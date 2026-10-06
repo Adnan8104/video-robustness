@@ -5,7 +5,7 @@
 | Choice | Reason and tradeoff |
 |---|---|
 | AEGIS pretrained checkpoint | Public downloadable weights and readable inference code; no training budget. It is a DINOv2-based multi-branch model, so lightweight here means a small experiment, not a tiny model. |
-| Four clips (two MSVD real, two Sora) | Fast plumbing check with both labels. Deterministic first filenames from the pinned source listing, no score-based selection. Labels come from the benchmark. This is not a representative evaluation. |
+| Twenty clips (10 MSVD real, 5 Sora, 5 VEO3) | Expand the smoke test with two generators and 16 new clips. Freeze filename-based selection before scoring, cap files at 10 MiB, and retain one MSVD segment per source ID. Labels come from the benchmark; this is a convenience sample, not representative evaluation. |
 | Pinned upstream code + strict checkpoint loading | Avoid changing architecture or accidentally measuring random weights. Full backbone is in the checkpoint, so the author's extra local cache is unnecessary. |
 | CPU, four threads | Works on this Apple Silicon Mac and is easy to reproduce. CUDA/MPS optimization can wait until data volume justifies it. |
 | 16 frames in centered four-second window | Retains upstream inference window length and frame count, removes random window selection so variants use the same temporal region. |
@@ -21,8 +21,8 @@
 
 ## What this proves
 
-A functioning pretrained inference pipeline and paired score comparison. Four source videos
-are four observations, not twenty independent observations after augmentation. Do not tune
+A functioning pretrained inference pipeline and paired score comparison. Twenty source clips
+are twenty observations, not one hundred independent observations after augmentation. The original four discovery clips are also reported separately from the 16 new clips. Do not tune
 thresholds on these clips, report AUC/low-FPR results, or claim the detector is reliable.
 Training-set overlap is unknown. Real and fake sources differ in content and encoding, so
 between-class score differences can reflect dataset artifacts. An output near zero or one
@@ -30,3 +30,16 @@ can be confidently wrong. Keep such failures in the report.
 
 
 Run artifacts record exact model and dataset revisions, input/output hashes, environment versions, and transformation commands. Paths in those commands are relative to the repository root.
+
+## Expanded-sample analysis
+
+[Selection policy](../configs/selection.md) specifies source quotas, file-size cap,
+deduplication, retained discovery cases, and the descriptive 0.10 score-change rule.
+The rule counts absolute differences; opposite signed changes must not cancel.
+Summary tables separate all clips and new clips, and give per-source medians. No
+classification threshold is tuned. Small shifts in saturated outputs can conceal
+changes in unreported model logits, so they do not establish trustworthy detection.
+
+Prior four-clip results are preserved in reports/milestone1/ and reports/milestone2/.
+The expanded sample stays inside the same dataset, so the second generator expands
+generator coverage but does not establish cross-dataset generalization.

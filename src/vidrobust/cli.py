@@ -11,6 +11,7 @@ import time
 import urllib.request
 from urllib.parse import quote
 from .detectors import AegisDetector
+from .reporting import write_summary
 
 ROOT = Path(__file__).resolve().parents[2]
 MODEL_REV = "95b71346cec650165e6ad3fb20ed9e80f4b6702a"
@@ -116,7 +117,7 @@ def run(root):
                     preprocessing="upstream ImageNet normalization, centered 4s window, 16 frames, 224x224", transformations=commands)
     (reports / "run.json").write_text(json.dumps(metadata, indent=2))
     (reports / "validation.json").write_text(json.dumps(validation, indent=2) + "\n")
-    lines = ["# Robustness experiment with encoding control", "", "Four clips; paired scores only. Higher scores mean more AI-like according to AEGIS, not calibrated probabilities.", "",
+    lines = ["# Robustness experiment with encoding control", "", f"{len(config['samples'])} source clips; paired scores only. Higher scores mean more AI-like according to AEGIS, not calibrated probabilities.", "",
              "| Clip (label) | Original | Encode control (CRF 18) | Compression (CRF 35) | Resize | Crop |", "|---|---:|---:|---:|---:|---:|"]
     for sample in config["samples"]:
         group = [r for r in rows if r["video_id"] == sample["id"]]
@@ -129,9 +130,10 @@ def run(root):
         group = {r["variant"]: r for r in rows if r["video_id"] == sample["id"]}
         shifts = [group["encode_control"]["delta"], *[group[v]["delta_vs_control"] for v in ("compression", "resize", "crop")]]
         lines.append(f'| {sample["id"]} | ' + " | ".join(f"{d:+.6f}" for d in shifts) + " |")
-    lines += ["", "See scores.csv for deltas versus both original and control, timings, dimensions, and hashes; run.json records exact inputs and environment. validation.json checks all case geometries and timing. The initial experiment is preserved in milestone1/.", "",
-              "Control-relative differences help isolate spatial edits, but are not a causal decomposition: encoding interacts with image content and resolution. Compression versus control compares CRF 35 and CRF 18 encodes. No accuracy, AUC, low-FPR, calibration, or population robustness claims are supported by four clips. Dataset labels are inherited, not independently audited. Possible training overlap is unknown."]
+    lines += ["", "See scores.csv for deltas versus both original and control, timings, dimensions, and hashes; run.json records exact inputs and environment. validation.json checks all case geometries and timing. Earlier four-clip experiments are preserved in milestone1/ and milestone2/.", "",
+              "Control-relative differences help isolate spatial edits, but are not a causal decomposition: encoding interacts with image content and resolution. Compression versus control compares CRF 35 and CRF 18 encodes. This convenience sample does not establish accuracy, low-FPR performance, calibration, or population robustness. Dataset labels are inherited, not independently audited. Possible training overlap is unknown."]
     (reports / "comparison.md").write_text("\n".join(lines)+"\n")
+    write_summary(root, config, rows)
 
 def main():
     parser = argparse.ArgumentParser()

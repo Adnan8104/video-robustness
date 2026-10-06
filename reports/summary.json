@@ -1,0 +1,407 @@
+{
+  "source_clips": 20,
+  "scored_cases": 100,
+  "new_source_clips": 16,
+  "shift_cutoff": 0.1,
+  "cutoff_meaning": "Descriptive score-change cutoff, not confidence or a detection threshold.",
+  "groups": [
+    {
+      "cohort": "all",
+      "source": "MSVD",
+      "clips": 10,
+      "median_original_score": 0.00017879452207125723,
+      "conditions": {
+        "encode_control": {
+          "median_signed_delta": -5.516521923709661e-07,
+          "median_absolute_delta": 8.217077265726402e-06,
+          "sizable_shift_count": 0,
+          "minimum_delta": -8.393102325499058e-05,
+          "maximum_delta": 0.014716863632202148
+        },
+        "compression": {
+          "median_signed_delta": 6.0084639699198306e-06,
+          "median_absolute_delta": 6.294897320913151e-05,
+          "sizable_shift_count": 1,
+          "minimum_delta": -0.9573338385671377,
+          "maximum_delta": 0.005086163524538279
+        },
+        "resize": {
+          "median_signed_delta": 9.598124597687274e-05,
+          "median_absolute_delta": 0.00021203074720688164,
+          "sizable_shift_count": 0,
+          "minimum_delta": -0.00026634009554982185,
+          "maximum_delta": 0.07207962358370423
+        },
+        "crop": {
+          "median_signed_delta": 6.854421371826902e-06,
+          "median_absolute_delta": 0.00012151744158472866,
+          "sizable_shift_count": 0,
+          "minimum_delta": -0.07364082336425781,
+          "maximum_delta": 0.021158516872674227
+        }
+      }
+    },
+    {
+      "cohort": "all",
+      "source": "Sora",
+      "clips": 5,
+      "median_original_score": 0.9999663829803467,
+      "conditions": {
+        "encode_control": {
+          "median_signed_delta": 3.5762786865234375e-07,
+          "median_absolute_delta": 4.76837158203125e-07,
+          "sizable_shift_count": 0,
+          "minimum_delta": -5.3822994232177734e-05,
+          "maximum_delta": 0.005131125450134277
+        },
+        "compression": {
+          "median_signed_delta": -1.537799835205078e-05,
+          "median_absolute_delta": 0.0006241202354431152,
+          "sizable_shift_count": 0,
+          "minimum_delta": -0.016698837280273438,
+          "maximum_delta": 0.028553307056427002
+        },
+        "resize": {
+          "median_signed_delta": 7.62939453125e-06,
+          "median_absolute_delta": 7.62939453125e-06,
+          "sizable_shift_count": 0,
+          "minimum_delta": 2.9802322387695312e-06,
+          "maximum_delta": 0.028476297855377197
+        },
+        "crop": {
+          "median_signed_delta": 6.67572021484375e-06,
+          "median_absolute_delta": 2.181529998779297e-05,
+          "sizable_shift_count": 0,
+          "minimum_delta": -2.181529998779297e-05,
+          "maximum_delta": 0.053425371646881104
+        }
+      }
+    },
+    {
+      "cohort": "all",
+      "source": "VEO3",
+      "clips": 5,
+      "median_original_score": 0.9999043941497803,
+      "conditions": {
+        "encode_control": {
+          "median_signed_delta": 3.5762786865234375e-07,
+          "median_absolute_delta": 1.2755393981933594e-05,
+          "sizable_shift_count": 0,
+          "minimum_delta": -1.2755393981933594e-05,
+          "maximum_delta": 0.0008071064949035645
+        },
+        "compression": {
+          "median_signed_delta": -3.4570693969726562e-06,
+          "median_absolute_delta": 0.0002624392509460449,
+          "sizable_shift_count": 0,
+          "minimum_delta": -0.054609477519989014,
+          "maximum_delta": 0.0002624392509460449
+        },
+        "resize": {
+          "median_signed_delta": 6.556510925292969e-06,
+          "median_absolute_delta": 6.4849853515625e-05,
+          "sizable_shift_count": 0,
+          "minimum_delta": -0.00022459030151367188,
+          "maximum_delta": 0.00012481212615966797
+        },
+        "crop": {
+          "median_signed_delta": -0.0004951357841491699,
+          "median_absolute_delta": 0.0004951357841491699,
+          "sizable_shift_count": 0,
+          "minimum_delta": -0.009025871753692627,
+          "maximum_delta": -1.823902130126953e-05
+        }
+      }
+    },
+    {
+      "cohort": "new",
+      "source": "MSVD",
+      "clips": 8,
+      "median_original_score": 0.00017879452207125723,
+      "conditions": {
+        "encode_control": {
+          "median_signed_delta": -6.221926014404744e-07,
+          "median_absolute_delta": 8.217077265726402e-06,
+          "sizable_shift_count": 0,
+          "minimum_delta": -8.393102325499058e-05,
+          "maximum_delta": 0.0003296585055068135
+        },
+        "compression": {
+          "median_signed_delta": 6.0084639699198306e-06,
+          "median_absolute_delta": 3.7719320971518755e-05,
+          "sizable_shift_count": 0,
+          "minimum_delta": -0.0010853104759007692,
+          "maximum_delta": 0.005086163524538279
+        },
+        "resize": {
+          "median_signed_delta": 9.486073395237327e-05,
+          "median_absolute_delta": 0.00021203074720688164,
+          "sizable_shift_count": 0,
+          "minimum_delta": -0.00026634009554982185,
+          "maximum_delta": 0.07207962358370423
+        },
+        "crop": {
+          "median_signed_delta": 6.854421371826902e-06,
+          "median_absolute_delta": 0.00010275781824020669,
+          "sizable_shift_count": 0,
+          "minimum_delta": -0.00021739286603406072,
+          "maximum_delta": 0.021158516872674227
+        }
+      }
+    },
+    {
+      "cohort": "new",
+      "source": "Sora",
+      "clips": 3,
+      "median_original_score": 0.9994761347770691,
+      "conditions": {
+        "encode_control": {
+          "median_signed_delta": 3.5762786865234375e-07,
+          "median_absolute_delta": 5.3822994232177734e-05,
+          "sizable_shift_count": 0,
+          "minimum_delta": -5.3822994232177734e-05,
+          "maximum_delta": 0.005131125450134277
+        },
+        "compression": {
+          "median_signed_delta": -0.0006241202354431152,
+          "median_absolute_delta": 0.016698837280273438,
+          "sizable_shift_count": 0,
+          "minimum_delta": -0.016698837280273438,
+          "maximum_delta": 0.028553307056427002
+        },
+        "resize": {
+          "median_signed_delta": 0.00034159421920776367,
+          "median_absolute_delta": 0.00034159421920776367,
+          "sizable_shift_count": 0,
+          "minimum_delta": 7.62939453125e-06,
+          "maximum_delta": 0.028476297855377197
+        },
+        "crop": {
+          "median_signed_delta": 0.00029414892196655273,
+          "median_absolute_delta": 0.00029414892196655273,
+          "sizable_shift_count": 0,
+          "minimum_delta": 6.67572021484375e-06,
+          "maximum_delta": 0.053425371646881104
+        }
+      }
+    },
+    {
+      "cohort": "new",
+      "source": "VEO3",
+      "clips": 5,
+      "median_original_score": 0.9999043941497803,
+      "conditions": {
+        "encode_control": {
+          "median_signed_delta": 3.5762786865234375e-07,
+          "median_absolute_delta": 1.2755393981933594e-05,
+          "sizable_shift_count": 0,
+          "minimum_delta": -1.2755393981933594e-05,
+          "maximum_delta": 0.0008071064949035645
+        },
+        "compression": {
+          "median_signed_delta": -3.4570693969726562e-06,
+          "median_absolute_delta": 0.0002624392509460449,
+          "sizable_shift_count": 0,
+          "minimum_delta": -0.054609477519989014,
+          "maximum_delta": 0.0002624392509460449
+        },
+        "resize": {
+          "median_signed_delta": 6.556510925292969e-06,
+          "median_absolute_delta": 6.4849853515625e-05,
+          "sizable_shift_count": 0,
+          "minimum_delta": -0.00022459030151367188,
+          "maximum_delta": 0.00012481212615966797
+        },
+        "crop": {
+          "median_signed_delta": -0.0004951357841491699,
+          "median_absolute_delta": 0.0004951357841491699,
+          "sizable_shift_count": 0,
+          "minimum_delta": -0.009025871753692627,
+          "maximum_delta": -1.823902130126953e-05
+        }
+      }
+    }
+  ],
+  "largest_shift_per_clip": [
+    {
+      "video_id": "real_01",
+      "source": "MSVD",
+      "new_clip": false,
+      "variant": "compression",
+      "control_score": 0.9811278581619263,
+      "score": 0.02379401959478855,
+      "delta": -0.9573338385671377
+    },
+    {
+      "video_id": "real_08",
+      "source": "MSVD",
+      "new_clip": true,
+      "variant": "resize",
+      "control_score": 0.003006143029779196,
+      "score": 0.07508576661348343,
+      "delta": 0.07207962358370423
+    },
+    {
+      "video_id": "ai_06",
+      "source": "VEO3",
+      "new_clip": true,
+      "variant": "compression",
+      "control_score": 0.9998916387557983,
+      "score": 0.9452821612358093,
+      "delta": -0.054609477519989014
+    },
+    {
+      "video_id": "ai_03",
+      "source": "Sora",
+      "new_clip": true,
+      "variant": "crop",
+      "control_score": 0.946255624294281,
+      "score": 0.9996809959411621,
+      "delta": 0.053425371646881104
+    },
+    {
+      "video_id": "ai_04",
+      "source": "Sora",
+      "new_clip": true,
+      "variant": "compression",
+      "control_score": 0.9994223117828369,
+      "score": 0.9827234745025635,
+      "delta": -0.016698837280273438
+    },
+    {
+      "video_id": "ai_10",
+      "source": "VEO3",
+      "new_clip": true,
+      "variant": "crop",
+      "control_score": 0.9995917677879333,
+      "score": 0.9932896494865417,
+      "delta": -0.0063021183013916016
+    },
+    {
+      "video_id": "real_06",
+      "source": "MSVD",
+      "new_clip": true,
+      "variant": "resize",
+      "control_score": 0.00040518384776078165,
+      "score": 0.004543639253824949,
+      "delta": 0.004138455406064168
+    },
+    {
+      "video_id": "real_03",
+      "source": "MSVD",
+      "new_clip": true,
+      "variant": "compression",
+      "control_score": 0.0014629727229475975,
+      "score": 0.00037766224704682827,
+      "delta": -0.0010853104759007692
+    },
+    {
+      "video_id": "ai_07",
+      "source": "VEO3",
+      "new_clip": true,
+      "variant": "compression",
+      "control_score": 0.9998714923858643,
+      "score": 0.998914361000061,
+      "delta": -0.0009571313858032227
+    },
+    {
+      "video_id": "ai_05",
+      "source": "Sora",
+      "new_clip": true,
+      "variant": "compression",
+      "control_score": 0.9999892711639404,
+      "score": 0.9993651509284973,
+      "delta": -0.0006241202354431152
+    },
+    {
+      "video_id": "real_09",
+      "source": "MSVD",
+      "new_clip": true,
+      "variant": "resize",
+      "control_score": 0.00020267906074877828,
+      "score": 0.000496570544783026,
+      "delta": 0.0002938914840342477
+    },
+    {
+      "video_id": "real_10",
+      "source": "MSVD",
+      "new_clip": true,
+      "variant": "crop",
+      "control_score": 6.820249109296128e-05,
+      "score": 0.0002669264213182032,
+      "delta": 0.00019872393022524193
+    },
+    {
+      "video_id": "real_04",
+      "source": "MSVD",
+      "new_clip": true,
+      "variant": "crop",
+      "control_score": 0.00015983250341378152,
+      "score": 0.00032192294020205736,
+      "delta": 0.00016209043678827584
+    },
+    {
+      "video_id": "real_02",
+      "source": "MSVD",
+      "new_clip": false,
+      "variant": "crop",
+      "control_score": 0.00012997802696190774,
+      "score": 0.00021092247334308922,
+      "delta": 8.094444638118148e-05
+    },
+    {
+      "video_id": "ai_09",
+      "source": "VEO3",
+      "new_clip": true,
+      "variant": "crop",
+      "control_score": 0.9999972581863403,
+      "score": 0.9999266862869263,
+      "delta": -7.05718994140625e-05
+    },
+    {
+      "video_id": "real_05",
+      "source": "MSVD",
+      "new_clip": true,
+      "variant": "crop",
+      "control_score": 0.00011750433623092249,
+      "score": 7.407913653878495e-05,
+      "delta": -4.342519969213754e-05
+    },
+    {
+      "video_id": "real_07",
+      "source": "MSVD",
+      "new_clip": true,
+      "variant": "crop",
+      "control_score": 0.00011167044431203976,
+      "score": 0.00013885865337215364,
+      "delta": 2.7188209060113877e-05
+    },
+    {
+      "video_id": "ai_01",
+      "source": "Sora",
+      "new_clip": false,
+      "variant": "crop",
+      "control_score": 0.9999665021896362,
+      "score": 0.9999446868896484,
+      "delta": -2.181529998779297e-05
+    },
+    {
+      "video_id": "ai_08",
+      "source": "VEO3",
+      "new_clip": true,
+      "variant": "crop",
+      "control_score": 0.9999639987945557,
+      "score": 0.9999457597732544,
+      "delta": -1.823902130126953e-05
+    },
+    {
+      "video_id": "ai_02",
+      "source": "Sora",
+      "new_clip": false,
+      "variant": "crop",
+      "control_score": 0.9999953508377075,
+      "score": 0.9999854564666748,
+      "delta": -9.894371032714844e-06
+    }
+  ]
+}

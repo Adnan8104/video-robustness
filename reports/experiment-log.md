@@ -1,61 +1,67 @@
-# Experiment log: encoding control
+# Experiment log: fixed 20-clip expansion
 
-Date: 2026-10-02. Detector, checkpoint, four source clips, and centered frame sampling
-are unchanged from milestone 1. This follow-up adds one condition, not new source videos.
+Date: 2026-10-06. Detector, checkpoint, centered 16-frame sampling, and all five
+conditions remain unchanged. Sample policy was frozen in commit 001190d; the
+0.10 descriptive score-shift rule was recorded in 30bf3e8 before expanded scoring.
+The previous four-clip log and results remain in milestone2/.
 
-## Question and design
+## Design
 
-Was real_01's large score shift caused by any re-encoding, or is it sensitive to the
-encoding settings? Add a no-spatial-edit H.264 encode at CRF 18, matching the existing
-resize/crop codec, preset, pixel format, and audio removal. Compare each score to
-both its original and its control. Retain CRF 35 as the stronger compression case.
-This yields 20 cases from four source observations.
+10 real MSVD clips, five Sora clips, and five VEO3 clips from the pinned ComGenVid
+revision. Select first eligible filenames within the first 100 listed files per
+source, cap each file at 10 MiB, and keep one real segment per source video ID.
+All source hashes are unique. Selection does not inspect detector scores.
 
-## Observations
+The original four discovery clips remain in the panel. The 16 new clips are
+reported separately to avoid presenting the known failure as new confirmation.
+Original, CRF 18 encode-only control, CRF 35 compression, half-size resize, and
+center crop produce 100 cases from 20 source observations.
 
-| real_01 condition | AI-like score | Difference from control |
-|---|---:|---:|
-| Original | 0.966411 | -0.014717 |
-| Encode only, CRF 18 | 0.981128 | 0 |
-| Encode only, CRF 35 | 0.023794 | -0.957334 |
-| Half-size, CRF 18 | 0.999983 | +0.018855 |
-| Center crop, CRF 18 | 0.907487 | -0.073641 |
+## Findings
 
-The model gives high AI-like scores to original real_01 and its CRF 18 control,
-despite its source label being real. The stronger encode changes that behavior.
-The other real clip stays near zero, and the two Sora clips stay near one.
-Scores are model outputs, not calibrated authenticity probabilities.
+The original real_01 compression shift reproduced: control 0.981128, compressed
+0.023794, signed difference −0.957334. None of the 16 new clips shows a shift of
+at least 0.10, whether measuring the encode control against original or the three
+transformed variants against control.
 
-## Visual inspection
+| New case | Condition | Control score | Variant score | Signed change |
+|---|---|---:|---:|---:|
+| real_08 (MSVD) | Resize | 0.003006 | 0.075086 | +0.072080 |
+| ai_06 (VEO3) | Compression | 0.999892 | 0.945282 | −0.054609 |
+| ai_03 (Sora) | Crop | 0.946256 | 0.999681 | +0.053425 |
 
-A contact sheet uses frames 90, 129, 168, and 208 (about 3.01, 4.31, 5.62, 6.95 seconds)
-from the exact temporal window used by the model. The clip depicts a small rodent
-eating inside a wire cage. Scene composition is stable across original, control,
-and stronger compression; CRF 35 visibly softens some texture and cage detail.
-Looking at these frames does not independently verify the dataset's real label.
-The local contact sheet is `real_01_frames.png`; it is excluded from Git and the
-shareable archive along with source media.
+The expanded panel does not reproduce the original dramatic compression failure
+on new cases. It does show smaller, condition-dependent score changes. Per-source
+medians and sizable-shift counts are in summary.md and summary.json.
 
 ## Interpretation and limits
 
-The large shift is not reproduced by the CRF 18 encode-only control. That supports
-sensitivity to compression settings on this particular clip. It does not identify
-which learned features are responsible. A texture/frequency explanation is a
-hypothesis, not an established mechanism.
+This is a negative replication of a large score shift within a small convenience
+sample. It does not establish general robustness. Most model scores saturate near
+zero or one; small probability-like changes can conceal larger logit changes.
+The file-size cap and filename ordering can bias content, duration, and original
+encoding. All real footage comes from MSVD, only five clips represent each
+generator, source labels are inherited, and training overlap is unknown.
+Adding Veo is generator coverage, not proof of unseen-generator generalization.
 
-Resize and crop relative to the CRF 18 control are useful paired comparisons, but
-encoding changes with content and resolution; subtracting scores is not a clean
-causal decomposition. Four clips, one generated source, unknown training overlap,
-and inherited source labels remain major limits. Do not tune a threshold on this case.
+Spatial edits interact with encoding, so control-relative subtraction is not a
+clean causal decomposition. The 0.10 rule is a descriptive score-change cutoff;
+it is not calibrated confidence, a detection threshold, or a significance test.
+Do not turn these results into an accuracy or low-FPR claim.
 
-## Verification and next step
+## Verification
 
-All 20 cases preserve frame counts and frame rates and have the expected dimensions.
-Input/output hashes and exact settings are in run.json and scores.csv. Repeat checks
-are recorded in validation.json. Milestone 1's reports remain in milestone1/.
+All 20 source clips pass SHA-256 and full decoding checks. All 100 cases preserve
+frame counts and FPS and match intended geometry. All 20 prior case scores and
+video hashes are unchanged. Repeat checks for the leading new real and Veo cases
+are recorded in validation.json. Tests cover provenance failures, repeatable
+sampling, signed-versus-absolute summaries, and exclusion of discovery cases.
 
-Next 3–4 hour session: expand to a fixed small sample (10 real plus 10 generated,
-with two generator sources if available), freeze selection before scoring, and run
-these same five conditions. Report per-clip score shifts before aggregate claims.
-A small compression-quality sweep can follow if similar failures recur. Keep model
-training and a UI outside the current scope.
+## Next small experiment
+
+Use a second real-video source with clear labels and source terms; pair or match
+content and resolution where possible. Keep this detector and settings fixed.
+Test whether the rodent-cage failure follows similar texture/content or original
+encoding. A short CRF sweep on the original failure and selected controls can
+then test the compression-response curve. Keep model training and a UI out of
+scope until these measurements support a clearer question.

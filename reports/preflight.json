@@ -1,0 +1,186 @@
+{
+  "status": "passed",
+  "source_clips": 20,
+  "clips": [
+    {
+      "video_id": "real_01",
+      "decoded_frames": 300,
+      "total_frames": 300,
+      "fps": 29.916666666666668,
+      "width": 480,
+      "height": 360,
+      "duration": 10.027855153203342
+    },
+    {
+      "video_id": "real_02",
+      "decoded_frames": 46,
+      "total_frames": 46,
+      "fps": 15.0,
+      "width": 320,
+      "height": 240,
+      "duration": 3.066666666666667
+    },
+    {
+      "video_id": "real_03",
+      "decoded_frames": 120,
+      "total_frames": 120,
+      "fps": 29.916666666666668,
+      "width": 854,
+      "height": 480,
+      "duration": 4.011142061281337
+    },
+    {
+      "video_id": "real_04",
+      "decoded_frames": 300,
+      "total_frames": 300,
+      "fps": 59.94005994005994,
+      "width": 640,
+      "height": 360,
+      "duration": 5.005
+    },
+    {
+      "video_id": "real_05",
+      "decoded_frames": 360,
+      "total_frames": 360,
+      "fps": 59.94005994005994,
+      "width": 400,
+      "height": 226,
+      "duration": 6.006
+    },
+    {
+      "video_id": "real_06",
+      "decoded_frames": 181,
+      "total_frames": 181,
+      "fps": 30.0,
+      "width": 400,
+      "height": 300,
+      "duration": 6.033333333333333
+    },
+    {
+      "video_id": "real_07",
+      "decoded_frames": 276,
+      "total_frames": 276,
+      "fps": 25.0,
+      "width": 320,
+      "height": 240,
+      "duration": 11.04
+    },
+    {
+      "video_id": "real_08",
+      "decoded_frames": 225,
+      "total_frames": 225,
+      "fps": 14.985014985014985,
+      "width": 320,
+      "height": 240,
+      "duration": 15.015
+    },
+    {
+      "video_id": "real_09",
+      "decoded_frames": 300,
+      "total_frames": 300,
+      "fps": 29.97002997002997,
+      "width": 320,
+      "height": 240,
+      "duration": 10.01
+    },
+    {
+      "video_id": "real_10",
+      "decoded_frames": 120,
+      "total_frames": 120,
+      "fps": 29.97002997002997,
+      "width": 320,
+      "height": 240,
+      "duration": 4.0040000000000004
+    },
+    {
+      "video_id": "ai_01",
+      "decoded_frames": 150,
+      "total_frames": 150,
+      "fps": 30.0,
+      "width": 480,
+      "height": 720,
+      "duration": 5.0
+    },
+    {
+      "video_id": "ai_02",
+      "decoded_frames": 300,
+      "total_frames": 300,
+      "fps": 30.0,
+      "width": 480,
+      "height": 720,
+      "duration": 10.0
+    },
+    {
+      "video_id": "ai_03",
+      "decoded_frames": 150,
+      "total_frames": 150,
+      "fps": 30.0,
+      "width": 854,
+      "height": 480,
+      "duration": 5.0
+    },
+    {
+      "video_id": "ai_04",
+      "decoded_frames": 300,
+      "total_frames": 300,
+      "fps": 30.0,
+      "width": 480,
+      "height": 720,
+      "duration": 10.0
+    },
+    {
+      "video_id": "ai_05",
+      "decoded_frames": 150,
+      "total_frames": 150,
+      "fps": 30.0,
+      "width": 480,
+      "height": 720,
+      "duration": 5.0
+    },
+    {
+      "video_id": "ai_06",
+      "decoded_frames": 192,
+      "total_frames": 192,
+      "fps": 24.0,
+      "width": 1280,
+      "height": 720,
+      "duration": 8.0
+    },
+    {
+      "video_id": "ai_07",
+      "decoded_frames": 192,
+      "total_frames": 192,
+      "fps": 24.0,
+      "width": 1280,
+      "height": 720,
+      "duration": 8.0
+    },
+    {
+      "video_id": "ai_08",
+      "decoded_frames": 192,
+      "total_frames": 192,
+      "fps": 24.0,
+      "width": 1280,
+      "height": 720,
+      "duration": 8.0
+    },
+    {
+      "video_id": "ai_09",
+      "decoded_frames": 192,
+      "total_frames": 192,
+      "fps": 24.0,
+      "width": 1280,
+      "height": 720,
+      "duration": 8.0
+    },
+    {
+      "video_id": "ai_10",
+      "decoded_frames": 192,
+      "total_frames": 192,
+      "fps": 24.0,
+      "width": 1280,
+      "height": 720,
+      "duration": 8.0
+    }
+  ]
+}

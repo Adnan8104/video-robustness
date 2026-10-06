@@ -1,20 +1,40 @@
 {
-  "cases": 20,
+  "cases": 100,
   "geometry_and_timing_checks": "passed",
-  "milestone1_case_scores_and_output_hashes": "all 16 unchanged",
-  "repeat_checks": [
+  "source_clips": 20,
+  "expected_cases": 100,
+  "complete_sample_coverage": "passed",
+  "unique_real_source_ids": 10,
+  "retained_case_scores_and_output_hashes": "all previous 20 unchanged",
+  "input_decode_checks": "preflight.json",
+  "selection_reference_commit": "30bf3e8",
+  "new_case_repeat_checks": [
     {
-      "video_id": "real_01",
+      "video_id": "real_08",
       "variant": "encode_control",
-      "first": 0.9811278581619263,
-      "repeat": 0.9811278581619263,
+      "first": 0.003006143029779196,
+      "repeat": 0.003006143029779196,
       "absolute_difference": 0.0
     },
     {
-      "video_id": "real_01",
+      "video_id": "real_08",
+      "variant": "resize",
+      "first": 0.07508576661348343,
+      "repeat": 0.07508576661348343,
+      "absolute_difference": 0.0
+    },
+    {
+      "video_id": "ai_06",
+      "variant": "encode_control",
+      "first": 0.9998916387557983,
+      "repeat": 0.9998916387557983,
+      "absolute_difference": 0.0
+    },
+    {
+      "video_id": "ai_06",
       "variant": "compression",
-      "first": 0.02379401959478855,
-      "repeat": 0.02379401959478855,
+      "first": 0.9452821612358093,
+      "repeat": 0.9452821612358093,
       "absolute_difference": 0.0
     }
   ]

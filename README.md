@@ -16,22 +16,22 @@ uv run python run.py run
 uv run python run.py check
 ```
 
-The first download includes a ~433 MiB pretrained checkpoint and four short clips.
+The first download includes a ~433 MiB pretrained checkpoint and 20 short clips (~71 MiB total).
 Inference runs on CPU. Model weights, videos, and the local environment are excluded from Git.
 
-## Initial result
+## Expanded experiment
 
-Four source clips, five conditions, 20 scored cases. One source-labeled real clip
-shows sensitivity to compression strength:
+20 source clips: 10 real MSVD, 5 Sora, and 5 Veo clips. Five conditions produce
+100 scored cases. The manifest was frozen before expanded scoring.
 
-| Original | Encode control (CRF 18) | Compression (CRF 35) |
-|---:|---:|---:|
-| 0.966411 | 0.981128 | 0.023794 |
+The original real clip's large compression drop did not repeat on the 16 newly
+selected clips. Their largest control-relative changes were +0.072 for a resized
+real clip, −0.055 for a compressed Veo clip, and +0.053 for a cropped Sora clip.
 
 Higher scores mean more AI-like according to AEGIS; they are not calibrated
-probabilities. This small sample does not establish detector accuracy.
+probabilities. This convenience sample does not establish detector accuracy.
 
-[Full comparison](reports/comparison.md) · [Experiment notes](reports/experiment-log.md) · [Methodology](docs/methodology.md)
+[Results summary](reports/summary.md) · [All scores](reports/comparison.md) · [Experiment notes](reports/experiment-log.md) · [Methodology](docs/methodology.md)
 
 ## Sources
 
