@@ -1,0 +1,20 @@
+{
+  "cases": 16,
+  "geometry_and_timing_checks": "passed",
+  "repeat_checks": [
+    {
+      "video_id": "real_01",
+      "variant": "original",
+      "first": 0.9664109945297241,
+      "repeat": 0.9664109945297241,
+      "absolute_difference": 0.0
+    },
+    {
+      "video_id": "real_01",
+      "variant": "compression",
+      "first": 0.02379401959478855,
+      "repeat": 0.02379401959478855,
+      "absolute_difference": 0.0
+    }
+  ]
+}

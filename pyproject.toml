@@ -1,0 +1,13 @@
+[project]
+name = "video-robustness"
+version = "0.1.0"
+description = "Tiny paired robustness experiment for pretrained AI-video detection"
+requires-python = ">=3.11,<3.12"
+dependencies = ["torch==2.5.1", "torchvision==0.20.1", "timm==1.0.27", "einops==0.8.2", "opencv-python-headless==4.11.0.86", "numpy==2.2.6", "safetensors==0.7.0", "imageio-ffmpeg==0.6.0", "huggingface-hub==0.36.0"]
+[project.scripts]
+vidrobust = "vidrobust.cli:main"
+[build-system]
+requires = ["setuptools==75.8.0"]
+build-backend = "setuptools.build_meta"
+[tool.setuptools.packages.find]
+where = ["src"]
