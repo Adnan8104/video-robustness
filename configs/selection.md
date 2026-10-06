@@ -20,3 +20,8 @@ The detector, frame sampling, and transformation settings remain fixed.
 Before scoring, commit this manifest and policy. Use that commit as the selection
 reference in the experiment log. Saved previous four-clip reports are in
 reports/milestone2/; the initial experiment remains in reports/milestone1/.
+
+Descriptive summary rule fixed before scoring: report signed and absolute score
+differences versus control, and count changes of at least 0.10 score units. That
+cutoff labels a sizable output change for this report; it is not a calibrated
+confidence threshold, a detection operating point, or a significance test.
