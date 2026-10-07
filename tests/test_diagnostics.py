@@ -1,6 +1,6 @@
 """Guard against assuming monotonicity and changing frames during a paired test."""
 import unittest
-from vidrobust.diagnostics import curve_metrics, validate_case
+from vidrobust.legacy.diagnostics import curve_metrics, validate_case
 
 class DiagnosticCurveTests(unittest.TestCase):
     def test_non_monotone_curve_retains_multiple_crossings_and_crf_spacing(self):

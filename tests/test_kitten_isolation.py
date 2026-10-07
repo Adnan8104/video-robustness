@@ -4,7 +4,7 @@ import math
 import unittest
 import numpy as np
 from vidrobust.frame_scoring import rgb_digest
-from vidrobust.kitten_isolation import factorial_summary,variant_name
+from vidrobust.legacy.kitten_isolation import factorial_summary,variant_name
 
 
 def rows_fixture():

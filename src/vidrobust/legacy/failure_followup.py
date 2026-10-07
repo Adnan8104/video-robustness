@@ -59,12 +59,13 @@ def analyze(rows, samples):
 
 def run_followup(root):
     import imageio_ffmpeg
-    from .cli import sha, download, MODEL_HASH, MODEL_REV
+    from ..artifacts import sha, download
+    from ..adapters.aegis import MODEL_HASH, MODEL_REV
     from .controlled import prepare_panel
     from .diagnostics import probe
     from .comparison import write_csv
-    from .detectors import AegisDetector
-    from .waverep import WaveRepDetector, WEIGHTS_HASH, WEIGHTS_URL, aggregate_frame_logits
+    from ..adapters.aegis import AegisDetector
+    from ..adapters.waverep import WaveRepDetector, WEIGHTS_HASH, WEIGHTS_URL, aggregate_frame_logits
     from .failure_report import write_report
     cfg_path = root/'configs/failure-followup.json'
     config = json.loads(cfg_path.read_text())
@@ -80,8 +81,8 @@ def run_followup(root):
     manifest = json.loads((root/'configs/controlled.json').read_text())
     samples = [next(s for s in manifest['samples'] if s['id'] == c['id']) for c in config['clips']]
     packages = {p: importlib.metadata.version(p) for p in parent['package_versions']}
-    inference_paths = ['src/vidrobust/detectors.py','src/vidrobust/waverep.py','vendor/aegis/video_io.py']
-    inference_matches = packages == parent['package_versions'] and all(sha(root/p) == parent['code_sha256'][p] for p in inference_paths)
+    inference_paths = ['src/vidrobust/adapters/aegis.py','src/vidrobust/adapters/waverep.py','vendor/aegis/video_io.py']
+    inference_matches = packages == parent['package_versions'] and all((root/p).exists() and sha(root/p) == parent['code_sha256'].get(p) for p in inference_paths)
     inference_matches &= parent['aegis_model_sha256'] == MODEL_HASH and parent['waverep_model_sha256'] == WEIGHTS_HASH and parent['aegis_model_revision'] == MODEL_REV
     download(WEIGHTS_URL, root/'models/weights_dinov2_G4.ckpt', WEIGHTS_HASH)
     download(f'https://huggingface.co/MusapYildiz/aegis-video-detector/resolve/{MODEL_REV}/checkpoint_best.pt',root/'models/checkpoint_best.pt',MODEL_HASH)
@@ -149,7 +150,7 @@ def run_followup(root):
         config_sha256=sha(cfg_path),package_versions=packages,python=platform.python_version(),ffmpeg=imageio_ffmpeg.get_ffmpeg_version(),
         device='cpu',threads=4,seed=0,deterministic_algorithms=True,waverep_frame_batch=2,
         aegis_model_sha256=MODEL_HASH,aegis_model_revision=MODEL_REV,waverep_model_sha256=WEIGHTS_HASH,
-        code_sha256={p:sha(root/p) for p in inference_paths+['src/vidrobust/failure_followup.py','src/vidrobust/failure_report.py','src/vidrobust/controlled.py']},
+        code_sha256={p:sha(root/p) for p in inference_paths+['src/vidrobust/legacy/failure_followup.py','src/vidrobust/legacy/failure_report.py','src/vidrobust/legacy/controlled.py']},
         newly_scored_cases=sum(not r['reused'] for r in rows),reused_cases=sum(r['reused'] for r in rows),
         preparation=preparation,medium_crf_commands=commands,parent_master_hash_matches=master_matches)
     (out/'run.json').write_text(json.dumps(metadata,indent=2)+'\n')

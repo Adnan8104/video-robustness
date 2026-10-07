@@ -1,8 +1,8 @@
 """Retain multiple crossings and keep native originals distinct from preparation."""
 import json
 import unittest
-from vidrobust.failure_followup import curve_summary, analyze, CRFS, VARIANTS
-from vidrobust.controlled import SAMPLED_INDICES
+from vidrobust.legacy.failure_followup import curve_summary, analyze, CRFS, VARIANTS
+from vidrobust.legacy.controlled import SAMPLED_INDICES
 
 
 class FailureFollowupTests(unittest.TestCase):

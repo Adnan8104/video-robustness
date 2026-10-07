@@ -4,7 +4,7 @@ from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import patch
-from vidrobust.cli import download, sha
+from vidrobust.artifacts import download, sha
 
 class ProvenanceTests(unittest.TestCase):
     def test_bad_download_never_becomes_input(self):

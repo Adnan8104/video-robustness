@@ -6,6 +6,8 @@ Sparse temporal sampling is our explicit CPU-budget adaptation.
 import math
 from pathlib import Path
 import sys
+from ..media import read_exact_rgb
+from ..registry import register
 
 WEIGHTS_HASH = "50d639049d928986ba7d69861a4fe4f3e7afbba1843e3e089cdf6b4748f53d5b"
 WEIGHTS_URL = "https://www.grip.unina.it/download/prog/WaveRep_SynthVideoDet/weights_dinov2_G4.ckpt"
@@ -20,38 +22,20 @@ def aggregate_frame_logits(logits):
     return mean, score
 
 
-def read_exact_rgb(path, indices):
-    """Decode all requested frames; reject partial decodes instead of padding."""
-    import cv2
-    cap = cv2.VideoCapture(str(path))
-    wanted = set(indices)
-    frames = {}
-    try:
-        if not cap.isOpened():
-            raise ValueError(f"Cannot open {Path(path).name}")
-        index = 0
-        while len(frames) < len(wanted):
-            ok, frame = cap.read()
-            if not ok:
-                break
-            if index in wanted:
-                frames[index] = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            index += 1
-        if set(frames) != wanted:
-            raise ValueError(f"Missing sampled frames: {Path(path).name}")
-        return [frames[i] for i in indices]
-    finally:
-        cap.release()
 
 
+@register("waverep")
 class WaveRepDetector:
     name = "waverep-G4-sparse16"
+    checkpoint = dict(path="models/weights_dinov2_G4.ckpt", sha256=WEIGHTS_HASH, url=WEIGHTS_URL,
+        revision="0fd6010759c14b572b7842a28fa9f85fe1ddd2fd")
+    preprocessing = "16 RGB frames; 504×504 center crop with zero padding for smaller inputs; ImageNet normalization; sigmoid of mean frame logits; batch size 2"
 
     def __init__(self, root):
         import torch
         import timm
         from torchvision import transforms
-        from .cli import sha
+        from ..artifacts import sha
         path = root / "models/weights_dinov2_G4.ckpt"
         if sha(path) != WEIGHTS_HASH:
             raise ValueError("WaveRep checkpoint checksum mismatch")
@@ -78,6 +62,18 @@ class WaveRepDetector:
 
     def score(self, path):
         return self.score_details(path)["ai_score"]
+
+    def prepare_frames(self, frames):
+        import torch
+        from PIL import Image
+        return torch.stack([self.transform(Image.fromarray(frame)) for frame in frames])
+
+    def predict(self, tensor):
+        logits = []
+        for start in range(0, 16, 2):
+            logits.extend(self.model(tensor[start:start+2]).reshape(-1).tolist())
+        mean, score = aggregate_frame_logits(logits)
+        return dict(ai_score=score, fusion_logit=mean, frame_logits=logits)
 
     def score_details(self, path):
         import torch

@@ -5,6 +5,50 @@ import subprocess
 from urllib.parse import quote
 
 
+def probe(path, full_decode=False):
+    import cv2
+    cap = cv2.VideoCapture(str(path))
+    if not cap.isOpened():
+        raise ValueError(f"Cannot decode video: {path.name}")
+    meta = dict(width=int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)),height=int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)),
+                frames=int(cap.get(cv2.CAP_PROP_FRAME_COUNT)),fps=cap.get(cv2.CAP_PROP_FPS))
+    try:
+        if min(meta["width"],meta["height"]) < 1 or meta["frames"] < 8 or meta["fps"] <= 0:
+            raise ValueError(f"Invalid source geometry/timing: {path.name}")
+        if full_decode:
+            count=0
+            while cap.read()[0]:
+                count+=1
+            if count!=meta["frames"]:
+                raise ValueError(f"Partial decode: {path.name} ({count}/{meta['frames']})")
+    finally:
+        cap.release()
+    return meta
+
+def read_exact_rgb(path, indices):
+    """Decode all requested frames; reject partial decodes instead of padding."""
+    import cv2
+    cap = cv2.VideoCapture(str(path))
+    wanted = set(indices)
+    frames = {}
+    try:
+        if not cap.isOpened():
+            raise ValueError(f"Cannot open {Path(path).name}")
+        index = 0
+        while len(frames) < len(wanted):
+            ok, frame = cap.read()
+            if not ok:
+                break
+            if index in wanted:
+                frames[index] = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            index += 1
+        if set(frames) != wanted:
+            raise ValueError(f"Missing sampled frames: {Path(path).name}")
+        return [frames[i] for i in indices]
+    finally:
+        cap.release()
+
+
 def transform_filter(name, width, height):
     if name == "identity":
         return None, (width, height)
@@ -27,8 +71,7 @@ def transform_filter(name, width, height):
 
 
 def prepare_cases(root, config, samples):
-    from .cli import download, sha
-    from .diagnostics import probe
+    from .artifacts import download, sha
     from .experiment import inside
     import imageio_ffmpeg
     ffmpeg = imageio_ffmpeg.get_ffmpeg_exe()

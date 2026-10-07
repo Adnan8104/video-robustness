@@ -61,7 +61,7 @@ def summarize(rows):
 
 
 def read_previous(root):
-    from .cli import MODEL_HASH, MODEL_REV
+    from ..adapters.aegis import MODEL_HASH, MODEL_REV
     old = {}
     for directory in (root / "reports", root / "reports/diagnostics"):
         meta = json.loads((directory / "run.json").read_text())
@@ -88,10 +88,12 @@ def write_csv(path, rows):
 def run_comparison(root):
     import imageio_ffmpeg
     import torch
-    from .cli import download, sha, MODEL_HASH, MODEL_REV, FILTERS
-    from .detectors import AegisDetector
+    from ..artifacts import download, sha
+    from ..adapters.aegis import MODEL_HASH, MODEL_REV
+    from .initial import FILTERS
+    from ..adapters.aegis import AegisDetector
     from .diagnostics import probe, validate_case
-    from .waverep import WaveRepDetector, WEIGHTS_HASH, WEIGHTS_URL
+    from ..adapters.waverep import WaveRepDetector, WEIGHTS_HASH, WEIGHTS_URL
     config_path = root / "configs/two-detectors.json"
     config = json.loads(config_path.read_text())
     download(WEIGHTS_URL, root / "models/weights_dinov2_G4.ckpt", WEIGHTS_HASH)
@@ -140,7 +142,7 @@ def run_comparison(root):
     out = root / "reports/two-detectors"
     out.mkdir(parents=True, exist_ok=True)
     signature = dict(config_sha256=sha(config_path), model_sha256=WEIGHTS_HASH,
-        adapter_sha256=sha(root / "src/vidrobust/waverep.py"),
+        adapter_sha256=sha(root / "src/vidrobust/adapters/waverep.py"),
         package_versions={p: importlib.metadata.version(p) for p in ("torch", "timm", "opencv-python-headless", "numpy", "torchvision")})
     cache_path = root / "data/waverep-comparison-cache.json"
     cache = json.loads(cache_path.read_text()) if cache_path.exists() else {}

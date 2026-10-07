@@ -32,11 +32,14 @@ def write_results(root, out, config, samples, rows, summary, metadata, validatio
     lines += ["", "## Run details", "",
         "Every variant starts independently from the source or the common lossless master. "
         "Models receive the same decoded RGB frames, with their own native preprocessing. "
-        "WaveRep averages 16 frame logits before applying sigmoid; AEGIS uses its released fusion head. "
         "Inference runs on CPU with four threads. Configs and source manifests must be committed before scoring.", "",
         "These clips measure score changes, not general detector accuracy. Labels come from the dataset. "
         "Source quality and training overlap are unknown. Common preparation changes geometry and can change sampled physical frames; "
         "comparisons within the prepared variants keep those choices fixed.", ""]
+    lines += ["| Adapter | Native preprocessing and aggregation |", "|---|---|"]
+    for name, model in metadata["models"].items():
+        lines.append(f"| {name} | {model['preprocessing']} |")
+    lines.append("")
     if config.get("notes"):
         lines += [config["notes"], ""]
     lines += [f"Reproduce: `uv run python run.py experiment {metadata['config_path']}`.", "",
@@ -44,7 +47,7 @@ def write_results(root, out, config, samples, rows, summary, metadata, validatio
     (out / "report.md").write_text("\n".join(lines))
 
 
-def plot_pairs(root, out, config, samples, rows):
+def plot_pairs(root, out, config, samples, rows, basename="pairs", compression_hero=True):
     os.environ.setdefault("MPLCONFIGDIR", str(root / "data/.matplotlib"))
     import matplotlib
     matplotlib.use("Agg")
@@ -56,7 +59,8 @@ def plot_pairs(root, out, config, samples, rows):
     fig, axes = plt.subplots((len(cells)+columns-1)//columns, columns, squeeze=False,
         figsize=(6*columns, 5*((len(cells)+columns-1)//columns)), layout="constrained")
     plt.rcParams["svg.hashsalt"] = "video-robustness"
-    colors = {"aegis": "#2563eb", "waverep": "#d97706"}
+    palette = ["#2563eb", "#d97706", "#059669", "#9333ea", "#dc2626", "#0891b2"]
+    colors = {name: palette[i % len(palette)] for i, name in enumerate(config["detectors"])}
     markers = ["o", "s", "^", "D", "v", "P", "X"]
     for ax, cell in zip(axes.flat, cells):
         group = [s for s in samples if s.get("cell", s["label"]) == cell]
@@ -82,8 +86,13 @@ def plot_pairs(root, out, config, samples, rows):
     for ax in list(axes.flat)[len(cells):]:
         ax.set_visible(False)
     fig.suptitle(f"{config['name']}\nFilled = {config['baseline']} · hollow = edited", fontweight="bold")
-    fig.savefig(out / "pairs.png", dpi=180)
-    svg = out / "pairs.svg"
+    fig.savefig(out / f"{basename}.png", dpi=180)
+    svg = out / f"{basename}.svg"
     fig.savefig(svg, metadata={"Date": None})
     plt.close(fig)
     svg.write_text("\n".join(line.rstrip() for line in svg.read_text().splitlines())+"\n")
+
+    # Keep a focused compression pair for the README while the full figure covers every edit.
+    if compression_hero and "compression" in edits and len(edits) > 1:
+        pair_config = config | {"variants": [v for v in config["variants"] if v["name"] in (config["baseline"], "compression")]}
+        plot_pairs(root, out, pair_config, samples, rows, basename="compression-pairs", compression_hero=False)

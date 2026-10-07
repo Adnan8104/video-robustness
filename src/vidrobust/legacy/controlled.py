@@ -45,7 +45,7 @@ def validate_prepared(meta):
 
 def prepare_panel(root, config):
     import imageio_ffmpeg
-    from .cli import download, sha
+    from ..artifacts import download, sha
     from .diagnostics import probe
     def fetch(s):
         path = root / f"data/controlled/sources/{s['id']}.mp4"
@@ -139,9 +139,10 @@ def analyze(rows, samples):
 
 def run_controlled(root):
     import imageio_ffmpeg
-    from .cli import download, sha, MODEL_HASH, MODEL_REV
-    from .detectors import AegisDetector
-    from .waverep import WaveRepDetector, WEIGHTS_HASH, WEIGHTS_URL
+    from ..artifacts import download, sha
+    from ..adapters.aegis import MODEL_HASH, MODEL_REV
+    from ..adapters.aegis import AegisDetector
+    from ..adapters.waverep import WaveRepDetector, WEIGHTS_HASH, WEIGHTS_URL
     from .comparison import write_csv
     config_path = root / 'configs/controlled.json'
     config = json.loads(config_path.read_text())
@@ -177,7 +178,7 @@ def run_controlled(root):
     write_csv(out/'scores.csv', rows)
     (out/'summary.json').write_text(json.dumps(summary, indent=2)+'\n')
     packages = {p: importlib.metadata.version(p) for p in ('torch', 'timm', 'numpy', 'torchvision', 'opencv-python-headless', 'imageio-ffmpeg', 'matplotlib')}
-    module_paths = ['src/vidrobust/controlled.py','src/vidrobust/detectors.py','src/vidrobust/waverep.py','vendor/aegis/video_io.py']
+    module_paths = ['src/vidrobust/legacy/controlled.py','src/vidrobust/adapters/aegis.py','src/vidrobust/adapters/waverep.py','vendor/aegis/video_io.py']
     metadata = dict(created_at_utc=datetime.now(timezone.utc).isoformat(), selection_frozen_commit=frozen_commit,
         config_sha256=sha(config_path), config=config, package_versions=packages,
         code_sha256={p: sha(root/p) for p in module_paths}, python=platform.python_version(),

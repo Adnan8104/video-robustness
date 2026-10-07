@@ -1,3 +1,4 @@
+from ..media import probe
 """Fixed compression sweep and an independent-source convenience panel."""
 from concurrent.futures import ThreadPoolExecutor
 import csv
@@ -27,25 +28,6 @@ def curve_metrics(rows):
         largest_step=max(steps,key=lambda s: abs(s["delta"])),steps=steps,midpoint_crossings=crossings,
         non_monotone=any(d>1e-6 for d in deltas) and any(d < -1e-6 for d in deltas))
 
-def probe(path, full_decode=False):
-    import cv2
-    cap = cv2.VideoCapture(str(path))
-    if not cap.isOpened():
-        raise ValueError(f"Cannot decode video: {path.name}")
-    meta = dict(width=int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)),height=int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)),
-                frames=int(cap.get(cv2.CAP_PROP_FRAME_COUNT)),fps=cap.get(cv2.CAP_PROP_FPS))
-    try:
-        if min(meta["width"],meta["height"]) < 1 or meta["frames"] < 8 or meta["fps"] <= 0:
-            raise ValueError(f"Invalid source geometry/timing: {path.name}")
-        if full_decode:
-            count=0
-            while cap.read()[0]:
-                count+=1
-            if count!=meta["frames"]:
-                raise ValueError(f"Partial decode: {path.name} ({count}/{meta['frames']})")
-    finally:
-        cap.release()
-    return meta
 
 def validate_case(source, row):
     if row["frames"]!=source["frames"] or abs(row["fps"]-source["fps"]) > 0.01:
@@ -135,8 +117,10 @@ def write_report(root, config, rows):
 
 def run_diagnostics(root):
     import imageio_ffmpeg
-    from .cli import download, sha, MODEL_HASH, MODEL_REV, FILTERS
-    from .detectors import AegisDetector
+    from ..artifacts import download, sha
+    from ..adapters.aegis import MODEL_HASH, MODEL_REV
+    from .initial import FILTERS
+    from ..adapters.aegis import AegisDetector
     config=json.loads((root/"configs/diagnostics.json").read_text())
     if tuple(config["crfs"])!=CRFS:
         raise ValueError("CRF grid differs from the frozen experiment")
@@ -190,3 +174,4 @@ def run_diagnostics(root):
     (out/"run.json").write_text(json.dumps(metadata,indent=2)+"\n")
     (out/"validation.json").write_text(json.dumps(dict(source_clips=9,scored_cases=49,full_source_decode='passed',geometry_timing_and_sampled_indices='passed',preflight=preflight),indent=2)+"\n")
     plot_results(root,config,rows);write_report(root,config,rows)
+

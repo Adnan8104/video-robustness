@@ -1,0 +1,33 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: astral-sh/setup-uv@94527f2e458b27549849d47d273a16bec83a01e9 # v7
+        with:
+          python-version: '3.11'
+          enable-cache: false
+      - name: Install locked dependencies
+        run: uv sync --locked --no-cache
+      - name: Run tests (no pretrained weights or dataset downloads)
+        run: uv run --no-sync python run.py check
+      - name: Validate smoke config
+        run: uv run --no-sync python run.py experiment configs/experiments/smoke.json --dry-run
+      - name: Validate all-edit panel config
+        run: uv run --no-sync python run.py experiment configs/experiments/compression.json --dry-run

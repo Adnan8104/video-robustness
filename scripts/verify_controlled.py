@@ -6,9 +6,9 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'src'))
-from vidrobust.cli import sha
-from vidrobust.detectors import AegisDetector
-from vidrobust.waverep import WaveRepDetector
+from vidrobust.artifacts import sha
+from vidrobust.adapters.aegis import AegisDetector
+from vidrobust.adapters.waverep import WaveRepDetector
 
 
 def main():

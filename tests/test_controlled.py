@@ -2,7 +2,7 @@
 import copy
 import json
 import unittest
-from vidrobust.controlled import CELLS, SAMPLED_INDICES, analyze, validate_panel, validate_prepared
+from vidrobust.legacy.controlled import CELLS, SAMPLED_INDICES, analyze, validate_panel, validate_prepared
 
 
 def fixture():

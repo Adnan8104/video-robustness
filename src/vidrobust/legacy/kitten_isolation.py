@@ -45,13 +45,14 @@ def factorial_summary(rows):
 
 def run_isolation(root):
     import imageio_ffmpeg
-    from .cli import sha,download,MODEL_HASH,MODEL_REV
+    from ..artifacts import sha, download
+    from ..adapters.aegis import MODEL_HASH, MODEL_REV
     from .comparison import write_csv
     from .controlled import SAMPLED_INDICES
-    from .detectors import AegisDetector
+    from ..adapters.aegis import AegisDetector
     from .diagnostics import probe
-    from .waverep import WaveRepDetector,WEIGHTS_HASH,WEIGHTS_URL,read_exact_rgb
-    from .frame_scoring import rgb_digest,score_frames
+    from ..adapters.waverep import WaveRepDetector,WEIGHTS_HASH,WEIGHTS_URL,read_exact_rgb
+    from ..frame_scoring import rgb_digest,score_frames
     from .kitten_report import write_report
     cfg_path=root/'configs/kitten-isolation.json';config=json.loads(cfg_path.read_text())
     if subprocess.check_output(['git','show','HEAD:configs/kitten-isolation.json'],cwd=root)!=cfg_path.read_bytes():raise ValueError('Commit the specification before inference')
@@ -158,7 +159,7 @@ def run_isolation(root):
                 if value!=expected:raise ValueError(f'Fresh repeat mismatch: {name}/{variant}/{key}')
             repeats.append(dict(detector=name,variant=variant,ai_score=details['ai_score'],all_outputs_and_input_hashes_exact_match=True))
         del detector
-    code_paths=['src/vidrobust/kitten_isolation.py','src/vidrobust/kitten_report.py','src/vidrobust/frame_scoring.py','src/vidrobust/detectors.py','src/vidrobust/waverep.py','vendor/aegis/video_io.py']
+    code_paths=['src/vidrobust/legacy/kitten_isolation.py','src/vidrobust/legacy/kitten_report.py','src/vidrobust/frame_scoring.py','src/vidrobust/adapters/aegis.py','src/vidrobust/adapters/waverep.py','vendor/aegis/video_io.py']
     (out/'run.json').write_text(json.dumps(dict(created_at_utc=datetime.now(timezone.utc).isoformat(),config=config,config_sha256=sha(cfg_path),selection_frozen_commit=subprocess.check_output(['git','log','-1','--format=%H','--','configs/kitten-isolation.json'],cwd=root,text=True).strip(),code_sha256={p:sha(root/p) for p in code_paths},package_versions={p:importlib.metadata.version(p) for p in parent_run['package_versions']},python=platform.python_version(),ffmpeg=imageio_ffmpeg.get_ffmpeg_version(),device='cpu',threads=4,seed=0,waverep_frame_batch=2,aegis_model_sha256=MODEL_HASH,waverep_model_sha256=WEIGHTS_HASH,commands=commands),indent=2)+'\n')
     (out/'validation.json').write_text(json.dumps(dict(model_scores=36,identity_rgb_exact_match=True,metadata_only_rgb_exact_match=True,fps_mapping_unique_and_matches_frozen_indices=True,lossless_spatial_inputs_equal_parent_master=True,both_direct_frame_endpoints_equal_published_outputs=True,full_decode_geometry_and_fixed_frame_checks='passed',fresh_model_repeats=repeats),indent=2)+'\n')
     write_report(root,rows,summary)

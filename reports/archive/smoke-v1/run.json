@@ -1,0 +1,296 @@
+{
+  "created_at_utc": "2026-10-07T19:06:33.767332+00:00",
+  "config": {
+    "schema_version": 1,
+    "name": "smoke",
+    "manifest": "configs/samples.json",
+    "sample_ids": [
+      "real_01",
+      "ai_01"
+    ],
+    "source_directory": "data/original",
+    "detectors": [
+      "aegis",
+      "waverep"
+    ],
+    "preparation": "native",
+    "baseline": "encode_control",
+    "variants": [
+      {
+        "name": "original",
+        "transform": "identity",
+        "encoding": "source"
+      },
+      {
+        "name": "encode_control",
+        "transform": "identity",
+        "encoding": "h264",
+        "crf": 18
+      },
+      {
+        "name": "compression",
+        "transform": "identity",
+        "encoding": "h264",
+        "crf": 35
+      },
+      {
+        "name": "resize",
+        "transform": "half_resize",
+        "encoding": "h264",
+        "crf": 18
+      },
+      {
+        "name": "crop",
+        "transform": "center_crop_80",
+        "encoding": "h264",
+        "crf": 18
+      }
+    ],
+    "notes": "Two existing discovery clips check the pipeline. They are selected for a quick run and are not new evaluation data. Resize/crop also include encoding; compare them with the encode-only control."
+  },
+  "config_path": "configs/experiments/smoke.json",
+  "config_sha256": "262aef5546604e0dd46610867b3a835b25a544da2323de2b74db5300a1cc3f0d",
+  "manifest_sha256": "7fd318d7bcc81f9579ebe593e54872c75900eefdf25c929ce89c72c8e714fb42",
+  "frozen_commits": {
+    "configs/experiments/smoke.json": "fb7d7b9fb1539646298f4f4eeb0ea5afef546590",
+    "configs/samples.json": "001190d44b82acae012afc337574ce291bf1c6ef"
+  },
+  "code_sha256": {
+    "src/vidrobust/experiment.py": "df9a083655d91320cbe85fb3feb0b36f00c7297d62491f2771d7e1fc4683c805",
+    "src/vidrobust/media.py": "37028c4fe3a3871f5de1e0c6350bc0d6509ccb14d31c20b9e7c52b88b3d43ff4",
+    "src/vidrobust/experiment_report.py": "e41975b5b554d95dd9cc23abf2fa8a5012a83c624ebab5018d45e1ab5d739f36",
+    "src/vidrobust/frame_scoring.py": "83762959afe75605a6c3d335d688bc5809d3d5759eb0c4444ffba26e7717d436",
+    "src/vidrobust/detectors.py": "9c47ae384c9a2ca2735e30b5df854a74df7d17ec564cea4a3d35558d20e05dd8",
+    "src/vidrobust/waverep.py": "5ae87a2cd3136cd5ee5e26eff654993067fe9156212987b7974920432d8f32aa",
+    "src/vidrobust/cli.py": "350cd8f3ce97c4116759220d9f6c4e8638d9dc9a06cebcdb0f9e997d30063ca3",
+    "src/vidrobust/diagnostics.py": "56e2ef36d74b61361b29ab192c9b3eba1853d4e1f5479438509908e841e71e3b",
+    "vendor/aegis/consistency_branch.py": "bc0687fdc835037e18bafe28a80511e23fdc4f8c0603171a3c4897057b5c434b",
+    "vendor/aegis/detector_model.py": "bdfcfddba6dfe305f462d0a094b28314ea208b2f4b7fa119978fd226d88f05a6",
+    "vendor/aegis/motion_branch.py": "5d809994c1597bcfc2a7c7cdf59faa1da15ba87b0701df1ab580ce138a3d7c34",
+    "vendor/aegis/pixel_branch.py": "e8d6d188729662187fcd04653d54337101bd8287820d3a87f2a4cf09e8bca26a",
+    "vendor/aegis/video_io.py": "bab6ba4b8b1c07ff9bc392cf40487be8e8d31fdd248a4494563057e812a043dc"
+  },
+  "python": "3.11.15",
+  "packages": {
+    "torch": "2.5.1",
+    "torchvision": "0.20.1",
+    "timm": "1.0.27",
+    "numpy": "2.2.6",
+    "opencv-python-headless": "4.11.0.86",
+    "imageio-ffmpeg": "0.6.0",
+    "matplotlib": "3.10.7"
+  },
+  "model_sha256": {
+    "aegis": "7df233979f9d3ef340e101d0d635a4d074577d43e6d1591d677cde31f80e44ba",
+    "waverep": "50d639049d928986ba7d69861a4fe4f3e7afbba1843e3e089cdf6b4748f53d5b"
+  },
+  "aegis_model_revision": "95b71346cec650165e6ad3fb20ed9e80f4b6702a",
+  "ffmpeg": "7.1",
+  "device": "cpu",
+  "threads": 4,
+  "seed": 0,
+  "deterministic_algorithms": true,
+  "waverep_frame_batch": 2,
+  "preparation": [
+    {
+      "video_id": "real_01",
+      "source_sha256": "ffa148e164ea0fd89ce3d6e3125dce4fe4a54f92f7ee5334e8759d2e24cca1b9",
+      "source_metadata": {
+        "width": 480,
+        "height": 360,
+        "frames": 300,
+        "fps": 29.916666666666668
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/original/real_01.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "18",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/smoke/real_01_encode_control.mp4"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/original/real_01.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/smoke/real_01_compression.mp4"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/original/real_01.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "scale=trunc(iw/4)*2:trunc(ih/4)*2:flags=bicubic",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "18",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/smoke/real_01_resize.mp4"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/original/real_01.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "crop=trunc(iw*0.8/2)*2:trunc(ih*0.8/2)*2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "18",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/smoke/real_01_crop.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "ai_01",
+      "source_sha256": "a1cec2a88fbebbdf0715c4f9aef359211e9bb55329cbaa22c3c0b1aa2f0f0a4d",
+      "source_metadata": {
+        "width": 480,
+        "height": 720,
+        "frames": 150,
+        "fps": 30.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/original/ai_01.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "18",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/smoke/ai_01_encode_control.mp4"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/original/ai_01.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/smoke/ai_01_compression.mp4"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/original/ai_01.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "scale=trunc(iw/4)*2:trunc(ih/4)*2:flags=bicubic",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "18",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/smoke/ai_01_resize.mp4"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/original/ai_01.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "crop=trunc(iw*0.8/2)*2:trunc(ih*0.8/2)*2",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "18",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/smoke/ai_01_crop.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    }
+  ],
+  "report_layout_update": {
+    "original_renderer_sha256": "4b43701199c79faa2d00e54dcd61cc28974eccd833a4fe89f2d0784b27c8221d",
+    "reason": "Move chart legends outside data; scores were not recomputed"
+  }
+}

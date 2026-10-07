@@ -33,7 +33,7 @@ class ExperimentTests(unittest.TestCase):
             smoke = experiment_plan(ROOT, "configs/experiments/smoke.json")
             compression = experiment_plan(ROOT, "configs/experiments/compression.json")
             self.assertEqual(smoke["scores"], 20)
-            self.assertEqual(compression["scores"], 80)
+            self.assertEqual(compression["scores"], 160)
             model.assert_not_called()
             network.assert_not_called()
 
@@ -101,9 +101,9 @@ class ExperimentTests(unittest.TestCase):
     def test_lossless_native_edits_preserve_identity_pixels_and_frame_count(self):
         import imageio_ffmpeg
         import numpy as np
-        from vidrobust.cli import sha
+        from vidrobust.artifacts import sha
         from vidrobust.media import prepare_cases
-        from vidrobust.waverep import read_exact_rgb
+        from vidrobust.adapters.waverep import read_exact_rgb
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             cache = root / "data/sources"

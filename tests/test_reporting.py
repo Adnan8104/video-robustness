@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
-from vidrobust.reporting import write_summary
+from vidrobust.legacy.reporting import write_summary
 
 class PairedSummaryTests(unittest.TestCase):
     def test_opposite_shifts_do_not_cancel_and_new_cohort_excludes_discovery(self):

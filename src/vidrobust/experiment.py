@@ -11,7 +11,7 @@ import subprocess
 import sys
 import time
 
-DETECTORS = ("aegis", "waverep")
+from .registry import detector_names, get_adapter, make_detector
 TRANSFORMS = ("identity", "half_resize", "center_crop_80", "center_square", "short_side_504")
 
 
@@ -51,8 +51,9 @@ def load_config(root, path):
         if Path(s["remote_path"]).is_absolute() or ".." in Path(s["remote_path"]).parts:
             raise ValueError("Invalid remote path")
     names = config["detectors"]
-    if not names or len(set(names)) != len(names) or set(names) - set(DETECTORS):
-        raise ValueError("Choose unique detectors from aegis, waverep")
+    available = detector_names()
+    if not names or len(set(names)) != len(names) or set(names) - set(available):
+        raise ValueError("Choose unique registered detectors from " + ", ".join(available))
     if config["preparation"] not in ("native", "centered_4s_504_24fps"):
         raise ValueError("Unknown preparation profile")
     inside(root, config["source_directory"], "data")
@@ -136,27 +137,21 @@ def analyze(rows, config, samples):
     return summary
 
 
-def make_detector(root, name):
-    from .cli import download, MODEL_REV, MODEL_HASH
-    if name == "aegis":
-        from .detectors import AegisDetector
-        download(f"https://huggingface.co/MusapYildiz/aegis-video-detector/resolve/{MODEL_REV}/checkpoint_best.pt",
-                 root / "models/checkpoint_best.pt", MODEL_HASH)
-        return AegisDetector(root)
-    from .waverep import WaveRepDetector, WEIGHTS_URL, WEIGHTS_HASH
-    download(WEIGHTS_URL, root / "models/weights_dinov2_G4.ckpt", WEIGHTS_HASH)
-    return WaveRepDetector(root)
-
-
 def run_experiment(root, path):
-    from .cli import sha, MODEL_HASH, MODEL_REV
-    from .waverep import WEIGHTS_HASH, read_exact_rgb
+    from .artifacts import sha
     from .frame_scoring import score_frames
-    from .media import prepare_cases
+    from .media import prepare_cases, read_exact_rgb
     from .experiment_report import write_results
     import imageio_ffmpeg
     config_path, manifest_path, config, samples = load_config(root, path)
     frozen = {p.relative_to(root).as_posix(): frozen_revision(root, p) for p in (config_path, manifest_path)}
+    models = {name: get_adapter(name).metadata(root) for name in config["detectors"]}
+    code_paths = {str(p.relative_to(root)) for p in (root / "src/vidrobust").rglob("*.py")
+                  if "legacy" not in p.relative_to(root / "src/vidrobust").parts}
+    code_paths.update(model["code_path"] for model in models.values())
+    code_paths.update(str(p.relative_to(root)) for p in (root / "vendor/aegis").glob("*.py"))
+    code_hashes = {p: sha(root / p) for p in sorted(code_paths)}
+    config_hash, manifest_hash = sha(config_path), sha(manifest_path)
     cases, preparation = prepare_cases(root, config, samples)
     sys.path.insert(0, str(root / "vendor/aegis"))
     from video_io import window_sample
@@ -175,21 +170,20 @@ def run_experiment(root, path):
             print(f"{name} {index}/{len(cases)} {case['video_id']} {case['variant']}: {details['ai_score']:.6f}", flush=True)
         del detector
     summary = analyze(rows, config, samples)
-    code_paths = ["src/vidrobust/experiment.py", "src/vidrobust/media.py", "src/vidrobust/experiment_report.py",
-                  "src/vidrobust/frame_scoring.py", "src/vidrobust/detectors.py", "src/vidrobust/waverep.py",
-                  "src/vidrobust/cli.py", "src/vidrobust/diagnostics.py"]
-    code_paths += [str(p.relative_to(root)) for p in sorted((root / "vendor/aegis").glob("*.py"))]
+    if sha(config_path) != config_hash or sha(manifest_path) != manifest_hash or any(sha(root / p) != h for p, h in code_hashes.items()):
+        raise ValueError("Config, manifest or scoring code changed during inference; rerun with a fixed plan")
     metadata = dict(created_at_utc=datetime.now(timezone.utc).isoformat(), config=config,
-        config_path=config_path.relative_to(root).as_posix(),
-        config_sha256=sha(config_path), manifest_sha256=sha(manifest_path), frozen_commits=frozen,
-        code_sha256={p: sha(root / p) for p in code_paths}, python=platform.python_version(),
+        config_path=config_path.relative_to(root).as_posix(), models=models,
+        config_sha256=config_hash, manifest_sha256=manifest_hash, frozen_commits=frozen,
+        code_sha256=code_hashes, python=platform.python_version(),
         packages={p: importlib.metadata.version(p) for p in ("torch", "torchvision", "timm", "numpy", "opencv-python-headless", "imageio-ffmpeg", "matplotlib")},
-        model_sha256={d: {"aegis": MODEL_HASH, "waverep": WEIGHTS_HASH}[d] for d in config["detectors"]},
-        aegis_model_revision=MODEL_REV, ffmpeg=imageio_ffmpeg.get_ffmpeg_version(), device="cpu", threads=4,
-        seed=0, deterministic_algorithms=True, waverep_frame_batch=2, preparation=preparation)
+        model_sha256={name: model["checkpoint"]["sha256"] for name, model in models.items()},
+        ffmpeg=imageio_ffmpeg.get_ffmpeg_version(), device="cpu", threads=4,
+        seed=0, deterministic_algorithms=True, preparation=preparation)
     validation = dict(source_clips=len(samples), paired_cases=len(cases), model_scores=len(rows),
         source_hashes_and_full_decode="passed", geometry_timing_and_frame_indices="passed",
-        complete_case_matrix="passed", identical_bytes_and_RGB_between_detectors="passed")
+        complete_case_matrix="passed", identical_bytes_and_RGB_between_detectors="passed",
+        config_and_code_unchanged_during_inference="passed")
     out = root / f"reports/experiments/{config['name']}"
     out.mkdir(parents=True, exist_ok=True)
     write_results(root, out, config, samples, rows, summary, metadata, validation)

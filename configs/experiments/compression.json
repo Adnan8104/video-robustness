@@ -21,7 +21,19 @@
       "transform": "identity",
       "encoding": "h264",
       "crf": 35
+    },
+    {
+      "name": "half_resize",
+      "transform": "half_resize",
+      "encoding": "h264",
+      "crf": 18
+    },
+    {
+      "name": "center_crop_80",
+      "transform": "center_crop_80",
+      "encoding": "h264",
+      "crf": 18
     }
   ],
-  "notes": "Reproduces the existing 20-clip content panel. Five clips per real/AI \u00d7 animal/non-animal group. The manifest includes the reviewed labels and crop audit."
+  "notes": "20 previously selected clips, five per real/AI \u00d7 animal/non-animal group. The source manifest and content audit are unchanged. All four variants start independently from the same 504\u00d7504 lossless master. Baseline, resize and crop use H.264 CRF 18; compression uses CRF 35. Resize produces 252\u00d7252 pixels and crop produces 402\u00d7402 pixels. WaveRep zero-pads these to 504\u00d7504; that padding is part of the measured pipeline response. The added edits are follow-ups on an existing panel, not a new holdout."
 }

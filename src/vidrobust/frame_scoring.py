@@ -22,25 +22,11 @@ def tensor_digest(tensor):
 
 def score_frames(detector, name, frames):
     import torch
-    from PIL import Image
-    from .waverep import aggregate_frame_logits
     rgb_hash=rgb_digest(frames)
     with torch.inference_mode():
-        if name=='aegis':
-            from video_io import preprocess_frames
-            tensor=preprocess_frames(np.stack(frames),height=224,width=224)
-            output=detector.model(tensor.unsqueeze(0))
-            details=dict(ai_score=output['ai_probability'].item(),fusion_logit=output['ai_logit'].item(),
-                pixel_score=output['pixel_prob'].item(),motion_score=output['motion_prob'].item(),
-                consistency_score=output['consistency_prob'].item())
-        elif name=='waverep':
-            tensor=torch.stack([detector.transform(Image.fromarray(f)) for f in frames])
-            logits=[]
-            for start in range(0,16,2):
-                logits.extend(detector.model(tensor[start:start+2]).reshape(-1).tolist())
-            mean,score=aggregate_frame_logits(logits)
-            details=dict(ai_score=score,fusion_logit=mean,frame_logits=logits)
-        else:raise ValueError('Unknown detector')
-    if not all(math.isfinite(v) for k,v in details.items() if k!='frame_logits') or not 0<=details['ai_score']<=1:
+        tensor = detector.prepare_frames(frames)
+        details = detector.predict(tensor)
+    numeric = [v for value in details.values() for v in (value if isinstance(value, list) else [value])]
+    if not all(math.isfinite(v) for v in numeric) or not 0<=details['ai_score']<=1:
         raise ValueError('Invalid model outputs')
     return details | dict(sampled_rgb_sha256=rgb_hash,model_input_sha256=tensor_digest(tensor))

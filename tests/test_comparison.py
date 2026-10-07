@@ -3,8 +3,8 @@ import math
 import unittest
 from unittest.mock import patch
 import numpy as np
-from vidrobust.waverep import aggregate_frame_logits, read_exact_rgb
-from vidrobust.comparison import pair_rows, summarize
+from vidrobust.adapters.waverep import aggregate_frame_logits, read_exact_rgb
+from vidrobust.legacy.comparison import pair_rows, summarize
 
 
 class ComparisonTests(unittest.TestCase):
