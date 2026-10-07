@@ -65,3 +65,45 @@ portable PNG/SVG charts without a dashboard. Geometry, timing, paired sampling,
 and hashes are checked; source frames stay local. Five key cases were rescored
 with a freshly loaded model, and 12 overlapping cases match prior scores and
 encoded hashes. See the [report](../reports/diagnostics/report.md) and its validation.
+
+## Second detector and fresh panel
+
+The [frozen comparison](../configs/two-detectors-selection.md) retains 25 previous
+source clips and adds ten fresh filename-selected clips (five MSVD, three Sora,
+two VEO3). Thirty-five sources produce 187 paired conditions, including the
+previous four sweeps. Existing AEGIS scores are reused only on identical input
+bytes with verified checkpoint provenance. Its legacy root CSV lacks explicit
+indices; those are reconstructed using the original run's documented centered
+sampler and checked against WaveRep. The diagnostic CSV records its indices directly.
+
+WaveRep G4 supplies a full trained detector checkpoint. The inspected ReStraV
+release supplies feature extraction and training code, but no pretrained
+classifier head was found; feature extraction alone would not be a second trained
+detector. WaveRep fits the locked torch/timm environment without extra packages.
+Its original informational/nonprofit license and authors' attribution are retained.
+
+Use native 504-pixel torchvision center crop (zero padding for smaller frames),
+ImageNet normalization, and sigmoid of mean frame logits. The checkpoint contains
+the backbone, so load it strictly without an additional backbone download.
+Process two frames at a time to limit memory. This adapter samples the same 16
+frames as AEGIS instead of scoring every frame as WaveRep's demo does; it is a
+sparse-frame adaptation, not a reproduction of published benchmark results.
+
+Different spatial preprocessing is part of each model's input pipeline. AEGIS
+rescales to 224; WaveRep preserves native pixel scale and crops/pads. For WaveRep,
+half-size inputs may increase padded area. A shared temporal window controls one
+source of variation without pretending the full input pipelines are identical.
+Strict decoding rejects missing selected frames rather than silently filling them.
+
+Summaries separate previous and fresh clips, count absolute shifts of at least
+0.10 relative to encoding control, and report fixed-midpoint label conflicts and
+model disagreements. These descriptive counts do not rank deployable accuracy.
+Training overlap, sample selection, source differences and lack of calibration
+remain limits. No training or threshold tuning is performed. Model disagreement
+narrows the observation to particular pipelines; it does not reveal a learned cause.
+Both detectors use DINOv2 backbones, so this comparison does not span independent
+backbone families even though their trained heads and input pipelines differ.
+
+Extraction saves an ignored resumable cache keyed by model, adapter, environment,
+configuration and individual input hashes. The final CSV retains every WaveRep
+frame logit. Reports include only numerical outputs and measurement plots.

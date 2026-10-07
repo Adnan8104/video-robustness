@@ -2,7 +2,7 @@
 
 Paired robustness tests for pretrained AI-generated video detectors.
 
-Runs AEGIS on real and generated clips, then compares scores after compression,
+Runs pretrained detectors on real and generated clips, then compares scores after compression,
 resizing, cropping, and an encode-only control. No model training is required.
 
 ## Quick start
@@ -42,9 +42,21 @@ a new DAVIS bear clip shows a similar drop (0.993 → 0.237).
 
 Reproduce this follow-up with `uv run python run.py diagnose` (~14 MiB of new media).
 
+## Two-detector comparison
+
+Compare AEGIS with WaveRep on the same frames, including ten fresh clips:
+`uv run python run.py compare`. This adds ~331 MiB of model weights and ~42 MiB
+of media. WaveRep uses sparse frame sampling and its native crop/pad preprocessing.
+Across 35 clips, it avoids the known real-clip high scores but loses several
+generated-video signals under compression. AEGIS also makes errors on fresh originals.
+[Comparison report](reports/two-detectors/report.md) · [Selection](configs/two-detectors-selection.md)
+
 ## Sources
 
 Uses [AEGIS](https://huggingface.co/MusapYildiz/aegis-video-detector) and clips from
 [ComGenVid](https://huggingface.co/datasets/OmerXYZ/comgenvid) and DAVIS clips via
-[VLM4D](https://huggingface.co/datasets/shijiezhou/VLM4D). Vendored detector code
+[VLM4D](https://huggingface.co/datasets/shijiezhou/VLM4D), plus
+[WaveRep](https://github.com/grip-unina/WaveRep-SyntheticVideoDetection).
+WaveRep is for informational/nonprofit use; its [license](vendor/waverep/LICENSE.md)
+and author attribution are retained. AEGIS vendored detector code
 retains its [MIT license](vendor/aegis/LICENSE). Dataset media are not redistributed.

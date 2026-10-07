@@ -1,0 +1,120 @@
+{
+  "all": {
+    "aegis": {
+      "source_clips": 35,
+      "real_midpoint_conflicts": 3,
+      "ai_midpoint_conflicts": 1,
+      "changes_at_least_point10": 4,
+      "transformed_cases": 105,
+      "largest_control_relative_change": {
+        "video_id": "real_01",
+        "label": "real",
+        "source": "MSVD",
+        "cohort": "previous",
+        "variant": "compression",
+        "sha256": "6998aa9123c7bb2c942e4abd27f2b8b622342ede205945b515f8f8413dda234a",
+        "width": 480,
+        "height": 360,
+        "frames": 300,
+        "fps": 29.916666666666668,
+        "ai_score": 0.02379401959478855,
+        "sampled_frame_indices": "[90, 97, 105, 113, 121, 129, 137, 145, 152, 160, 168, 176, 184, 192, 200, 208]",
+        "fusion_logit": -3.7142393589019775,
+        "pixel_score": 0.0024229460395872593,
+        "motion_score": 0.42765167355537415,
+        "consistency_score": 0.759316086769104,
+        "detector": "aegis",
+        "elapsed_sec": 2.2943150420032907,
+        "reused": true,
+        "delta_vs_control": -0.9573338385671377
+      }
+    },
+    "waverep": {
+      "source_clips": 35,
+      "real_midpoint_conflicts": 0,
+      "ai_midpoint_conflicts": 2,
+      "changes_at_least_point10": 29,
+      "transformed_cases": 105,
+      "largest_control_relative_change": {
+        "video_id": "ai_10",
+        "label": "ai",
+        "source": "VEO3",
+        "cohort": "previous",
+        "variant": "compression",
+        "sha256": "be742b6c974edeb7cdd360d5b2c6f83c19aeacf8a4aae62c0a0fb4d7529b3f46",
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0,
+        "ai_score": 0.00308325854643708,
+        "fusion_logit": -5.778680250048637,
+        "frame_logits": "[-8.481874465942383, -7.769288063049316, -7.5960283279418945, -6.46649169921875, -4.20966100692749, -6.667248725891113, -6.905969142913818, -6.957089900970459, -6.777215003967285, -1.073195457458496, -4.493932723999023, -6.536264419555664, -7.358311653137207, -7.351492404937744, -6.622264862060547, 2.807443857192993]",
+        "sampled_frame_indices": "[48, 54, 60, 67, 73, 79, 86, 92, 98, 105, 111, 117, 124, 130, 136, 143]",
+        "detector": "waverep",
+        "elapsed_sec": 6.219740000000456,
+        "reused": false,
+        "delta_vs_control": -0.9959816044435488
+      }
+    },
+    "original_midpoint_disagreements": 6
+  },
+  "fresh": {
+    "aegis": {
+      "source_clips": 10,
+      "real_midpoint_conflicts": 1,
+      "ai_midpoint_conflicts": 1,
+      "changes_at_least_point10": 2,
+      "transformed_cases": 30,
+      "largest_control_relative_change": {
+        "video_id": "fresh_sora_03",
+        "label": "ai",
+        "source": "Sora",
+        "cohort": "fresh",
+        "variant": "crop",
+        "sha256": "c1d10742e94e97729aa91855256a99dc03339f62c6234879ae628ca8561f0efc",
+        "width": 682,
+        "height": 384,
+        "frames": 150,
+        "fps": 30.0,
+        "ai_score": 0.9848344326019287,
+        "fusion_logit": 4.173445701599121,
+        "pixel_score": 0.8887812495231628,
+        "motion_score": 0.9629776477813721,
+        "consistency_score": 0.986156165599823,
+        "sampled_frame_indices": "[15, 22, 30, 38, 46, 54, 62, 70, 78, 86, 94, 102, 110, 118, 126, 134]",
+        "detector": "aegis",
+        "elapsed_sec": 2.3657369170105085,
+        "reused": false,
+        "delta_vs_control": 0.6533440351486206
+      }
+    },
+    "waverep": {
+      "source_clips": 10,
+      "real_midpoint_conflicts": 0,
+      "ai_midpoint_conflicts": 0,
+      "changes_at_least_point10": 9,
+      "transformed_cases": 30,
+      "largest_control_relative_change": {
+        "video_id": "fresh_veo_01",
+        "label": "ai",
+        "source": "VEO3",
+        "cohort": "fresh",
+        "variant": "compression",
+        "sha256": "cb99f0cedaece092ce478ff5b6437e047bf67fe0b57dc51c5bdcc1660f1aac2f",
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0,
+        "ai_score": 0.004265235802588245,
+        "fusion_logit": -5.45298345386982,
+        "frame_logits": "[-6.990213871002197, -6.773619174957275, -6.519887924194336, -6.031752109527588, -5.070034027099609, -4.141883850097656, -3.3318674564361572, -3.50877046585083, -5.3531036376953125, -5.251045227050781, -6.325228691101074, -5.335148811340332, -5.721514701843262, -6.433676242828369, -5.929380893707275, -4.530608177185059]",
+        "sampled_frame_indices": "[48, 54, 60, 67, 73, 79, 86, 92, 98, 105, 111, 117, 124, 130, 136, 143]",
+        "detector": "waverep",
+        "elapsed_sec": 6.229264291992877,
+        "reused": false,
+        "delta_vs_control": -0.9817690428000971
+      }
+    },
+    "original_midpoint_disagreements": 2
+  }
+}

@@ -5,3 +5,8 @@ Our adapter constructs DINOv2 without the author's absolute-path cache, then str
 loads the complete detector checkpoint (including backbone). No architecture change.
 OpenCV fallback replaces optional Decord on macOS. The quality check permits spatial
 variants below 128 pixels, since rejecting them would hide a robustness failure.
+
+WaveRep's original license and source/author attribution are in waverep/.
+The adapter in src/vidrobust/waverep.py preserves its native spatial transform
+and score aggregation, with explicit sparse temporal sampling for this experiment.
+No trained weights are redistributed.

@@ -137,9 +137,12 @@ def run(root):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("command", choices=["fetch", "run", "check", "diagnose"])
+    parser.add_argument("command", choices=["fetch", "run", "check", "diagnose", "compare"])
     args = parser.parse_args()
-    if args.command == "diagnose":
+    if args.command == "compare":
+        from .comparison import run_comparison
+        run_comparison(ROOT)
+    elif args.command == "diagnose":
         from .diagnostics import run_diagnostics
         run_diagnostics(ROOT)
     elif args.command == "check":

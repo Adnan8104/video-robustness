@@ -1,0 +1,262 @@
+{
+  "source_clips": 35,
+  "model_scores": 374,
+  "paired_cases": 187,
+  "full_source_decode": "passed",
+  "geometry_timing_input_hashes_and_paired_sampling": "passed",
+  "source_metadata": {
+    "real_01": {
+      "width": 480,
+      "height": 360,
+      "frames": 300,
+      "fps": 29.916666666666668
+    },
+    "real_02": {
+      "width": 320,
+      "height": 240,
+      "frames": 46,
+      "fps": 15.0
+    },
+    "real_03": {
+      "width": 854,
+      "height": 480,
+      "frames": 120,
+      "fps": 29.916666666666668
+    },
+    "real_04": {
+      "width": 640,
+      "height": 360,
+      "frames": 300,
+      "fps": 59.94005994005994
+    },
+    "real_05": {
+      "width": 400,
+      "height": 226,
+      "frames": 360,
+      "fps": 59.94005994005994
+    },
+    "real_06": {
+      "width": 400,
+      "height": 300,
+      "frames": 181,
+      "fps": 30.0
+    },
+    "real_07": {
+      "width": 320,
+      "height": 240,
+      "frames": 276,
+      "fps": 25.0
+    },
+    "real_08": {
+      "width": 320,
+      "height": 240,
+      "frames": 225,
+      "fps": 14.985014985014985
+    },
+    "real_09": {
+      "width": 320,
+      "height": 240,
+      "frames": 300,
+      "fps": 29.97002997002997
+    },
+    "real_10": {
+      "width": 320,
+      "height": 240,
+      "frames": 120,
+      "fps": 29.97002997002997
+    },
+    "ai_01": {
+      "width": 480,
+      "height": 720,
+      "frames": 150,
+      "fps": 30.0
+    },
+    "ai_02": {
+      "width": 480,
+      "height": 720,
+      "frames": 300,
+      "fps": 30.0
+    },
+    "ai_03": {
+      "width": 854,
+      "height": 480,
+      "frames": 150,
+      "fps": 30.0
+    },
+    "ai_04": {
+      "width": 480,
+      "height": 720,
+      "frames": 300,
+      "fps": 30.0
+    },
+    "ai_05": {
+      "width": 480,
+      "height": 720,
+      "frames": 150,
+      "fps": 30.0
+    },
+    "ai_06": {
+      "width": 1280,
+      "height": 720,
+      "frames": 192,
+      "fps": 24.0
+    },
+    "ai_07": {
+      "width": 1280,
+      "height": 720,
+      "frames": 192,
+      "fps": 24.0
+    },
+    "ai_08": {
+      "width": 1280,
+      "height": 720,
+      "frames": 192,
+      "fps": 24.0
+    },
+    "ai_09": {
+      "width": 1280,
+      "height": 720,
+      "frames": 192,
+      "fps": 24.0
+    },
+    "ai_10": {
+      "width": 1280,
+      "height": 720,
+      "frames": 192,
+      "fps": 24.0
+    },
+    "davis_01": {
+      "width": 854,
+      "height": 480,
+      "frames": 71,
+      "fps": 24.0
+    },
+    "davis_02": {
+      "width": 910,
+      "height": 480,
+      "frames": 90,
+      "fps": 24.0
+    },
+    "davis_03": {
+      "width": 854,
+      "height": 480,
+      "frames": 77,
+      "fps": 24.0
+    },
+    "davis_04": {
+      "width": 854,
+      "height": 480,
+      "frames": 82,
+      "fps": 24.0
+    },
+    "davis_05": {
+      "width": 854,
+      "height": 480,
+      "frames": 78,
+      "fps": 24.0
+    },
+    "fresh_real_01": {
+      "width": 640,
+      "height": 360,
+      "frames": 360,
+      "fps": 59.94005994005994
+    },
+    "fresh_real_02": {
+      "width": 1280,
+      "height": 720,
+      "frames": 150,
+      "fps": 29.916666666666668
+    },
+    "fresh_real_03": {
+      "width": 448,
+      "height": 338,
+      "frames": 240,
+      "fps": 29.97002997002997
+    },
+    "fresh_real_04": {
+      "width": 480,
+      "height": 360,
+      "frames": 150,
+      "fps": 29.916666666666668
+    },
+    "fresh_real_05": {
+      "width": 480,
+      "height": 360,
+      "frames": 300,
+      "fps": 29.97002997002997
+    },
+    "fresh_sora_01": {
+      "width": 480,
+      "height": 720,
+      "frames": 150,
+      "fps": 30.0
+    },
+    "fresh_sora_02": {
+      "width": 480,
+      "height": 720,
+      "frames": 150,
+      "fps": 30.0
+    },
+    "fresh_sora_03": {
+      "width": 854,
+      "height": 480,
+      "frames": 150,
+      "fps": 30.0
+    },
+    "fresh_veo_01": {
+      "width": 1280,
+      "height": 720,
+      "frames": 192,
+      "fps": 24.0
+    },
+    "fresh_veo_02": {
+      "width": 1280,
+      "height": 720,
+      "frames": 192,
+      "fps": 24.0
+    }
+  },
+  "complete_unique_pair_coverage": "passed",
+  "verified_aegis_reuse_cases": 137,
+  "wave_frame_aggregation_checks": 187,
+  "post_run_input_hash_checks": 187,
+  "fresh_model_repeat_checks": [
+    {
+      "detector": "waverep",
+      "video_id": "davis_04",
+      "variant": "original",
+      "score": 0.0006847740697707765,
+      "absolute_difference": 0.0
+    },
+    {
+      "detector": "waverep",
+      "video_id": "ai_02",
+      "variant": "original",
+      "score": 0.9887753286281982,
+      "absolute_difference": 0.0
+    },
+    {
+      "detector": "waverep",
+      "video_id": "ai_02",
+      "variant": "compression",
+      "score": 0.0009237946761374252,
+      "absolute_difference": 0.0
+    },
+    {
+      "detector": "aegis",
+      "video_id": "fresh_real_05",
+      "variant": "original",
+      "score": 0.9999922513961792,
+      "absolute_difference": 0.0
+    },
+    {
+      "detector": "aegis",
+      "video_id": "fresh_sora_03",
+      "variant": "original",
+      "score": 0.3093816637992859,
+      "absolute_difference": 0.0
+    }
+  ],
+  "unit_tests_passed": 11,
+  "source_visual_inspection": "Ten fresh source midpoint frames decoded and showed varied scenes; inherited labels unchanged, source frames remain local"
+}
