@@ -1,0 +1,55 @@
+{
+  "model_scores": 36,
+  "identity_rgb_exact_match": true,
+  "metadata_only_rgb_exact_match": true,
+  "fps_mapping_unique_and_matches_frozen_indices": true,
+  "lossless_spatial_inputs_equal_parent_master": true,
+  "both_direct_frame_endpoints_equal_published_outputs": true,
+  "full_decode_geometry_and_fixed_frame_checks": "passed",
+  "fresh_model_repeats": [
+    {
+      "detector": "aegis",
+      "variant": "r0_c0_e0_original",
+      "ai_score": 0.005296257324516773,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "aegis",
+      "variant": "r0_c1_e0_original",
+      "ai_score": 0.9998975992202759,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "aegis",
+      "variant": "parent_prepared_encoded",
+      "ai_score": 0.9999672174453735,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "waverep",
+      "variant": "r0_c0_e0_original",
+      "ai_score": 0.15137764047251198,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "waverep",
+      "variant": "r1_c0_e0_original",
+      "ai_score": 0.6773832631097729,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "waverep",
+      "variant": "parent_prepared_encoded",
+      "ai_score": 0.7320824872868131,
+      "all_outputs_and_input_hashes_exact_match": true
+    }
+  ],
+  "unit_tests_passed": 20,
+  "paired_bytes_frame_indices_and_decoded_rgb": "18/18 conditions match between models",
+  "metadata_only_model_inputs": "exactly equal for both detectors",
+  "waverep_lossless_crop_model_inputs": "four conditional pairs exactly equal",
+  "saved_scores_reanalysis": "exactly equals summary",
+  "native_aggregation": "18 WaveRep outputs exactly recomputed; 18 AEGIS sigmoid outputs within 1e-7",
+  "input_media_code_and_manifest_hashes": "passed",
+  "identity_rgb_equal_on_both_fixed_frame_lists": true
+}

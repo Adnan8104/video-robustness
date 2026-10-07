@@ -80,6 +80,20 @@ Run `uv run python run.py followup`.
 Original-to-prepared comparisons measure the whole preparation recipe; the CRF
 curve keeps that preparation fixed.
 
+## Isolating the kitten preparation steps
+
+Hold source-frame identities fixed while testing resizing, cropping, encoding
+and their combinations. Compare a second frame list traced through the FPS
+conversion, a metadata-only FPS control and the exact prepared endpoint: 36 scores.
+On fixed original frames, crop alone flips AEGIS across the midpoint; resize
+alone flips WaveRep. This is a finding about the selected kitten clip.
+
+Run `uv run python run.py isolate`.
+[Step chart and findings](reports/kitten-isolation/report.md) ·
+[Frozen controls and frame checks](configs/kitten-isolation-selection.md).
+This isolates conditional pipeline effects on one clip without claiming a
+learned animal/texture mechanism.
+
 ## Sources
 
 Uses [AEGIS](https://huggingface.co/MusapYildiz/aegis-video-detector) and clips from

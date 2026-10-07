@@ -170,3 +170,30 @@ large changes. Reload both models to repeat the kitten original and newly scored
 AI midpoint brackets, or CRF 23 when no bracket exists. Previous reports remain
 unchanged. Interpret four deliberately selected clips as observations, without
 population accuracy, significance or a causal animal/texture conclusion.
+
+## Fixed-frame preparation-step isolation
+
+The [kitten ablation](../configs/kitten-isolation-selection.md) fixes two exact
+source-frame lists before new inference. Original indices come from the preceding
+native-file run; the alternative list is traced through the actual 24-fps FFmpeg
+recipe using unique raw-YUV and plane-checksum matches. It changes nine of 16
+frame selections. Compare all resize × crop × encoding combinations on each
+fixed list. Lossless identity pixels must equal original decoded RGB pixels.
+
+Every factorial file retains the full native 240-frame sequence and 30000/1001
+FPS, holding encoding context fixed. Resize/crop use the same FFmpeg filters as
+the parent recipe. A metadata-only 24-fps control keeps all images and explicit
+indices unchanged. The models consume selected image tensors; timestamp effects
+on ordinary sampling are addressed by switching the explicit source-frame list.
+Frame-level scoring retains native model preprocessing and aggregation, and must
+reproduce both published original and actual prepared endpoint outputs exactly.
+
+The native-rate factorial H.264 context differs from the actual 96-frame/24-fps
+parent context. An exact parent encoding bridge prevents treating them as
+interchangeable. Lossless resized/cropped alternate-frame tensors must come from
+the same RGB pixels as the parent master. Conditional effects and resize/crop
+logit interactions are reported rather than global causal percentages. The
+sequential path to the exact endpoint telescopes in logits but depends on order.
+RGB and model-input tensor hashes identify pixel equivalence and model-specific
+no-op edits. This explains a particular preparation response while leaving
+learned visual cues and population behavior unestablished.
