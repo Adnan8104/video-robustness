@@ -1,0 +1,2368 @@
+{
+  "annotation_method": "manual, three centered square-crop frames per candidate, no scores inspected",
+  "ordering": "pinned filename order within each source; first five qualifying per content cell",
+  "metadata_warning": "Dataset frame counts sometimes differ from actual decode; actual decoded metadata determines timing.",
+  "candidates": [
+    {
+      "candidate_id": "msvd_001",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/-8y1Q0rA3n8_108_115.mp4",
+      "source_id": "-8y1Q0rA3n8",
+      "sha256": "fe8dfe037b4d6bfa33b779cd96483ed0545d9d5e37c4664cc32b4faa18b6ce57",
+      "bytes": 19929372,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 7.007,
+        "fps": 29.97,
+        "num_frames": 209
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 210,
+        "fps": 29.97002997002997
+      },
+      "content": "non_animal",
+      "subject": "Human handling bottle outdoors",
+      "eligibility": "passed",
+      "selected": true,
+      "selection_decision": "first qualifying candidate within cell quota",
+      "crop_review_passed": true,
+      "crop_review_note": "Recognizable subject/content category retained across the 16 inspected frames."
+    },
+    {
+      "candidate_id": "msvd_002",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/-zOrV-5vh1A_69_76.mp4",
+      "source_id": "-zOrV-5vh1A",
+      "sha256": "b55514e5d96db34aef9928ac7864142e8679d0630aa67f4a5e2118b4c6ea58e5",
+      "bytes": 22371113,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 7.04,
+        "fps": 25.0,
+        "num_frames": 176
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 176,
+        "fps": 25.0
+      },
+      "content": "non_animal",
+      "subject": "Colorful balls bouncing",
+      "eligibility": "passed",
+      "selected": true,
+      "selection_decision": "first qualifying candidate within cell quota",
+      "crop_review_passed": true,
+      "crop_review_note": "Recognizable subject/content category retained across the 16 inspected frames."
+    },
+    {
+      "candidate_id": "msvd_003",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/0hyZ__3YhZc_279_283.mp4",
+      "source_id": "0hyZ__3YhZc",
+      "sha256": "e0fa7a0214022df69e329ec4612441b6b5e82a5dbded825ba08273ba4a366771",
+      "bytes": 10432963,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 4.004,
+        "fps": 29.97,
+        "num_frames": 119
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 120,
+        "fps": 29.97002997002997
+      },
+      "content": "non_animal",
+      "subject": "Pouring oil into cooking pan",
+      "eligibility": "passed",
+      "selected": true,
+      "selection_decision": "first qualifying candidate within cell quota",
+      "crop_review_passed": true,
+      "crop_review_note": "Recognizable subject/content category retained across the 16 inspected frames."
+    },
+    {
+      "candidate_id": "msvd_004",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/1Dty_eGY9Ec_123_133.mp4",
+      "source_id": "1Dty_eGY9Ec",
+      "sha256": "2a3a36e9c7fd4ce72d073ac6e95052957dd5205b5ca1b9bf53997e96251b5230",
+      "bytes": 12333179,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 10.027855,
+        "fps": 29.92,
+        "num_frames": 300
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 300,
+        "fps": 29.916666666666668
+      },
+      "content": "non_animal",
+      "subject": "Human grooming face",
+      "eligibility": "passed",
+      "selected": true,
+      "selection_decision": "first qualifying candidate within cell quota",
+      "crop_review_passed": true,
+      "crop_review_note": "Recognizable subject/content category retained across the 16 inspected frames."
+    },
+    {
+      "candidate_id": "msvd_005",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/1dfR0A_BXjw_401_408.mp4",
+      "source_id": "1dfR0A_BXjw",
+      "sha256": "b2c51d837deb9cb067a609fa5de0f3563fd5f49a543340bb0a51ec56ae275f58",
+      "bytes": 30162171,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 7.007,
+        "fps": 29.97,
+        "num_frames": 209
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 210,
+        "fps": 29.97002997002997
+      },
+      "content": "non_animal",
+      "subject": "Greasing baking tray",
+      "eligibility": "passed",
+      "selected": true,
+      "selection_decision": "first qualifying candidate within cell quota",
+      "crop_review_passed": true,
+      "crop_review_note": "Recognizable subject/content category retained across the 16 inspected frames."
+    },
+    {
+      "candidate_id": "msvd_006",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/21uB8g-jDZI_70_79.mp4",
+      "source_id": "21uB8g-jDZI",
+      "sha256": "cb1c0be44933ae19a213ad200d8078631aaa6fe664735c3844e8619541ec6421",
+      "bytes": 14744958,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 9.009,
+        "fps": 29.97,
+        "num_frames": 269
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 270,
+        "fps": 29.97002997002997
+      },
+      "content": "non_animal",
+      "subject": "Human riding a small bicycle",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_007",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/47D9-U8hn5I_11_16.mp4",
+      "source_id": "47D9-U8hn5I",
+      "sha256": "a3814404d81fe9ba073a2286d3307b239d18c18f528dbddd9d1703539122cfbf",
+      "bytes": 20164341,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 5.033333,
+        "fps": 30.0,
+        "num_frames": 150
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 151,
+        "fps": 30.0
+      },
+      "content": "excluded",
+      "subject": "Cat partly cropped; retained interval ends with a promotional title",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "exclude ambiguous content/style"
+    },
+    {
+      "candidate_id": "msvd_008",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/4cgzdXlJksU_83_90.mp4",
+      "source_id": "4cgzdXlJksU",
+      "sha256": "93e263971ff1defa02ea87f52809c39dd4630b4cf1656e57be6140f8cf29ee9b",
+      "bytes": 29020315,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 7.0,
+        "fps": 30.0,
+        "num_frames": 210
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 210,
+        "fps": 30.0
+      },
+      "content": "non_animal",
+      "subject": "Chopping food on board",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_009",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/5OvgDatToBU_0_8.mp4",
+      "source_id": "5OvgDatToBU",
+      "sha256": "9379a0509a6d4892644d44e90d67d9561bc6a8defdadb0c1bb2e5172ce7fc03e",
+      "bytes": 29816612,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.008,
+        "fps": 29.97,
+        "num_frames": 239
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 240,
+        "fps": 29.97002997002997
+      },
+      "content": "animal",
+      "subject": "White kitten close-up",
+      "eligibility": "passed",
+      "selected": true,
+      "selection_decision": "first qualifying candidate within cell quota",
+      "crop_review_passed": true,
+      "crop_review_note": "Recognizable subject/content category retained across the 16 inspected frames."
+    },
+    {
+      "candidate_id": "msvd_010",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/60x_yxy7Sfw_1_7.mp4",
+      "source_id": "60x_yxy7Sfw",
+      "sha256": "d9a0813c6c58c7e790ed893c59fd4ce1437cd6c2c51da41a120a3d6fbfb4681e",
+      "bytes": 7115615,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 6.006,
+        "fps": 29.97,
+        "num_frames": 179
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 180,
+        "fps": 29.97002997002997
+      },
+      "content": "non_animal",
+      "subject": "Seated human speaking",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_011",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/6owu8Mow0_g_302_307.mp4",
+      "source_id": "6owu8Mow0_g",
+      "sha256": "2370d1fcce267fbd77c6b305f38fbbbb0e96b23ab3fc19208ea2fc7b8adfebbb",
+      "bytes": 15917715,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 5.005,
+        "fps": 29.97,
+        "num_frames": 149
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 150,
+        "fps": 29.97002997002997
+      },
+      "content": "non_animal",
+      "subject": "Preparing pizza/cheese",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_012",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/7HcYJKMxpcg_20_28.mp4",
+      "source_id": "7HcYJKMxpcg",
+      "sha256": "df12b80d6647c6cc3a412e668bc5b4a1c3e43a1084c86ae5276b8ee5b5bac358",
+      "bytes": 29729729,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.008,
+        "fps": 29.97,
+        "num_frames": 239
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 240,
+        "fps": 29.97002997002997
+      },
+      "content": "animal",
+      "subject": "Elephants behind zoo fence",
+      "eligibility": "passed",
+      "selected": true,
+      "selection_decision": "first qualifying candidate within cell quota",
+      "crop_review_passed": true,
+      "crop_review_note": "Recognizable subject/content category retained across the 16 inspected frames."
+    },
+    {
+      "candidate_id": "msvd_013",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/7uF-2adCsI0_60_67.mp4",
+      "source_id": "7uF-2adCsI0",
+      "sha256": "0967aa0f57c78542b23e295b66b2b8438a14225d400f71416740a8d290d72127",
+      "bytes": 27934431,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 7.007,
+        "fps": 29.97,
+        "num_frames": 209
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 210,
+        "fps": 29.97002997002997
+      },
+      "content": "non_animal",
+      "subject": "Human drinking from can",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_014",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/8PQiaurIiDM_143_151.mp4",
+      "source_id": "8PQiaurIiDM",
+      "sha256": "3ae1d45d4049e0eaee930102a53ba5a7437267af4b306d6de904587cdbe007b6",
+      "bytes": 24101503,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.008,
+        "fps": 29.97,
+        "num_frames": 239
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 240,
+        "fps": 29.97002997002997
+      },
+      "content": "non_animal",
+      "subject": "Human demonstrating or striking objects",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_015",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/8yuPGwxwdPs_1_10.mp4",
+      "source_id": "8yuPGwxwdPs",
+      "sha256": "7e616e767bd285b919f790e4b52807229615e307768afc0474374fcad96655ad",
+      "bytes": 30298837,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 9.009,
+        "fps": 29.97,
+        "num_frames": 269
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 270,
+        "fps": 29.97002997002997
+      },
+      "content": "non_animal",
+      "subject": "Human with phone/cardboard device",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_016",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/9HTUcMjWB3g_122_128.mp4",
+      "source_id": "9HTUcMjWB3g",
+      "sha256": "3729154a782d612f9e4d249cb8a0655082f2287942270d178e9e829aa0447ca2",
+      "bytes": 28027711,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 6.016713,
+        "fps": 29.92,
+        "num_frames": 180
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 180,
+        "fps": 29.916666666666668
+      },
+      "content": "non_animal",
+      "subject": "Chopping carrots",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_017",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/9Wr48VFhZH8_45_50.mp4",
+      "source_id": "9Wr48VFhZH8",
+      "sha256": "7e79acd574fab71ff5cc865e3e9f43d61dfb931c3725c296fa556f738aa32098",
+      "bytes": 28202753,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 5.005,
+        "fps": 29.97,
+        "num_frames": 149
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 150,
+        "fps": 29.97002997002997
+      },
+      "content": "animal",
+      "subject": "Tiger playing with human outdoors",
+      "eligibility": "passed",
+      "selected": true,
+      "selection_decision": "first qualifying candidate within cell quota",
+      "crop_review_passed": true,
+      "crop_review_note": "Recognizable subject/content category retained across the 16 inspected frames."
+    },
+    {
+      "candidate_id": "msvd_018",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/9gbUM9oHBNI_557_563.mp4",
+      "source_id": "9gbUM9oHBNI",
+      "sha256": "efed9025a3749a5528560df2aa42bb4444069de2148876572d52853e0ce4d7f5",
+      "bytes": 6784422,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 6.006,
+        "fps": 29.97,
+        "num_frames": 179
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 180,
+        "fps": 29.97002997002997
+      },
+      "content": "non_animal",
+      "subject": "Chef drinking",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_019",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/CquJjlNuotg_147_155.mp4",
+      "source_id": "CquJjlNuotg",
+      "sha256": "682245d14fc2c028a7be22f7ef6dc7783dc1c0e7b28d21d8ac79f0d9bf80d18f",
+      "bytes": 17223521,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.008,
+        "fps": 29.97,
+        "num_frames": 239
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 240,
+        "fps": 29.97002997002997
+      },
+      "content": "non_animal",
+      "subject": "Human at desk with objects",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_020",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/D1tTBncIsm8_841_848.mp4",
+      "source_id": "D1tTBncIsm8",
+      "sha256": "799323a205ab2965b98de8ff1d4d16742e10834ef2993726aa5d7291353bfa96",
+      "bytes": 28814357,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1920,
+        "height": 1080,
+        "duration_seconds": 7.04,
+        "fps": 25.0,
+        "num_frames": 176
+      },
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 176,
+        "fps": 25.0
+      },
+      "content": "non_animal",
+      "subject": "Camera burning on stones",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_021",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/DlOhXqKcLXk_7_14.mp4",
+      "source_id": "DlOhXqKcLXk",
+      "sha256": "08cdd3bbf2ed3b8655ae2603a396e66c53dab6c04718f4c1faeb715e3a6a5d47",
+      "bytes": 29412485,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 7.007,
+        "fps": 29.97,
+        "num_frames": 209
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 210,
+        "fps": 29.97002997002997
+      },
+      "content": "non_animal",
+      "subject": "Human playing guitar",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_022",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/F3pmw2ga244_59_65.mp4",
+      "source_id": "F3pmw2ga244",
+      "sha256": "400fdfca702ca1ad3ce8aded3145cfd5e7bb1e77d8322d2614ca2aad45c5c8ae",
+      "bytes": 18228718,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 6.016713,
+        "fps": 29.92,
+        "num_frames": 180
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 180,
+        "fps": 29.916666666666668
+      },
+      "content": "non_animal",
+      "subject": "Baseball broadcast",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_023",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/FWzsXeXCwuc_111_116.mp4",
+      "source_id": "FWzsXeXCwuc",
+      "sha256": "53d04ae2b5b8129108ab9793cd7f139584fb3d186655ae3013496f6dee2751cd",
+      "bytes": 29540309,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1920,
+        "height": 1080,
+        "duration_seconds": 5.04,
+        "fps": 25.0,
+        "num_frames": 126
+      },
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 126,
+        "fps": 25.0
+      },
+      "content": "excluded",
+      "subject": "Very small insect near ground; prominence uncertain",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "exclude ambiguous content/style"
+    },
+    {
+      "candidate_id": "msvd_024",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/Gh4Beb8StFM_29_50.mp4",
+      "source_id": "Gh4Beb8StFM",
+      "sha256": "b78550751da83d11c0c551b909bf944e541630060b62ae43082e70788cb0a64d",
+      "bytes": 29269187,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 21.021,
+        "fps": 29.97,
+        "num_frames": 629
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 630,
+        "fps": 29.97002997002997
+      },
+      "content": "non_animal",
+      "subject": "Human stage performance",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_025",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/Goj131_GxYs_2_7.mp4",
+      "source_id": "Goj131_GxYs",
+      "sha256": "3244354377a0ca913b2e22ea8b7bf32f40b3cdb4f742bed848fdae83411db727",
+      "bytes": 29087298,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 5.005,
+        "fps": 29.97,
+        "num_frames": 149
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 150,
+        "fps": 29.97002997002997
+      },
+      "content": "animal",
+      "subject": "Gray horse with rider",
+      "eligibility": "passed",
+      "selected": true,
+      "selection_decision": "first qualifying candidate within cell quota",
+      "crop_review_passed": true,
+      "crop_review_note": "Recognizable subject/content category retained across the 16 inspected frames."
+    },
+    {
+      "candidate_id": "msvd_026",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/Hd-NeIhbYGc_43_48.mp4",
+      "source_id": "Hd-NeIhbYGc",
+      "sha256": "50bc9d84c7193c4029172d89bfa115cca6fc3f418f76e5407eab9c07972a0ef9",
+      "bytes": 22684234,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 5.005,
+        "fps": 29.97,
+        "num_frames": 149
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 150,
+        "fps": 29.97002997002997
+      },
+      "content": "animal",
+      "subject": "Pinto horse with rider",
+      "eligibility": "passed",
+      "selected": true,
+      "selection_decision": "first qualifying candidate within cell quota",
+      "crop_review_passed": true,
+      "crop_review_note": "Recognizable subject/content category retained across the 16 inspected frames. Some frames have blur or overexposure; horse remains identifiable."
+    },
+    {
+      "candidate_id": "msvd_027",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/HmVPxs4ygMc_44_53.mp4",
+      "source_id": "HmVPxs4ygMc",
+      "sha256": "a5f5a2924f68b6ebd9f963e8a1824e048fae211db1430c29ced8ffaa5a75cb6e",
+      "bytes": 18847885,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 9.009,
+        "fps": 29.97,
+        "num_frames": 269
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 270,
+        "fps": 29.97002997002997
+      },
+      "content": "non_animal",
+      "subject": "Hands cutting material",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_028",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/IiIiY6o-C9k_49_55.mp4",
+      "source_id": "IiIiY6o-C9k",
+      "sha256": "7176f7afde2619bce6483f1ea5c4348c06bac2eb3c023115aa2a8422f2af2040",
+      "bytes": 19139877,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 6.006,
+        "fps": 29.97,
+        "num_frames": 179
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 180,
+        "fps": 29.97002997002997
+      },
+      "content": "non_animal",
+      "subject": "Human unboxing brown paper",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_029",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/IpHJffM3G1c_439_446.mp4",
+      "source_id": "IpHJffM3G1c",
+      "sha256": "bde36fcd14981ce7de523dff7966c1295a7ff570deb070ee55699986349e128a",
+      "bytes": 18248701,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 7.007,
+        "fps": 29.97,
+        "num_frames": 209
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 210,
+        "fps": 29.97002997002997
+      },
+      "content": "non_animal",
+      "subject": "Spreading butter on bread",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_030",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/JXSkYkiKO0I_42_46.mp4",
+      "source_id": "JXSkYkiKO0I",
+      "sha256": "734dcd1620db39dc41270ec9a7bb1d51c656e076e585a4b2c8c5ad9fc3dda3d3",
+      "bytes": 19166533,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 4.004,
+        "fps": 29.97,
+        "num_frames": 119
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 120,
+        "fps": 29.97002997002997
+      },
+      "content": "non_animal",
+      "subject": "Human exercise demonstration",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_031",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/Je3V7U5Ctj4_504_511.mp4",
+      "source_id": "Je3V7U5Ctj4",
+      "sha256": "1b97a2794286925c6eb8e1fcc160e71793ca8ee7a36fbc26c9471a652886f87e",
+      "bytes": 25340089,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 7.007,
+        "fps": 29.97,
+        "num_frames": 209
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 210,
+        "fps": 29.97002997002997
+      },
+      "content": "non_animal",
+      "subject": "Food preparation with hand tool",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_032",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/KPPCwmU5OHQ_227_238.mp4",
+      "source_id": "KPPCwmU5OHQ",
+      "sha256": "b1996121823a74acb6dbda803121c9f5beb914c25f705ed367b8b53ec9835421",
+      "bytes": 13451720,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 11.011,
+        "fps": 29.97,
+        "num_frames": 329
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 330,
+        "fps": 29.97002997002997
+      },
+      "content": "non_animal",
+      "subject": "Pouring liquid into pan",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_033",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/Lyp7MiaCXNE_114_120.mp4",
+      "source_id": "Lyp7MiaCXNE",
+      "sha256": "15497bc6415a17175adee1cdf6f66ab5a2f469af80b86461c7d2565f54891154",
+      "bytes": 12314952,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 6.006,
+        "fps": 29.97,
+        "num_frames": 179
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 180,
+        "fps": 29.97002997002997
+      },
+      "content": "non_animal",
+      "subject": "Liquid in metal bowl",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_034",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/MSrJTeKNzdI_32_36.mp4",
+      "source_id": "MSrJTeKNzdI",
+      "sha256": "62914499560feda8be24d9749901280d32147ebf02c08e46ef45e08f1744a034",
+      "bytes": 15056381,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 4.004,
+        "fps": 29.97,
+        "num_frames": 119
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 120,
+        "fps": 29.97002997002997
+      },
+      "content": "non_animal",
+      "subject": "Humans skiing",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_035",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/NbOlG7THecM_25_34.mp4",
+      "source_id": "NbOlG7THecM",
+      "sha256": "02b8da2239c60a7496232678ec586d56a591a1183e5a5f7a4475832f831fb252",
+      "bytes": 28150132,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 9.009,
+        "fps": 29.97,
+        "num_frames": 269
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 270,
+        "fps": 29.97002997002997
+      },
+      "content": "non_animal",
+      "subject": "Woodworking tool demonstration",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_036",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/OCcy9TDRGKo_118_127.mp4",
+      "source_id": "OCcy9TDRGKo",
+      "sha256": "a1bfb29d57076806577373d35caa1a36ae7613c3824f0056ee832a40b6562e0a",
+      "bytes": 23005929,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 9.009,
+        "fps": 29.97,
+        "num_frames": 269
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 270,
+        "fps": 29.97002997002997
+      },
+      "content": "non_animal",
+      "subject": "Bread slices",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_037",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/OUII8_aOfNM_60_69.mp4",
+      "source_id": "OUII8_aOfNM",
+      "sha256": "bc2b2ae3921d5a62bb7b7fd254d400214d23481a28a4c170f64d9728a7b212b9",
+      "bytes": 28867600,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 9.009,
+        "fps": 29.97,
+        "num_frames": 269
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 270,
+        "fps": 29.97002997002997
+      },
+      "content": "non_animal",
+      "subject": "Raw meat being cut; food rather than living animal",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_038",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/QhRqJp-CgEs_7_14.mp4",
+      "source_id": "QhRqJp-CgEs",
+      "sha256": "a704bc4e2f376277a2222d468d5b07ce2b21d59c4a4a29ff0c80bbd82797f569",
+      "bytes": 20003526,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 7.041667,
+        "fps": 24.0,
+        "num_frames": 169
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 169,
+        "fps": 24.0
+      },
+      "content": "non_animal",
+      "subject": "Humans reclining in boat",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_039",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/QsC8__3lwO0_50_60.mp4",
+      "source_id": "QsC8__3lwO0",
+      "sha256": "f0ab5b9ee182fa7f160c111584a4e5fc8b55ab3d4d72cef51c91b502b17b8893",
+      "bytes": 31200816,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 10.027855,
+        "fps": 29.92,
+        "num_frames": 300
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 300,
+        "fps": 29.916666666666668
+      },
+      "content": "non_animal",
+      "subject": "Raw poultry preparation; food rather than living animal",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "msvd_040",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/real/MSVD/S-Civm_fbK8_20_26.mp4",
+      "source_id": "S-Civm_fbK8",
+      "sha256": "76cdd52f385b3a8ce3b43dd897537a62f1d3b536de76beb540c73a908cafb125",
+      "bytes": 23292183,
+      "label": "real",
+      "source": "MSVD",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 6.04,
+        "fps": 25.0,
+        "num_frames": 151
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 151,
+        "fps": 25.0
+      },
+      "content": "non_animal",
+      "subject": "Human kicking football",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "veo3_001",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/03c6137f-d644-52c5-a5bc-be152c0ff9da.mp4",
+      "source_id": "03c6137f-d644-52c5-a5bc-be152c0ff9da",
+      "sha256": "4b220190057b6c1d57339b0a1c2358bdbedb2ec97c39e622b9516a9caf44fac4",
+      "bytes": 3218707,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "excluded",
+      "subject": "Stylized sci-fi robot; photographic/rendered style uncertain",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "exclude ambiguous content/style"
+    },
+    {
+      "candidate_id": "veo3_002",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/03ddb7eb-fdfc-5277-a0cb-21a53836bbb1.mp4",
+      "source_id": "03ddb7eb-fdfc-5277-a0cb-21a53836bbb1",
+      "sha256": "9e39e6bc1738aacd65c00b18e5db4dda5e955301533787763e8d5ab22c32b042",
+      "bytes": 4640752,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "non_animal",
+      "subject": "People in ruined city",
+      "eligibility": "passed",
+      "selected": true,
+      "selection_decision": "first qualifying candidate within cell quota",
+      "crop_review_passed": true,
+      "crop_review_note": "Recognizable subject/content category retained across the 16 inspected frames."
+    },
+    {
+      "candidate_id": "veo3_003",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/03e635b4-b93e-5db6-bf8c-bfeeb02ef377.mp4",
+      "source_id": "03e635b4-b93e-5db6-bf8c-bfeeb02ef377",
+      "sha256": "55272af90bb658f01492199df7506bd227018e9f59347c8501cbab9407b97898",
+      "bytes": 7089286,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "excluded",
+      "subject": "Abstract rendered bottle/vortex",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "exclude ambiguous content/style"
+    },
+    {
+      "candidate_id": "veo3_004",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/0443601f-0330-575d-bb93-802156580834.mp4",
+      "source_id": "0443601f-0330-575d-bb93-802156580834",
+      "sha256": "1f91995a5d8a4f3cd836e8d177acb680adcb1a094d4a5bf3b8d912a51b4bea5b",
+      "bytes": 7364598,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "animal",
+      "subject": "Chimpanzee marching band",
+      "eligibility": "passed",
+      "selected": true,
+      "selection_decision": "first qualifying candidate within cell quota",
+      "crop_review_passed": true,
+      "crop_review_note": "Recognizable subject/content category retained across the 16 inspected frames."
+    },
+    {
+      "candidate_id": "veo3_005",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/045d2a9c-0684-562a-a26d-d8b9352b5046.mp4",
+      "source_id": "045d2a9c-0684-562a-a26d-d8b9352b5046",
+      "sha256": "0bd35d814e2094884528371390d6bb653115de9a8f32429bf10774f85ed4072f",
+      "bytes": 4915404,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "excluded",
+      "subject": "Human/mermaid hybrids; animal category uncertain",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "exclude ambiguous content/style"
+    },
+    {
+      "candidate_id": "veo3_006",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/0461c10a-6141-5723-b800-f038dc110dff.mp4",
+      "source_id": "0461c10a-6141-5723-b800-f038dc110dff",
+      "sha256": "43f7a746d7db4f83381b70c1df0f2df3fd5e234ae2ad07e9a2126c9924baba92",
+      "bytes": 2930936,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "non_animal",
+      "subject": "Eggplant falling into water",
+      "eligibility": "passed",
+      "selected": true,
+      "selection_decision": "first qualifying candidate within cell quota",
+      "crop_review_passed": true,
+      "crop_review_note": "Recognizable subject/content category retained across the 16 inspected frames."
+    },
+    {
+      "candidate_id": "veo3_007",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/0481eac5-3c02-57ff-95f0-724b0d83b855.mp4",
+      "source_id": "0481eac5-3c02-57ff-95f0-724b0d83b855",
+      "sha256": "ef9bfdde1f3e81da8c77bc05447ce9aa9d7a4c21d854f2e4a64e27d91a9c520a",
+      "bytes": 6273251,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "animal",
+      "subject": "Elephant in grassland",
+      "eligibility": "passed",
+      "selected": true,
+      "selection_decision": "first qualifying candidate within cell quota",
+      "crop_review_passed": true,
+      "crop_review_note": "Recognizable subject/content category retained across the 16 inspected frames."
+    },
+    {
+      "candidate_id": "veo3_008",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/04aa1f21-b50e-54c0-9369-3508a1182d6d.mp4",
+      "source_id": "04aa1f21-b50e-54c0-9369-3508a1182d6d",
+      "sha256": "a647531e78412a32a839b00e7eabe2401aa71f460ba21cfb78337f61bce1378f",
+      "bytes": 3850437,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "non_animal",
+      "subject": "People walking at sunset",
+      "eligibility": "passed",
+      "selected": true,
+      "selection_decision": "first qualifying candidate within cell quota",
+      "crop_review_passed": true,
+      "crop_review_note": "Recognizable subject/content category retained across the 16 inspected frames."
+    },
+    {
+      "candidate_id": "veo3_009",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/04c270e9-3fee-547c-944c-3a01841126d1.mp4",
+      "source_id": "04c270e9-3fee-547c-944c-3a01841126d1",
+      "sha256": "a9d59e1e4abd712e7a67c9a4f32917a051df99b0dc47b59dc248885875d372bb",
+      "bytes": 6161164,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "non_animal",
+      "subject": "Motorboat and human on water",
+      "eligibility": "passed",
+      "selected": true,
+      "selection_decision": "first qualifying candidate within cell quota",
+      "crop_review_passed": true,
+      "crop_review_note": "Recognizable subject/content category retained across the 16 inspected frames."
+    },
+    {
+      "candidate_id": "veo3_010",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/0506008b-8432-55c2-b8ed-41e49937f87b.mp4",
+      "source_id": "0506008b-8432-55c2-b8ed-41e49937f87b",
+      "sha256": "30865db48534bac227d34a4565833c3413cb943ed1b179df7f5f1e481536afd6",
+      "bytes": 2595929,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "non_animal",
+      "subject": "Warehouse workers",
+      "eligibility": "passed",
+      "selected": true,
+      "selection_decision": "first qualifying candidate within cell quota",
+      "crop_review_passed": true,
+      "crop_review_note": "Recognizable subject/content category retained across the 16 inspected frames."
+    },
+    {
+      "candidate_id": "veo3_011",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/05445092-4c0d-5de1-b464-f4f11ba52193.mp4",
+      "source_id": "05445092-4c0d-5de1-b464-f4f11ba52193",
+      "sha256": "f704f54d34f51d19411b94c908529f7304f7b39ba1c5930d4795b8715fd57799",
+      "bytes": 1504276,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "non_animal",
+      "subject": "Handwriting close-up",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "veo3_012",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/054f065e-27a5-53cc-a4d7-88be732c80aa.mp4",
+      "source_id": "054f065e-27a5-53cc-a4d7-88be732c80aa",
+      "sha256": "6a7bd7942b592a8e24243018b3b01077c51a9c3ee120efdc33c06c78a4db2818",
+      "bytes": 2875768,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "excluded",
+      "subject": "Graphic slot-machine imagery/animal likenesses",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "exclude ambiguous content/style"
+    },
+    {
+      "candidate_id": "veo3_013",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/0569c6cc-984b-5e80-acd8-267c5765cdec.mp4",
+      "source_id": "0569c6cc-984b-5e80-acd8-267c5765cdec",
+      "sha256": "1776ea4cb15d80581d89e65f8f6629a137afe4ea2ff31ea178e927017233c9e8",
+      "bytes": 2966810,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "animal",
+      "subject": "Dog with people outdoors",
+      "eligibility": "passed",
+      "selected": true,
+      "selection_decision": "first qualifying candidate within cell quota",
+      "crop_review_passed": true,
+      "crop_review_note": "Recognizable subject/content category retained across the 16 inspected frames. A cross-dissolve changes the dog/human scene near the end."
+    },
+    {
+      "candidate_id": "veo3_014",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/057e8e50-5c1d-5c0a-910d-066bdaf5f378.mp4",
+      "source_id": "057e8e50-5c1d-5c0a-910d-066bdaf5f378",
+      "sha256": "4db5f0036d1431f8358c076ef8b91903462479cec601817f3e101f07293575d1",
+      "bytes": 2192414,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "animal",
+      "subject": "Labrador lying on carpet",
+      "eligibility": "passed",
+      "selected": true,
+      "selection_decision": "first qualifying candidate within cell quota",
+      "crop_review_passed": true,
+      "crop_review_note": "Recognizable subject/content category retained across the 16 inspected frames."
+    },
+    {
+      "candidate_id": "veo3_015",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/058d6f43-1a85-5456-b52e-59a0716b1d3f.mp4",
+      "source_id": "058d6f43-1a85-5456-b52e-59a0716b1d3f",
+      "sha256": "38b1a380c3e4c59ca1c2a3ecae93f42890c288cbd55f00ca31c67fd30d9250bc",
+      "bytes": 1169612,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "excluded",
+      "subject": "Animated alphabet/fruit graphic",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "exclude ambiguous content/style"
+    },
+    {
+      "candidate_id": "veo3_016",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/05a82758-36e6-5e24-81d4-e1ef6c2e6cec.mp4",
+      "source_id": "05a82758-36e6-5e24-81d4-e1ef6c2e6cec",
+      "sha256": "8e1eb760cd4f34a21980605f6c9c438600a57e36e163c789ece64ddac1bda94c",
+      "bytes": 4303020,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "non_animal",
+      "subject": "Game-show host and audience",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "veo3_017",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/05ce81c0-323b-53cf-8dd2-90183af200f8.mp4",
+      "source_id": "05ce81c0-323b-53cf-8dd2-90183af200f8",
+      "sha256": "f23f85ec2725fcf68cb84bf64634efabb05791a10fdbb471907eb5176581a90b",
+      "bytes": 11362555,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "non_animal",
+      "subject": "City traffic and people",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "veo3_018",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/05de2bf7-50b7-5b65-90f9-e2cd3a6c592a.mp4",
+      "source_id": "05de2bf7-50b7-5b65-90f9-e2cd3a6c592a",
+      "sha256": "d89bb709bf791b6a81987f7ba13efaa8140fe8d898cc07911cb33eb3f4d306e1",
+      "bytes": 2884513,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "non_animal",
+      "subject": "Empty damaged corridor",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "veo3_019",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/05feb8ba-bd35-5846-b0b0-d07d54dffdf6.mp4",
+      "source_id": "05feb8ba-bd35-5846-b0b0-d07d54dffdf6",
+      "sha256": "849c78c506a1f06ba6e75652633f316cfcbcab001c655c5a0af6a32808038dee",
+      "bytes": 1944126,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "non_animal",
+      "subject": "Electrical substation and wires",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "veo3_020",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/0619fb93-a7c7-5e8c-9473-a25795614218.mp4",
+      "source_id": "0619fb93-a7c7-5e8c-9473-a25795614218",
+      "sha256": "0619a981e9a45d74f7d3095a23389191f068f76e353177579c86b8c6fc3081a8",
+      "bytes": 2383147,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "non_animal",
+      "subject": "Volcanic eruption",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "veo3_021",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/063d099c-54ed-5d60-a04d-c412e5cd07dd.mp4",
+      "source_id": "063d099c-54ed-5d60-a04d-c412e5cd07dd",
+      "sha256": "313baf7dfb85cf14aa66c6c7c8e31d1b8ae424fab9a35e723996b9478e064b03",
+      "bytes": 2911158,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "non_animal",
+      "subject": "Human playing beach volleyball",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "veo3_022",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/064c5c17-f52e-5276-85b3-2eb2fd000d0d.mp4",
+      "source_id": "064c5c17-f52e-5276-85b3-2eb2fd000d0d",
+      "sha256": "12b99ecba7a5ab2bc1a301857580a392d621f41b0dcd85eefb85354e45fc4d9b",
+      "bytes": 3100580,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "non_animal",
+      "subject": "Office workers",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "veo3_023",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/0660584e-b7db-5e2b-b6cc-d8617b1c706c.mp4",
+      "source_id": "0660584e-b7db-5e2b-b6cc-d8617b1c706c",
+      "sha256": "cd64ee26bd64056842f3cf4ef97d61c6618ea7c9c424f9ec9d7461c31fcce7b9",
+      "bytes": 7852672,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "excluded",
+      "subject": "Stylized fantasy combat; rendered style uncertain",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "exclude ambiguous content/style"
+    },
+    {
+      "candidate_id": "veo3_024",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/06afef5f-bff2-5aa5-9102-eadac8cf45a3.mp4",
+      "source_id": "06afef5f-bff2-5aa5-9102-eadac8cf45a3",
+      "sha256": "342601eb14cccde74edd973ac233e91af8ec3955f3dffb9f694c817ffe50c1f0",
+      "bytes": 7916734,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "non_animal",
+      "subject": "Humans walking through field",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "veo3_025",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/06b806a2-f209-565a-a280-220e519e5bd7.mp4",
+      "source_id": "06b806a2-f209-565a-a280-220e519e5bd7",
+      "sha256": "a04aa92b5d663a191c5c50dc03184949deef01eb4a9998e5a1b2ecb41042b418",
+      "bytes": 4206154,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "non_animal",
+      "subject": "Human on beach",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "veo3_026",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/0709f838-c35d-5ade-bd8f-9dace06dda41.mp4",
+      "source_id": "0709f838-c35d-5ade-bd8f-9dace06dda41",
+      "sha256": "45812c7388d9dc49913c91b793d77a6ca9493376bd556e5f2f86ad259aca73be",
+      "bytes": 6040609,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "excluded",
+      "subject": "Distant flying birds; prominence across retained interval uncertain",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "exclude ambiguous content/style"
+    },
+    {
+      "candidate_id": "veo3_027",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/071b919e-bf0f-5dd7-9946-6913eb6648a3.mp4",
+      "source_id": "071b919e-bf0f-5dd7-9946-6913eb6648a3",
+      "sha256": "56f8289d4af2c79ac1bcc3bbdbd40dedb8f36d58bcb6378175ff9f0a529d7968",
+      "bytes": 3990073,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "non_animal",
+      "subject": "Human farming with clay pot",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "veo3_028",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/076570aa-2652-540a-8b92-7c95def3bc8d.mp4",
+      "source_id": "076570aa-2652-540a-8b92-7c95def3bc8d",
+      "sha256": "903a649e2498045c43bf09c05ed9aa09ababf7c7af4458e13d388f66c7880f7e",
+      "bytes": 3232945,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "non_animal",
+      "subject": "Human at train station",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "veo3_029",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/07a3dd5c-120b-592a-a068-67017366e0a1.mp4",
+      "source_id": "07a3dd5c-120b-592a-a068-67017366e0a1",
+      "sha256": "3efacfd4fa7564af5e815cfac0d7a53e776ed1d2a7e957ce35d838e83137f91d",
+      "bytes": 3202882,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "non_animal",
+      "subject": "Human in noir scene",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "veo3_030",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/07b43495-842c-5191-b9be-b294c7b7b8b6.mp4",
+      "source_id": "07b43495-842c-5191-b9be-b294c7b7b8b6",
+      "sha256": "d2804bb0c580925fac87fa0ddb302a9db4e6027d328bf4ffcdd07075ade2df90",
+      "bytes": 2026051,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "non_animal",
+      "subject": "Moon close-up",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "veo3_031",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/07dae49d-4e83-5dae-9b2f-83b8cdb108fa.mp4",
+      "source_id": "07dae49d-4e83-5dae-9b2f-83b8cdb108fa",
+      "sha256": "5dd25c2d04bff918b4327fd3e4e465a4d7b8baf2b31b1626664fa10079f56083",
+      "bytes": 11832965,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "non_animal",
+      "subject": "Moonlit forest",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "veo3_032",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/07e82ce6-0179-5223-8b44-3974064a927b.mp4",
+      "source_id": "07e82ce6-0179-5223-8b44-3974064a927b",
+      "sha256": "ae7b63bb90b2185d87422ae1318cf14cadb0921cc8718c3e0919323bca4130f1",
+      "bytes": 3473659,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "excluded",
+      "subject": "Animated children",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "exclude ambiguous content/style"
+    },
+    {
+      "candidate_id": "veo3_033",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/07ed025c-89d2-5397-80ca-3710a25f4dbe.mp4",
+      "source_id": "07ed025c-89d2-5397-80ca-3710a25f4dbe",
+      "sha256": "0eea3e9bfb9f13058b5facdde1353ff54ec1a8ae2b4c5ad530b5ba52c5eda3db",
+      "bytes": 1763660,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "excluded",
+      "subject": "Animated figure in corridor",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "exclude ambiguous content/style"
+    },
+    {
+      "candidate_id": "veo3_034",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/07f08da9-ab21-5f04-bc97-afedfa95d7e8.mp4",
+      "source_id": "07f08da9-ab21-5f04-bc97-afedfa95d7e8",
+      "sha256": "f28b065ff5b69f344a8ea9091a07ddf81e610fbc962cfffcbcf4bc043d0b7957",
+      "bytes": 3165697,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "excluded",
+      "subject": "People in lab then small/background penguins after scene change",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "exclude ambiguous content/style"
+    },
+    {
+      "candidate_id": "veo3_035",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/081ef0d9-ce88-58f3-b038-188f38c20db8.mp4",
+      "source_id": "081ef0d9-ce88-58f3-b038-188f38c20db8",
+      "sha256": "b2a23a9820214871a13cd7b514ac5e06b8f7189e8ef665e71a3876615b423e57",
+      "bytes": 7029335,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "excluded",
+      "subject": "Mythological dragon; animal identity/style outside photographic living-animal definition",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "exclude ambiguous content/style"
+    },
+    {
+      "candidate_id": "veo3_036",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/0824813a-5d4e-5cd3-9f88-bf7ac0fec256.mp4",
+      "source_id": "0824813a-5d4e-5cd3-9f88-bf7ac0fec256",
+      "sha256": "a74191111bb9efc0e40512f33dd9b19ed258c3414cdf29ee564ab06d5b3d5ce1",
+      "bytes": 3907627,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "non_animal",
+      "subject": "People dancing at concert",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "veo3_037",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/0838abb0-fb8d-501b-86a0-5c93704b6fb7.mp4",
+      "source_id": "0838abb0-fb8d-501b-86a0-5c93704b6fb7",
+      "sha256": "2a96327cb6ad751483018a32cd1ab830c1f4b6e111c0e6ab3c9909e9a550f8d9",
+      "bytes": 3017682,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "excluded",
+      "subject": "Stylized hooded figures; rendered style uncertain",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "exclude ambiguous content/style"
+    },
+    {
+      "candidate_id": "veo3_038",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/083f7e75-57e6-5778-8185-867115730a62.mp4",
+      "source_id": "083f7e75-57e6-5778-8185-867115730a62",
+      "sha256": "412c8ed25dccb1a9fda034f63c65aa6429bf95aac549a7674bf1e7393d64f6bb",
+      "bytes": 5224165,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "non_animal",
+      "subject": "Children talking on bench",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "veo3_039",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/0862a018-0a85-5875-986b-2b2d9abf3948.mp4",
+      "source_id": "0862a018-0a85-5875-986b-2b2d9abf3948",
+      "sha256": "4cb0341ec2059459d09c9576b73a3518806619c0a06f8d42981863373067799a",
+      "bytes": 1970831,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "non_animal",
+      "subject": "Human preparing cooked meat; food rather than living animal",
+      "eligibility": "passed",
+      "selected": false,
+      "selection_decision": "qualifies; quota already full"
+    },
+    {
+      "candidate_id": "veo3_040",
+      "dataset": "OmerXYZ/comgenvid",
+      "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+      "remote_path": "videos/fake/VEO3/086d463a-3abf-505f-99ae-cf2596aba806.mp4",
+      "source_id": "086d463a-3abf-505f-99ae-cf2596aba806",
+      "sha256": "55daef8213bfa42dc8555e8c40c5562b17b92274f99c388f90e2b1d17d3f2d84",
+      "bytes": 1894761,
+      "label": "ai",
+      "source": "VEO3",
+      "metadata": {
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 8.0,
+        "fps": 24.0,
+        "num_frames": 192
+      },
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "content": "animal",
+      "subject": "Bird flying above human hair",
+      "eligibility": "passed",
+      "selected": true,
+      "selection_decision": "first qualifying candidate within cell quota",
+      "crop_review_passed": true,
+      "crop_review_note": "Recognizable subject/content category retained across the 16 inspected frames."
+    }
+  ],
+  "selected_crop_review": "All 16 sampled frames in each prepared baseline inspected before inference."
+}

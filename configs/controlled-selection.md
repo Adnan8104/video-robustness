@@ -37,7 +37,9 @@ replacements. Freeze the exact final manifest before any model inference.
 
 ## Common preparation and paired conditions
 
-Center a four-second interval, convert to 24 fps, downscale the shortest side to
+Center a four-second interval, snapping its start down to the nearest source frame
+using the decoded frame count and FPS (less than one native frame from the nominal
+center). Reset timestamps before FPS conversion and after preparation, convert to 24 fps, downscale the shortest side to
 504 with bicubic interpolation, center-crop to 504×504, set square pixels, remove
 audio, and retain exactly 96 frames. No selected source is upscaled. Encode the
 same prepared frames independently with H.264, medium preset, yuv420p, at CRF 18
