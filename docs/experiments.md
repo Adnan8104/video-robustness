@@ -76,3 +76,19 @@ See [experiment history](experiment-history.md) for those results and commands.
 A future VidAudit integration belongs at the detector/score boundary. It has not
 been implemented. A new detector needs an adapter and registration in the shared
 runner; the media and report stages can stay the same.
+
+## Refactor checks
+
+The shared-runner smoke test is compared with the published two-detector CSV;
+the compression run is compared with the published common-preparation CSV.
+The checks require exact input hashes, scores, recorded frame lists and available
+branch/frame logits. They also recompute summaries from the saved CSV and verify
+local media, checkpoint and code hashes.
+
+```sh
+uv run python scripts/verify_experiment.py configs/experiments/smoke.json reports/two-detectors/scores.csv
+uv run python scripts/verify_experiment.py configs/experiments/compression.json reports/controlled/scores.csv
+```
+
+These are regression checks against existing clips, not additional evaluation data.
+Results are saved in each run's `validation.json`.

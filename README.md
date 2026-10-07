@@ -51,6 +51,8 @@ config + pinned sources → prepare variants → detector adapters → paired sc
 - `detectors.py` / `waverep.py`: pretrained model adapters
 - `experiment_report.py`: one output format for every config
 
+Checked with **27 tests** and exact matches on **100 previously published scores**.
+
 [Config guide and technical choices](docs/experiments.md) · [Methodology](docs/methodology.md) · [Earlier experiments](docs/experiment-history.md)
 
 ## Sources

@@ -1,81 +1,37 @@
 # Experiment history
 
-The project started with one detector, then added a second model and tighter input controls.
-The reports below keep the selection rules, scores and checks for each stage.
-For new runs, use the [shared experiment runner](experiments.md).
+The project started with one pretrained detector, added a second, then tightened
+input controls. The [shared runner](experiments.md) is now the default for new experiments.
 
-## Expanded experiment
+| Stage | What changed | Result |
+|---|---|---|
+| Initial panel | AEGIS on 20 clips and five conditions: 100 scores. | The first large compression drop did not repeat on the 16 new clips. |
+| Diagnostics | Five CRF levels on four clips, plus five real DAVIS clips: 49 scores. | A second real clip, a bear, dropped from 0.993 to 0.237 under compression. |
+| Two detectors | AEGIS and WaveRep on 35 clips: 187 paired conditions, 374 scores. | The models disagreed on real clips; WaveRep also lost AI signal under compression. |
+| Common preparation | 20 fresh clips, five per real/AI × animal/non-animal group: 80 scores. | WaveRep changed by at least 0.10 on 9/10 generated clips. AEGIS had no changes that large. |
+| Compression brackets | Original files and CRF 18/23/28/35 on four selected clips: 40 scores. | WaveRep crossed below 0.5 at CRF 23–28 for an AI elephant and 18–23 for an AI sunset scene. |
+| Fixed-frame check | Separate resize, crop, encoding and frame-selection controls on one real clip: 36 scores. | Crop alone changed AEGIS from 0.005 to 1.000; resize alone changed WaveRep from 0.151 to 0.677. |
 
-20 source clips: 10 real MSVD, 5 Sora, and 5 Veo clips. Five conditions produce
-100 scored cases. The manifest was frozen before expanded scoring.
+The last check explains a supporting failure case: both detectors gave a real
+kitten high scores after common preparation. Holding the same 16 source frames
+fixed showed which edits could trigger the change. It describes that clip;
+repeatability across other clips is still open.
 
-The original real clip's large compression drop did not repeat on the 16 newly
-selected clips. Their largest control-relative changes were +0.072 for a resized
-real clip, −0.055 for a compressed Veo clip, and +0.053 for a cropped Sora clip.
+## Reports and original commands
 
-Higher scores mean more AI-like according to AEGIS; they are not calibrated
-probabilities. This convenience sample does not establish detector accuracy.
+| Study | Report and selection | Original command |
+|---|---|---|
+| Initial panel | [Summary](../reports/summary.md) · [Scores](../reports/comparison.md) · [Selection](../configs/selection.md) | `run.py fetch`, then `run.py run` |
+| Diagnostics | [Report](../reports/diagnostics/report.md) · [Selection](../configs/diagnostics-selection.md) | `run.py diagnose` |
+| Two detectors | [Report](../reports/two-detectors/report.md) · [Selection](../configs/two-detectors-selection.md) | `run.py compare` |
+| Common preparation | [Chart and scores](../reports/controlled/report.md) · [Selection](../configs/controlled-selection.md) · [Content audit](../configs/controlled-candidate-audit.json) | `run.py controlled` |
+| Compression brackets | [Report](../reports/failure-followup/report.md) · [Selection](../configs/failure-followup-selection.md) | `run.py followup` |
+| Fixed-frame check | [Report](../reports/kitten-isolation/report.md) · [Controls](../configs/kitten-isolation-selection.md) | `run.py isolate` |
 
-[Results summary](../reports/summary.md) · [All scores](../reports/comparison.md) · [Experiment notes](../reports/experiment-log.md) · [Methodology](../docs/methodology.md)
+Run these with `uv run python` after `uv sync --locked`. The old commands remain
+available to reproduce the published studies. The new compression config
+reproduces the common-preparation panel through the shared runner.
 
-## Diagnostic follow-up
-
-49 additional cases: five compression strengths on four diagnostic clips, plus
-five real DAVIS clips. The original failure drops sharply at stronger compression;
-a new DAVIS bear clip shows a similar drop (0.993 → 0.237).
-[Plots and findings](../reports/diagnostics/report.md) · [Validation](../reports/diagnostics/validation.json)
-
-Reproduce this follow-up with `uv run python run.py diagnose` (~14 MiB of new media).
-
-## Two-detector comparison
-
-Compare AEGIS with WaveRep on the same frames, including ten fresh clips:
-`uv run python run.py compare`. This adds ~331 MiB of model weights and ~42 MiB
-of media. WaveRep uses sparse frame sampling and its native crop/pad preprocessing.
-Across 35 clips, it avoids the known real-clip high scores but loses several
-generated-video signals under compression. AEGIS also makes errors on fresh originals.
-[Comparison report](../reports/two-detectors/report.md) · [Selection](../configs/two-detectors-selection.md)
-
-## Balanced content check
-
-Twenty fresh clips, five each: real animal, real non-animal, Veo animal, and Veo
-non-animal. Common four-second, 504×504, 24 fps preparation avoids upscaling and
-WaveRep padding. Both detectors score independent CRF 18/35 encodes: 80 scores.
-Both put one real kitten above the fixed midpoint in both conditions. WaveRep
-has large compression changes on 9/10 generated clips. These are descriptive
-findings on this panel, with uncalibrated scores.
-
-Reproduce with `uv run python run.py controlled` (~263 MiB of source media).
-[Paired chart and findings](../reports/controlled/report.md) ·
-[Selection rules](../configs/controlled-selection.md) · [Content audit](../configs/controlled-candidate-audit.json).
-This small panel tests recurrence; it cannot establish a causal animal effect.
-
-## Four-clip failure study
-
-Check original files and medium compression on the real kitten, a real horse,
-an AI elephant and an AI sunset scene. Adds CRF 23/28 to the prepared 18/35
-endpoints: 40 score rows, with 24 new scores when the endpoints match.
-The kitten crosses the midpoint after preparation in both models. WaveRep drops
-below it between CRF 23–28 for the AI elephant and CRF 18–23 for the AI sunset
-scene. These transitions are specific to the selected clips.
-
-Run `uv run python run.py followup`.
-[Chart and findings](../reports/failure-followup/report.md) ·
-[Frozen diagnostic selection](../configs/failure-followup-selection.md).
-Original-to-prepared comparisons measure the whole preparation recipe; the CRF
-curve keeps that preparation fixed.
-
-## Isolating the kitten preparation steps
-
-Hold source-frame identities fixed while testing resizing, cropping, encoding
-and their combinations. Compare a second frame list traced through the FPS
-conversion, a metadata-only FPS control and the exact prepared endpoint: 36 scores.
-On fixed original frames, crop alone flips AEGIS across the midpoint; resize
-alone flips WaveRep. This is a finding about the selected kitten clip.
-
-Run `uv run python run.py isolate`.
-[Step chart and findings](../reports/kitten-isolation/report.md) ·
-[Frozen controls and frame checks](../configs/kitten-isolation-selection.md).
-This isolates conditional pipeline effects on one clip without claiming a
-learned animal/texture mechanism.
-
+Each report keeps its full numerical outputs and validation. See
+[methodology](methodology.md) for sampling, preprocessing and measurement limits.
+Earlier four-clip discovery results remain in `reports/milestone1/` and `reports/milestone2/`.

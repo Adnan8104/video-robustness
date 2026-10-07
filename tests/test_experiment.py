@@ -2,6 +2,7 @@
 import copy
 import json
 from pathlib import Path
+import subprocess
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -96,6 +97,35 @@ class ExperimentTests(unittest.TestCase):
         self.assertEqual(transform_filter("short_side_504", 720, 1280)[1], (504, 896))
         with self.assertRaises(ValueError):
             transform_filter("short_side_504", 320, 240)
+
+    def test_lossless_native_edits_preserve_identity_pixels_and_frame_count(self):
+        import imageio_ffmpeg
+        import numpy as np
+        from vidrobust.cli import sha
+        from vidrobust.media import prepare_cases
+        from vidrobust.waverep import read_exact_rgb
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            cache = root / "data/sources"
+            cache.mkdir(parents=True)
+            source = cache / "clip.mp4"
+            subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(), "-y", "-loglevel", "error", "-f", "lavfi", "-i",
+                "testsrc2=size=1280x720:rate=24", "-frames:v", "16", "-c:v", "libx264", "-crf", "18",
+                "-pix_fmt", "yuv420p", str(source)], check=True)
+            config = dict(name="lossless-check", source_directory="data/sources", preparation="native",
+                variants=[dict(name=n, transform=t, encoding="ffv1") for n, t in
+                          (("baseline", "identity"), ("resize", "short_side_504"), ("crop", "center_square"))])
+            sample = dict(id="clip", label="real", dataset="unused", revision="0"*40,
+                          remote_path="clip.mp4", sha256=sha(source))
+            with patch("urllib.request.urlretrieve") as network:
+                cases, _ = prepare_cases(root, config, [sample])
+                network.assert_not_called()
+            self.assertEqual([(r["width"], r["height"], r["frames"]) for _, r in cases],
+                             [(1280, 720, 16), (896, 504, 16), (720, 720, 16)])
+            original = read_exact_rgb(source, list(range(16)))
+            lossless = read_exact_rgb(cases[0][0], list(range(16)))
+            for a, b in zip(original, lossless):
+                np.testing.assert_array_equal(a, b)
 
 
 if __name__ == "__main__":

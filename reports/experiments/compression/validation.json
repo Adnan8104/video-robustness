@@ -1,0 +1,33 @@
+{
+  "source_clips": 20,
+  "paired_cases": 40,
+  "model_scores": 80,
+  "source_hashes_and_full_decode": "passed",
+  "geometry_timing_and_frame_indices": "passed",
+  "complete_case_matrix": "passed",
+  "identical_bytes_and_RGB_between_detectors": "passed",
+  "published_reference_parity": {
+    "reference": "reports/controlled/scores.csv",
+    "reference_sha256": "eac0de2fb4c5cd0d6d0adf71871a7f7c12b30c5b00f601b9cebd0518283f036a",
+    "matched_scores": 80,
+    "exact_match": true,
+    "compared_fields": [
+      "ai_score",
+      "consistency_score",
+      "fps",
+      "frame_logits",
+      "frames",
+      "fusion_logit",
+      "height",
+      "label",
+      "motion_score",
+      "pixel_score",
+      "sampled_frame_indices",
+      "sha256",
+      "source",
+      "width"
+    ],
+    "independent_CSV_analysis": "passed",
+    "scored_media_and_model_and_code_hashes": "passed"
+  }
+}

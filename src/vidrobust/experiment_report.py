@@ -54,7 +54,7 @@ def plot_pairs(root, out, config, samples, rows):
     indexed = {(r["video_id"], r["variant"], r["detector"]): r for r in rows}
     columns = min(2, len(cells))
     fig, axes = plt.subplots((len(cells)+columns-1)//columns, columns, squeeze=False,
-        figsize=(6*columns, 3.5*((len(cells)+columns-1)//columns)), layout="constrained")
+        figsize=(6*columns, 5*((len(cells)+columns-1)//columns)), layout="constrained")
     plt.rcParams["svg.hashsalt"] = "video-robustness"
     colors = {"aegis": "#2563eb", "waverep": "#d97706"}
     markers = ["o", "s", "^", "D", "v", "P", "X"]
@@ -78,7 +78,7 @@ def plot_pairs(root, out, config, samples, rows):
         ax.set_xlabel("AI-like score")
         ax.set_title(f"{cell.replace('_', ' ')} · n={len(group)}")
         ax.grid(axis="x", alpha=.2)
-        ax.legend(fontsize=8)
+        ax.legend(fontsize=8, loc="upper center", bbox_to_anchor=(.5, -.16), ncol=2)
     for ax in list(axes.flat)[len(cells):]:
         ax.set_visible(False)
     fig.suptitle(f"{config['name']}\nFilled = {config['baseline']} · hollow = edited", fontweight="bold")
