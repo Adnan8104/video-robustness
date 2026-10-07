@@ -1,0 +1,73 @@
+{
+  "source_clips": 20,
+  "encoded_cases": 40,
+  "model_scores": 80,
+  "full_source_master_and_prepared_decode": "passed",
+  "exact_prepared_geometry": "504x504 / 24 fps / 96 frames",
+  "source_hashes_and_fresh_identities": "passed",
+  "five_per_cell": "passed",
+  "paired_input_hashes_and_sampling": "passed",
+  "fresh_model_repeat_selection": "Kitten pair in both models and WaveRep pair with largest absolute compression change",
+  "fresh_model_reloads": 2,
+  "fresh_model_repeats": [
+    {
+      "detector": "aegis",
+      "video_id": "controlled_real_animal_01",
+      "variant": "baseline",
+      "sha256": "ebaaf41f757f0346a01825d0402f8e9d14c30016bca9579efc61b123ede8809e",
+      "ai_score": 0.9999672174453735,
+      "absolute_score_difference": 0.0,
+      "all_numeric_outputs_and_indices_exact_match": true
+    },
+    {
+      "detector": "aegis",
+      "video_id": "controlled_real_animal_01",
+      "variant": "compression",
+      "sha256": "96d4313a9a0ce57b635dcd72b6246c431b1cfb52da1e20e60d69748ea77cae1b",
+      "ai_score": 0.9049241542816162,
+      "absolute_score_difference": 0.0,
+      "all_numeric_outputs_and_indices_exact_match": true
+    },
+    {
+      "detector": "waverep",
+      "video_id": "controlled_real_animal_01",
+      "variant": "baseline",
+      "sha256": "ebaaf41f757f0346a01825d0402f8e9d14c30016bca9579efc61b123ede8809e",
+      "ai_score": 0.7320824872868131,
+      "absolute_score_difference": 0.0,
+      "all_numeric_outputs_and_indices_exact_match": true
+    },
+    {
+      "detector": "waverep",
+      "video_id": "controlled_real_animal_01",
+      "variant": "compression",
+      "sha256": "96d4313a9a0ce57b635dcd72b6246c431b1cfb52da1e20e60d69748ea77cae1b",
+      "ai_score": 0.6883779791671549,
+      "absolute_score_difference": 0.0,
+      "all_numeric_outputs_and_indices_exact_match": true
+    },
+    {
+      "detector": "waverep",
+      "video_id": "controlled_ai_animal_02",
+      "variant": "baseline",
+      "sha256": "90178ca4ba4ae57750e562ad0dd8f058668cce976803021d13732f0acc5256e0",
+      "ai_score": 0.9962799772961752,
+      "absolute_score_difference": 0.0,
+      "all_numeric_outputs_and_indices_exact_match": true
+    },
+    {
+      "detector": "waverep",
+      "video_id": "controlled_ai_animal_02",
+      "variant": "compression",
+      "sha256": "a30986a93d363819a04012f6b0f69f0b0ccc6921d73a79ced2c4fbd775b5ea75",
+      "ai_score": 0.0008786127047950404,
+      "absolute_score_difference": 0.0,
+      "all_numeric_outputs_and_indices_exact_match": true
+    }
+  ],
+  "native_aggregation_checks": "40 WaveRep mean-logit/sigmoid outputs exactly recomputed; 40 AEGIS fused-logit/sigmoid outputs within 1e-7",
+  "reviewed_baseline_hashes": "20/20 match pre-inference crop-review hashes",
+  "recorded_code_and_manifest_hashes": "passed",
+  "prepared_score_input_hashes": "40/40 match saved media",
+  "unit_tests_passed": 14
+}

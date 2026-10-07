@@ -1,0 +1,126 @@
+{
+  "aegis": {
+    "real_animal": {
+      "n": 5,
+      "median_delta": -1.829677785281092e-06,
+      "median_absolute_delta": 0.00037142212386243045,
+      "changes_at_least_point10": 0,
+      "midpoint_conflicts": {
+        "baseline": 1,
+        "compression": 1
+      },
+      "midpoint_crossings": []
+    },
+    "real_non_animal": {
+      "n": 5,
+      "median_delta": -9.223094093613327e-05,
+      "median_absolute_delta": 9.223094093613327e-05,
+      "changes_at_least_point10": 0,
+      "midpoint_conflicts": {
+        "baseline": 0,
+        "compression": 0
+      },
+      "midpoint_crossings": []
+    },
+    "ai_animal": {
+      "n": 5,
+      "median_delta": -4.76837158203125e-07,
+      "median_absolute_delta": 4.887580871582031e-06,
+      "changes_at_least_point10": 0,
+      "midpoint_conflicts": {
+        "baseline": 0,
+        "compression": 0
+      },
+      "midpoint_crossings": []
+    },
+    "ai_non_animal": {
+      "n": 5,
+      "median_delta": -0.0006064772605895996,
+      "median_absolute_delta": 0.0006064772605895996,
+      "changes_at_least_point10": 0,
+      "midpoint_conflicts": {
+        "baseline": 0,
+        "compression": 0
+      },
+      "midpoint_crossings": []
+    }
+  },
+  "waverep": {
+    "real_animal": {
+      "n": 5,
+      "median_delta": -0.0004430553119923969,
+      "median_absolute_delta": 0.0004430553119923969,
+      "changes_at_least_point10": 0,
+      "midpoint_conflicts": {
+        "baseline": 1,
+        "compression": 1
+      },
+      "midpoint_crossings": []
+    },
+    "real_non_animal": {
+      "n": 5,
+      "median_delta": -0.005177466787890616,
+      "median_absolute_delta": 0.005177466787890616,
+      "changes_at_least_point10": 0,
+      "midpoint_conflicts": {
+        "baseline": 0,
+        "compression": 0
+      },
+      "midpoint_crossings": []
+    },
+    "ai_animal": {
+      "n": 5,
+      "median_delta": -0.5981297376893984,
+      "median_absolute_delta": 0.5981297376893984,
+      "changes_at_least_point10": 5,
+      "midpoint_conflicts": {
+        "baseline": 2,
+        "compression": 5
+      },
+      "midpoint_crossings": [
+        {
+          "video_id": "controlled_ai_animal_02",
+          "baseline": 0.9962799772961752,
+          "compression": 0.0008786127047950404,
+          "delta": -0.9954013645913802
+        },
+        {
+          "video_id": "controlled_ai_animal_04",
+          "baseline": 0.9713999071802011,
+          "compression": 0.007833535365008325,
+          "delta": -0.9635663718151928
+        },
+        {
+          "video_id": "controlled_ai_animal_05",
+          "baseline": 0.9989091200517303,
+          "compression": 0.40077938236233185,
+          "delta": -0.5981297376893984
+        }
+      ]
+    },
+    "ai_non_animal": {
+      "n": 5,
+      "median_delta": -0.43123900770759144,
+      "median_absolute_delta": 0.43123900770759144,
+      "changes_at_least_point10": 4,
+      "midpoint_conflicts": {
+        "baseline": 2,
+        "compression": 4
+      },
+      "midpoint_crossings": [
+        {
+          "video_id": "controlled_ai_non_animal_03",
+          "baseline": 0.9898970487425781,
+          "compression": 0.002951473178199307,
+          "delta": -0.9869455755643788
+        },
+        {
+          "video_id": "controlled_ai_non_animal_04",
+          "baseline": 0.9839402095923093,
+          "compression": 0.0009736320108020877,
+          "delta": -0.9829665775815072
+        }
+      ]
+    }
+  }
+}

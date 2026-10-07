@@ -107,3 +107,41 @@ backbone families even though their trained heads and input pipelines differ.
 Extraction saves an ignored resumable cache keyed by model, adapter, environment,
 configuration and individual input hashes. The final CSV retains every WaveRep
 frame logit. Reports include only numerical outputs and measurement plots.
+
+## Balanced content and common preparation
+
+The [controlled policy](../configs/controlled-selection.md) and
+[reviewed manifest](../configs/controlled.json) add 20 fresh sources with five per
+real/AI × animal/non-animal cell. MSVD and Veo hold source constant within each
+label. Native shortest sides must be at least 504, durations at least four seconds,
+FPS at least 24, landscape aspect at least 1.4, and files no more than 30 MiB.
+Previous hashes and MSVD source IDs are excluded. Manual inspection proceeds in
+pinned filename order without detector scores; every downloaded candidate has an
+[audit entry](../configs/controlled-candidate-audit.json). Review all 16 sampled
+frames of each selected prepared crop before committing the exact manifest.
+
+Downscale with bicubic interpolation, center-crop to 504×504, convert to 24 fps,
+and retain 96 frames. Snap the centered interval start down to a native frame,
+within one frame of the nominal center, then reset output timestamps. This avoids
+a fractional seek dropping a boundary frame on four-second sources. The lossless
+FFV1 AVI intermediate stores exactly those prepared pixels; both H.264 encodes
+start from it independently (medium preset, yuv420p, CRF 18 and 35, no audio).
+Check metadata and sequential decode counts for sources, intermediates and encodes.
+Reset timestamps remove gaps that can inflate reported frame counts; AVI provides
+an explicit frame index for validation.
+
+AEGIS keeps its native 224-pixel preprocessing; WaveRep receives its native
+504-pixel crop without padding. Their temporal indices and encoded input hashes
+must match. This controls prepared geometry, not native capture quality or all
+model preprocessing. Native frame-rate conversion, prior compression, embedded
+letterboxing, scene transitions and camera artifacts remain possible influences.
+Species and motion are not matched, and training overlap is unknown. Previous
+low-resolution animal failures were excluded from this fresh panel; this test
+cannot establish that common preparation fixes those earlier failures.
+
+Report signed and absolute compression-relative changes, every fixed-midpoint
+crossing, and conflicts against inherited labels per five-clip cell. Scores are
+uncalibrated and the midpoint is descriptive. Keep counts separate by model,
+content and label; n=5 supports case-level follow-up rather than an accuracy
+ranking, significance claim or a low-FPR estimate. Use the existing adapter
+boundary and numerical artifacts to support a future VidAudit integration.

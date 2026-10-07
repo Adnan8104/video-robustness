@@ -51,6 +51,20 @@ Across 35 clips, it avoids the known real-clip high scores but loses several
 generated-video signals under compression. AEGIS also makes errors on fresh originals.
 [Comparison report](reports/two-detectors/report.md) · [Selection](configs/two-detectors-selection.md)
 
+## Balanced content check
+
+Twenty fresh clips, five each: real animal, real non-animal, Veo animal, and Veo
+non-animal. Common four-second, 504×504, 24 fps preparation avoids upscaling and
+WaveRep padding. Both detectors score independent CRF 18/35 encodes: 80 scores.
+Both put one real kitten above the fixed midpoint in both conditions. WaveRep
+has large compression changes on 9/10 generated clips. These are descriptive
+findings on this panel, with uncalibrated scores.
+
+Reproduce with `uv run python run.py controlled` (~263 MiB of source media).
+[Paired chart and findings](reports/controlled/report.md) ·
+[Selection rules](configs/controlled-selection.md) · [Content audit](configs/controlled-candidate-audit.json).
+This small panel tests recurrence; it cannot establish a causal animal effect.
+
 ## Sources
 
 Uses [AEGIS](https://huggingface.co/MusapYildiz/aegis-video-detector) and clips from
