@@ -43,3 +43,25 @@ changes in unreported model logits, so they do not establish trustworthy detecti
 Prior four-clip results are preserved in reports/milestone1/ and reports/milestone2/.
 The expanded sample stays inside the same dataset, so the second generator expands
 generator coverage but does not establish cross-dataset generalization.
+
+## Compression sweep and second-source check
+
+The [frozen diagnostic policy](../configs/diagnostics-selection.md) adds 49 cases:
+four previously observed clips at CRF 18, 23, 28, 32, and 35 plus their originals,
+and five new DAVIS clips at the usual five conditions. These add five source
+observations, not 49 independent videos. DAVIS selection uses filenames and size,
+not model scores. The source is pinned separately through VLM4D; benchmark labels
+and any prior encoding are inherited, and training overlap remains unknown.
+
+The five CRF levels locate broad changes while keeping CPU work small. CRF is not
+a linear scale of perceptual degradation. Report signed adjacent steps, steps per
+CRF unit, non-monotonicity, and all crossings of the descriptive 0.5 midpoint.
+The grid cannot locate the precise transition or establish its mechanism.
+
+Plot fused raw outputs alongside scores because the sigmoid saturates near zero
+and one. Auxiliary heads are stored for inspection, but they do not establish why
+the fused model responds. Matplotlib adds one locked dependency and exports
+portable PNG/SVG charts without a dashboard. Geometry, timing, paired sampling,
+and hashes are checked; source frames stay local. Five key cases were rescored
+with a freshly loaded model, and 12 overlapping cases match prior scores and
+encoded hashes. See the [report](../reports/diagnostics/report.md) and its validation.

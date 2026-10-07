@@ -137,9 +137,12 @@ def run(root):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("command", choices=["fetch", "run", "check"])
+    parser.add_argument("command", choices=["fetch", "run", "check", "diagnose"])
     args = parser.parse_args()
-    if args.command == "check":
+    if args.command == "diagnose":
+        from .diagnostics import run_diagnostics
+        run_diagnostics(ROOT)
+    elif args.command == "check":
         import unittest
         suite = unittest.defaultTestLoader.discover(str(ROOT / "tests"))
         if not unittest.TextTestRunner(verbosity=2).run(suite).wasSuccessful():

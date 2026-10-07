@@ -1,0 +1,110 @@
+{
+  "source_clips": 9,
+  "scored_cases": 49,
+  "full_source_decode": "passed",
+  "geometry_timing_and_sampled_indices": "passed",
+  "preflight": {
+    "real_01": {
+      "width": 480,
+      "height": 360,
+      "frames": 300,
+      "fps": 29.916666666666668
+    },
+    "real_08": {
+      "width": 320,
+      "height": 240,
+      "frames": 225,
+      "fps": 14.985014985014985
+    },
+    "ai_06": {
+      "width": 1280,
+      "height": 720,
+      "frames": 192,
+      "fps": 24.0
+    },
+    "ai_03": {
+      "width": 854,
+      "height": 480,
+      "frames": 150,
+      "fps": 30.0
+    },
+    "davis_01": {
+      "width": 854,
+      "height": 480,
+      "frames": 71,
+      "fps": 24.0
+    },
+    "davis_02": {
+      "width": 910,
+      "height": 480,
+      "frames": 90,
+      "fps": 24.0
+    },
+    "davis_03": {
+      "width": 854,
+      "height": 480,
+      "frames": 77,
+      "fps": 24.0
+    },
+    "davis_04": {
+      "width": 854,
+      "height": 480,
+      "frames": 82,
+      "fps": 24.0
+    },
+    "davis_05": {
+      "width": 854,
+      "height": 480,
+      "frames": 78,
+      "fps": 24.0
+    }
+  },
+  "selection_frozen_commit": "dfcb346",
+  "previous_score_and_hash_matches": [
+    "real_01/original",
+    "real_01/crf_18",
+    "real_01/crf_35",
+    "real_08/original",
+    "real_08/crf_18",
+    "real_08/crf_35",
+    "ai_06/original",
+    "ai_06/crf_18",
+    "ai_06/crf_35",
+    "ai_03/original",
+    "ai_03/crf_18",
+    "ai_03/crf_35"
+  ],
+  "fresh_model_repeat_checks": [
+    {
+      "video_id": "real_01",
+      "variant": "crf_32",
+      "score": 0.6658079624176025,
+      "absolute_difference": 0.0
+    },
+    {
+      "video_id": "real_01",
+      "variant": "crf_35",
+      "score": 0.02379401959478855,
+      "absolute_difference": 0.0
+    },
+    {
+      "video_id": "davis_04",
+      "variant": "original",
+      "score": 0.9941451549530029,
+      "absolute_difference": 0.0
+    },
+    {
+      "video_id": "davis_04",
+      "variant": "crf_18",
+      "score": 0.9932690262794495,
+      "absolute_difference": 0.0
+    },
+    {
+      "video_id": "davis_04",
+      "variant": "crf_35",
+      "score": 0.23746226727962494,
+      "absolute_difference": 0.0
+    }
+  ],
+  "visual_check": "DAVIS bear: sampled frames at original/CRF18/CRF35 show same scene and no blank-frame failure; source frames kept local"
+}

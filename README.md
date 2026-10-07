@@ -33,8 +33,18 @@ probabilities. This convenience sample does not establish detector accuracy.
 
 [Results summary](reports/summary.md) · [All scores](reports/comparison.md) · [Experiment notes](reports/experiment-log.md) · [Methodology](docs/methodology.md)
 
+## Diagnostic follow-up
+
+49 additional cases: five compression strengths on four diagnostic clips, plus
+five real DAVIS clips. The original failure drops sharply at stronger compression;
+a new DAVIS bear clip shows a similar drop (0.993 → 0.237).
+[Plots and findings](reports/diagnostics/report.md) · [Validation](reports/diagnostics/validation.json)
+
+Reproduce this follow-up with `uv run python run.py diagnose` (~14 MiB of new media).
+
 ## Sources
 
 Uses [AEGIS](https://huggingface.co/MusapYildiz/aegis-video-detector) and clips from
-[ComGenVid](https://huggingface.co/datasets/OmerXYZ/comgenvid). Vendored detector code
+[ComGenVid](https://huggingface.co/datasets/OmerXYZ/comgenvid) and DAVIS clips via
+[VLM4D](https://huggingface.co/datasets/shijiezhou/VLM4D). Vendored detector code
 retains its [MIT license](vendor/aegis/LICENSE). Dataset media are not redistributed.
