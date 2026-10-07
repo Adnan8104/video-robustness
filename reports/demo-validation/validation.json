@@ -1,0 +1,576 @@
+{
+  "aegis_upstream_revision": "d86a774fd971954a023e1cd00ed7ff5b2575e0d1",
+  "source_checks": [
+    {
+      "path": "vendor/aegis/detector_model.py",
+      "sha256": "bdfcfddba6dfe305f462d0a094b28314ea208b2f4b7fa119978fd226d88f05a6",
+      "matches_pinned_upstream": true
+    },
+    {
+      "path": "vendor/aegis/pixel_branch.py",
+      "sha256": "e8d6d188729662187fcd04653d54337101bd8287820d3a87f2a4cf09e8bca26a",
+      "matches_pinned_upstream": true
+    },
+    {
+      "path": "vendor/aegis/motion_branch.py",
+      "sha256": "5d809994c1597bcfc2a7c7cdf59faa1da15ba87b0701df1ab580ce138a3d7c34",
+      "matches_pinned_upstream": true
+    },
+    {
+      "path": "vendor/aegis/consistency_branch.py",
+      "sha256": "bc0687fdc835037e18bafe28a80511e23fdc4f8c0603171a3c4897057b5c434b",
+      "matches_pinned_upstream": true
+    },
+    {
+      "path": "vendor/aegis/video_io.py",
+      "sha256": "bab6ba4b8b1c07ff9bc392cf40487be8e8d31fdd248a4494563057e812a043dc",
+      "matches_pinned_upstream": true
+    }
+  ],
+  "models": {
+    "aegis": {
+      "sha256": "7df233979f9d3ef340e101d0d635a4d074577d43e6d1591d677cde31f80e44ba",
+      "verified": true,
+      "preprocessing": "16 RGB frames; linear resize to 224\u00d7224; ImageNet normalization; released fusion head"
+    },
+    "waverep": {
+      "sha256": "50d639049d928986ba7d69861a4fe4f3e7afbba1843e3e089cdf6b4748f53d5b",
+      "verified": true,
+      "preprocessing": "16 RGB frames; 504\u00d7504 center crop with zero padding for smaller inputs; ImageNet normalization; sigmoid of mean frame logits; batch size 2"
+    }
+  },
+  "checks": [
+    {
+      "video_id": "real_01",
+      "label": "real",
+      "input_sha256": "ffa148e164ea0fd89ce3d6e3125dce4fe4a54f92f7ee5334e8759d2e24cca1b9",
+      "metadata": {
+        "width": 480,
+        "height": 360,
+        "frames": 300,
+        "fps": 29.916666666666668
+      },
+      "centered_tensor_and_all_five_aegis_outputs_match_native_loader": true,
+      "both_centered_scores_logits_and_input_hashes_match_previous_smoke": true,
+      "windows": [
+        {
+          "section": "beginning",
+          "sampled_frame_indices": [
+            0,
+            7,
+            15,
+            23,
+            31,
+            39,
+            47,
+            55,
+            62,
+            70,
+            78,
+            86,
+            94,
+            102,
+            110,
+            118
+          ],
+          "sampled_time_seconds": [
+            0.0,
+            0.233983286908078,
+            0.5013927576601671,
+            0.7688022284122562,
+            1.0362116991643453,
+            1.3036211699164344,
+            1.5710306406685237,
+            1.8384401114206128,
+            2.0724233983286906,
+            2.3398328690807797,
+            2.607242339832869,
+            2.874651810584958,
+            3.1420612813370474,
+            3.4094707520891365,
+            3.6768802228412256,
+            3.9442896935933147
+          ],
+          "detectors": [
+            {
+              "detector": "aegis",
+              "ai_score": 0.1412150114774704,
+              "fusion_logit": -1.8052350282669067,
+              "pixel_score": 0.7645137906074524,
+              "motion_score": 0.012418070808053017,
+              "consistency_score": 0.9998542070388794,
+              "sampled_rgb_sha256": "7b9c935c80f92ee94343aa4dcdb46924a8d2b5b0fd088a581bef5beb13ef48be",
+              "model_input_sha256": "dd1c299ee1d9d114b52333a66e62ea893188f612bf150159495ded5b6be8a314",
+              "checkpoint_sha256": "7df233979f9d3ef340e101d0d635a4d074577d43e6d1591d677cde31f80e44ba",
+              "preprocessing": "16 RGB frames; linear resize to 224\u00d7224; ImageNet normalization; released fusion head"
+            },
+            {
+              "detector": "waverep",
+              "ai_score": 0.000228343361760408,
+              "fusion_logit": -8.384431719779968,
+              "frame_logits": [
+                -5.203534126281738,
+                -9.127276420593262,
+                -8.856744766235352,
+                -8.355761528015137,
+                -8.602370262145996,
+                -9.27291488647461,
+                -9.300763130187988,
+                -9.331165313720703,
+                -7.7643022537231445,
+                -8.36369800567627,
+                -7.161067962646484,
+                -8.605422973632812,
+                -8.30775260925293,
+                -8.00540828704834,
+                -8.842716217041016,
+                -9.050008773803711
+              ],
+              "sampled_rgb_sha256": "7b9c935c80f92ee94343aa4dcdb46924a8d2b5b0fd088a581bef5beb13ef48be",
+              "model_input_sha256": "bff0bf5f7d11978260d580dad45318e76da8cb1b0ddeebdf45c239f9eb8cb5f4",
+              "checkpoint_sha256": "50d639049d928986ba7d69861a4fe4f3e7afbba1843e3e089cdf6b4748f53d5b",
+              "preprocessing": "16 RGB frames; 504\u00d7504 center crop with zero padding for smaller inputs; ImageNet normalization; sigmoid of mean frame logits; batch size 2"
+            }
+          ]
+        },
+        {
+          "section": "middle",
+          "sampled_frame_indices": [
+            90,
+            97,
+            105,
+            113,
+            121,
+            129,
+            137,
+            145,
+            152,
+            160,
+            168,
+            176,
+            184,
+            192,
+            200,
+            208
+          ],
+          "sampled_time_seconds": [
+            3.0083565459610027,
+            3.2423398328690807,
+            3.5097493036211698,
+            3.777158774373259,
+            4.044568245125348,
+            4.311977715877437,
+            4.579387186629527,
+            4.846796657381615,
+            5.080779944289693,
+            5.348189415041783,
+            5.6155988857938715,
+            5.883008356545961,
+            6.15041782729805,
+            6.417827298050139,
+            6.685236768802228,
+            6.952646239554317
+          ],
+          "detectors": [
+            {
+              "detector": "aegis",
+              "ai_score": 0.9664109945297241,
+              "fusion_logit": 3.359391212463379,
+              "pixel_score": 0.7995399832725525,
+              "motion_score": 0.6360139846801758,
+              "consistency_score": 0.9999066591262817,
+              "sampled_rgb_sha256": "0318e2b3e2fc778a628d3b02018f8c6ccc5918334d7cef195943c1b792ab00ba",
+              "model_input_sha256": "247439b4f8b628c7871369c333fcdfc07fe09df105093ddac6ba1228e3e05cfb",
+              "checkpoint_sha256": "7df233979f9d3ef340e101d0d635a4d074577d43e6d1591d677cde31f80e44ba",
+              "preprocessing": "16 RGB frames; linear resize to 224\u00d7224; ImageNet normalization; released fusion head"
+            },
+            {
+              "detector": "waverep",
+              "ai_score": 0.00015120129346746572,
+              "fusion_logit": -8.796747326850891,
+              "frame_logits": [
+                -8.759982109069824,
+                -8.8578519821167,
+                -8.339027404785156,
+                -8.690347671508789,
+                -9.032691955566406,
+                -9.560653686523438,
+                -8.50351619720459,
+                -8.753366470336914,
+                -8.886810302734375,
+                -8.673047065734863,
+                -9.502523422241211,
+                -8.379114151000977,
+                -9.087141036987305,
+                -9.118371963500977,
+                -7.611753463745117,
+                -8.991758346557617
+              ],
+              "sampled_rgb_sha256": "0318e2b3e2fc778a628d3b02018f8c6ccc5918334d7cef195943c1b792ab00ba",
+              "model_input_sha256": "751c9326c5fc1f8f3c239cff59fd317ac3dab2e73eb2c259c491a544ab6edc5a",
+              "checkpoint_sha256": "50d639049d928986ba7d69861a4fe4f3e7afbba1843e3e089cdf6b4748f53d5b",
+              "preprocessing": "16 RGB frames; 504\u00d7504 center crop with zero padding for smaller inputs; ImageNet normalization; sigmoid of mean frame logits; batch size 2"
+            }
+          ]
+        },
+        {
+          "section": "end",
+          "sampled_frame_indices": [
+            181,
+            188,
+            196,
+            204,
+            212,
+            220,
+            228,
+            236,
+            243,
+            251,
+            259,
+            267,
+            275,
+            283,
+            291,
+            299
+          ],
+          "sampled_time_seconds": [
+            6.050139275766017,
+            6.284122562674095,
+            6.5515320334261835,
+            6.818941504178273,
+            7.086350974930362,
+            7.353760445682451,
+            7.62116991643454,
+            7.888579387186629,
+            8.122562674094707,
+            8.389972144846796,
+            8.657381615598885,
+            8.924791086350975,
+            9.192200557103064,
+            9.459610027855152,
+            9.727019498607241,
+            9.994428969359332
+          ],
+          "detectors": [
+            {
+              "detector": "aegis",
+              "ai_score": 0.9728975892066956,
+              "fusion_logit": 3.5806572437286377,
+              "pixel_score": 0.5329902172088623,
+              "motion_score": 0.7479252219200134,
+              "consistency_score": 0.9998883008956909,
+              "sampled_rgb_sha256": "a0f2787b4367cb56181acff636bdae03ec3d626b328f13b18843b03fe4f6612b",
+              "model_input_sha256": "aaeaa0a9128836005ba9a2035229c013a8d28d3f9d92d5b783abba0dd48beead",
+              "checkpoint_sha256": "7df233979f9d3ef340e101d0d635a4d074577d43e6d1591d677cde31f80e44ba",
+              "preprocessing": "16 RGB frames; linear resize to 224\u00d7224; ImageNet normalization; released fusion head"
+            },
+            {
+              "detector": "waverep",
+              "ai_score": 0.00019668620122556397,
+              "fusion_logit": -8.533704280853271,
+              "frame_logits": [
+                -9.083486557006836,
+                -9.388594627380371,
+                -8.923666000366211,
+                -7.801449298858643,
+                -7.938150882720947,
+                -8.818798065185547,
+                -8.691717147827148,
+                -8.641159057617188,
+                -8.822566032409668,
+                -7.278556823730469,
+                -8.645151138305664,
+                -8.244056701660156,
+                -8.850395202636719,
+                -7.742007255554199,
+                -9.182923316955566,
+                -8.486590385437012
+              ],
+              "sampled_rgb_sha256": "a0f2787b4367cb56181acff636bdae03ec3d626b328f13b18843b03fe4f6612b",
+              "model_input_sha256": "4e04dd8256c0e01a852cfd612ec3f01f2d0753a53304c63a75e585e9709926cf",
+              "checkpoint_sha256": "50d639049d928986ba7d69861a4fe4f3e7afbba1843e3e089cdf6b4748f53d5b",
+              "preprocessing": "16 RGB frames; 504\u00d7504 center crop with zero padding for smaller inputs; ImageNet normalization; sigmoid of mean frame logits; batch size 2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "video_id": "ai_01",
+      "label": "ai",
+      "input_sha256": "a1cec2a88fbebbdf0715c4f9aef359211e9bb55329cbaa22c3c0b1aa2f0f0a4d",
+      "metadata": {
+        "width": 480,
+        "height": 720,
+        "frames": 150,
+        "fps": 30.0
+      },
+      "centered_tensor_and_all_five_aegis_outputs_match_native_loader": true,
+      "both_centered_scores_logits_and_input_hashes_match_previous_smoke": true,
+      "windows": [
+        {
+          "section": "beginning",
+          "sampled_frame_indices": [
+            0,
+            7,
+            15,
+            23,
+            31,
+            39,
+            47,
+            55,
+            63,
+            71,
+            79,
+            87,
+            95,
+            103,
+            111,
+            119
+          ],
+          "sampled_time_seconds": [
+            0.0,
+            0.23333333333333334,
+            0.5,
+            0.7666666666666667,
+            1.0333333333333334,
+            1.3,
+            1.5666666666666667,
+            1.8333333333333333,
+            2.1,
+            2.3666666666666667,
+            2.6333333333333333,
+            2.9,
+            3.1666666666666665,
+            3.433333333333333,
+            3.7,
+            3.966666666666667
+          ],
+          "detectors": [
+            {
+              "detector": "aegis",
+              "ai_score": 0.9999638795852661,
+              "fusion_logit": 10.229187965393066,
+              "pixel_score": 0.9999788999557495,
+              "motion_score": 0.045601628720760345,
+              "consistency_score": 0.999911904335022,
+              "sampled_rgb_sha256": "1a71f225a552287f1927664a557a823417773d8084541a857d50fc541efa003a",
+              "model_input_sha256": "60511ca8b3a8a48d125fa5a6d2967237c7a5f6deec09eb58213b45f93bcb50f3",
+              "checkpoint_sha256": "7df233979f9d3ef340e101d0d635a4d074577d43e6d1591d677cde31f80e44ba",
+              "preprocessing": "16 RGB frames; linear resize to 224\u00d7224; ImageNet normalization; released fusion head"
+            },
+            {
+              "detector": "waverep",
+              "ai_score": 0.674500648906217,
+              "fusion_logit": 0.7286121696233749,
+              "frame_logits": [
+                4.571988105773926,
+                4.384124755859375,
+                3.3025970458984375,
+                1.9049360752105713,
+                5.168998718261719,
+                1.4879003763198853,
+                1.550778865814209,
+                2.1575403213500977,
+                1.7706111669540405,
+                4.831446647644043,
+                -3.6171369552612305,
+                -2.8917810916900635,
+                -2.5694029331207275,
+                -2.951343059539795,
+                -2.307945728302002,
+                -5.135517597198486
+              ],
+              "sampled_rgb_sha256": "1a71f225a552287f1927664a557a823417773d8084541a857d50fc541efa003a",
+              "model_input_sha256": "87019655c31e59e8ea7912ead32330ec57339016c0eca2cf7feba8dba662dffd",
+              "checkpoint_sha256": "50d639049d928986ba7d69861a4fe4f3e7afbba1843e3e089cdf6b4748f53d5b",
+              "preprocessing": "16 RGB frames; 504\u00d7504 center crop with zero padding for smaller inputs; ImageNet normalization; sigmoid of mean frame logits; batch size 2"
+            }
+          ]
+        },
+        {
+          "section": "middle",
+          "sampled_frame_indices": [
+            15,
+            22,
+            30,
+            38,
+            46,
+            54,
+            62,
+            70,
+            78,
+            86,
+            94,
+            102,
+            110,
+            118,
+            126,
+            134
+          ],
+          "sampled_time_seconds": [
+            0.5,
+            0.7333333333333333,
+            1.0,
+            1.2666666666666666,
+            1.5333333333333334,
+            1.8,
+            2.066666666666667,
+            2.3333333333333335,
+            2.6,
+            2.8666666666666667,
+            3.1333333333333333,
+            3.4,
+            3.6666666666666665,
+            3.933333333333333,
+            4.2,
+            4.466666666666667
+          ],
+          "detectors": [
+            {
+              "detector": "aegis",
+              "ai_score": 0.9999663829803467,
+              "fusion_logit": 10.301737785339355,
+              "pixel_score": 0.9999794960021973,
+              "motion_score": 0.042962606996297836,
+              "consistency_score": 0.9999070167541504,
+              "sampled_rgb_sha256": "f3b53b766c5312e5080bb8dc9621f8d71e16e3e0895595e6b8c9758af95dc6f6",
+              "model_input_sha256": "3a672d39594e34a06a22a89732d845a47a68211536aa1e7f1b153307ede54398",
+              "checkpoint_sha256": "7df233979f9d3ef340e101d0d635a4d074577d43e6d1591d677cde31f80e44ba",
+              "preprocessing": "16 RGB frames; linear resize to 224\u00d7224; ImageNet normalization; released fusion head"
+            },
+            {
+              "detector": "waverep",
+              "ai_score": 0.4913889940609453,
+              "fusion_logit": -0.034447429701685905,
+              "frame_logits": [
+                3.3025970458984375,
+                3.2884819507598877,
+                4.974582672119141,
+                -4.5820746421813965,
+                1.3342317342758179,
+                0.045674026012420654,
+                -1.4947395324707031,
+                1.1675255298614502,
+                -2.030457019805908,
+                -4.85132360458374,
+                -0.09519949555397034,
+                -1.045518398284912,
+                -2.4704341888427734,
+                -2.1709201335906982,
+                1.0320664644241333,
+                3.04434871673584
+              ],
+              "sampled_rgb_sha256": "f3b53b766c5312e5080bb8dc9621f8d71e16e3e0895595e6b8c9758af95dc6f6",
+              "model_input_sha256": "783a252f7d453e4209f6914479c8c2aff078c417be22203729f8eade3f58b2dd",
+              "checkpoint_sha256": "50d639049d928986ba7d69861a4fe4f3e7afbba1843e3e089cdf6b4748f53d5b",
+              "preprocessing": "16 RGB frames; 504\u00d7504 center crop with zero padding for smaller inputs; ImageNet normalization; sigmoid of mean frame logits; batch size 2"
+            }
+          ]
+        },
+        {
+          "section": "end",
+          "sampled_frame_indices": [
+            30,
+            37,
+            45,
+            53,
+            61,
+            69,
+            77,
+            85,
+            93,
+            101,
+            109,
+            117,
+            125,
+            133,
+            141,
+            149
+          ],
+          "sampled_time_seconds": [
+            1.0,
+            1.2333333333333334,
+            1.5,
+            1.7666666666666666,
+            2.033333333333333,
+            2.3,
+            2.566666666666667,
+            2.8333333333333335,
+            3.1,
+            3.3666666666666667,
+            3.6333333333333333,
+            3.9,
+            4.166666666666667,
+            4.433333333333334,
+            4.7,
+            4.966666666666667
+          ],
+          "detectors": [
+            {
+              "detector": "aegis",
+              "ai_score": 0.9999711513519287,
+              "fusion_logit": 10.455477714538574,
+              "pixel_score": 0.9999799728393555,
+              "motion_score": 0.04107282683253288,
+              "consistency_score": 0.9999146461486816,
+              "sampled_rgb_sha256": "e11dec592e0b12e86b32f747e7d3832ea1b637cd9f837bb1844fcda9ab2ea042",
+              "model_input_sha256": "f26454ef9d6fd2fb66811c9fde47cc88a57cec4999a6d691f100ea438e68ce75",
+              "checkpoint_sha256": "7df233979f9d3ef340e101d0d635a4d074577d43e6d1591d677cde31f80e44ba",
+              "preprocessing": "16 RGB frames; linear resize to 224\u00d7224; ImageNet normalization; released fusion head"
+            },
+            {
+              "detector": "waverep",
+              "ai_score": 0.49107208265485075,
+              "fusion_logit": -0.03571546543389559,
+              "frame_logits": [
+                4.974582672119141,
+                0.4733673930168152,
+                2.5155534744262695,
+                0.900155246257782,
+                4.647165298461914,
+                0.7638583183288574,
+                1.354567289352417,
+                -4.501160621643066,
+                0.020355582237243652,
+                -0.15342114865779877,
+                -1.0032485723495483,
+                -0.7295024991035461,
+                0.5497824549674988,
+                -0.4066070020198822,
+                -3.6121129989624023,
+                -6.364782333374023
+              ],
+              "sampled_rgb_sha256": "e11dec592e0b12e86b32f747e7d3832ea1b637cd9f837bb1844fcda9ab2ea042",
+              "model_input_sha256": "9ed4ba5a5509e34e4fb52977b5b6ba1ff0262a052e4920765e8b50badfe6813c",
+              "checkpoint_sha256": "50d639049d928986ba7d69861a4fe4f3e7afbba1843e3e089cdf6b4748f53d5b",
+              "preprocessing": "16 RGB frames; 504\u00d7504 center crop with zero padding for smaller inputs; ImageNet normalization; sigmoid of mean frame logits; batch size 2"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "code_sha256": {
+    "src/vidrobust/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/vidrobust/artifacts.py": "675011cd1c4f9d0f88b9ecc2b00e21811c1081308c0748a4e9bb3c63f748b237",
+    "src/vidrobust/cli.py": "22132dac9fa6bef4ee93d2efc7435c7f0178b8bca8dce4467646503ee1825d5d",
+    "src/vidrobust/demo.py": "e6eeb68614ba4d5f6c84f5eac557db6b67f46f94e9814d7cff21ff448241b1ae",
+    "src/vidrobust/detectors.py": "008d9ee078d5f2b002e95ea2bb10292a45a77c90f4e8af0b3ba562e8e5460dbc",
+    "src/vidrobust/experiment.py": "2b72ff1c262ec16efd62c3ae3277e5a62c7d2ece2b1b73cb3ec3a5e9de203013",
+    "src/vidrobust/experiment_report.py": "bf69d08bc5a0d8acdf13abfe5b313d8b9b84e05f7782c3d0609cc9082a87b7f5",
+    "src/vidrobust/frame_scoring.py": "094a76d885165ab4353bb31c90880b8c4b6c8a68690b0ed8a63208d2e9370707",
+    "src/vidrobust/inference.py": "52494d0edcc2ae8359faafa75f0b25e976f1f658df2073e7a67eddf3470a0157",
+    "src/vidrobust/media.py": "e74f4003acaa52e94368ee9bcefc967d7dae050c4e3a5ed9c29421c753a8a237",
+    "src/vidrobust/registry.py": "73172d25f30510c2610f1193ac3c28af48d764a679252424ce5cbdfec7f6ab8b",
+    "src/vidrobust/adapters/__init__.py": "fb3d517f42e6e4b8baaa794a03e545b0bd97f0818ba73ac3db09b1e6ab645a42",
+    "src/vidrobust/adapters/aegis.py": "cb750d6fcf20801e95761f9e62ed288863b7c2b1db805a082f920dd89e8ccac7",
+    "src/vidrobust/adapters/waverep.py": "5d1db1890e45cf08d2ccc4456dedaf343bc7e0534d7b0c90e84fe236c5027394",
+    "demo.py": "75574bd007642abf7e499e83dd25c28a0b03205dbddd0e8b84f24a73b8de222d",
+    "run.py": "2d58e1aaddeb377b11e8e584838164e3f39387baffd29b73a7ab72d78ebb1857",
+    "pyproject.toml": "ee49626c2337e98f0468f1b8382a2498042cfd9c511d91fe734b554b2d82b462",
+    "uv.lock": "8c315de149249ff53344c54adc3d5944633139f98cf8dc1af1846410f58c734f",
+    "scripts/verify_demo.py": "6470158cbc0dd56071bd57f35c718f36eedcbd68a160d72ceae87220ef3db9e9"
+  },
+  "limits": "Two previously scored public clips. Confirms implementation parity, not detection accuracy or an explanation of the user's uploaded clip."
+}

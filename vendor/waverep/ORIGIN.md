@@ -8,7 +8,7 @@ Forensic-Oriented Augmentation,” NeurIPS 2025.
 Source: https://github.com/grip-unina/WaveRep-SyntheticVideoDetection
 Pinned revision: `0fd6010759c14b572b7842a28fa9f85fe1ddd2fd`.
 
-`src/vidrobust/waverep.py` adapts the architecture, torchvision transform and
+`src/vidrobust/adapters/waverep.py` adapts the architecture, torchvision transform and
 mean-frame-logit aggregation in `demo/utils.py` and `demo/main_avideo.py`.
 It disables the unnecessary backbone download (the full checkpoint supplies it),
 uses strict safe checkpoint loading, CPU batches of two, and the same sparse

@@ -21,6 +21,20 @@ Higher scores mean more AI-like. These are small-sample results; 0.5 is a refere
 
 Requires Python 3.11 and [uv](https://docs.astral.sh/uv/).
 
+To check your own video in a local browser demo:
+
+```sh
+uv sync --locked --extra demo
+uv run --extra demo python run.py demo
+```
+
+Open **http://127.0.0.1:8501**, upload a short video and click **Check video**.
+Optional three-section checking shows beginning, middle and end scores, plus AEGIS component scores.
+Uploads are processed locally; temporary video files are deleted after each check.
+The demo shows uncalibrated scores, not an authenticity verdict. [Demo guide](docs/demo.md)
+
+To reproduce the experiments:
+
 ```sh
 uv sync --locked
 uv run python run.py experiment configs/experiments/smoke.json
@@ -55,7 +69,7 @@ config + pinned sources → prepare variants → detector adapters → paired sc
 - `adapters/` + `registry.py`: model adapters, discovered automatically
 - `experiment_report.py`: one output format for every config
 
-**31 tests** cover input checks, paired analysis, registry extensions and historical commands. GitHub Actions runs the tests and validates both configs.
+**43 tests** cover input checks, paired analysis, registry extensions, uploads, section sampling and historical commands. GitHub Actions includes the demo tests and validates both configs.
 Historical studies and their report code live in `src/vidrobust/legacy/`.
 
 [Config guide and technical choices](docs/experiments.md) · [Methodology](docs/methodology.md) · [Earlier experiments](docs/experiment-history.md)

@@ -24,7 +24,7 @@ jobs:
           python-version: '3.11'
           enable-cache: false
       - name: Install locked dependencies
-        run: uv sync --locked --no-cache
+        run: uv sync --locked --extra demo --no-cache
       - name: Run tests (no pretrained weights or dataset downloads)
         run: uv run --no-sync python run.py check
       - name: Validate smoke config

@@ -17,7 +17,7 @@ LEGACY_COMMANDS = {
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("command", choices=["experiment", "check", *LEGACY_COMMANDS])
+    parser.add_argument("command", choices=["experiment", "demo", "check", *LEGACY_COMMANDS])
     parser.add_argument("config", nargs="?", help="Experiment config, relative to the repository root")
     parser.add_argument("--dry-run", action="store_true", help="Validate config and counts without downloads or inference")
     args = parser.parse_args()
@@ -31,6 +31,15 @@ def main():
             print(json.dumps(experiment_plan(ROOT, args.config), indent=2))
         else:
             run_experiment(ROOT, args.config)
+    elif args.command == "demo":
+        import importlib.util
+        import subprocess
+        import sys
+        if importlib.util.find_spec("streamlit") is None:
+            parser.error("Install the demo with: uv sync --locked --extra demo")
+        raise SystemExit(subprocess.call([sys.executable, "-m", "streamlit", "run", str(ROOT / "demo.py"),
+            "--server.address=127.0.0.1", "--server.headless=true", "--server.maxUploadSize=100",
+            "--browser.gatherUsageStats=false"], cwd=ROOT))
     elif args.command == "check":
         import unittest
         suite = unittest.defaultTestLoader.discover(str(ROOT / "tests"))
