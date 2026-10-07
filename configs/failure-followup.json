@@ -1,0 +1,42 @@
+{
+  "experiment": "failure-followup-v1",
+  "parent_manifest": "configs/controlled.json",
+  "parent_manifest_sha256": "ba0d1d49e7aae666207321bd7462770b681e6f475f8d5560f43eea7629e67674",
+  "parent_run_sha256": "d7b78491b86289da5a564018da11a842af7618421f29405a35858a75cc06e769",
+  "parent_scores_sha256": "eac0de2fb4c5cd0d6d0adf71871a7f7c12b30c5b00f601b9cebd0518283f036a",
+  "clips": [
+    {
+      "id": "controlled_real_animal_01",
+      "selection_reason": "Shared real-kitten midpoint conflict in the preceding panel"
+    },
+    {
+      "id": "controlled_real_animal_04",
+      "selection_reason": "First selected horse: low-score real comparison with the same native size and FPS as the kitten"
+    },
+    {
+      "id": "controlled_ai_animal_02",
+      "selection_reason": "Largest WaveRep compression drop within the AI-animal cell"
+    },
+    {
+      "id": "controlled_ai_non_animal_03",
+      "selection_reason": "Largest WaveRep compression drop within the AI-non-animal cell"
+    }
+  ],
+  "crfs": [
+    18,
+    23,
+    28,
+    35
+  ],
+  "new_cases": [
+    "original",
+    "crf_23",
+    "crf_28"
+  ],
+  "prior_endpoints": {
+    "crf_18": "baseline",
+    "crf_35": "compression"
+  },
+  "midpoint": 0.5,
+  "large_change": 0.1
+}
