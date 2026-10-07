@@ -6,6 +6,7 @@
   "geometry_timing_and_frame_indices": "passed",
   "complete_case_matrix": "passed",
   "identical_bytes_and_RGB_between_detectors": "passed",
+  "config_and_code_unchanged_during_inference": "passed",
   "published_reference_parity": {
     "reference": "reports/two-detectors/scores.csv",
     "reference_sha256": "e6fb826e907bab26513f54eb79269ae2cb0a0ce67187f5bbae52ba539958e9dc",

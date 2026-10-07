@@ -60,9 +60,14 @@ Higher scores mean more AI-like. Scores are uncalibrated; 0.5 is a fixed referen
 
 ## Run details
 
-Every variant starts independently from the source or the common lossless master. Models receive the same decoded RGB frames, with their own native preprocessing. WaveRep averages 16 frame logits before applying sigmoid; AEGIS uses its released fusion head. Inference runs on CPU with four threads. Configs and source manifests must be committed before scoring.
+Every variant starts independently from the source or the common lossless master. Models receive the same decoded RGB frames, with their own native preprocessing. Inference runs on CPU with four threads. Configs and source manifests must be committed before scoring.
 
 These clips measure score changes, not general detector accuracy. Labels come from the dataset. Source quality and training overlap are unknown. Common preparation changes geometry and can change sampled physical frames; comparisons within the prepared variants keep those choices fixed.
+
+| Adapter | Native preprocessing and aggregation |
+|---|---|
+| aegis | 16 RGB frames; linear resize to 224×224; ImageNet normalization; released fusion head |
+| waverep | 16 RGB frames; 504×504 center crop with zero padding for smaller inputs; ImageNet normalization; sigmoid of mean frame logits; batch size 2 |
 
 Two existing discovery clips check the pipeline. They are selected for a quick run and are not new evaluation data. Resize/crop also include encoding; compare them with the encode-only control.
 

@@ -29,8 +29,9 @@ repeatability across other clips is still open.
 | Fixed-frame check | [Report](../reports/kitten-isolation/report.md) · [Controls](../configs/kitten-isolation-selection.md) | `run.py isolate` |
 
 Run these with `uv run python` after `uv sync --locked`. The old commands remain
-available to reproduce the published studies. The new compression config
-reproduces the common-preparation panel through the shared runner.
+available from `src/vidrobust/legacy/` to reproduce the published studies. The new compression config
+extends the common-preparation panel to resize and crop: 160 scores on the same 20 clips.
+The [original shared-runner outputs](../reports/archive/compression-v1/report.md) are preserved.
 
 Each report keeps its full numerical outputs and validation. See
 [methodology](methodology.md) for sampling, preprocessing and measurement limits.

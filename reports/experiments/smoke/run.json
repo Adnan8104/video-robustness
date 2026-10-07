@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-10-07T19:06:33.767332+00:00",
+  "created_at_utc": "2026-10-07T19:56:18.274312+00:00",
   "config": {
     "schema_version": 1,
     "name": "smoke",
@@ -49,6 +49,30 @@
     "notes": "Two existing discovery clips check the pipeline. They are selected for a quick run and are not new evaluation data. Resize/crop also include encoding; compare them with the encode-only control."
   },
   "config_path": "configs/experiments/smoke.json",
+  "models": {
+    "aegis": {
+      "adapter": "vidrobust.adapters.aegis.AegisDetector",
+      "code_path": "src/vidrobust/adapters/aegis.py",
+      "checkpoint": {
+        "path": "models/checkpoint_best.pt",
+        "sha256": "7df233979f9d3ef340e101d0d635a4d074577d43e6d1591d677cde31f80e44ba",
+        "revision": "95b71346cec650165e6ad3fb20ed9e80f4b6702a",
+        "url": "https://huggingface.co/MusapYildiz/aegis-video-detector/resolve/95b71346cec650165e6ad3fb20ed9e80f4b6702a/checkpoint_best.pt"
+      },
+      "preprocessing": "16 RGB frames; linear resize to 224\u00d7224; ImageNet normalization; released fusion head"
+    },
+    "waverep": {
+      "adapter": "vidrobust.adapters.waverep.WaveRepDetector",
+      "code_path": "src/vidrobust/adapters/waverep.py",
+      "checkpoint": {
+        "path": "models/weights_dinov2_G4.ckpt",
+        "sha256": "50d639049d928986ba7d69861a4fe4f3e7afbba1843e3e089cdf6b4748f53d5b",
+        "url": "https://www.grip.unina.it/download/prog/WaveRep_SynthVideoDet/weights_dinov2_G4.ckpt",
+        "revision": "0fd6010759c14b572b7842a28fa9f85fe1ddd2fd"
+      },
+      "preprocessing": "16 RGB frames; 504\u00d7504 center crop with zero padding for smaller inputs; ImageNet normalization; sigmoid of mean frame logits; batch size 2"
+    }
+  },
   "config_sha256": "262aef5546604e0dd46610867b3a835b25a544da2323de2b74db5300a1cc3f0d",
   "manifest_sha256": "7fd318d7bcc81f9579ebe593e54872c75900eefdf25c929ce89c72c8e714fb42",
   "frozen_commits": {
@@ -56,14 +80,18 @@
     "configs/samples.json": "001190d44b82acae012afc337574ce291bf1c6ef"
   },
   "code_sha256": {
-    "src/vidrobust/experiment.py": "df9a083655d91320cbe85fb3feb0b36f00c7297d62491f2771d7e1fc4683c805",
-    "src/vidrobust/media.py": "37028c4fe3a3871f5de1e0c6350bc0d6509ccb14d31c20b9e7c52b88b3d43ff4",
-    "src/vidrobust/experiment_report.py": "e41975b5b554d95dd9cc23abf2fa8a5012a83c624ebab5018d45e1ab5d739f36",
-    "src/vidrobust/frame_scoring.py": "83762959afe75605a6c3d335d688bc5809d3d5759eb0c4444ffba26e7717d436",
-    "src/vidrobust/detectors.py": "9c47ae384c9a2ca2735e30b5df854a74df7d17ec564cea4a3d35558d20e05dd8",
-    "src/vidrobust/waverep.py": "5ae87a2cd3136cd5ee5e26eff654993067fe9156212987b7974920432d8f32aa",
-    "src/vidrobust/cli.py": "350cd8f3ce97c4116759220d9f6c4e8638d9dc9a06cebcdb0f9e997d30063ca3",
-    "src/vidrobust/diagnostics.py": "56e2ef36d74b61361b29ab192c9b3eba1853d4e1f5479438509908e841e71e3b",
+    "src/vidrobust/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/vidrobust/adapters/__init__.py": "fb3d517f42e6e4b8baaa794a03e545b0bd97f0818ba73ac3db09b1e6ab645a42",
+    "src/vidrobust/adapters/aegis.py": "cb750d6fcf20801e95761f9e62ed288863b7c2b1db805a082f920dd89e8ccac7",
+    "src/vidrobust/adapters/waverep.py": "5d1db1890e45cf08d2ccc4456dedaf343bc7e0534d7b0c90e84fe236c5027394",
+    "src/vidrobust/artifacts.py": "675011cd1c4f9d0f88b9ecc2b00e21811c1081308c0748a4e9bb3c63f748b237",
+    "src/vidrobust/cli.py": "38648e10704efa75d776aa6e020d4f22c6df5da0d954080db0213a6b55154bd0",
+    "src/vidrobust/detectors.py": "008d9ee078d5f2b002e95ea2bb10292a45a77c90f4e8af0b3ba562e8e5460dbc",
+    "src/vidrobust/experiment.py": "2b72ff1c262ec16efd62c3ae3277e5a62c7d2ece2b1b73cb3ec3a5e9de203013",
+    "src/vidrobust/experiment_report.py": "bf69d08bc5a0d8acdf13abfe5b313d8b9b84e05f7782c3d0609cc9082a87b7f5",
+    "src/vidrobust/frame_scoring.py": "094a76d885165ab4353bb31c90880b8c4b6c8a68690b0ed8a63208d2e9370707",
+    "src/vidrobust/media.py": "e74f4003acaa52e94368ee9bcefc967d7dae050c4e3a5ed9c29421c753a8a237",
+    "src/vidrobust/registry.py": "73172d25f30510c2610f1193ac3c28af48d764a679252424ce5cbdfec7f6ab8b",
     "vendor/aegis/consistency_branch.py": "bc0687fdc835037e18bafe28a80511e23fdc4f8c0603171a3c4897057b5c434b",
     "vendor/aegis/detector_model.py": "bdfcfddba6dfe305f462d0a094b28314ea208b2f4b7fa119978fd226d88f05a6",
     "vendor/aegis/motion_branch.py": "5d809994c1597bcfc2a7c7cdf59faa1da15ba87b0701df1ab580ce138a3d7c34",
@@ -84,13 +112,11 @@
     "aegis": "7df233979f9d3ef340e101d0d635a4d074577d43e6d1591d677cde31f80e44ba",
     "waverep": "50d639049d928986ba7d69861a4fe4f3e7afbba1843e3e089cdf6b4748f53d5b"
   },
-  "aegis_model_revision": "95b71346cec650165e6ad3fb20ed9e80f4b6702a",
   "ffmpeg": "7.1",
   "device": "cpu",
   "threads": 4,
   "seed": 0,
   "deterministic_algorithms": true,
-  "waverep_frame_batch": 2,
   "preparation": [
     {
       "video_id": "real_01",
@@ -288,9 +314,5 @@
         ""
       ]
     }
-  ],
-  "report_layout_update": {
-    "original_renderer_sha256": "4b43701199c79faa2d00e54dcd61cc28974eccd833a4fe89f2d0784b27c8221d",
-    "reason": "Move chart legends outside data; scores were not recomputed"
-  }
+  ]
 }

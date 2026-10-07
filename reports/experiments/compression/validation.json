@@ -1,11 +1,12 @@
 {
   "source_clips": 20,
-  "paired_cases": 40,
-  "model_scores": 80,
+  "paired_cases": 80,
+  "model_scores": 160,
   "source_hashes_and_full_decode": "passed",
   "geometry_timing_and_frame_indices": "passed",
   "complete_case_matrix": "passed",
   "identical_bytes_and_RGB_between_detectors": "passed",
+  "config_and_code_unchanged_during_inference": "passed",
   "published_reference_parity": {
     "reference": "reports/controlled/scores.csv",
     "reference_sha256": "eac0de2fb4c5cd0d6d0adf71871a7f7c12b30c5b00f601b9cebd0518283f036a",
@@ -29,5 +30,112 @@
     ],
     "independent_CSV_analysis": "passed",
     "scored_media_and_model_and_code_hashes": "passed"
-  }
+  },
+  "fresh_model_repeat_selection": {
+    "variants": [
+      "half_resize",
+      "center_crop_80"
+    ],
+    "rule": "All selected-variant midpoint crossings plus the largest absolute change per detector and label; baseline included; cases deduplicated"
+  },
+  "fresh_model_repeats": [
+    {
+      "detector": "aegis",
+      "video_id": "controlled_real_animal_01",
+      "variant": "baseline",
+      "ai_score": 0.9999672174453735,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "aegis",
+      "video_id": "controlled_real_animal_01",
+      "variant": "center_crop_80",
+      "ai_score": 0.002365225926041603,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "aegis",
+      "video_id": "controlled_real_animal_02",
+      "variant": "baseline",
+      "ai_score": 0.0005066823214292526,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "aegis",
+      "video_id": "controlled_real_animal_02",
+      "variant": "half_resize",
+      "ai_score": 0.8385845422744751,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "aegis",
+      "video_id": "controlled_ai_animal_01",
+      "variant": "baseline",
+      "ai_score": 0.9994638562202454,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "aegis",
+      "video_id": "controlled_ai_animal_01",
+      "variant": "center_crop_80",
+      "ai_score": 0.9765532612800598,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "waverep",
+      "video_id": "controlled_ai_animal_02",
+      "variant": "baseline",
+      "ai_score": 0.9962799772961752,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "waverep",
+      "video_id": "controlled_ai_animal_02",
+      "variant": "half_resize",
+      "ai_score": 0.4875661482265371,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "waverep",
+      "video_id": "controlled_ai_non_animal_03",
+      "variant": "baseline",
+      "ai_score": 0.9898970487425781,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "waverep",
+      "video_id": "controlled_ai_non_animal_03",
+      "variant": "half_resize",
+      "ai_score": 0.190007661804665,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "waverep",
+      "video_id": "controlled_ai_non_animal_03",
+      "variant": "center_crop_80",
+      "ai_score": 0.47568916265816313,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "waverep",
+      "video_id": "controlled_real_animal_01",
+      "variant": "baseline",
+      "ai_score": 0.7320824872868131,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "waverep",
+      "video_id": "controlled_real_animal_01",
+      "variant": "half_resize",
+      "ai_score": 0.3741549215568054,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "waverep",
+      "video_id": "controlled_real_animal_01",
+      "variant": "center_crop_80",
+      "ai_score": 0.0336716036616863,
+      "all_outputs_and_input_hashes_exact_match": true
+    }
+  ]
 }

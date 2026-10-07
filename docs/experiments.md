@@ -16,7 +16,7 @@ uv run python run.py experiment configs/experiments/compression.json --dry-run
 | `manifest` | Existing JSON source list with pinned dataset revisions and SHA256 hashes. Relative paths start at the repository root. |
 | `sample_ids` | Optional ordered subset of the manifest. Omit to use every clip. |
 | `source_directory` | Local download cache under `data/`. A matching hash allows reuse. |
-| `detectors` | `aegis`, `waverep`, or both. Models load one at a time to limit memory. |
+| `detectors` | Registered adapter names (currently `aegis` and `waverep`). Models load one at a time to limit memory. |
 | `preparation` | `native` preserves source geometry/timing. `centered_4s_504_24fps` creates a common lossless 504×504, 96-frame master. |
 | `variants` | Named transforms and encoding settings. Each starts independently from the source or common master. |
 | `baseline` | Variant used for score deltas and midpoint crossings. |
@@ -69,26 +69,88 @@ Outputs: `scores.csv`, `summary.json`, `run.json`, `validation.json`, `pairs.png
 
 The old commands still reproduce their published studies. Their modules retain
 special controls, cached-score checks and report layouts used for those experiments.
+These modules live in `src/vidrobust/legacy/`; shared decoding and artifact helpers live in the core.
 The shared runner is the default for new paired experiments. It handles native edits
-and common-preparation compression; it does not replace the diagnostic frame-tracing study.
+and all three edits after common preparation; it does not replace the diagnostic frame-tracing study.
 See [experiment history](experiment-history.md) for those results and commands.
 
-A future VidAudit integration belongs at the detector/score boundary. It has not
-been implemented. A new detector needs an adapter and registration in the shared
-runner; the media and report stages can stay the same.
+## Add a detector
+
+Create a module under `src/vidrobust/adapters/` and decorate its class with
+`@register("your_detector")` from `vidrobust.registry`. Discovery imports the
+adapter modules but does not load checkpoints. The registered name becomes valid
+in configs without editing the runner, config validator or report.
+
+The class follows the [detector contract](../src/vidrobust/detectors.py):
+
+- `checkpoint`: dictionary with `path` under `models/`, an HTTPS `url`, and a SHA256; include an upstream revision where available.
+- `preprocessing`: a short description recorded in the report.
+- `__init__(root)`: load the verified trained checkpoint and set evaluation mode.
+- `prepare_frames(frames)`: convert the 16 RGB arrays into the native normalized PyTorch tensor.
+- `predict(tensor)`: return numeric outputs including `ai_score` in [0,1]; include logits where available.
+
+The registry downloads/verifies the checkpoint before initialization. The shared
+scorer runs inference mode, checks finite outputs, and hashes the RGB frames and
+model tensor. Duplicate registrations and invalid checkpoint paths are rejected.
+Adapters must use deterministic CPU settings (four threads and seed 0), preserve
+their released preprocessing, and retain upstream attribution and licenses.
+The AEGIS and WaveRep adapters are working examples. Tests use a clearly marked
+fixture adapter to check extension points; fixture scores are not benchmark results.
+
+## All-edit panel
+
+`compression.json` now contains four conditions on the same 20 selected clips:
+CRF 18 baseline, CRF 35 compression, half-size resize at CRF 18, and an 80% center
+crop at CRF 18. All start independently from the same prepared lossless master.
+The panel produces 160 scores and keeps the original source selection unchanged.
+The added edits are follow-ups on that panel, not a fresh holdout.
+
+Resize produces 252×252 frames; crop produces 402×402 frames. WaveRep adds zero
+padding to reach 504×504. AEGIS still resizes to 224×224. These results measure
+each complete input pipeline, including padding and re-encoding, rather than
+isolated geometric effects. The fixed-frame kitten study uses separate lossless
+controls and remains a supporting diagnostic case.
+
+The full `pairs.png` chart shows every edit. `compression-pairs.png` is a focused
+pair from the same run and is used in the README. The previous 80-score shared
+run is preserved in [compression-v1](../reports/archive/compression-v1/report.md),
+and the earlier smoke run in [smoke-v1](../reports/archive/smoke-v1/report.md).
+Their `run.json` files retain the original config, code hashes and frozen commit;
+use the recorded Git revision to reproduce those historical versions.
+
+## Continuous integration
+
+[GitHub Actions](https://github.com/Adnan8104/video-robustness/actions/workflows/ci.yml)
+installs locked dependencies on Python 3.11, runs the test suite, then validates
+both configs with `--dry-run`. It does not download dataset media or pretrained
+weights. Tests create small synthetic videos locally. The workflow follows
+[uv's official integration guide](https://docs.astral.sh/uv/guides/integration/github/)
+and pins its setup actions to commit hashes.
 
 ## Refactor checks
 
 The shared-runner smoke test is compared with the published two-detector CSV;
 the compression run is compared with the published common-preparation CSV.
+The compression reference comparison checks the original baseline/compression subset; the full 160-row matrix is validated separately.
 The checks require exact input hashes, scores, recorded frame lists and available
 branch/frame logits. They also recompute summaries from the saved CSV and verify
 local media, checkpoint and code hashes.
 
 ```sh
 uv run python scripts/verify_experiment.py configs/experiments/smoke.json reports/two-detectors/scores.csv
-uv run python scripts/verify_experiment.py configs/experiments/compression.json reports/controlled/scores.csv
+uv run python scripts/verify_experiment.py configs/experiments/compression.json reports/controlled/scores.csv --variants baseline compression
 ```
 
 These are regression checks against existing clips, not additional evaluation data.
 Results are saved in each run's `validation.json`.
+
+Repeat the added-edit midpoint crossings and the largest absolute change per
+model and label with freshly loaded models:
+
+```sh
+uv run python scripts/repeat_experiment.py configs/experiments/compression.json --variants half_resize center_crop_80
+```
+
+The script repeats each selected baseline/edit pair, checks every numeric output
+and RGB/model-tensor hash, and records the checks in `validation.json`. This is a
+diagnostic repeat of selected results, not a new evaluation sample.

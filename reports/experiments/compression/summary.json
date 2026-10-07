@@ -67,6 +67,86 @@
         "midpoint_conflicts": 0,
         "midpoint_crossings": []
       }
+    },
+    "half_resize": {
+      "ai_animal": {
+        "n": 5,
+        "median_delta": 1.3589859008789062e-05,
+        "median_absolute_delta": 1.3589859008789062e-05,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      },
+      "ai_non_animal": {
+        "n": 5,
+        "median_delta": 7.87973403930664e-05,
+        "median_absolute_delta": 7.87973403930664e-05,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      },
+      "real_animal": {
+        "n": 5,
+        "median_delta": 7.06971732142847e-05,
+        "median_absolute_delta": 9.381771087646484e-05,
+        "changes_at_least_point10": 1,
+        "midpoint_conflicts": 2,
+        "midpoint_crossings": [
+          {
+            "video_id": "controlled_real_animal_02",
+            "baseline": 0.0005066823214292526,
+            "score": 0.8385845422744751
+          }
+        ]
+      },
+      "real_non_animal": {
+        "n": 5,
+        "median_delta": 0.00018839545373339206,
+        "median_absolute_delta": 0.00018839545373339206,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      }
+    },
+    "center_crop_80": {
+      "ai_animal": {
+        "n": 5,
+        "median_delta": -1.0251998901367188e-05,
+        "median_absolute_delta": 1.0251998901367188e-05,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      },
+      "ai_non_animal": {
+        "n": 5,
+        "median_delta": -0.00014895200729370117,
+        "median_absolute_delta": 0.00014895200729370117,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      },
+      "real_animal": {
+        "n": 5,
+        "median_delta": -0.00012730949674732983,
+        "median_absolute_delta": 0.00012730949674732983,
+        "changes_at_least_point10": 1,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": [
+          {
+            "video_id": "controlled_real_animal_01",
+            "baseline": 0.9999672174453735,
+            "score": 0.002365225926041603
+          }
+        ]
+      },
+      "real_non_animal": {
+        "n": 5,
+        "median_delta": -4.319922300055623e-05,
+        "median_absolute_delta": 4.319922300055623e-05,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      }
     }
   },
   "waverep": {
@@ -160,6 +240,104 @@
         "n": 5,
         "median_delta": -0.005177466787890616,
         "median_absolute_delta": 0.005177466787890616,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      }
+    },
+    "half_resize": {
+      "ai_animal": {
+        "n": 5,
+        "median_delta": -0.0853068620600775,
+        "median_absolute_delta": 0.0853068620600775,
+        "changes_at_least_point10": 2,
+        "midpoint_conflicts": 3,
+        "midpoint_crossings": [
+          {
+            "video_id": "controlled_ai_animal_02",
+            "baseline": 0.9962799772961752,
+            "score": 0.4875661482265371
+          }
+        ]
+      },
+      "ai_non_animal": {
+        "n": 5,
+        "median_delta": -0.1457806204767299,
+        "median_absolute_delta": 0.1457806204767299,
+        "changes_at_least_point10": 3,
+        "midpoint_conflicts": 3,
+        "midpoint_crossings": [
+          {
+            "video_id": "controlled_ai_non_animal_03",
+            "baseline": 0.9898970487425781,
+            "score": 0.190007661804665
+          }
+        ]
+      },
+      "real_animal": {
+        "n": 5,
+        "median_delta": 0.009706827782518078,
+        "median_absolute_delta": 0.06108159638003843,
+        "changes_at_least_point10": 1,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": [
+          {
+            "video_id": "controlled_real_animal_01",
+            "baseline": 0.7320824872868131,
+            "score": 0.3741549215568054
+          }
+        ]
+      },
+      "real_non_animal": {
+        "n": 5,
+        "median_delta": 0.06538902376934233,
+        "median_absolute_delta": 0.06538902376934233,
+        "changes_at_least_point10": 2,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      }
+    },
+    "center_crop_80": {
+      "ai_animal": {
+        "n": 5,
+        "median_delta": -0.07167691701596574,
+        "median_absolute_delta": 0.07167691701596574,
+        "changes_at_least_point10": 2,
+        "midpoint_conflicts": 2,
+        "midpoint_crossings": []
+      },
+      "ai_non_animal": {
+        "n": 5,
+        "median_delta": -0.05676828376877327,
+        "median_absolute_delta": 0.05676828376877327,
+        "changes_at_least_point10": 2,
+        "midpoint_conflicts": 3,
+        "midpoint_crossings": [
+          {
+            "video_id": "controlled_ai_non_animal_03",
+            "baseline": 0.9898970487425781,
+            "score": 0.47568916265816313
+          }
+        ]
+      },
+      "real_animal": {
+        "n": 5,
+        "median_delta": -0.0003959481592635901,
+        "median_absolute_delta": 0.00046093132002418406,
+        "changes_at_least_point10": 1,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": [
+          {
+            "video_id": "controlled_real_animal_01",
+            "baseline": 0.7320824872868131,
+            "score": 0.0336716036616863
+          }
+        ]
+      },
+      "real_non_animal": {
+        "n": 5,
+        "median_delta": -0.003611933794819276,
+        "median_absolute_delta": 0.003611933794819276,
         "changes_at_least_point10": 0,
         "midpoint_conflicts": 0,
         "midpoint_crossings": []

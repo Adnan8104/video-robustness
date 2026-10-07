@@ -1,18 +1,21 @@
 # Video Robustness
 
+[![Tests](https://github.com/Adnan8104/video-robustness/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Adnan8104/video-robustness/actions/workflows/ci.yml)
+
 Tests how compression, resizing and cropping change pretrained AI-video detector scores.
 Two models: **AEGIS** and **WaveRep**. Runs on CPU; no training required.
 
 ## Key findings
 
 - **Compression weakened WaveRep's AI signal.** On a 20-clip panel, generated clips below 0.5 rose from **4/10 to 9/10** after stronger compression.
-- **The models responded differently.** WaveRep scores changed by at least 0.10 on **9/10 generated clips**. AEGIS had **0/20** changes that large across the panel.
+- **The models responded differently under compression.** WaveRep scores changed by at least 0.10 on **9/10 generated clips**. AEGIS had **0/20** changes that large in the compression pair.
 - **Failures started before the strongest compression.** On two selected AI clips, WaveRep crossed below 0.5 between CRF **23–28** (elephant) and **18–23** (sunset scene).
+- **Edits can push real footage toward AI.** Half-size resize moved AEGIS’s real-elephant score **0.0005 → 0.839**. A separate [fixed-frame kitten check](reports/kitten-isolation/report.md) found crop-triggered AEGIS and resize-triggered WaveRep flips too.
 
-![AEGIS and WaveRep scores before and after compression](reports/controlled/compression-pairs.png)
+![AEGIS and WaveRep scores before and after compression](reports/experiments/compression/compression-pairs.png)
 
 Higher scores mean more AI-like. These are small-sample results; 0.5 is a reference point, not a validated detection threshold.
-[Compression results](reports/controlled/report.md) · [Intermediate compression check](reports/failure-followup/report.md)
+[All three edits](docs/panel-results.md) · [Intermediate compression check](reports/failure-followup/report.md)
 
 ## Run it
 
@@ -27,13 +30,14 @@ uv run python run.py check
 The smoke run tests one real and one generated clip with both models and five conditions: **20 scores**.
 First run downloads about **764 MiB of weights** and **9 MiB of clips**. Videos and weights stay out of Git.
 
-To reproduce the 20-clip compression panel:
+To run all three edits on the 20-clip panel:
 
 ```sh
 uv run python run.py experiment configs/experiments/compression.json
 ```
 
-This adds about 263 MiB of source media and writes 80 scores, a paired chart and a report under `reports/experiments/compression/`.
+This adds about 263 MiB of source media and writes **160 scores**: baseline, compression, half-size resize and 80% center crop, with both models. Results go to `reports/experiments/compression/`.
+Resize/crop produce smaller inputs; WaveRep pads them to its native 504×504 size.
 Use `--dry-run` to check a config without downloading or scoring.
 
 ## How it works
@@ -48,10 +52,11 @@ config + pinned sources → prepare variants → detector adapters → paired sc
 
 - `experiment.py`: config validation, scoring and paired analysis
 - `media.py`: shared preparation and transforms
-- `detectors.py` / `waverep.py`: pretrained model adapters
+- `adapters/` + `registry.py`: model adapters, discovered automatically
 - `experiment_report.py`: one output format for every config
 
-Checked with **27 tests** and exact matches on **100 previously published scores**.
+**31 tests** cover input checks, paired analysis, registry extensions and historical commands. GitHub Actions runs the tests and validates both configs.
+Historical studies and their report code live in `src/vidrobust/legacy/`.
 
 [Config guide and technical choices](docs/experiments.md) · [Methodology](docs/methodology.md) · [Earlier experiments](docs/experiment-history.md)
 

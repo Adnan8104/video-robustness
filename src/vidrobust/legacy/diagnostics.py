@@ -1,5 +1,5 @@
-from ..media import probe
 """Fixed compression sweep and an independent-source convenience panel."""
+from ..media import probe
 from concurrent.futures import ThreadPoolExecutor
 import csv
 from datetime import datetime, timezone
@@ -174,4 +174,3 @@ def run_diagnostics(root):
     (out/"run.json").write_text(json.dumps(metadata,indent=2)+"\n")
     (out/"validation.json").write_text(json.dumps(dict(source_clips=9,scored_cases=49,full_source_decode='passed',geometry_timing_and_sampled_indices='passed',preflight=preflight),indent=2)+"\n")
     plot_results(root,config,rows);write_report(root,config,rows)
-
