@@ -145,3 +145,28 @@ uncalibrated and the midpoint is descriptive. Keep counts separate by model,
 content and label; n=5 supports case-level follow-up rather than an accuracy
 ranking, significance claim or a low-FPR estimate. Use the existing adapter
 boundary and numerical artifacts to support a future VidAudit integration.
+
+## Original-file check and medium compression
+
+The [four-clip follow-up](../configs/failure-followup-selection.md) targets the
+shared kitten failure, the first selected horse (same native size/FPS, low score),
+and the strongest previous WaveRep compression drops in each AI content cell.
+This selection deliberately uses previous scores. It is diagnostic work, not a
+new holdout or a representative estimate.
+
+Score native original files and independently encode CRF 23 and 28 from the same
+prepared lossless master. Combine with CRF 18/35 endpoints, reusing only identical
+input bytes with matching model/preprocessing/sampling provenance and package
+versions. Rescore endpoints if those checks fail. Original files preserve native
+geometry and FPS; prepared cases preserve the common 96-frame grid. Both models
+sample identical indices within a condition, but original-to-prepared comparisons
+can change the sampled physical frames and field of view. Report this whole-recipe
+comparison separately from adjacent fixed-preparation CRF changes.
+
+Record all midpoint crossings, signed adjacent changes and changes per CRF unit.
+The grid brackets a transition rather than estimating an exact critical CRF.
+Raw logits and branch outputs remain in the CSV; saturated probabilities can hide
+large changes. Reload both models to repeat the kitten original and newly scored
+AI midpoint brackets, or CRF 23 when no bracket exists. Previous reports remain
+unchanged. Interpret four deliberately selected clips as observations, without
+population accuracy, significance or a causal animal/texture conclusion.

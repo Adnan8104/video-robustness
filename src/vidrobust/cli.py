@@ -137,9 +137,12 @@ def run(root):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("command", choices=["fetch", "run", "check", "diagnose", "compare", "controlled"])
+    parser.add_argument("command", choices=["fetch", "run", "check", "diagnose", "compare", "controlled", "followup"])
     args = parser.parse_args()
-    if args.command == "controlled":
+    if args.command == "followup":
+        from .failure_followup import run_followup
+        run_followup(ROOT)
+    elif args.command == "controlled":
         from .controlled import run_controlled
         run_controlled(ROOT)
     elif args.command == "compare":

@@ -65,6 +65,21 @@ Reproduce with `uv run python run.py controlled` (~263 MiB of source media).
 [Selection rules](configs/controlled-selection.md) · [Content audit](configs/controlled-candidate-audit.json).
 This small panel tests recurrence; it cannot establish a causal animal effect.
 
+## Four-clip failure study
+
+Check original files and medium compression on the real kitten, a real horse,
+an AI elephant and an AI sunset scene. Adds CRF 23/28 to the prepared 18/35
+endpoints: 40 score rows, with 24 new scores when the endpoints match.
+The kitten crosses the midpoint after preparation in both models. WaveRep drops
+below it between CRF 23–28 for the AI elephant and CRF 18–23 for the AI sunset
+scene. These transitions are specific to the selected clips.
+
+Run `uv run python run.py followup`.
+[Chart and findings](reports/failure-followup/report.md) ·
+[Frozen diagnostic selection](configs/failure-followup-selection.md).
+Original-to-prepared comparisons measure the whole preparation recipe; the CRF
+curve keeps that preparation fixed.
+
 ## Sources
 
 Uses [AEGIS](https://huggingface.co/MusapYildiz/aegis-video-detector) and clips from

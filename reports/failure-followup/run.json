@@ -1,0 +1,630 @@
+{
+  "created_at_utc": "2026-10-07T05:43:13.874903+00:00",
+  "config": {
+    "experiment": "failure-followup-v1",
+    "parent_manifest": "configs/controlled.json",
+    "parent_manifest_sha256": "ba0d1d49e7aae666207321bd7462770b681e6f475f8d5560f43eea7629e67674",
+    "parent_run_sha256": "d7b78491b86289da5a564018da11a842af7618421f29405a35858a75cc06e769",
+    "parent_scores_sha256": "eac0de2fb4c5cd0d6d0adf71871a7f7c12b30c5b00f601b9cebd0518283f036a",
+    "clips": [
+      {
+        "id": "controlled_real_animal_01",
+        "selection_reason": "Shared real-kitten midpoint conflict in the preceding panel"
+      },
+      {
+        "id": "controlled_real_animal_04",
+        "selection_reason": "First selected horse: low-score real comparison with the same native size and FPS as the kitten"
+      },
+      {
+        "id": "controlled_ai_animal_02",
+        "selection_reason": "Largest WaveRep compression drop within the AI-animal cell"
+      },
+      {
+        "id": "controlled_ai_non_animal_03",
+        "selection_reason": "Largest WaveRep compression drop within the AI-non-animal cell"
+      }
+    ],
+    "crfs": [
+      18,
+      23,
+      28,
+      35
+    ],
+    "new_cases": [
+      "original",
+      "crf_23",
+      "crf_28"
+    ],
+    "prior_endpoints": {
+      "crf_18": "baseline",
+      "crf_35": "compression"
+    },
+    "midpoint": 0.5,
+    "large_change": 0.1
+  },
+  "selection_frozen_commit": "60b90c8429eacddccab7c12384a591fb19836325",
+  "config_sha256": "4dc7623776bc0056385f0e104dffef3077abd5326a5bba2519fb70fda2afd370",
+  "package_versions": {
+    "torch": "2.5.1",
+    "timm": "1.0.27",
+    "numpy": "2.2.6",
+    "torchvision": "0.20.1",
+    "opencv-python-headless": "4.11.0.86",
+    "imageio-ffmpeg": "0.6.0",
+    "matplotlib": "3.10.7"
+  },
+  "python": "3.11.15",
+  "ffmpeg": "7.1",
+  "device": "cpu",
+  "threads": 4,
+  "seed": 0,
+  "deterministic_algorithms": true,
+  "waverep_frame_batch": 2,
+  "aegis_model_sha256": "7df233979f9d3ef340e101d0d635a4d074577d43e6d1591d677cde31f80e44ba",
+  "aegis_model_revision": "95b71346cec650165e6ad3fb20ed9e80f4b6702a",
+  "waverep_model_sha256": "50d639049d928986ba7d69861a4fe4f3e7afbba1843e3e089cdf6b4748f53d5b",
+  "code_sha256": {
+    "src/vidrobust/detectors.py": "9c47ae384c9a2ca2735e30b5df854a74df7d17ec564cea4a3d35558d20e05dd8",
+    "src/vidrobust/waverep.py": "5ae87a2cd3136cd5ee5e26eff654993067fe9156212987b7974920432d8f32aa",
+    "vendor/aegis/video_io.py": "bab6ba4b8b1c07ff9bc392cf40487be8e8d31fdd248a4494563057e812a043dc",
+    "src/vidrobust/failure_followup.py": "74c40ab0b90e7dcd24c207d15af447a639a290181941f89e11fdfea574cdb1cf",
+    "src/vidrobust/failure_report.py": "eb1f93336fbddd08456aaf1b35e5e36e160835090ed2884e1152c327d61f7fbb",
+    "src/vidrobust/controlled.py": "533e257342915b51abdab34b0307d251d04e44475e5a7eb68e09120069c69830"
+  },
+  "newly_scored_cases": 24,
+  "reused_cases": 16,
+  "preparation": [
+    {
+      "video_id": "controlled_real_animal_01",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 240,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 2.0040000000000004,
+      "start_seconds": 2.0020000000000002,
+      "master_sha256": "96b6dfa9c8ac02d878b0d26745c50d61d7391f6e48a6e01d4515df9ccd15250a",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.002000000",
+          "-i",
+          "data/controlled/sources/controlled_real_animal_01.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/controlled/prepared/controlled_real_animal_01_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/controlled/prepared/controlled_real_animal_01_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "18",
+          "-pix_fmt",
+          "yuv420p",
+          "data/controlled/prepared/controlled_real_animal_01_baseline.mp4"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/controlled/prepared/controlled_real_animal_01_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/controlled/prepared/controlled_real_animal_01_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "controlled_real_animal_04",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 150,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 0.5025,
+      "start_seconds": 0.5005000000000001,
+      "master_sha256": "52a4e5c65aab97f668941ffdf22484ee982292b7982d7b8f6a09e3b582c52cf6",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "0.500500000",
+          "-i",
+          "data/controlled/sources/controlled_real_animal_04.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/controlled/prepared/controlled_real_animal_04_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/controlled/prepared/controlled_real_animal_04_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "18",
+          "-pix_fmt",
+          "yuv420p",
+          "data/controlled/prepared/controlled_real_animal_04_baseline.mp4"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/controlled/prepared/controlled_real_animal_04_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/controlled/prepared/controlled_real_animal_04_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "controlled_ai_animal_02",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "nominal_center_start_seconds": 2.0,
+      "start_seconds": 2.0,
+      "master_sha256": "99f2f89206832a90637d0fbfdccdf264119f64d1284c5fad74680a3a0dd50964",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.000000000",
+          "-i",
+          "data/controlled/sources/controlled_ai_animal_02.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/controlled/prepared/controlled_ai_animal_02_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/controlled/prepared/controlled_ai_animal_02_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "18",
+          "-pix_fmt",
+          "yuv420p",
+          "data/controlled/prepared/controlled_ai_animal_02_baseline.mp4"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/controlled/prepared/controlled_ai_animal_02_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/controlled/prepared/controlled_ai_animal_02_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "controlled_ai_non_animal_03",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "nominal_center_start_seconds": 2.0,
+      "start_seconds": 2.0,
+      "master_sha256": "77a0d0fd8b8c1cb676b6b13351f303d9eabab684fb5ac9a3813026a217eab78f",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.000000000",
+          "-i",
+          "data/controlled/sources/controlled_ai_non_animal_03.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/controlled/prepared/controlled_ai_non_animal_03_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/controlled/prepared/controlled_ai_non_animal_03_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "18",
+          "-pix_fmt",
+          "yuv420p",
+          "data/controlled/prepared/controlled_ai_non_animal_03_baseline.mp4"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/controlled/prepared/controlled_ai_non_animal_03_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/controlled/prepared/controlled_ai_non_animal_03_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        "",
+        ""
+      ]
+    }
+  ],
+  "medium_crf_commands": [
+    {
+      "args": [
+        "-y",
+        "-loglevel",
+        "warning",
+        "-i",
+        "data/controlled/prepared/controlled_real_animal_01_master.avi",
+        "-map",
+        "0:v:0",
+        "-an",
+        "-frames:v",
+        "96",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "medium",
+        "-crf",
+        "23",
+        "-pix_fmt",
+        "yuv420p",
+        "data/failure-followup/controlled_real_animal_01_crf_23.mp4"
+      ],
+      "warnings": ""
+    },
+    {
+      "args": [
+        "-y",
+        "-loglevel",
+        "warning",
+        "-i",
+        "data/controlled/prepared/controlled_real_animal_01_master.avi",
+        "-map",
+        "0:v:0",
+        "-an",
+        "-frames:v",
+        "96",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "medium",
+        "-crf",
+        "28",
+        "-pix_fmt",
+        "yuv420p",
+        "data/failure-followup/controlled_real_animal_01_crf_28.mp4"
+      ],
+      "warnings": ""
+    },
+    {
+      "args": [
+        "-y",
+        "-loglevel",
+        "warning",
+        "-i",
+        "data/controlled/prepared/controlled_real_animal_04_master.avi",
+        "-map",
+        "0:v:0",
+        "-an",
+        "-frames:v",
+        "96",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "medium",
+        "-crf",
+        "23",
+        "-pix_fmt",
+        "yuv420p",
+        "data/failure-followup/controlled_real_animal_04_crf_23.mp4"
+      ],
+      "warnings": ""
+    },
+    {
+      "args": [
+        "-y",
+        "-loglevel",
+        "warning",
+        "-i",
+        "data/controlled/prepared/controlled_real_animal_04_master.avi",
+        "-map",
+        "0:v:0",
+        "-an",
+        "-frames:v",
+        "96",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "medium",
+        "-crf",
+        "28",
+        "-pix_fmt",
+        "yuv420p",
+        "data/failure-followup/controlled_real_animal_04_crf_28.mp4"
+      ],
+      "warnings": ""
+    },
+    {
+      "args": [
+        "-y",
+        "-loglevel",
+        "warning",
+        "-i",
+        "data/controlled/prepared/controlled_ai_animal_02_master.avi",
+        "-map",
+        "0:v:0",
+        "-an",
+        "-frames:v",
+        "96",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "medium",
+        "-crf",
+        "23",
+        "-pix_fmt",
+        "yuv420p",
+        "data/failure-followup/controlled_ai_animal_02_crf_23.mp4"
+      ],
+      "warnings": ""
+    },
+    {
+      "args": [
+        "-y",
+        "-loglevel",
+        "warning",
+        "-i",
+        "data/controlled/prepared/controlled_ai_animal_02_master.avi",
+        "-map",
+        "0:v:0",
+        "-an",
+        "-frames:v",
+        "96",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "medium",
+        "-crf",
+        "28",
+        "-pix_fmt",
+        "yuv420p",
+        "data/failure-followup/controlled_ai_animal_02_crf_28.mp4"
+      ],
+      "warnings": ""
+    },
+    {
+      "args": [
+        "-y",
+        "-loglevel",
+        "warning",
+        "-i",
+        "data/controlled/prepared/controlled_ai_non_animal_03_master.avi",
+        "-map",
+        "0:v:0",
+        "-an",
+        "-frames:v",
+        "96",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "medium",
+        "-crf",
+        "23",
+        "-pix_fmt",
+        "yuv420p",
+        "data/failure-followup/controlled_ai_non_animal_03_crf_23.mp4"
+      ],
+      "warnings": ""
+    },
+    {
+      "args": [
+        "-y",
+        "-loglevel",
+        "warning",
+        "-i",
+        "data/controlled/prepared/controlled_ai_non_animal_03_master.avi",
+        "-map",
+        "0:v:0",
+        "-an",
+        "-frames:v",
+        "96",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "medium",
+        "-crf",
+        "28",
+        "-pix_fmt",
+        "yuv420p",
+        "data/failure-followup/controlled_ai_non_animal_03_crf_28.mp4"
+      ],
+      "warnings": ""
+    }
+  ],
+  "parent_master_hash_matches": {
+    "controlled_real_animal_01": true,
+    "controlled_real_animal_04": true,
+    "controlled_ai_animal_02": true,
+    "controlled_ai_non_animal_03": true
+  }
+}
