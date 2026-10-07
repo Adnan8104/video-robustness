@@ -137,9 +137,21 @@ def run(root):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("command", choices=["fetch", "run", "check", "diagnose", "compare", "controlled", "followup", "isolate"])
+    parser.add_argument("command", choices=["experiment", "fetch", "run", "check", "diagnose", "compare", "controlled", "followup", "isolate"])
+    parser.add_argument("config", nargs="?", help="Experiment config, relative to the repository root")
+    parser.add_argument("--dry-run", action="store_true", help="Validate config and show case counts without downloading or scoring")
     args = parser.parse_args()
-    if args.command == "isolate":
+    if args.command != "experiment" and (args.config or args.dry_run):
+        parser.error("config and --dry-run apply only to experiment")
+    if args.command == "experiment":
+        if not args.config:
+            parser.error("experiment requires a config path")
+        from .experiment import experiment_plan, run_experiment
+        if args.dry_run:
+            print(json.dumps(experiment_plan(ROOT, args.config), indent=2))
+        else:
+            run_experiment(ROOT, args.config)
+    elif args.command == "isolate":
         from .kitten_isolation import run_isolation
         run_isolation(ROOT)
     elif args.command == "followup":

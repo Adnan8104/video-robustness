@@ -1,105 +1,65 @@
 # Video Robustness
 
-Paired robustness tests for pretrained AI-generated video detectors.
+Tests how compression, resizing and cropping change pretrained AI-video detector scores.
+Two models: **AEGIS** and **WaveRep**. Runs on CPU; no training required.
 
-Runs pretrained detectors on real and generated clips, then compares scores after compression,
-resizing, cropping, and an encode-only control. No model training is required.
+## Key findings
 
-## Quick start
+- **Compression weakened WaveRep's AI signal.** On a 20-clip panel, generated clips below 0.5 rose from **4/10 to 9/10** after stronger compression.
+- **The models responded differently.** WaveRep scores changed by at least 0.10 on **9/10 generated clips**. AEGIS had **0/20** changes that large across the panel.
+- **Failures started before the strongest compression.** On two selected AI clips, WaveRep crossed below 0.5 between CRF **23–28** (elephant) and **18–23** (sunset scene).
 
-Requires Python 3.11 and [uv](https://docs.astral.sh/uv/). From this repository:
+![AEGIS and WaveRep scores before and after compression](reports/controlled/compression-pairs.png)
+
+Higher scores mean more AI-like. These are small-sample results; 0.5 is a reference point, not a validated detection threshold.
+[Compression results](reports/controlled/report.md) · [Intermediate compression check](reports/failure-followup/report.md)
+
+## Run it
+
+Requires Python 3.11 and [uv](https://docs.astral.sh/uv/).
 
 ```sh
 uv sync --locked
-uv run python run.py fetch
-uv run python run.py run
+uv run python run.py experiment configs/experiments/smoke.json
 uv run python run.py check
 ```
 
-The first download includes a ~433 MiB pretrained checkpoint and 20 short clips (~71 MiB total).
-Inference runs on CPU. Model weights, videos, and the local environment are excluded from Git.
+The smoke run tests one real and one generated clip with both models and five conditions: **20 scores**.
+First run downloads about **764 MiB of weights** and **9 MiB of clips**. Videos and weights stay out of Git.
 
-## Expanded experiment
+To reproduce the 20-clip compression panel:
 
-20 source clips: 10 real MSVD, 5 Sora, and 5 Veo clips. Five conditions produce
-100 scored cases. The manifest was frozen before expanded scoring.
+```sh
+uv run python run.py experiment configs/experiments/compression.json
+```
 
-The original real clip's large compression drop did not repeat on the 16 newly
-selected clips. Their largest control-relative changes were +0.072 for a resized
-real clip, −0.055 for a compressed Veo clip, and +0.053 for a cropped Sora clip.
+This adds about 263 MiB of source media and writes 80 scores, a paired chart and a report under `reports/experiments/compression/`.
+Use `--dry-run` to check a config without downloading or scoring.
 
-Higher scores mean more AI-like according to AEGIS; they are not calibrated
-probabilities. This convenience sample does not establish detector accuracy.
+## How it works
 
-[Results summary](reports/summary.md) · [All scores](reports/comparison.md) · [Experiment notes](reports/experiment-log.md) · [Methodology](docs/methodology.md)
+A config chooses the source manifest, detectors, preparation, variants and baseline.
+The shared runner verifies input hashes, prepares each variant, scores the same frames with both models,
+and writes CSV scores, JSON run details and a Markdown report.
 
-## Diagnostic follow-up
+```text
+config + pinned sources → prepare variants → detector adapters → paired scores + report
+```
 
-49 additional cases: five compression strengths on four diagnostic clips, plus
-five real DAVIS clips. The original failure drops sharply at stronger compression;
-a new DAVIS bear clip shows a similar drop (0.993 → 0.237).
-[Plots and findings](reports/diagnostics/report.md) · [Validation](reports/diagnostics/validation.json)
+- `experiment.py`: config validation, scoring and paired analysis
+- `media.py`: shared preparation and transforms
+- `detectors.py` / `waverep.py`: pretrained model adapters
+- `experiment_report.py`: one output format for every config
 
-Reproduce this follow-up with `uv run python run.py diagnose` (~14 MiB of new media).
-
-## Two-detector comparison
-
-Compare AEGIS with WaveRep on the same frames, including ten fresh clips:
-`uv run python run.py compare`. This adds ~331 MiB of model weights and ~42 MiB
-of media. WaveRep uses sparse frame sampling and its native crop/pad preprocessing.
-Across 35 clips, it avoids the known real-clip high scores but loses several
-generated-video signals under compression. AEGIS also makes errors on fresh originals.
-[Comparison report](reports/two-detectors/report.md) · [Selection](configs/two-detectors-selection.md)
-
-## Balanced content check
-
-Twenty fresh clips, five each: real animal, real non-animal, Veo animal, and Veo
-non-animal. Common four-second, 504×504, 24 fps preparation avoids upscaling and
-WaveRep padding. Both detectors score independent CRF 18/35 encodes: 80 scores.
-Both put one real kitten above the fixed midpoint in both conditions. WaveRep
-has large compression changes on 9/10 generated clips. These are descriptive
-findings on this panel, with uncalibrated scores.
-
-Reproduce with `uv run python run.py controlled` (~263 MiB of source media).
-[Paired chart and findings](reports/controlled/report.md) ·
-[Selection rules](configs/controlled-selection.md) · [Content audit](configs/controlled-candidate-audit.json).
-This small panel tests recurrence; it cannot establish a causal animal effect.
-
-## Four-clip failure study
-
-Check original files and medium compression on the real kitten, a real horse,
-an AI elephant and an AI sunset scene. Adds CRF 23/28 to the prepared 18/35
-endpoints: 40 score rows, with 24 new scores when the endpoints match.
-The kitten crosses the midpoint after preparation in both models. WaveRep drops
-below it between CRF 23–28 for the AI elephant and CRF 18–23 for the AI sunset
-scene. These transitions are specific to the selected clips.
-
-Run `uv run python run.py followup`.
-[Chart and findings](reports/failure-followup/report.md) ·
-[Frozen diagnostic selection](configs/failure-followup-selection.md).
-Original-to-prepared comparisons measure the whole preparation recipe; the CRF
-curve keeps that preparation fixed.
-
-## Isolating the kitten preparation steps
-
-Hold source-frame identities fixed while testing resizing, cropping, encoding
-and their combinations. Compare a second frame list traced through the FPS
-conversion, a metadata-only FPS control and the exact prepared endpoint: 36 scores.
-On fixed original frames, crop alone flips AEGIS across the midpoint; resize
-alone flips WaveRep. This is a finding about the selected kitten clip.
-
-Run `uv run python run.py isolate`.
-[Step chart and findings](reports/kitten-isolation/report.md) ·
-[Frozen controls and frame checks](configs/kitten-isolation-selection.md).
-This isolates conditional pipeline effects on one clip without claiming a
-learned animal/texture mechanism.
+[Config guide and technical choices](docs/experiments.md) · [Methodology](docs/methodology.md) · [Earlier experiments](docs/experiment-history.md)
 
 ## Sources
 
-Uses [AEGIS](https://huggingface.co/MusapYildiz/aegis-video-detector) and clips from
-[ComGenVid](https://huggingface.co/datasets/OmerXYZ/comgenvid) and DAVIS clips via
-[VLM4D](https://huggingface.co/datasets/shijiezhou/VLM4D), plus
-[WaveRep](https://github.com/grip-unina/WaveRep-SyntheticVideoDetection).
-WaveRep is for informational/nonprofit use; its [license](vendor/waverep/LICENSE.md)
-and author attribution are retained. AEGIS vendored detector code
-retains its [MIT license](vendor/aegis/LICENSE). Dataset media are not redistributed.
+[AEGIS](https://huggingface.co/MusapYildiz/aegis-video-detector) ·
+[WaveRep](https://github.com/grip-unina/WaveRep-SyntheticVideoDetection) ·
+[ComGenVid](https://huggingface.co/datasets/OmerXYZ/comgenvid) ·
+[DAVIS via VLM4D](https://huggingface.co/datasets/shijiezhou/VLM4D)
+
+AEGIS code retains its [MIT license](vendor/aegis/LICENSE).
+WaveRep's [informational/nonprofit license](vendor/waverep/LICENSE.md) and author attribution are retained.
+Dataset media are not redistributed.

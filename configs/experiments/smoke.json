@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "name": "smoke",
+  "manifest": "configs/samples.json",
+  "sample_ids": [
+    "real_01",
+    "ai_01"
+  ],
+  "source_directory": "data/original",
+  "detectors": [
+    "aegis",
+    "waverep"
+  ],
+  "preparation": "native",
+  "baseline": "encode_control",
+  "variants": [
+    {
+      "name": "original",
+      "transform": "identity",
+      "encoding": "source"
+    },
+    {
+      "name": "encode_control",
+      "transform": "identity",
+      "encoding": "h264",
+      "crf": 18
+    },
+    {
+      "name": "compression",
+      "transform": "identity",
+      "encoding": "h264",
+      "crf": 35
+    },
+    {
+      "name": "resize",
+      "transform": "half_resize",
+      "encoding": "h264",
+      "crf": 18
+    },
+    {
+      "name": "crop",
+      "transform": "center_crop_80",
+      "encoding": "h264",
+      "crf": 18
+    }
+  ],
+  "notes": "Two existing discovery clips check the pipeline. They are selected for a quick run and are not new evaluation data. Resize/crop also include encoding; compare them with the encode-only control."
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "name": "compression",
+  "manifest": "configs/controlled.json",
+  "source_directory": "data/controlled/sources",
+  "detectors": [
+    "aegis",
+    "waverep"
+  ],
+  "preparation": "centered_4s_504_24fps",
+  "baseline": "baseline",
+  "variants": [
+    {
+      "name": "baseline",
+      "transform": "identity",
+      "encoding": "h264",
+      "crf": 18
+    },
+    {
+      "name": "compression",
+      "transform": "identity",
+      "encoding": "h264",
+      "crf": 35
+    }
+  ],
+  "notes": "Reproduces the existing 20-clip content panel. Five clips per real/AI \u00d7 animal/non-animal group. The manifest includes the reviewed labels and crop audit."
+}
