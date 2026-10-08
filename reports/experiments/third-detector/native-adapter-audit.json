@@ -1,0 +1,91 @@
+{
+  "checkpoint_sha256": "c2df6f477a590f4b24b14eac9654b868a9f178312795df20749274a502d59bdd",
+  "author_model_sha256": "c7e477dba329434df9ae421e32eae0552b9c2e95db769dbff1050887ca326dc7",
+  "adapter_sha256": "d898721bd72c61dbf1cf62f0a333018e0e0e0b875fb5fd8bc4504c9add741e39",
+  "script_sha256": "bb5382b8e875f1ada1b22e9ad8983f9333fe46b6ed3704904e20c97e0e7e6d33",
+  "config_sha256": "ecf48bedf94e7f0dd7e4668bec542ae47cfeee5c6f80ead5df31ecf11af28c26",
+  "manifest_sha256": "c79db292283e7c798e77f3fbe59de0cee873bc17b82e885e7490375f1b3bbc3a",
+  "state_tensors_loaded_strictly": 320,
+  "clips": [
+    {
+      "video_id": "panel_ego4d_01",
+      "ai_score": 0.789933599793585,
+      "sha256": "5d2e769afd90c5f8d9ff81dc249f5e713624b5c3fc626b79daf5602d61198e4f",
+      "model_input_sha256": "1352647eb51257f14b16a0111974735f0f07240c750bdb3a6da2adf0d1401ba6",
+      "frame_logits": [
+        -6.240787982940674,
+        0.9477145671844482,
+        6.760395050048828,
+        7.306800842285156,
+        6.252579689025879,
+        4.73863410949707,
+        3.1111655235290527,
+        0.8460386991500854,
+        -5.580063819885254,
+        -1.002010703086853,
+        7.375725269317627,
+        13.706012725830078,
+        14.670578002929688,
+        15.146217346191406,
+        14.420764923095703,
+        14.36093521118164
+      ],
+      "exact_native_preprocessing_logits_probabilities_and_aggregation": true,
+      "stored_run_exact_match": true
+    },
+    {
+      "video_id": "panel_wan_04",
+      "ai_score": 1.6691960204665013e-08,
+      "sha256": "949b39c29d327d68bb667c3997167c151fe24387b95967de53b7faa7bed77b6b",
+      "model_input_sha256": "6b90deafefac24e137f1f41d6a5fd653a6c23d5b57320e906e97cc9c99bd7cfe",
+      "frame_logits": [
+        -21.433250427246094,
+        -22.062543869018555,
+        -22.277097702026367,
+        -21.055774688720703,
+        -21.37796974182129,
+        -18.849750518798828,
+        -17.483253479003906,
+        -17.05213737487793,
+        -16.702518463134766,
+        -18.83919334411621,
+        -19.31175994873047,
+        -20.18791961669922,
+        -20.28939437866211,
+        -19.88377571105957,
+        -18.262187957763672,
+        -16.024431228637695
+      ],
+      "exact_native_preprocessing_logits_probabilities_and_aggregation": true,
+      "stored_run_exact_match": true
+    },
+    {
+      "video_id": "panel_wan_05",
+      "ai_score": 1.0502250049900885e-07,
+      "sha256": "79f9a06b5b5084828559a196e6be5f57d92d814dbdfbbf909d8f34eaa51c110c",
+      "model_input_sha256": "588f5f54cdee50e56bb26a38524ffba0430b44a00c6ab823f136cb8ee5867f34",
+      "frame_logits": [
+        -26.525053024291992,
+        -25.969545364379883,
+        -25.494998931884766,
+        -25.889219284057617,
+        -26.41356658935547,
+        -25.672286987304688,
+        -25.14614486694336,
+        -24.265684127807617,
+        -23.525802612304688,
+        -19.630035400390625,
+        -18.810508728027344,
+        -16.81458854675293,
+        -18.047683715820312,
+        -17.19338035583496,
+        -14.396244049072266,
+        -13.803078651428223
+      ],
+      "exact_native_preprocessing_logits_probabilities_and_aggregation": true,
+      "stored_run_exact_match": true
+    }
+  ],
+  "independently_checked_stored_score_arithmetic": 20,
+  "scope": "RGB branch only; same sparse 16 frames, not full optical-flow detector or all-frame evaluation"
+}

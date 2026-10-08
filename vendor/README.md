@@ -10,3 +10,8 @@ WaveRep's original license and source/author attribution are in waverep/.
 The adapter in src/vidrobust/adapters/waverep.py preserves its native spatial transform
 and score aggregation, with explicit sparse temporal sampling for this experiment.
 No trained weights are redistributed.
+
+AIGVDet attribution and the authors' academic-only restriction are in aigvdet/.
+Its unchanged ResNet source is included for native parity auditing. The adapter
+loads the released RGB-branch checkpoint into the equivalent torchvision model;
+it omits optical-flow fusion and uses the harness's shared 16-frame sample.

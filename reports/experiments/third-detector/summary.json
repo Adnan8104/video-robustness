@@ -1,0 +1,110 @@
+{
+  "aegis": {
+    "original": {
+      "ai_cosmos": {
+        "n": 5,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      },
+      "ai_wan": {
+        "n": 5,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 5,
+        "midpoint_crossings": []
+      },
+      "real_ego4d": {
+        "n": 5,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      },
+      "real_youtube-vos": {
+        "n": 5,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 1,
+        "midpoint_crossings": []
+      }
+    }
+  },
+  "waverep": {
+    "original": {
+      "ai_cosmos": {
+        "n": 5,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 1,
+        "midpoint_crossings": []
+      },
+      "ai_wan": {
+        "n": 5,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 2,
+        "midpoint_crossings": []
+      },
+      "real_ego4d": {
+        "n": 5,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      },
+      "real_youtube-vos": {
+        "n": 5,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      }
+    }
+  },
+  "aigvdet_rgb": {
+    "original": {
+      "ai_cosmos": {
+        "n": 5,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 2,
+        "midpoint_crossings": []
+      },
+      "ai_wan": {
+        "n": 5,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 5,
+        "midpoint_crossings": []
+      },
+      "real_ego4d": {
+        "n": 5,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 1,
+        "midpoint_crossings": []
+      },
+      "real_youtube-vos": {
+        "n": 5,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      }
+    }
+  }
+}

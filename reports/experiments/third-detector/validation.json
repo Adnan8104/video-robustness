@@ -1,0 +1,101 @@
+{
+  "source_clips": 20,
+  "paired_cases": 20,
+  "model_scores": 60,
+  "source_hashes_and_full_decode": "passed",
+  "geometry_timing_and_frame_indices": "passed",
+  "complete_case_matrix": "passed",
+  "identical_bytes_and_RGB_between_detectors": "passed",
+  "config_and_code_unchanged_during_inference": "passed",
+  "published_reference_parity": {
+    "reference": "reports/experiments/source-panel/scores.csv",
+    "reference_sha256": "0992da62303209f5bb8556b2387cf478ace7ccdbae0fa09f5f564bd686ec438d",
+    "matched_scores": 40,
+    "exact_match": true,
+    "compared_fields": [
+      "ai_score",
+      "consistency_score",
+      "fps",
+      "frame_logits",
+      "frames",
+      "fusion_logit",
+      "height",
+      "label",
+      "model_input_sha256",
+      "motion_score",
+      "pixel_score",
+      "sampled_frame_indices",
+      "sampled_rgb_sha256",
+      "sha256",
+      "source",
+      "width"
+    ],
+    "independent_CSV_analysis": "passed",
+    "independent_error_and_agreement_analysis": "passed",
+    "scored_media_and_model_and_code_hashes": "passed"
+  },
+  "native_RGB_branch_parity": {
+    "audit": "native-adapter-audit.json",
+    "audit_sha256": "c7a8ad5717b942b5fb9515940adc4d2a64fe7ac3f9af481a357abbe89478ed9c",
+    "clips": [
+      "panel_ego4d_01",
+      "panel_wan_04",
+      "panel_wan_05"
+    ],
+    "exact_match": true
+  },
+  "fresh_model_repeat_selection": {
+    "variants": [
+      "original"
+    ],
+    "detectors": [
+      "aigvdet_rgb"
+    ],
+    "rule": "First lexicographic label conflict and disagreement per cell, plus first correct control per label; cases deduplicated",
+    "script_sha256": "032cef2e7d865e476803faa6f24bdcee3d8090b1d4cb81736797edf8c18ce869"
+  },
+  "fresh_model_repeats": [
+    {
+      "detector": "aigvdet_rgb",
+      "video_id": "panel_cosmos_01",
+      "variant": "original",
+      "ai_score": 0.6786740273237228,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "aigvdet_rgb",
+      "video_id": "panel_cosmos_02",
+      "variant": "original",
+      "ai_score": 6.558072744411447e-06,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "aigvdet_rgb",
+      "video_id": "panel_ego4d_01",
+      "variant": "original",
+      "ai_score": 0.789933599793585,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "aigvdet_rgb",
+      "video_id": "panel_ego4d_02",
+      "variant": "original",
+      "ai_score": 0.3276658219838282,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "aigvdet_rgb",
+      "video_id": "panel_wan_01",
+      "variant": "original",
+      "ai_score": 1.2832116467499655e-10,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "aigvdet_rgb",
+      "video_id": "panel_youtube_vos_02",
+      "variant": "original",
+      "ai_score": 1.552189787766274e-11,
+      "all_outputs_and_input_hashes_exact_match": true
+    }
+  ]
+}

@@ -1,64 +1,93 @@
-# What the additional-source test tells us
+# Which detector helped?
 
-Neither detector is ready to give a reliable authenticity verdict. On this pilot,
-WaveRep made fewer wrong calls at 0.5, and both models missed the same two generated clips.
+The third candidate did not improve this panel. AIGVDet's RGB branch missed both
+shared Wan failures and added a real-video error, so it remains an evaluated baseline.
+The demo continues to use AEGIS and WaveRep; neither provides a reliable authenticity verdict.
 
-Twenty new source clips: ten real (Ego4D and YouTube-VOS) and ten AI-generated
-(Cosmos and Wan 2.2-14B). Original bytes, centered four-second/16-frame sampling,
-unchanged pretrained weights. Clips and analysis were fixed before scoring.
+Twenty frozen source clips: ten real (Ego4D and YouTube-VOS) and ten generated
+(Cosmos and Wan 2.2-14B). All models received the same centered four-second/16-frame
+window from unchanged source bytes, with their own native spatial preprocessing.
+The 0.5 reference was fixed; no thresholds or weights were fitted.
 
-| Detector | Real clips with high AI-like scores | Generated clips with low AI-like scores |
+| Detector | Real clips scored AI-like | Generated clips scored real-like |
 |---|---:|---:|
 | AEGIS | 1/10 | 5/10 |
 | WaveRep | 0/10 | 3/10 |
+| AIGVDet RGB branch | 1/10 | 7/10 |
 
-AEGIS gave a real owl clip 0.999404, yet missed all five Wan clips. WaveRep missed
-one Cosmos clip and two Wan clips. This behavior shows why a single high or low score
-cannot be treated as proof of a video's origin.
+AEGIS flagged a real owl clip and missed all five Wan clips. WaveRep missed one
+Cosmos clip and two Wan clips. AIGVDet RGB flagged one real painting clip and
+missed two Cosmos clips and all five Wan clips. Counts describe this panel, not
+an overall model ranking.
 
-## Does requiring agreement help?
+## Why this candidate
 
-The fixed rule gives AI-like only if both scores are >=0.5, real-like only if both
-are below 0.5, and otherwise inconclusive. On this panel it returned:
+Both existing adapters use DINOv2. AIGVDet's released RGB branch uses a ResNet50
+convolutional network, giving us a different feature extractor with existing CPU
+dependencies. We loaded the full trained branch strictly, including its classifier.
+It uses a 448×448 center crop, ImageNet-normalized RGB, and the mean of individual
+frame probabilities.
 
-- 13 agreed results consistent with source labels: nine real and four AI clips.
-- Two agreed real-like results for generated Wan clips.
-- Five inconclusive clips: one real and four generated.
+The full AIGVDet method also uses a separately trained optical-flow branch. This
+baseline omits that branch and uses 16 sampled frames rather than every frame,
+so these results evaluate **our RGB-only sparse-frame adaptation**. They do not
+establish how the full paper detector performs. [Author code and provenance](../vendor/aigvdet/ORIGIN.md).
 
-The unresolved clips are kept in the denominator. Agreement reduces some wrong
-calls by declining to answer, but also leaves generated clips undetected. It does
-not repair shared failures, and agreement cannot be presented as authentication.
+The [predeclared criterion](../configs/third-detector-policy.md) required recovering
+`panel_wan_04` and `panel_wan_05` without adding real errors relative to WaveRep.
+The RGB branch gave those AI clips scores of approximately 1.67e-8 and 1.05e-7,
+while giving a real control 0.789934. It failed that criterion. Matching native
+inference rules out an adapter discrepancy on the audited clips; it does not
+identify which visual feature causes the errors.
 
-## What to improve next
+## Does agreement help?
 
-Keep the frozen panel as a regression check. Compare a pretrained detector that
-uses a different feature extractor or detection signal; both current adapters use
-DINOv2 features. Require the candidate to recover the shared misses without adding
-real-footage errors, then confirm on separately selected clips before accepting it.
-This is the next model-comparison milestone; it has not been achieved yet.
+AI-like requires every selected model >=0.5; real-like requires every model below
+0.5; otherwise the result is inconclusive.
 
-Expand the confirmation clips with real construction footage alongside generated
-construction footage, plus additional camera viewpoints and creators. This checks
-whether apparent improvements depend on scene content rather than origin.
-Threshold calibration requires separate labeled development data and a held-out test.
-We have not fitted a threshold, trained a model or changed the demo's verdict policy.
+| Models required to agree | Correct agreed | Wrong agreed | Inconclusive | All clips |
+|---|---:|---:|---:|---:|
+| AEGIS + WaveRep | 13 | 2 | 5 | 20 |
+| All three | 11 | 2 | 7 | 20 |
 
-## Limits and verification
+The same two generated Wan clips remain incorrectly real-like under either rule.
+Adding this third model creates two more inconclusive clips without removing a
+shared error. Inconclusive clips stay in the denominator. Agreement is not authentication.
 
-These are clip counts from a convenience pilot. Source, content, encoding and viewpoint
-are different across groups. Five Ego4D clips show two room setups; three Wan clips
-share a construction scene. Files are new to this project, but original-video grouping
-and checkpoint training overlap are unknown. The pilot cannot establish a population
-error rate, statistical independence or an overall model ranking. The 0.5 reference
-is uncalibrated, and WaveRep uses a central crop and 16 frames rather than full-video
-inference.
+## Next useful test
 
-All 40 scores passed source/checkpoint/code hash checks, complete pairing, unique
-frame sampling and raw score-arithmetic checks. Eleven representative errors,
-disagreements and controls reproduced exactly after two fresh model loads.
-Source videos and inspection frames remain local.
+Keep this panel as a regression check. Before promoting another detector, use a
+small, separately selected set that matches scene content: real construction footage
+alongside generated construction footage, with multiple creators and camera viewpoints.
+This helps separate sensitivity to construction scenes from sensitivity to origin.
+A temporal or optical-flow detector would test a different signal from this RGB
+baseline, but must be evaluated before changing the demo.
 
-[Complete scores and chart](../reports/experiments/source-panel/report.md) ·
-[Selection policy](../configs/source-panel-selection.md) ·
-[Candidate audit](../configs/source-panel-candidate-audit.json) ·
-[Verification](../reports/experiments/source-panel/validation.json)
+Threshold calibration needs separate labeled development data and a held-out test.
+We have not calibrated a threshold or trained a detector. A candidate passing this
+known regression panel still needs confirmation on independently selected footage.
+
+## Verification and limits
+
+All 60 rows passed source/checkpoint/code hash checks, complete pairing, full decode,
+unique frame sampling and independent CSV summaries/error counts. The existing 40
+scores, logits, frame indices and input hashes matched the earlier source-panel run
+exactly. All 20 RGB-branch scores passed independent probability-arithmetic checks.
+
+On one real control and both shared misses, the adapter matched the pinned author
+ResNet code exactly in preprocessing, all 16 logits, probabilities and aggregation.
+Those fresh native outputs also matched the saved run. Six representative RGB-branch
+errors, disagreements and correct controls reproduced every output and input hash
+after another fresh load. The earlier two-model panel retains its eleven exact repeats.
+
+Source, content, encoding and viewpoint differ across groups. Five Ego4D files show
+two room setups, and three Wan files share a construction scene. Source videos are
+new to this project, but original-video grouping and training overlap are unknown.
+Twenty files are not twenty independent origins, and this convenience pilot cannot
+establish a population error rate. Source videos, weights and inspection frames remain local.
+
+[Complete three-model scores and chart](../reports/experiments/third-detector/report.md) ·
+[Verification](../reports/experiments/third-detector/validation.json) ·
+[Native audit](../reports/experiments/third-detector/native-adapter-audit.json) ·
+[Earlier two-model panel](../reports/experiments/source-panel/report.md) ·
+[Source selection policy](../configs/source-panel-selection.md).

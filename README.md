@@ -3,7 +3,8 @@
 [![Tests](https://github.com/Adnan8104/video-robustness/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Adnan8104/video-robustness/actions/workflows/ci.yml)
 
 Compares pretrained AI-video detectors on real and generated footage, including compression, resizing and cropping.
-Two models: **AEGIS** and **WaveRep**. Runs on CPU; no training required.
+Models: **AEGIS**, **WaveRep** and the **AIGVDet RGB branch**. Runs on CPU; no training required.
+The local demo uses AEGIS and WaveRep.
 
 ## Key findings
 
@@ -20,8 +21,9 @@ Higher scores mean more AI-like. These are small-sample results; 0.5 is a refere
 A [separate 20-clip source panel](reports/experiments/source-panel/report.md) found both error directions:
 AEGIS missed **5/10 AI clips** and flagged **1/10 real clips**; WaveRep missed **3/10 AI clips**
 and flagged **0/10 real clips**, at the 0.5 reference. Both missed two Wan clips.
-Leaving disagreements inconclusive did not remove those shared errors.
-[Eight-real-clip check](reports/experiments/real-footage/sections.md) · [What to improve next](docs/detector-evaluation.md)
+The third baseline, **AIGVDet RGB**, missed **7/10 AI clips** and flagged **1/10 real clips**.
+All three missed the same two Wan clips; adding a model did not repair them.
+[Three-model comparison](reports/experiments/third-detector/report.md) · [Eight-real-clip check](reports/experiments/real-footage/sections.md) · [What to improve next](docs/detector-evaluation.md)
 
 
 ## Run it
@@ -64,7 +66,7 @@ Use `--dry-run` to check a config without downloading or scoring.
 ## How it works
 
 A config chooses the source manifest, detectors, preparation, variants and baseline.
-The shared runner verifies input hashes, prepares each variant, scores the same frames with both models,
+The shared runner verifies input hashes, prepares each variant, scores the same frames with each selected model,
 and writes CSV scores, JSON run details and a Markdown report.
 
 ```text
@@ -76,7 +78,7 @@ config + pinned sources → prepare variants → detector adapters → paired sc
 - `adapters/` + `registry.py`: model adapters, discovered automatically
 - `experiment_report.py`: one output format for every config
 
-**45 tests** cover input checks, paired analysis, registry extensions, uploads, section sampling and historical commands. GitHub Actions includes the demo tests and validates all four configs.
+**48 tests** cover input checks, paired analysis, registry extensions, uploads, section sampling and historical commands. GitHub Actions includes the demo tests and validates all five configs.
 Historical studies and their report code live in `src/vidrobust/legacy/`.
 
 [Config guide and technical choices](docs/experiments.md) · [Methodology](docs/methodology.md) · [Earlier experiments](docs/experiment-history.md)
@@ -85,10 +87,12 @@ Historical studies and their report code live in `src/vidrobust/legacy/`.
 
 [AEGIS](https://huggingface.co/MusapYildiz/aegis-video-detector) ·
 [WaveRep](https://github.com/grip-unina/WaveRep-SyntheticVideoDetection) ·
+[AIGVDet](https://github.com/multimediaFor/AIGVDet) ·
 [ComGenVid](https://huggingface.co/datasets/OmerXYZ/comgenvid) ·
 [VLM4D](https://huggingface.co/datasets/shijiezhou/VLM4D) ·
 [GovTech SynthSite](https://huggingface.co/datasets/govtech/SynthSite)
 
 AEGIS code retains its [MIT license](vendor/aegis/LICENSE).
 WaveRep's [informational/nonprofit license](vendor/waverep/LICENSE.md) and author attribution are retained.
-Dataset media are not redistributed.
+AIGVDet's [academic-only restriction](vendor/aigvdet/LICENSE.md) and attribution are retained; our baseline omits its optical-flow branch.
+Dataset media and trained weights are not redistributed.

@@ -16,7 +16,7 @@ uv run python run.py experiment configs/experiments/compression.json --dry-run
 | `manifest` | Existing JSON source list with pinned dataset revisions and SHA256 hashes. Relative paths start at the repository root. |
 | `sample_ids` | Optional ordered subset of the manifest. Omit to use every clip. |
 | `source_directory` | Local download cache under `data/`. A matching hash allows reuse. |
-| `detectors` | Registered adapter names (currently `aegis` and `waverep`). Models load one at a time to limit memory. |
+| `detectors` | Registered adapter names (currently `aegis`, `waverep` and `aigvdet_rgb`). Models load one at a time to limit memory. |
 | `preparation` | `native` preserves source geometry/timing. `centered_4s_504_24fps` creates a common lossless 504×504, 96-frame master. |
 | `variants` | Named transforms and encoding settings. Each starts independently from the source or common master. |
 | `baseline` | Variant used for score deltas and midpoint crossings. |
@@ -55,7 +55,7 @@ requiring a commit, accessing the network or loading models. It does not decode 
 
 - **Plain JSON:** reviewable in Git; no config library or framework dependency.
 - **One scoring loop and report writer:** adding clips, CRF levels or supported transforms is a config change. Model-specific preprocessing stays in the adapters.
-- **Shared decoded RGB frames:** both models get the same 16 centered-window frames per condition. Each keeps its native spatial preprocessing. RGB and normalized tensor hashes are recorded alongside logits.
+- **Shared decoded RGB frames:** all selected models get the same 16 centered-window frames per condition. Each keeps its native spatial preprocessing. RGB and normalized tensor hashes are recorded alongside logits.
 - **CPU, four threads:** works on a laptop. WaveRep batches two frames. AEGIS processes the 16-frame window. This is sparse-frame WaveRep inference, not its native all-frame evaluation.
 - **Independent encodes:** variants start from a common input rather than from each other. The compression config matches the historical panel's preparation exactly. Native resize/crop with H.264 also measures re-encoding; the encode-only baseline controls that part.
 - **Full decode and complete case matrix:** reject damaged files, changed timing, mismatched detector inputs and missing/duplicate observations before publishing a report.
@@ -122,7 +122,7 @@ use the recorded Git revision to reproduce those historical versions.
 
 [GitHub Actions](https://github.com/Adnan8104/video-robustness/actions/workflows/ci.yml)
 installs locked dependencies on Python 3.11, runs the test suite, then validates
-both configs with `--dry-run`. It does not download dataset media or pretrained
+all five configs with `--dry-run`. It does not download dataset media or pretrained
 weights. Tests create small synthetic videos locally. The workflow follows
 [uv's official integration guide](https://docs.astral.sh/uv/guides/integration/github/)
 and pins its setup actions to commit hashes.
@@ -209,3 +209,22 @@ uv run python scripts/repeat_experiment.py configs/experiments/source-panel.json
 ```
 
 The stored pilot includes 11 exact repeats. See [interpretation and next milestone](detector-evaluation.md).
+
+## Compare a different pretrained backbone
+
+```sh
+uv run python run.py experiment configs/experiments/third-detector.json
+uv run python scripts/verify_experiment.py configs/experiments/third-detector.json reports/experiments/source-panel/scores.csv --detectors aegis waverep
+uv run python scripts/audit_aigvdet.py configs/experiments/third-detector.json --clips panel_ego4d_01 panel_wan_04 panel_wan_05
+uv run python scripts/repeat_experiment.py configs/experiments/third-detector.json --variants original --source-errors --detectors aigvdet_rgb
+```
+
+Same frozen 20 source clips, three models, one unchanged-source condition: **60 scores**. The two existing models must exactly match their earlier 40 scores, frame indices, logits and RGB/model-tensor hashes. All 60 rows are independently reanalyzed even when reference parity selects only two detectors.
+
+The new `aigvdet_rgb` adapter uses the released **AIGVDet RGB branch only**, with its ResNet50 trained backbone and classifier. This changes the feature extractor from DINOv2 without adding dependencies or training. The full AIGVDet detector also uses optical flow, which this CPU baseline omits.
+
+Native spatial input is a 448×448 center crop and ImageNet-normalized RGB. Smaller inputs receive CenterCrop's zero padding; none of the source-panel inputs need it. Frames are scored individually, and their sigmoid probabilities are averaged. This differs from WaveRep's sigmoid after averaging logits. Batch size 1 matches author inference. Temporal sampling is the harness's shared centered 16 frames, instead of AIGVDet's all-frame inference. The RGB-only and sparse-frame adaptations prevent direct comparisons with paper metrics.
+
+The checkpoint is pinned by SHA256 and loaded strictly, including the trained classifier. It is about **270 MiB** because the released artifact also contains optimizer state; the adapter only uses model weights. Native architecture, preprocessing, per-frame logits, probabilities and aggregation are checked against unchanged upstream code at the pinned revision. The audit also checks score arithmetic on all 20 saved RGB rows and exact stored-run parity on the three native audit clips.
+
+The adapter is discovered automatically without runner/report changes. [Predeclared criteria](../configs/third-detector-policy.md) · [Native code and weight provenance](../vendor/aigvdet/ORIGIN.md) · [Comparison results](../reports/experiments/third-detector/report.md).
