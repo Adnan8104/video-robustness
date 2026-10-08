@@ -1,0 +1,56 @@
+{
+  "policy_sha256": "a3a11a9295e4a303c6e13fb679698c89dc79d3aa677cbb873f10ee6bada86621",
+  "scores_csv_sha256": "bf686a362a356084e5a7499918ef90a79b86ac64fa1ec90799edf168852eb84b",
+  "method": "Lower raw temporal_std is more AI-like. Count real controls with discrepancy <= target; ties block separation by any one threshold. Panel groups follow pre-existing source ID prefixes. No cutoff fitted.",
+  "targets": [
+    {
+      "video_id": "panel_wan_04",
+      "temporal_std": 0.6217142343521118,
+      "real_controls": 13,
+      "strictly_more_ai_like_than_real_controls": 13,
+      "blocking_real_controls": []
+    },
+    {
+      "video_id": "panel_wan_05",
+      "temporal_std": 0.9844609498977661,
+      "real_controls": 13,
+      "strictly_more_ai_like_than_real_controls": 11,
+      "blocking_real_controls": [
+        {
+          "video_id": "construction_real_02",
+          "temporal_std": 0.8485676646232605
+        },
+        {
+          "video_id": "construction_real_03",
+          "temporal_std": 0.8983955979347229
+        }
+      ]
+    },
+    {
+      "video_id": "construction_ai_02",
+      "temporal_std": 0.4690003991127014,
+      "real_controls": 13,
+      "strictly_more_ai_like_than_real_controls": 13,
+      "blocking_real_controls": []
+    }
+  ],
+  "groups": {
+    "source-panel": {
+      "real_clips": 10,
+      "ai_clips": 10,
+      "pairs": 100,
+      "ai_above_real": 94,
+      "ties": 0,
+      "pairwise_auc": 0.94
+    },
+    "construction-scenes": {
+      "real_clips": 3,
+      "ai_clips": 3,
+      "pairs": 9,
+      "ai_above_real": 9,
+      "ties": 0,
+      "pairwise_auc": 1.0
+    }
+  },
+  "zero_real_error_recovery_of_all_three_possible": false
+}

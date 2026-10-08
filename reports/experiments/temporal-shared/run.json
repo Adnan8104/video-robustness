@@ -1,0 +1,404 @@
+{
+  "created_at_utc": "2026-10-08T01:50:25.707892+00:00",
+  "config": {
+    "schema_version": 1,
+    "name": "temporal-shared",
+    "manifest": "configs/temporal-panel.json",
+    "source_directory": "data/temporal-panel",
+    "detectors": [
+      "d3_resnet18"
+    ],
+    "preparation": "native",
+    "analysis": "ranking",
+    "sampling": "centered_4s_16",
+    "baseline": "original",
+    "variants": [
+      {
+        "name": "original",
+        "transform": "identity",
+        "encoding": "source"
+      }
+    ],
+    "notes": "D3 ResNet18 option, L2 discrepancy; ranking only. All 26 previously published source files are retained. The bounded ai_score coordinate is 1/(1+raw temporal_std), with no decision threshold or calibration. Author BGR preprocessing is preserved. This is an adaptation to deterministic center-window sampling and directly decoded source frames: upstream uses random-window 8 fps JPEG frames, and its main model is XCLIP, not this lightweight option. The 8 fps profile checks native-like timing without introducing JPEG encoding. See configs/temporal-ranking-policy.md. Counts do not measure general accuracy or establish a replacement for the demo."
+  },
+  "config_path": "configs/experiments/temporal-shared.json",
+  "models": {
+    "d3_resnet18": {
+      "adapter": "vidrobust.adapters.d3.D3ResNet18Detector",
+      "code_path": "src/vidrobust/adapters/d3.py",
+      "checkpoint": {
+        "path": "models/resnet18-f37072fd.pth",
+        "sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+        "url": "https://download.pytorch.org/models/resnet18-f37072fd.pth",
+        "revision": "torchvision-0.20.1-ResNet18-IMAGENET1K_V1"
+      },
+      "preprocessing": "Author BGR order; trim 10% from each end of long axis; OpenCV linear 224\u00d7224 resize; ImageNet normalization; ResNet18 pooled features; sample std of second differences of L2 frame-feature distances; lower discrepancy is more AI-like. ai_score=1/(1+temporal_std) is a bounded ranking coordinate, never a probability or midpoint decision.",
+      "ranking_only": true
+    }
+  },
+  "config_sha256": "e03b78451f3e245b49cbfae42b21f917897cf2515aa8bc2568339038bef4dd30",
+  "manifest_sha256": "37521ba87accaf6b2dc0420a6a7feee04b810885b6e4ff32e1636a4576ef2899",
+  "frozen_commits": {
+    "configs/experiments/temporal-shared.json": "0f1ec9c9489fc193179915b0877b23ed925ef681",
+    "configs/temporal-panel.json": "0f1ec9c9489fc193179915b0877b23ed925ef681"
+  },
+  "code_sha256": {
+    "src/vidrobust/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/vidrobust/adapters/__init__.py": "fb3d517f42e6e4b8baaa794a03e545b0bd97f0818ba73ac3db09b1e6ab645a42",
+    "src/vidrobust/adapters/aegis.py": "cb750d6fcf20801e95761f9e62ed288863b7c2b1db805a082f920dd89e8ccac7",
+    "src/vidrobust/adapters/aigvdet_rgb.py": "d898721bd72c61dbf1cf62f0a333018e0e0e0b875fb5fd8bc4504c9add741e39",
+    "src/vidrobust/adapters/d3.py": "d4cc974f1c8d4013dfde53759c355bdc50fde8893f9b66ffbda867058d4259d0",
+    "src/vidrobust/adapters/waverep.py": "5d1db1890e45cf08d2ccc4456dedaf343bc7e0534d7b0c90e84fe236c5027394",
+    "src/vidrobust/artifacts.py": "859f540b0688201b74a346cc496fdd4d321bf06f1390dcde25a49e4eb9d687d1",
+    "src/vidrobust/cli.py": "22132dac9fa6bef4ee93d2efc7435c7f0178b8bca8dce4467646503ee1825d5d",
+    "src/vidrobust/demo.py": "e6eeb68614ba4d5f6c84f5eac557db6b67f46f94e9814d7cff21ff448241b1ae",
+    "src/vidrobust/detectors.py": "008d9ee078d5f2b002e95ea2bb10292a45a77c90f4e8af0b3ba562e8e5460dbc",
+    "src/vidrobust/experiment.py": "f72df5738de23e01297d23252ff697aff30190c9b6fbc1b6d16c723b18e66afc",
+    "src/vidrobust/experiment_report.py": "58956f2d9684630c60297d9c87bb427b5a1a6730b899f805d97d87512bbc46c8",
+    "src/vidrobust/frame_scoring.py": "1ed45ddd118399e03914552c39d1874dce9a55553b38f98acfe8d559ad926c21",
+    "src/vidrobust/inference.py": "de4d95833fbf4b3f70d3453c2c6e3963504cb01e68e3c534965e1becff7852db",
+    "src/vidrobust/media.py": "bc5cb77acdce748721ee20c3033b2a2fc23fc55d39473ee298c99c4dd59cf3b0",
+    "src/vidrobust/registry.py": "c706bfb7f1121690452147e57be63b47a8a926f36f5818cf5b0ad4b0429c7093",
+    "vendor/aegis/consistency_branch.py": "bc0687fdc835037e18bafe28a80511e23fdc4f8c0603171a3c4897057b5c434b",
+    "vendor/aegis/detector_model.py": "bdfcfddba6dfe305f462d0a094b28314ea208b2f4b7fa119978fd226d88f05a6",
+    "vendor/aegis/motion_branch.py": "5d809994c1597bcfc2a7c7cdf59faa1da15ba87b0701df1ab580ce138a3d7c34",
+    "vendor/aegis/pixel_branch.py": "e8d6d188729662187fcd04653d54337101bd8287820d3a87f2a4cf09e8bca26a",
+    "vendor/aegis/video_io.py": "bab6ba4b8b1c07ff9bc392cf40487be8e8d31fdd248a4494563057e812a043dc",
+    "vendor/aigvdet/resnet.py": "c7e477dba329434df9ae421e32eae0552b9c2e95db769dbff1050887ca326dc7",
+    "vendor/d3/D3_model.py": "017b68db492ab34f5e45320f14d5f70406355a9da2eb6bc2718499a46d8afc3d",
+    "vendor/d3/albucore_functions.py": "d9c5eab308b8c4a659ddfaaa2015ad54e2f7d77bdcf450d573e4af5df90639b7",
+    "vendor/d3/datasets.py": "b7a58fbb5da2525ebe3e3b3859bdea1e13ed2d37b28a40b71af7da00e329c7ea"
+  },
+  "python": "3.11.15",
+  "packages": {
+    "torch": "2.5.1",
+    "torchvision": "0.20.1",
+    "timm": "1.0.27",
+    "numpy": "2.2.6",
+    "opencv-python-headless": "4.11.0.86",
+    "imageio-ffmpeg": "0.6.0",
+    "matplotlib": "3.10.7"
+  },
+  "model_sha256": {
+    "d3_resnet18": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec"
+  },
+  "ffmpeg": "7.1",
+  "device": "cpu",
+  "threads": 4,
+  "seed": 0,
+  "deterministic_algorithms": true,
+  "preparation": [
+    {
+      "video_id": "panel_ego4d_01",
+      "source_sha256": "5d2e769afd90c5f8d9ff81dc249f5e713624b5c3fc626b79daf5602d61198e4f",
+      "source_metadata": {
+        "width": 720,
+        "height": 540,
+        "frames": 210,
+        "fps": 30.0
+      },
+      "commands": [],
+      "warnings": []
+    },
+    {
+      "video_id": "panel_ego4d_02",
+      "source_sha256": "7881605a5a69cc5452ba3f465bce894e49638c5fbd10719df50d4c2d3057d824",
+      "source_metadata": {
+        "width": 720,
+        "height": 540,
+        "frames": 120,
+        "fps": 30.0
+      },
+      "commands": [],
+      "warnings": []
+    },
+    {
+      "video_id": "panel_ego4d_03",
+      "source_sha256": "e4dd314e1e8be0f6faaafe2565419046a8b08779192fdc812e510eda20f0f567",
+      "source_metadata": {
+        "width": 720,
+        "height": 540,
+        "frames": 150,
+        "fps": 30.0
+      },
+      "commands": [],
+      "warnings": []
+    },
+    {
+      "video_id": "panel_ego4d_04",
+      "source_sha256": "b91b5931baea5714674356bdd656928f855b602fa328f39356360445ea553c83",
+      "source_metadata": {
+        "width": 720,
+        "height": 540,
+        "frames": 180,
+        "fps": 30.0
+      },
+      "commands": [],
+      "warnings": []
+    },
+    {
+      "video_id": "panel_ego4d_05",
+      "source_sha256": "07a9319acda1dd0dd17fbe64604cf4f0e19ad764ea5ee6f81852cd8a9b0fe3f7",
+      "source_metadata": {
+        "width": 720,
+        "height": 540,
+        "frames": 180,
+        "fps": 30.0
+      },
+      "commands": [],
+      "warnings": []
+    },
+    {
+      "video_id": "panel_youtube_vos_01",
+      "source_sha256": "2ce3437bc16d0ae2d124c7c7bc9e67056b8611666872e4b47cfb9f53ce3f582f",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 180,
+        "fps": 30.0
+      },
+      "commands": [],
+      "warnings": []
+    },
+    {
+      "video_id": "panel_youtube_vos_02",
+      "source_sha256": "7ffaa2d38d5553371b80b08f43c5619bde4a92fa5d570e1e2dc5125eb4aafa51",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 150,
+        "fps": 30.0
+      },
+      "commands": [],
+      "warnings": []
+    },
+    {
+      "video_id": "panel_youtube_vos_03",
+      "source_sha256": "a331f20236f84bf48958ff8756f0753afa0bafee1c57149d861a92d273fcd4e3",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 180,
+        "fps": 30.0
+      },
+      "commands": [],
+      "warnings": []
+    },
+    {
+      "video_id": "panel_youtube_vos_04",
+      "source_sha256": "b42da9d6bb72f49c4cd5566f3ae5723a4930441129185ae7fdf2f7efe01ea76d",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 180,
+        "fps": 30.0
+      },
+      "commands": [],
+      "warnings": []
+    },
+    {
+      "video_id": "panel_youtube_vos_05",
+      "source_sha256": "cc1d6d4923d411b6ff27b761ace4e30b109f27cdaaa3abb3146193ff22f7d57e",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 180,
+        "fps": 30.0
+      },
+      "commands": [],
+      "warnings": []
+    },
+    {
+      "video_id": "panel_cosmos_01",
+      "source_sha256": "83f6174d84b5f8bed7a957263249363800d4f1bf410622601ee4293091104579",
+      "source_metadata": {
+        "width": 1280,
+        "height": 704,
+        "frames": 121,
+        "fps": 24.0
+      },
+      "commands": [],
+      "warnings": []
+    },
+    {
+      "video_id": "panel_cosmos_02",
+      "source_sha256": "3f9e0f682d6323494d91ae613e4d2e04003bb9dd27af6b1444a06f6889ebfcca",
+      "source_metadata": {
+        "width": 1280,
+        "height": 704,
+        "frames": 121,
+        "fps": 24.0
+      },
+      "commands": [],
+      "warnings": []
+    },
+    {
+      "video_id": "panel_cosmos_03",
+      "source_sha256": "2274ccb71debf1feeafe7360896a683108c837c185b8aafd2f0189d8bad70383",
+      "source_metadata": {
+        "width": 1280,
+        "height": 704,
+        "frames": 121,
+        "fps": 24.0
+      },
+      "commands": [],
+      "warnings": []
+    },
+    {
+      "video_id": "panel_cosmos_04",
+      "source_sha256": "cc157d841c2a83ce857d529cd1634024ff33099bfebe329703409b0d67977447",
+      "source_metadata": {
+        "width": 1280,
+        "height": 704,
+        "frames": 121,
+        "fps": 24.0
+      },
+      "commands": [],
+      "warnings": []
+    },
+    {
+      "video_id": "panel_cosmos_05",
+      "source_sha256": "defa5791b885d204eeae11f9356ae21b5de40b4b5434d8192235835874a0f1e6",
+      "source_metadata": {
+        "width": 1280,
+        "height": 704,
+        "frames": 121,
+        "fps": 24.0
+      },
+      "commands": [],
+      "warnings": []
+    },
+    {
+      "video_id": "panel_wan_01",
+      "source_sha256": "304b0e5d5bd52c99b4175e4e9e84caeea06425d2137d452fbcc4ab0d94ba3a22",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 161,
+        "fps": 16.0
+      },
+      "commands": [],
+      "warnings": []
+    },
+    {
+      "video_id": "panel_wan_02",
+      "source_sha256": "d9a912f77c58c04d3263f8f478d384c5ee26bfaaee20b0f02314ef752bcfb803",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 161,
+        "fps": 16.0
+      },
+      "commands": [],
+      "warnings": []
+    },
+    {
+      "video_id": "panel_wan_03",
+      "source_sha256": "4bc9112e22a44aad62f30fec34e8e029a1ba364cecad9edde6afb480c1d1c0e1",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 161,
+        "fps": 16.0
+      },
+      "commands": [],
+      "warnings": []
+    },
+    {
+      "video_id": "panel_wan_04",
+      "source_sha256": "949b39c29d327d68bb667c3997167c151fe24387b95967de53b7faa7bed77b6b",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 161,
+        "fps": 16.0
+      },
+      "commands": [],
+      "warnings": []
+    },
+    {
+      "video_id": "panel_wan_05",
+      "source_sha256": "79f9a06b5b5084828559a196e6be5f57d92d814dbdfbbf909d8f34eaa51c110c",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 161,
+        "fps": 16.0
+      },
+      "commands": [],
+      "warnings": []
+    },
+    {
+      "video_id": "construction_real_01",
+      "source_sha256": "c0013ace4d6a3c7633a37755932db3a3cfb53779042b392c5d5d870001ab3c49",
+      "source_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 618,
+        "fps": 30.0
+      },
+      "commands": [],
+      "warnings": []
+    },
+    {
+      "video_id": "construction_real_02",
+      "source_sha256": "ad67214f32ec25cdd4b3be15aa63222344535e78c928896b382695ba374cbfd4",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 1833,
+        "fps": 24.0
+      },
+      "commands": [],
+      "warnings": []
+    },
+    {
+      "video_id": "construction_ai_01",
+      "source_sha256": "879c8b985886ad459f81ba3e2ca741d824e204f6a7641f66df3238661579d9de",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 240,
+        "fps": 30.0
+      },
+      "commands": [],
+      "warnings": []
+    },
+    {
+      "video_id": "construction_ai_02",
+      "source_sha256": "2caccf4460e20a2da4b59f7260218ff097d2b9d9675cfa2d3588b6263a0463c0",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 240,
+        "fps": 30.0
+      },
+      "commands": [],
+      "warnings": []
+    },
+    {
+      "video_id": "construction_ai_03",
+      "source_sha256": "d77308313597bda85ca84e280c992d9a656ad11229cf384da762d18fa4854b79",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "commands": [],
+      "warnings": []
+    },
+    {
+      "video_id": "construction_real_03",
+      "source_sha256": "7ca6a391c5bb853d6e00e392394b178e2d81fbeac19f4363c2c937ced473458e",
+      "source_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 2496,
+        "fps": 25.0
+      },
+      "commands": [],
+      "warnings": []
+    }
+  ]
+}

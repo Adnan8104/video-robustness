@@ -1,0 +1,82 @@
+{
+  "policy_sha256": "a3a11a9295e4a303c6e13fb679698c89dc79d3aa677cbb873f10ee6bada86621",
+  "scores_csv_sha256": "7ef31e14327dcbdf55ce526ff0b1105f3ea2981f669de10d1f837eb8ee79146c",
+  "method": "Lower raw temporal_std is more AI-like. Count real controls with discrepancy <= target; ties block separation by any one threshold. Panel groups follow pre-existing source ID prefixes. No cutoff fitted.",
+  "targets": [
+    {
+      "video_id": "panel_wan_04",
+      "temporal_std": 0.6783583164215088,
+      "real_controls": 13,
+      "strictly_more_ai_like_than_real_controls": 12,
+      "blocking_real_controls": [
+        {
+          "video_id": "construction_real_01",
+          "temporal_std": 0.6631022691726685
+        }
+      ]
+    },
+    {
+      "video_id": "panel_wan_05",
+      "temporal_std": 1.34286630153656,
+      "real_controls": 13,
+      "strictly_more_ai_like_than_real_controls": 8,
+      "blocking_real_controls": [
+        {
+          "video_id": "panel_ego4d_01",
+          "temporal_std": 1.2716039419174194
+        },
+        {
+          "video_id": "panel_ego4d_03",
+          "temporal_std": 1.0739096403121948
+        },
+        {
+          "video_id": "construction_real_01",
+          "temporal_std": 0.6631022691726685
+        },
+        {
+          "video_id": "construction_real_02",
+          "temporal_std": 1.036344051361084
+        },
+        {
+          "video_id": "construction_real_03",
+          "temporal_std": 0.8855051398277283
+        }
+      ]
+    },
+    {
+      "video_id": "construction_ai_02",
+      "temporal_std": 1.0223947763442993,
+      "real_controls": 13,
+      "strictly_more_ai_like_than_real_controls": 11,
+      "blocking_real_controls": [
+        {
+          "video_id": "construction_real_01",
+          "temporal_std": 0.6631022691726685
+        },
+        {
+          "video_id": "construction_real_03",
+          "temporal_std": 0.8855051398277283
+        }
+      ]
+    }
+  ],
+  "groups": {
+    "source-panel": {
+      "real_clips": 10,
+      "ai_clips": 10,
+      "pairs": 100,
+      "ai_above_real": 94,
+      "ties": 0,
+      "pairwise_auc": 0.94
+    },
+    "construction-scenes": {
+      "real_clips": 3,
+      "ai_clips": 3,
+      "pairs": 9,
+      "ai_above_real": 4,
+      "ties": 0,
+      "pairwise_auc": 0.4444444444444444
+    }
+  },
+  "zero_real_error_recovery_of_all_three_possible": false
+}

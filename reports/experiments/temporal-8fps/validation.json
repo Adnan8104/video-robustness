@@ -1,0 +1,98 @@
+{
+  "source_clips": 26,
+  "paired_cases": 26,
+  "model_scores": 26,
+  "source_hashes_and_full_decode": "passed",
+  "geometry_timing_and_frame_indices": "passed",
+  "complete_case_matrix": "passed",
+  "identical_bytes_and_RGB_between_detectors": "passed",
+  "config_and_code_unchanged_during_inference": "passed",
+  "native_temporal_parity": {
+    "audit": "native-adapter-audit.json",
+    "audit_sha256": "71dee2dc9619d909f261a6548806db9d17a90d75426487e331f1165350580b9e",
+    "clips": [
+      "panel_wan_04",
+      "panel_wan_05",
+      "construction_ai_02",
+      "construction_real_02",
+      "panel_ego4d_01",
+      "panel_youtube_vos_01"
+    ],
+    "exact_match": true,
+    "independent_arithmetic_rows": 26,
+    "independent_raw_rank_counts": "passed"
+  },
+  "fresh_model_repeat_selection": {
+    "variants": [
+      "original"
+    ],
+    "detectors": [
+      "d3_resnet18"
+    ],
+    "rule": "Explicit source IDs; no midpoint decisions",
+    "script_sha256": "811e3d3e42e639b420f7d31ca1b8d1baa9ea00bd376161a6e352800ba8c3d690"
+  },
+  "fresh_model_repeats": [
+    {
+      "detector": "d3_resnet18",
+      "video_id": "panel_ego4d_01",
+      "variant": "original",
+      "ai_score": 0.4402175843892568,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "d3_resnet18",
+      "video_id": "panel_youtube_vos_01",
+      "variant": "original",
+      "ai_score": 0.12516903608146296,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "d3_resnet18",
+      "video_id": "panel_wan_04",
+      "variant": "original",
+      "ai_score": 0.5958203264557581,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "d3_resnet18",
+      "video_id": "panel_wan_05",
+      "variant": "original",
+      "ai_score": 0.42682759974145934,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "d3_resnet18",
+      "video_id": "construction_real_02",
+      "variant": "original",
+      "ai_score": 0.49107615156270085,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "d3_resnet18",
+      "video_id": "construction_ai_02",
+      "variant": "original",
+      "ai_score": 0.49446330246541176,
+      "all_outputs_and_input_hashes_exact_match": true
+    }
+  ],
+  "independent_run_checks": {
+    "model_scores": 26,
+    "independent_CSV_analysis": "passed",
+    "independent_error_and_agreement_analysis": "not applicable; ranking-only",
+    "scored_media_and_model_and_code_hashes": "passed",
+    "script_sha256": "443a685c5b56fddd2e6a82bf47f7ffc674f65c9881e88db9e73a6256b2608388"
+  },
+  "independent_media_timing": {
+    "audit": "media-timing-audit.json",
+    "audit_sha256": "e638b7ed2170ebef86e985005a4b24167a0b2b2cba824f673a00ec7206dd009c",
+    "source_clips": 26,
+    "frame_counts_and_sampled_timestamps": "passed"
+  },
+  "predeclared_target_separation": {
+    "audit": "target-separation.json",
+    "audit_sha256": "4ad6925befb91bf5b8d9ec00177fc9fa2a2bf8067010173c49282bd7c2c6412e",
+    "raw_score_orderings": "passed",
+    "no_cutoff_fitted": true
+  }
+}

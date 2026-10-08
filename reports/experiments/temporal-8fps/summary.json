@@ -1,0 +1,70 @@
+{
+  "d3_resnet18": {
+    "original": {
+      "all": {
+        "real_clips": 13,
+        "ai_clips": 13,
+        "pairs": 169,
+        "ai_above_real": 141,
+        "ties": 0,
+        "pairwise_auc": 0.834319526627219
+      },
+      "source:Cosmos": {
+        "real_clips": 0,
+        "ai_clips": 5,
+        "pairs": 0,
+        "ai_above_real": 0,
+        "ties": 0,
+        "pairwise_auc": null
+      },
+      "source:Ego4D": {
+        "real_clips": 5,
+        "ai_clips": 0,
+        "pairs": 0,
+        "ai_above_real": 0,
+        "ties": 0,
+        "pairwise_auc": null
+      },
+      "source:Wan2.2-14B": {
+        "real_clips": 0,
+        "ai_clips": 5,
+        "pairs": 0,
+        "ai_above_real": 0,
+        "ties": 0,
+        "pairwise_auc": null
+      },
+      "source:Wikimedia Commons": {
+        "real_clips": 3,
+        "ai_clips": 0,
+        "pairs": 0,
+        "ai_above_real": 0,
+        "ties": 0,
+        "pairwise_auc": null
+      },
+      "source:YouTube-VOS": {
+        "real_clips": 5,
+        "ai_clips": 0,
+        "pairs": 0,
+        "ai_above_real": 0,
+        "ties": 0,
+        "pairwise_auc": null
+      },
+      "source:sora-2-pro": {
+        "real_clips": 0,
+        "ai_clips": 2,
+        "pairs": 0,
+        "ai_above_real": 0,
+        "ties": 0,
+        "pairwise_auc": null
+      },
+      "source:veo3.1": {
+        "real_clips": 0,
+        "ai_clips": 1,
+        "pairs": 0,
+        "ai_above_real": 0,
+        "ties": 0,
+        "pairwise_auc": null
+      }
+    }
+  }
+}

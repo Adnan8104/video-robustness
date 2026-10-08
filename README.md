@@ -4,7 +4,7 @@
 
 Compares pretrained AI-video detectors on real and generated footage, including compression, resizing and cropping.
 Models: **AEGIS**, **WaveRep** and the **AIGVDet RGB branch**. Runs on CPU; no training required.
-The local demo uses AEGIS and WaveRep.
+Also evaluates **D3 ResNet18** as a temporal ranker. The local demo uses AEGIS and WaveRep.
 
 ## Key findings
 
@@ -25,6 +25,9 @@ The third baseline, **AIGVDet RGB**, missed **7/10 AI clips** and flagged **1/10
 All three missed the same two Wan clips; adding a model did not repair them.
 [Three-model comparison](reports/experiments/third-detector/report.md) · [New construction-scene check](docs/construction-scenes.md) · [Eight-real-clip check](reports/experiments/real-footage/sections.md) · [What to improve next](docs/detector-evaluation.md)
 
+The [lightweight D3 temporal check](docs/temporal-candidate.md) ranks the existing
+26 clips with AUC 0.911 or 0.834 depending on sampling. Neither profile cleanly
+separates all three shared misses from every real control; no cutoff or demo change.
 
 ## Run it
 
@@ -78,7 +81,7 @@ config + pinned sources → prepare variants → detector adapters → paired sc
 - `adapters/` + `registry.py`: model adapters, discovered automatically
 - `experiment_report.py`: one output format for every config
 
-**51 tests** cover input checks, paired analysis, registry extensions, uploads, section sampling and historical commands. GitHub Actions includes the demo tests and validates all six configs.
+**55 tests** cover input checks, paired analysis, registry extensions, uploads, section sampling and historical commands. GitHub Actions includes the demo tests and validates all eight configs.
 Historical studies and their report code live in `src/vidrobust/legacy/`.
 
 [Config guide and technical choices](docs/experiments.md) · [Methodology](docs/methodology.md) · [Earlier experiments](docs/experiment-history.md)

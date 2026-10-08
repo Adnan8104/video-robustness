@@ -16,10 +16,12 @@ uv run python run.py experiment configs/experiments/compression.json --dry-run
 | `manifest` | Existing JSON source list with pinned revisions/versions and SHA256 hashes. Relative paths start at the repository root. |
 | `sample_ids` | Optional ordered subset of the manifest. Omit to use every clip. |
 | `source_directory` | Local download cache under `data/`. A matching hash allows reuse. |
-| `detectors` | Registered adapter names (currently `aegis`, `waverep` and `aigvdet_rgb`). Models load one at a time to limit memory. |
+| `detectors` | Registered adapter names (currently `aegis`, `waverep`, `aigvdet_rgb` and ranking-only `d3_resnet18`). Models load one at a time to limit memory. |
 | `preparation` | `native` preserves source geometry/timing. `centered_4s_504_24fps` creates a common lossless 504×504, 96-frame master. |
 | `variants` | Named transforms and encoding settings. Each starts independently from the source or common master. |
 | `baseline` | Variant used for score deltas and midpoint crossings. |
+| `analysis` | Default `midpoint`; `ranking` reports pair orderings/AUC without a cutoff. Ranking-only adapters require it. |
+| `sampling` | Default `centered_4s_16`; `centered_2s_8fps` selects 16 nominal 8 fps positions in a centered two-second window. |
 | `notes` | Optional experiment-specific context, included in the report. |
 
 A manifest contains `samples`, each with `id`, `label` (`real` or `ai`) and `sha256`.
@@ -93,6 +95,7 @@ The class follows the [detector contract](../src/vidrobust/detectors.py):
 - `__init__(root)`: load the verified trained checkpoint and set evaluation mode.
 - `prepare_frames(frames)`: convert the 16 RGB arrays into the native normalized PyTorch tensor.
 - `predict(tensor)`: return numeric outputs including `ai_score` in [0,1]; include logits where available.
+- `ranking_only = True`: required when the bounded score has no decision meaning; configs must select `analysis: "ranking"`. Save the raw score too and explain the coordinate mapping.
 
 The registry downloads/verifies the checkpoint before initialization. The shared
 scorer runs inference mode, checks finite outputs, and hashes the RGB frames and
@@ -127,7 +130,7 @@ use the recorded Git revision to reproduce those historical versions.
 
 [GitHub Actions](https://github.com/Adnan8104/video-robustness/actions/workflows/ci.yml)
 installs locked dependencies on Python 3.11, runs the test suite, then validates
-all six configs with `--dry-run`. It does not download dataset media or pretrained
+all eight configs with `--dry-run`. It does not download dataset media or pretrained
 weights. Tests create small synthetic videos locally. The workflow follows
 [uv's official integration guide](https://docs.astral.sh/uv/guides/integration/github/)
 and pins its setup actions to commit hashes.
@@ -268,3 +271,49 @@ resolution and camera geometry. No calibrated verdict or detector promotion foll
 from this small pilot. The [selection policy](../configs/construction-scenes-selection.md)
 and [candidate audit](../configs/construction-scenes-candidate-audit.json) were committed
 before inference. [Results and interpretation](construction-scenes.md).
+
+## Evaluate a temporal ranking candidate
+
+```sh
+uv run python run.py experiment configs/experiments/temporal-shared.json
+uv run python run.py experiment configs/experiments/temporal-8fps.json
+```
+
+Both configs reuse all 26 source clips from the source and construction panels.
+Each writes 26 scores, with no edit, training, threshold tuning or demo change.
+This is a regression/feasibility check on previously examined clips. It is not a
+new held-out accuracy test.
+
+D3's documented ResNet18 option uses an official **45 MiB** ImageNet encoder and
+existing locked dependencies. This is a lightweight temporal-feature candidate,
+not optical flow and not the main paper's XCLIP model. The adapter preserves the
+author's BGR order, long-axis crop, linear resize and normalization. It measures
+the standard deviation of changes between consecutive feature distances. Lower
+raw discrepancy is more AI-like. The bounded `ai_score = 1/(1+temporal_std)` column
+only stores a monotonic ranking coordinate; **0.5 has no decision meaning** for it.
+
+The runner rejects this adapter with midpoint analysis before any downloads.
+Ranking reports omit classification errors and agreement verdicts, and their
+plots have no midpoint line. AUC counts AI/real pair orderings, with ties worth
+half. It does not establish a useful threshold or independent-trial accuracy.
+
+The two-second profile uses frame-index rounding at nominal 8 fps and keeps source
+frames directly decoded. It is closer to upstream's timing, but upstream extracts
+JPEGs from a random window. The profiles also change window duration, so any
+ranking difference cannot be attributed solely to frame rate.
+
+For either config, run the following checks (replace the config path for the
+second profile):
+
+```sh
+uv run python scripts/verify_experiment.py configs/experiments/temporal-shared.json
+uv run python scripts/audit_media.py configs/experiments/temporal-shared.json
+uv run python scripts/audit_d3.py configs/experiments/temporal-shared.json --clips panel_wan_04 panel_wan_05 construction_ai_02 construction_real_02 panel_ego4d_01 panel_youtube_vos_01
+uv run python scripts/repeat_experiment.py configs/experiments/temporal-shared.json --variants original --clips panel_wan_04 panel_wan_05 construction_ai_02 construction_real_02 panel_ego4d_01 panel_youtube_vos_01
+```
+
+The audit executes unchanged author forward/crop and normalization code on six
+fixed clips. It checks all 26 score arithmetic/rank counts independently. Explicit
+repeat IDs replace midpoint-based selection, which is invalid for a ranker.
+[Predeclared criteria](../configs/temporal-ranking-policy.md) ·
+[Source, encoder and adaptation details](../vendor/d3/ORIGIN.md).

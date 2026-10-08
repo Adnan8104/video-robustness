@@ -95,3 +95,13 @@ establish a population error rate. Source videos, weights and inspection frames 
 [Native audit](../reports/experiments/third-detector/native-adapter-audit.json) ·
 [Earlier two-model panel](../reports/experiments/source-panel/report.md) ·
 [Source selection policy](../configs/source-panel-selection.md).
+
+## Temporal ranking follow-up
+
+[D3's lightweight temporal check](temporal-candidate.md) is now complete on all
+26 existing source/construction clips. AUC is 0.911 with the shared four-second
+window and 0.834 with native-like two-second/8 fps timing. The raw temporal signal
+is useful for ordering, but neither profile separates all three shared AI misses
+from every real control. There is no fitted cutoff, classification error claim or
+demo promotion. The main XCLIP version and released optical-flow branches remain
+candidates for a next check; these lightweight results do not evaluate them.
