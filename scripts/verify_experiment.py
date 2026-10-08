@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 from vidrobust.artifacts import sha
 from vidrobust.experiment import analyze, inside, load_config
+from vidrobust.experiment_report import summarize_decisions
 
 
 def main():
@@ -39,6 +40,8 @@ def main():
             r[key] = int(r[key])
     if analyze(rows, config, samples) != json.loads((out / "summary.json").read_text()):
         raise ValueError("Independent CSV analysis differs from stored summary")
+    if summarize_decisions(rows, config) != json.loads((out / "decisions.json").read_text()):
+        raise ValueError("Independent CSV decisions differ from stored error/coverage counts")
     for r in rows:
         variant = next(v for v in config["variants"] if v["name"] == r["variant"])
         if variant["encoding"] == "source":
@@ -68,7 +71,7 @@ def main():
             if r[field] != old[field]:
                 raise ValueError(f"Published {field} differs: {key}")
             compared_fields.add(field)
-        for field in ("sampled_frame_indices", "frame_logits"):
+        for field in ("sampled_frame_indices", "frame_logits", "frame_scores"):
             if old.get(field):
                 if json.loads(r[field]) != json.loads(old[field]):
                     raise ValueError(f"Published {field} differs: {key}")
@@ -82,7 +85,7 @@ def main():
     validation = json.loads(validation_path.read_text())
     validation["published_reference_parity"] = dict(reference=args.reference, reference_sha256=sha(reference_path),
         matched_scores=len(selected), exact_match=True, compared_fields=sorted(compared_fields),
-        independent_CSV_analysis="passed", scored_media_and_model_and_code_hashes="passed")
+        independent_CSV_analysis="passed", independent_error_and_agreement_analysis="passed", scored_media_and_model_and_code_hashes="passed")
     validation_path.write_text(json.dumps(validation, indent=2)+"\n")
     print(f"Exact parity: {len(selected)} scores; inputs, available logits and frame lists match {args.reference}")
 

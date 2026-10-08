@@ -1,6 +1,6 @@
 # AIGVDet RGB branch
 
-Bai et al., *AI-Generated Video Detection*, PRCV 2024.
+Bai et al., *AI-generated video detection via spatial-temporal anomaly learning*, PRCV 2024.
 Official repository: https://github.com/multimediaFor/AIGVDet
 Pinned commit: `5e0d5dd7c5ecf96040608676a2965502ffed2555`.
 

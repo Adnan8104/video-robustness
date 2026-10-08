@@ -61,6 +61,13 @@ def main():
                 raise ValueError('Stored scoring code changed')
         with (out / 'scores.csv').open() as f:
             references = {r['video_id']: r for r in csv.DictReader(f) if r['detector'] == 'aigvdet_rgb'}
+    if references:
+        for row in references.values():
+            logits = json.loads(row['frame_logits'])
+            probabilities = json.loads(row['frame_scores'])
+            native_probs = [torch.tensor(v, dtype=torch.float32).sigmoid().item() for v in logits]
+            if len(logits) != 16 or probabilities != native_probs or float(row['ai_score']) != sum(native_probs)/16:
+                raise ValueError('Stored RGB score arithmetic differs')
     results = []
     for clip in args.clips:
         sample = next(s for s in samples if s['id'] == clip)
@@ -100,6 +107,7 @@ def main():
         adapter_sha256=sha(ROOT / 'src/vidrobust/adapters/aigvdet_rgb.py'),
         script_sha256=sha(Path(__file__).resolve()), config_sha256=sha(config_path),
         manifest_sha256=sha(manifest_path), state_tensors_loaded_strictly=len(state), clips=results,
+        independently_checked_stored_score_arithmetic=len(references),
         scope='RGB branch only; same sparse 16 frames, not full optical-flow detector or all-frame evaluation')
     out.mkdir(parents=True, exist_ok=True)
     (out / 'native-adapter-audit.json').write_text(json.dumps(audit, indent=2)+'\n')
