@@ -13,7 +13,7 @@ uv run python run.py experiment configs/experiments/compression.json --dry-run
 |---|---|
 | `schema_version` | `1`; rejects unknown versions and misspelled top-level fields. |
 | `name` | Output folder name. Each run writes to `reports/experiments/<name>/`; media go to ignored `data/experiments/<name>/`. Rerunning a name replaces its generated outputs. |
-| `manifest` | Existing JSON source list with pinned dataset revisions and SHA256 hashes. Relative paths start at the repository root. |
+| `manifest` | Existing JSON source list with pinned revisions/versions and SHA256 hashes. Relative paths start at the repository root. |
 | `sample_ids` | Optional ordered subset of the manifest. Omit to use every clip. |
 | `source_directory` | Local download cache under `data/`. A matching hash allows reuse. |
 | `detectors` | Registered adapter names (currently `aegis`, `waverep` and `aigvdet_rgb`). Models load one at a time to limit memory. |
@@ -22,8 +22,13 @@ uv run python run.py experiment configs/experiments/compression.json --dry-run
 | `baseline` | Variant used for score deltas and midpoint crossings. |
 | `notes` | Optional experiment-specific context, included in the report. |
 
-A manifest contains `samples`, each with `id`, `label` (`real` or `ai`), `dataset`,
-`revision`, `remote_path`, and `sha256`. Dataset and revision may also be specified
+A manifest contains `samples`, each with `id`, `label` (`real` or `ai`) and `sha256`.
+By default, sources are Hugging Face files with `dataset`, a pinned 40-character
+`revision`, and `remote_path`. An explicit `provider: "http"` instead requires
+`source_url`, `source_page` and `source_revision`: public HTTPS media, a provenance
+page, and a recorded version/revision. SHA256 still pins exact downloaded bytes.
+Media URLs with embedded credentials or fragments are rejected. Include author,
+source-date and license fields when using external camera footage. Dataset and revision may also be specified
 at the manifest's top level. `source`, `content`, `cell` and `actual_metadata` are optional.
 The existing manifests include selection policies and audits; a new manifest needs its own selection notes.
 
@@ -122,7 +127,7 @@ use the recorded Git revision to reproduce those historical versions.
 
 [GitHub Actions](https://github.com/Adnan8104/video-robustness/actions/workflows/ci.yml)
 installs locked dependencies on Python 3.11, runs the test suite, then validates
-all five configs with `--dry-run`. It does not download dataset media or pretrained
+all six configs with `--dry-run`. It does not download dataset media or pretrained
 weights. Tests create small synthetic videos locally. The workflow follows
 [uv's official integration guide](https://docs.astral.sh/uv/guides/integration/github/)
 and pins its setup actions to commit hashes.
@@ -228,3 +233,38 @@ Native spatial input is a 448×448 center crop and ImageNet-normalized RGB. Smal
 The checkpoint is pinned by SHA256 and loaded strictly, including the trained classifier. It is about **270 MiB** because the released artifact also contains optimizer state; the adapter only uses model weights. Native architecture, preprocessing, per-frame logits, probabilities and aggregation are checked against unchanged upstream code at the pinned revision. The audit also checks score arithmetic on all 20 saved RGB rows and exact stored-run parity on the three native audit clips.
 
 The adapter is discovered automatically without runner/report changes. [Predeclared criteria](../configs/third-detector-policy.md) · [Native code and weight provenance](../vendor/aigvdet/ORIGIN.md) · [Comparison results](../reports/experiments/third-detector/report.md).
+
+## Check similar construction scenes
+
+```sh
+uv run python run.py experiment configs/experiments/construction-scenes.json
+uv run python scripts/verify_experiment.py configs/experiments/construction-scenes.json
+uv run python scripts/audit_media.py configs/experiments/construction-scenes.json
+uv run python scripts/audit_aigvdet.py configs/experiments/construction-scenes.json --clips construction_real_01 construction_ai_01 construction_ai_03
+uv run python scripts/repeat_experiment.py configs/experiments/construction-scenes.json --variants original --source-errors
+```
+
+Six new source files: three real camera recordings and three generated clips, with
+daylight crane/construction subject matter and two ground/one elevated viewpoints
+per origin. All three adapters score unchanged bytes: **18 scores**. This is a
+coarse subject/viewpoint comparison; the sources are not exact real/generated pairs.
+
+Real footage is directly downloaded from Wikimedia Commons and pinned by SHA256,
+with page revision IDs, authors, dates and licenses. Clips remain in their original
+WebM containers; the local cache filename is standardized to `.mp4`, and the decoder
+recognizes the actual container. No conversion is introduced. Generated sources
+are pinned SynthSite MP4 files from Sora 2 Pro and Veo 3.1.
+
+OpenCV can estimate a WebM frame count from duration and frame rate, rounding it
+up by one. If that count differs from its full decode, the runner checks the actual
+count with an independent FFmpeg decode using passthrough timing before accepting
+the file. Both decoders must agree; failures remain fatal. Ordinary MP4 count
+mismatches remain errors. The media audit independently checks presentation
+timestamps and records their agreement with nominal sampled times.
+
+Only the centered four-second window is scored, even for the longer camera sources.
+Native crops can omit the hoist or workers, and real/AI clips still differ in codecs,
+resolution and camera geometry. No calibrated verdict or detector promotion follows
+from this small pilot. The [selection policy](../configs/construction-scenes-selection.md)
+and [candidate audit](../configs/construction-scenes-candidate-audit.json) were committed
+before inference. [Results and interpretation](construction-scenes.md).

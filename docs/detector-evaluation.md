@@ -54,14 +54,18 @@ The same two generated Wan clips remain incorrectly real-like under either rule.
 Adding this third model creates two more inconclusive clips without removing a
 shared error. Inconclusive clips stay in the denominator. Agreement is not authentication.
 
-## Next useful test
+## Additional construction check and next step
 
-Keep this panel as a regression check. Before promoting another detector, use a
-small, separately selected set that matches scene content: real construction footage
-alongside generated construction footage, with multiple creators and camera viewpoints.
-This helps separate sensitivity to construction scenes from sensitivity to origin.
-A temporal or optical-flow detector would test a different signal from this RGB
-baseline, but must be evaluated before changing the demo.
+We also ran a [six-clip construction-scene check](construction-scenes.md) using new
+camera footage and Sora/Veo clips, with the same broad viewpoint counts per origin.
+WaveRep caught 2/3 new AI clips; AEGIS and AIGVDet RGB caught none. All three missed
+one Sora clip, and the RGB branch flagged a real camera recording. Similar subject
+matter did not remove the failures; source/codec/framing differences remain.
+
+Keep both panels as regression checks. A temporal or optical-flow detector would
+test a different signal from this RGB baseline. Require it to recover the shared
+Sora and Wan misses without new real-video errors, then confirm on additional
+sources before changing the demo.
 
 Threshold calibration needs separate labeled development data and a held-out test.
 We have not calibrated a threshold or trained a detector. A candidate passing this

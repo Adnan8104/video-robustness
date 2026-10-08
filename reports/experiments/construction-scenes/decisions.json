@@ -1,0 +1,34 @@
+{
+  "original": {
+    "models": {
+      "aegis": {
+        "real_clips": 3,
+        "ai_clips": 3,
+        "real_to_ai": 0,
+        "ai_to_real": 3
+      },
+      "waverep": {
+        "real_clips": 3,
+        "ai_clips": 3,
+        "real_to_ai": 0,
+        "ai_to_real": 1
+      },
+      "aigvdet_rgb": {
+        "real_clips": 3,
+        "ai_clips": 3,
+        "real_to_ai": 1,
+        "ai_to_real": 3
+      }
+    },
+    "agreement": {
+      "clips": 6,
+      "agreed_ai": 0,
+      "agreed_real": 3,
+      "inconclusive": 3,
+      "real_to_ai": 0,
+      "ai_to_real": 1,
+      "correct_agreed": 2,
+      "agreed_clips": 3
+    }
+  }
+}

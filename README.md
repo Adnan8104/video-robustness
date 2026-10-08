@@ -23,7 +23,7 @@ AEGIS missed **5/10 AI clips** and flagged **1/10 real clips**; WaveRep missed *
 and flagged **0/10 real clips**, at the 0.5 reference. Both missed two Wan clips.
 The third baseline, **AIGVDet RGB**, missed **7/10 AI clips** and flagged **1/10 real clips**.
 All three missed the same two Wan clips; adding a model did not repair them.
-[Three-model comparison](reports/experiments/third-detector/report.md) · [Eight-real-clip check](reports/experiments/real-footage/sections.md) · [What to improve next](docs/detector-evaluation.md)
+[Three-model comparison](reports/experiments/third-detector/report.md) · [New construction-scene check](docs/construction-scenes.md) · [Eight-real-clip check](reports/experiments/real-footage/sections.md) · [What to improve next](docs/detector-evaluation.md)
 
 
 ## Run it
@@ -78,7 +78,7 @@ config + pinned sources → prepare variants → detector adapters → paired sc
 - `adapters/` + `registry.py`: model adapters, discovered automatically
 - `experiment_report.py`: one output format for every config
 
-**48 tests** cover input checks, paired analysis, registry extensions, uploads, section sampling and historical commands. GitHub Actions includes the demo tests and validates all five configs.
+**51 tests** cover input checks, paired analysis, registry extensions, uploads, section sampling and historical commands. GitHub Actions includes the demo tests and validates all six configs.
 Historical studies and their report code live in `src/vidrobust/legacy/`.
 
 [Config guide and technical choices](docs/experiments.md) · [Methodology](docs/methodology.md) · [Earlier experiments](docs/experiment-history.md)

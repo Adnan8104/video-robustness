@@ -1,0 +1,178 @@
+{
+  "source_clips": 6,
+  "paired_cases": 6,
+  "model_scores": 18,
+  "source_hashes_and_full_decode": "passed",
+  "geometry_timing_and_frame_indices": "passed",
+  "complete_case_matrix": "passed",
+  "identical_bytes_and_RGB_between_detectors": "passed",
+  "config_and_code_unchanged_during_inference": "passed",
+  "independent_run_checks": {
+    "model_scores": 18,
+    "independent_CSV_analysis": "passed",
+    "independent_error_and_agreement_analysis": "passed",
+    "scored_media_and_model_and_code_hashes": "passed",
+    "script_sha256": "351d9a671e62773771685a7430ef2c67bd50419080929c7e3f8a434aa7501f57"
+  },
+  "independent_media_timing": {
+    "audit": "media-timing-audit.json",
+    "audit_sha256": "0c31f78407c1a71b37693b8bccc7e3776fd6a71f571707a141cbcce349b15b5e",
+    "source_clips": 6,
+    "frame_counts_and_sampled_timestamps": "passed"
+  },
+  "native_RGB_branch_parity": {
+    "audit": "native-adapter-audit.json",
+    "audit_sha256": "e9aea45d106f6445985cdeeee0bbba074c32847c0300dbdac7b48026f4222e24",
+    "clips": [
+      "construction_real_01",
+      "construction_ai_01",
+      "construction_ai_03"
+    ],
+    "exact_match": true
+  },
+  "fresh_model_repeat_selection": {
+    "variants": [
+      "original"
+    ],
+    "detectors": [
+      "aegis",
+      "waverep",
+      "aigvdet_rgb"
+    ],
+    "rule": "First lexicographic label conflict and disagreement per cell, plus first correct control per label; cases deduplicated",
+    "script_sha256": "032cef2e7d865e476803faa6f24bdcee3d8090b1d4cb81736797edf8c18ce869"
+  },
+  "fresh_model_repeats": [
+    {
+      "detector": "aegis",
+      "video_id": "construction_ai_01",
+      "variant": "original",
+      "ai_score": 0.0003194450109731406,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "aegis",
+      "video_id": "construction_ai_02",
+      "variant": "original",
+      "ai_score": 0.0015180713962763548,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "aegis",
+      "video_id": "construction_ai_03",
+      "variant": "original",
+      "ai_score": 0.004371666349470615,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "aegis",
+      "video_id": "construction_real_01",
+      "variant": "original",
+      "ai_score": 6.439079152187333e-05,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "aegis",
+      "video_id": "construction_real_02",
+      "variant": "original",
+      "ai_score": 8.46220864332281e-05,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "waverep",
+      "video_id": "construction_ai_01",
+      "variant": "original",
+      "ai_score": 0.5732566475580645,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "waverep",
+      "video_id": "construction_ai_02",
+      "variant": "original",
+      "ai_score": 0.0013900201662368353,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "waverep",
+      "video_id": "construction_ai_03",
+      "variant": "original",
+      "ai_score": 0.9994189246608005,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "waverep",
+      "video_id": "construction_real_01",
+      "variant": "original",
+      "ai_score": 0.002716002958208511,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "waverep",
+      "video_id": "construction_real_02",
+      "variant": "original",
+      "ai_score": 0.0027102494329895995,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "aigvdet_rgb",
+      "video_id": "construction_ai_01",
+      "variant": "original",
+      "ai_score": 8.509783101708773e-11,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "aigvdet_rgb",
+      "video_id": "construction_ai_02",
+      "variant": "original",
+      "ai_score": 3.2437376451532884e-08,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "aigvdet_rgb",
+      "video_id": "construction_ai_03",
+      "variant": "original",
+      "ai_score": 0.02174943448335398,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "aigvdet_rgb",
+      "video_id": "construction_real_01",
+      "variant": "original",
+      "ai_score": 0.07471716998378497,
+      "all_outputs_and_input_hashes_exact_match": true
+    },
+    {
+      "detector": "aigvdet_rgb",
+      "video_id": "construction_real_02",
+      "variant": "original",
+      "ai_score": 0.9926842078566551,
+      "all_outputs_and_input_hashes_exact_match": true
+    }
+  ],
+  "raw_score_arithmetic": {
+    "scores_csv_sha256": "9270e1d883fec716555fbd14419f13e19e5b10f5576609ef94a71fd2e9dad6d4",
+    "model_scores_checked": {
+      "aegis": 6,
+      "waverep": 6,
+      "aigvdet_rgb": 6
+    },
+    "aegis": "Stable Python sigmoid of stored fusion logit; absolute tolerance 1e-7",
+    "waverep": "Arithmetic mean of 16 stored frame logits, then stable Python sigmoid; exact",
+    "aigvdet_rgb": "Float32 sigmoid of each of 16 stored frame logits, then arithmetic mean; frame probabilities and score exact",
+    "passed": true
+  },
+  "existing_two_model_agreement": {
+    "detectors": [
+      "aegis",
+      "waverep"
+    ],
+    "threshold": 0.5,
+    "clips": 6,
+    "agreed_ai": 0,
+    "agreed_real": 4,
+    "correct_agreed": 3,
+    "wrong_agreed": 1,
+    "inconclusive": 2
+  },
+  "pre_scoring_timing_audit_matches_final": true
+}

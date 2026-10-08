@@ -1,0 +1,110 @@
+{
+  "aegis": {
+    "original": {
+      "ai_elevated": {
+        "n": 1,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 1,
+        "midpoint_crossings": []
+      },
+      "ai_ground": {
+        "n": 2,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 2,
+        "midpoint_crossings": []
+      },
+      "real_elevated": {
+        "n": 1,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      },
+      "real_ground": {
+        "n": 2,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      }
+    }
+  },
+  "waverep": {
+    "original": {
+      "ai_elevated": {
+        "n": 1,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      },
+      "ai_ground": {
+        "n": 2,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 1,
+        "midpoint_crossings": []
+      },
+      "real_elevated": {
+        "n": 1,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      },
+      "real_ground": {
+        "n": 2,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      }
+    }
+  },
+  "aigvdet_rgb": {
+    "original": {
+      "ai_elevated": {
+        "n": 1,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 1,
+        "midpoint_crossings": []
+      },
+      "ai_ground": {
+        "n": 2,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 2,
+        "midpoint_crossings": []
+      },
+      "real_elevated": {
+        "n": 1,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 1,
+        "midpoint_crossings": []
+      },
+      "real_ground": {
+        "n": 2,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      }
+    }
+  }
+}

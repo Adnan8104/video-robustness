@@ -1,0 +1,91 @@
+{
+  "checkpoint_sha256": "c2df6f477a590f4b24b14eac9654b868a9f178312795df20749274a502d59bdd",
+  "author_model_sha256": "c7e477dba329434df9ae421e32eae0552b9c2e95db769dbff1050887ca326dc7",
+  "adapter_sha256": "d898721bd72c61dbf1cf62f0a333018e0e0e0b875fb5fd8bc4504c9add741e39",
+  "script_sha256": "bb5382b8e875f1ada1b22e9ad8983f9333fe46b6ed3704904e20c97e0e7e6d33",
+  "config_sha256": "8e0c0a76d919a2bcca4fb474eafe8285ec233f7e1aaaf90527b546ac30dfd268",
+  "manifest_sha256": "4a150c8f95a7e948083be9c899f75d20b59622efb55db7c7ca948b2abd05f310",
+  "state_tensors_loaded_strictly": 320,
+  "clips": [
+    {
+      "video_id": "construction_real_01",
+      "ai_score": 0.07471716998378497,
+      "sha256": "c0013ace4d6a3c7633a37755932db3a3cfb53779042b392c5d5d870001ab3c49",
+      "model_input_sha256": "3a7ec34c42a436a4af8a2419c15cfcd579d834c86ba79e90fdf53b5e4cf59e1e",
+      "frame_logits": [
+        -10.727773666381836,
+        -11.138895034790039,
+        -10.277496337890625,
+        -8.233076095581055,
+        -7.080957412719727,
+        -6.883816242218018,
+        -4.779223918914795,
+        -6.1056084632873535,
+        -7.6196699142456055,
+        -5.593793869018555,
+        -2.669067859649658,
+        -2.259551763534546,
+        -2.0501039028167725,
+        -1.6855348348617554,
+        -1.024165153503418,
+        -0.06184202432632446
+      ],
+      "exact_native_preprocessing_logits_probabilities_and_aggregation": true,
+      "stored_run_exact_match": true
+    },
+    {
+      "video_id": "construction_ai_01",
+      "ai_score": 8.509783101708773e-11,
+      "sha256": "879c8b985886ad459f81ba3e2ca741d824e204f6a7641f66df3238661579d9de",
+      "model_input_sha256": "3f2aec7d9e45a41dc9520c0e154a58936d1b0fb57bbf1e5529cdf048af2988c1",
+      "frame_logits": [
+        -23.241840362548828,
+        -23.667198181152344,
+        -22.96701431274414,
+        -22.864551544189453,
+        -23.12399673461914,
+        -23.86898422241211,
+        -24.015209197998047,
+        -24.314504623413086,
+        -24.00257110595703,
+        -23.6873779296875,
+        -23.071929931640625,
+        -23.691293716430664,
+        -22.871557235717773,
+        -22.331562042236328,
+        -22.64556884765625,
+        -22.958267211914062
+      ],
+      "exact_native_preprocessing_logits_probabilities_and_aggregation": true,
+      "stored_run_exact_match": true
+    },
+    {
+      "video_id": "construction_ai_03",
+      "ai_score": 0.02174943448335398,
+      "sha256": "d77308313597bda85ca84e280c992d9a656ad11229cf384da762d18fa4854b79",
+      "model_input_sha256": "19476046b9266f8c88370fcf0e2285023af4d87196d9ac1ffd6f9459aae9d486",
+      "frame_logits": [
+        -3.6669490337371826,
+        -4.456040859222412,
+        -2.644110679626465,
+        -4.171706676483154,
+        -4.286317825317383,
+        -3.397904872894287,
+        -5.774916648864746,
+        -4.388731479644775,
+        -4.06479024887085,
+        -4.051002502441406,
+        -3.802907943725586,
+        -3.93766450881958,
+        -4.397813320159912,
+        -4.246965408325195,
+        -3.0114941596984863,
+        -3.858128786087036
+      ],
+      "exact_native_preprocessing_logits_probabilities_and_aggregation": true,
+      "stored_run_exact_match": true
+    }
+  ],
+  "independently_checked_stored_score_arithmetic": 6,
+  "scope": "RGB branch only; same sparse 16 frames, not full optical-flow detector or all-frame evaluation"
+}
