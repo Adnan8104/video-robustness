@@ -2,7 +2,7 @@
 
 [![Tests](https://github.com/Adnan8104/video-robustness/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Adnan8104/video-robustness/actions/workflows/ci.yml)
 
-Tests how compression, resizing and cropping change pretrained AI-video detector scores.
+Compares pretrained AI-video detectors on real and generated footage, including compression, resizing and cropping.
 Two models: **AEGIS** and **WaveRep**. Runs on CPU; no training required.
 
 ## Key findings
@@ -17,9 +17,12 @@ Two models: **AEGIS** and **WaveRep**. Runs on CPU; no training required.
 Higher scores mean more AI-like. These are small-sample results; 0.5 is a reference point, not a validated detection threshold.
 [All three edits](docs/panel-results.md) · [Intermediate compression check](reports/failure-followup/report.md)
 
-A [real-footage follow-up](reports/experiments/real-footage/sections.md) checked eight new archived clips
-(six kitchen actions, two music performances). Both models stayed below 0.5 across 22 sampled windows each.
-This does not explain the separate upload failure or establish general reliability.
+A [separate 20-clip source panel](reports/experiments/source-panel/report.md) found both error directions:
+AEGIS missed **5/10 AI clips** and flagged **1/10 real clips**; WaveRep missed **3/10 AI clips**
+and flagged **0/10 real clips**, at the 0.5 reference. Both missed two Wan clips.
+Leaving disagreements inconclusive did not remove those shared errors.
+[Eight-real-clip check](reports/experiments/real-footage/sections.md) · [What to improve next](docs/detector-evaluation.md)
+
 
 ## Run it
 
@@ -73,7 +76,7 @@ config + pinned sources → prepare variants → detector adapters → paired sc
 - `adapters/` + `registry.py`: model adapters, discovered automatically
 - `experiment_report.py`: one output format for every config
 
-**43 tests** cover input checks, paired analysis, registry extensions, uploads, section sampling and historical commands. GitHub Actions includes the demo tests and validates all three configs.
+**45 tests** cover input checks, paired analysis, registry extensions, uploads, section sampling and historical commands. GitHub Actions includes the demo tests and validates all four configs.
 Historical studies and their report code live in `src/vidrobust/legacy/`.
 
 [Config guide and technical choices](docs/experiments.md) · [Methodology](docs/methodology.md) · [Earlier experiments](docs/experiment-history.md)
@@ -83,7 +86,8 @@ Historical studies and their report code live in `src/vidrobust/legacy/`.
 [AEGIS](https://huggingface.co/MusapYildiz/aegis-video-detector) ·
 [WaveRep](https://github.com/grip-unina/WaveRep-SyntheticVideoDetection) ·
 [ComGenVid](https://huggingface.co/datasets/OmerXYZ/comgenvid) ·
-[DAVIS via VLM4D](https://huggingface.co/datasets/shijiezhou/VLM4D)
+[VLM4D](https://huggingface.co/datasets/shijiezhou/VLM4D) ·
+[GovTech SynthSite](https://huggingface.co/datasets/govtech/SynthSite)
 
 AEGIS code retains its [MIT license](vendor/aegis/LICENSE).
 WaveRep's [informational/nonprofit license](vendor/waverep/LICENSE.md) and author attribution are retained.

@@ -177,3 +177,35 @@ Short clips may share most frames across windows. Identical endpoint and middle
 windows are scored once, retaining the middle reference. This avoids counting duplicate
 inputs as extra observations. The real-only sample measures specific score conflicts;
 it cannot measure AI recall or rank overall model accuracy.
+
+## Compare both error directions on additional sources
+
+```sh
+uv run python run.py experiment configs/experiments/source-panel.json
+```
+
+This 20-clip pilot uses five real Ego4D, five real YouTube-VOS, five generated
+Cosmos and five generated Wan 2.2-14B clips. All are new to this project's prior
+configs. Native source bytes and the existing 16-frame centered sampling keep the
+comparison focused on the same detector setup used in the demo. No clip needs padding.
+
+The shared report now writes `decisions.json`: real-to-AI errors, AI-to-real errors,
+and agreement/inconclusive counts at the fixed 0.5 reference. Leaving disagreement
+inconclusive can reduce wrong calls while leaving more videos unresolved; the report
+keeps those unresolved clips in the denominator. No score averaging or threshold fitting
+is used. Source-level counts show whether aggregate results hide different behavior.
+
+The [selection policy](../configs/source-panel-selection.md) and candidate audit
+record eligibility and review before scoring. Some clips share a room or scene,
+recorded as visual clusters. Content, encoding and viewpoint differ between source
+groups. This is a convenience pilot and cannot establish a population error rate
+or an overall winning detector. Videos and review frames stay out of Git.
+
+Repeat the first label conflict and disagreement in each source group, plus correct
+controls, with freshly loaded models:
+
+```sh
+uv run python scripts/repeat_experiment.py configs/experiments/source-panel.json --variants original --source-errors
+```
+
+The stored pilot includes 11 exact repeats. See [interpretation and next milestone](detector-evaluation.md).
