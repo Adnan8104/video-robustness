@@ -128,5 +128,34 @@ class ExperimentTests(unittest.TestCase):
                 np.testing.assert_array_equal(a, b)
 
 
+class DecisionSummaryTests(unittest.TestCase):
+    def test_both_error_directions_and_inconclusive_coverage(self):
+        from vidrobust.experiment_report import summarize_decisions
+        config = dict(detectors=['one', 'two'], variants=[dict(name='original')])
+        cases = [('real_wrong', 'real', .8, .9), ('real_mixed', 'real', .8, .2),
+                 ('real_right', 'real', .2, .3), ('ai_wrong', 'ai', .1, .2),
+                 ('ai_mixed', 'ai', .9, .2), ('ai_right', 'ai', .5, .5)]
+        rows = [dict(video_id=clip, label=label, variant='original', detector=name, ai_score=score)
+                for clip, label, first, second in cases
+                for name, score in zip(config['detectors'], (first, second))]
+        decision = summarize_decisions(rows, config)['original']
+        self.assertEqual(decision['models']['one'], dict(real_clips=3, ai_clips=3, real_to_ai=2, ai_to_real=1))
+        self.assertEqual(decision['models']['two'], dict(real_clips=3, ai_clips=3, real_to_ai=1, ai_to_real=2))
+        self.assertEqual(decision['agreement'], dict(clips=6, agreed_ai=2, agreed_real=2,
+            inconclusive=2, real_to_ai=1, ai_to_real=1, correct_agreed=2, agreed_clips=4))
+
+    def test_reject_invalid_or_unpaired_decisions(self):
+        from vidrobust.experiment_report import summarize_decisions
+        config = dict(detectors=['one', 'two'], variants=[dict(name='original')])
+        rows = [dict(video_id='a', label='real', variant='original', detector=name, ai_score=.2)
+                for name in config['detectors']]
+        for bad in [[], rows[:1], rows + rows[:1],
+                    [rows[0], rows[1] | dict(label='ai')],
+                    [rows[0] | dict(ai_score=float('nan')), rows[1]],
+                    [rows[0] | dict(ai_score=1.1), rows[1]]]:
+            with self.subTest(rows=bad), self.assertRaises(ValueError):
+                summarize_decisions(bad, config)
+
+
 if __name__ == "__main__":
     unittest.main()

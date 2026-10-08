@@ -1,7 +1,51 @@
 """One report format for every experiment config."""
 import csv
 import json
+import math
 import os
+
+
+def summarize_decisions(rows, config):
+    """Describe fixed-midpoint errors and the coverage cost of model agreement."""
+    variants = [v["name"] for v in config["variants"]]
+    names = config["detectors"]
+    clips = {r["video_id"] for r in rows}
+    indexed = {(r["video_id"], r["variant"], r["detector"]): r for r in rows}
+    expected = {(clip, variant, name) for clip in clips for variant in variants for name in names}
+    if not clips or len(indexed) != len(rows) or set(indexed) != expected:
+        raise ValueError("Decision analysis needs a complete, unique paired matrix")
+    labels = {}
+    for row in rows:
+        if row["label"] not in ("real", "ai") or not math.isfinite(row["ai_score"]) or not 0 <= row["ai_score"] <= 1:
+            raise ValueError("Invalid decision-analysis label or score")
+        if labels.setdefault(row["video_id"], row["label"]) != row["label"]:
+            raise ValueError("Paired rows disagree on source label")
+    result = {}
+    for variant in variants:
+        models = {}
+        for name in names:
+            counts = dict(real_clips=sum(label == "real" for label in labels.values()),
+                ai_clips=sum(label == "ai" for label in labels.values()), real_to_ai=0, ai_to_real=0)
+            for clip, label in labels.items():
+                high = indexed[(clip, variant, name)]["ai_score"] >= .5
+                counts["real_to_ai"] += label == "real" and high
+                counts["ai_to_real"] += label == "ai" and not high
+            models[name] = counts
+        agreement = dict(clips=len(clips), agreed_ai=0, agreed_real=0, inconclusive=0,
+            real_to_ai=0, ai_to_real=0, correct_agreed=0)
+        for clip, label in labels.items():
+            high = {indexed[(clip, variant, name)]["ai_score"] >= .5 for name in names}
+            if len(high) != 1:
+                agreement["inconclusive"] += 1
+            else:
+                predicted_ai = high.pop()
+                agreement["agreed_ai" if predicted_ai else "agreed_real"] += 1
+                agreement["real_to_ai"] += label == "real" and predicted_ai
+                agreement["ai_to_real"] += label == "ai" and not predicted_ai
+                agreement["correct_agreed"] += predicted_ai == (label == "ai")
+        agreement["agreed_clips"] = agreement["agreed_ai"] + agreement["agreed_real"]
+        result[variant] = dict(models=models, agreement=agreement)
+    return result
 
 
 def write_results(root, out, config, samples, rows, summary, metadata, validation):
@@ -12,12 +56,32 @@ def write_results(root, out, config, samples, rows, summary, metadata, validatio
         writer.writerows(rows)
     for name, value in (("summary", summary), ("run", metadata), ("validation", validation)):
         (out / f"{name}.json").write_text(json.dumps(value, indent=2)+"\n")
+    decisions = summarize_decisions(rows, config)
+    (out / "decisions.json").write_text(json.dumps(decisions, indent=2)+"\n")
     plot_pairs(root, out, config, samples, rows)
     lines = [f"# {config['name']}", "",
         f"{len(samples)} clips × {len(config['variants'])} variants × {len(config['detectors'])} detectors = {len(rows)} scores.", "",
         f"Baseline: **{config['baseline']}**. Preparation: `{config['preparation']}`.", "",
-        "![Scores before and after each edit](pairs.png)", "",
+        "![Detector scores](pairs.png)", "",
         "Higher scores mean more AI-like. Scores are uncalibrated; 0.5 is a fixed reference, not a validated decision threshold.", "",
+        "## Both error directions", "",
+        "| Variant | Detector | Real scored AI-like / real clips | AI scored real-like / AI clips |",
+        "|---|---|---:|---:|"]
+    for variant, decision in decisions.items():
+        for name, counts in decision["models"].items():
+            real = f"{counts['real_to_ai']}/{counts['real_clips']}" if counts["real_clips"] else "—"
+            ai = f"{counts['ai_to_real']}/{counts['ai_clips']}" if counts["ai_clips"] else "—"
+            lines.append(f"| {variant} | {name} | {real} | {ai} |")
+    lines += ["", "## When models agree", "",
+        "All scores ≥0.5: AI-like. All scores <0.5: real-like. Mixed sides: inconclusive. "
+        "This fixed rule measures a coverage/error tradeoff; agreement does not establish authenticity.", "",
+        "| Variant | Agreed clips / all | Correct agreed | Real scored AI-like | AI scored real-like | Inconclusive |",
+        "|---|---:|---:|---:|---:|---:|"]
+    for variant, decision in decisions.items():
+        a = decision["agreement"]
+        lines.append(f"| {variant} | {a['agreed_clips']}/{a['clips']} | {a['correct_agreed']} | {a['real_to_ai']} | {a['ai_to_real']} | {a['inconclusive']} |")
+    lines += ["", "Inconclusive clips stay in the denominator; they are not counted as correct predictions. "
+        "Inspect per-source counts below because source and content can affect these totals.", "",
         "## Changes from baseline", "",
         "| Detector | Variant | Group | Clips | Median change | Median absolute change | Changes ≥0.10 | Scores against label at 0.5 | Crossings |",
         "|---|---|---|---:|---:|---:|---:|---:|---:|"]
@@ -43,7 +107,7 @@ def write_results(root, out, config, samples, rows, summary, metadata, validatio
     if config.get("notes"):
         lines += [config["notes"], ""]
     lines += [f"Reproduce: `uv run python run.py experiment {metadata['config_path']}`.", "",
-        "[Scores and logits](scores.csv) · [Summary](summary.json) · [Config, hashes and preparation commands](run.json) · [Checks](validation.json)", ""]
+        "[Scores and logits](scores.csv) · [Summary](summary.json) · [Errors and agreement](decisions.json) · [Config, hashes and preparation commands](run.json) · [Checks](validation.json)", ""]
     (out / "report.md").write_text("\n".join(lines))
 
 
@@ -73,8 +137,11 @@ def plot_pairs(root, out, config, samples, rows, basename="pairs", compression_h
                 marker = markers[offset % len(markers)]
                 ax.plot([a, b], [y, y], color=colors[d], alpha=.65, lw=1.3)
                 ax.scatter(a, y, color=colors[d], marker=marker, s=35)
-                ax.scatter(b, y, facecolors="white", edgecolors=colors[d], marker=marker, s=35,
-                           label=f"{d}: {v}" if i == 0 else None)
+                if edits:
+                    ax.scatter(b, y, facecolors="white", edgecolors=colors[d], marker=marker, s=35,
+                               label=f"{d}: {v}" if i == 0 else None)
+                elif i == 0:
+                    ax.scatter(a, y, color=colors[d], marker=marker, s=35, label=d)
         ax.set_yticks(range(len(group)), [s["id"].rsplit("_", 1)[-1] for s in group])
         ax.invert_yaxis()
         ax.set_xlim(-.03, 1.03)
@@ -85,7 +152,8 @@ def plot_pairs(root, out, config, samples, rows, basename="pairs", compression_h
         ax.legend(fontsize=8, loc="upper center", bbox_to_anchor=(.5, -.16), ncol=2)
     for ax in list(axes.flat)[len(cells):]:
         ax.set_visible(False)
-    fig.suptitle(f"{config['name']}\nFilled = {config['baseline']} · hollow = edited", fontweight="bold")
+    caption = f"Filled = {config['baseline']} · hollow = edited" if edits else "Unchanged source scores"
+    fig.suptitle(f"{config['name']}\n{caption}", fontweight="bold")
     fig.savefig(out / f"{basename}.png", dpi=180)
     svg = out / f"{basename}.svg"
     fig.savefig(svg, metadata={"Date": None})

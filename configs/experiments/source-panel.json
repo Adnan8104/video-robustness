@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "name": "source-panel",
+  "manifest": "configs/source-panel.json",
+  "source_directory": "data/source-panel",
+  "detectors": [
+    "aegis",
+    "waverep"
+  ],
+  "preparation": "native",
+  "baseline": "original",
+  "variants": [
+    {
+      "name": "original",
+      "transform": "identity",
+      "encoding": "source"
+    }
+  ],
+  "notes": "Twenty newly scored clips: five real Ego4D, five real YouTube-VOS, five generated Cosmos, five generated Wan 2.2-14B. Source labels and generator attribution follow the dataset author cards. See configs/source-panel-selection.md. Source, content, encoding and viewpoint differ across groups; native sampling uses nominal constant-fps timing. Five Ego4D clips show two room setups, and three Wan clips share a construction scene. Counts describe this convenience pilot, not independent trials or population accuracy. Checkpoint training overlap is unknown. No calibration, threshold tuning or deployment change is made."
+}

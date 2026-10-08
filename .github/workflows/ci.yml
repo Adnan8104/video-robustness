@@ -33,3 +33,5 @@ jobs:
         run: uv run --no-sync python run.py experiment configs/experiments/compression.json --dry-run
       - name: Validate real-footage config
         run: uv run --no-sync python run.py experiment configs/experiments/real-footage.json --dry-run
+      - name: Validate source panel config
+        run: uv run --no-sync python run.py experiment configs/experiments/source-panel.json --dry-run

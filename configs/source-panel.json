@@ -1,0 +1,440 @@
+{
+  "selection_policy": "configs/source-panel-selection.md",
+  "source_cards": [
+    {
+      "dataset": "shijiezhou/VLM4D",
+      "revision": "9562dc8608cf9715f979ed0c6a5409a11b3978ca",
+      "url": "https://huggingface.co/datasets/shijiezhou/VLM4D/blob/9562dc8608cf9715f979ed0c6a5409a11b3978ca/README.md",
+      "credit": "Zhou et al., VLM4D, ICCV 2025; inherited Ego4D and YouTube-VOS source rights apply."
+    },
+    {
+      "dataset": "govtech/SynthSite",
+      "revision": "2904ec01c3dbf2efba09f2cb1b7bdf17841d4d39",
+      "url": "https://huggingface.co/datasets/govtech/SynthSite/blob/2904ec01c3dbf2efba09f2cb1b7bdf17841d4d39/README.md",
+      "credit": "Government Technology Agency, Singapore, 2026; generated Wan 2.2-14B videos. GovTech license with MIT terms; no media redistributed."
+    }
+  ],
+  "grouping_note": "Visual clusters record apparent shared setups, not verified original-video IDs. Ego4D has two visible setups and the first three Wan clips share a construction scene. Do not treat these clips as independent trials.",
+  "samples": [
+    {
+      "dataset": "shijiezhou/VLM4D",
+      "revision": "9562dc8608cf9715f979ed0c6a5409a11b3978ca",
+      "remote_path": "videos_real/ego4d/clip_001.mp4",
+      "sha256": "5d2e769afd90c5f8d9ff81dc249f5e713624b5c3fc626b79daf5602d61198e4f",
+      "bytes": 1658958,
+      "label": "real",
+      "source": "Ego4D",
+      "cell": "real_ego4d",
+      "actual_metadata": {
+        "width": 720,
+        "height": 540,
+        "frames": 210,
+        "fps": 30.0
+      },
+      "id": "panel_ego4d_01",
+      "content": "Painting at an easel",
+      "visual_cluster": "ego_paint_room",
+      "source_id": "clip_001",
+      "visual_review": "Photographic-style activity confirmed in start, middle and end frames. Origin label follows the dataset authors, not appearance."
+    },
+    {
+      "dataset": "shijiezhou/VLM4D",
+      "revision": "9562dc8608cf9715f979ed0c6a5409a11b3978ca",
+      "remote_path": "videos_real/ego4d/clip_002.mp4",
+      "sha256": "7881605a5a69cc5452ba3f465bce894e49638c5fbd10719df50d4c2d3057d824",
+      "bytes": 600261,
+      "label": "real",
+      "source": "Ego4D",
+      "cell": "real_ego4d",
+      "actual_metadata": {
+        "width": 720,
+        "height": 540,
+        "frames": 120,
+        "fps": 30.0
+      },
+      "id": "panel_ego4d_02",
+      "content": "Painting at an easel",
+      "visual_cluster": "ego_paint_room",
+      "source_id": "clip_002",
+      "visual_review": "Photographic-style activity confirmed in start, middle and end frames. Origin label follows the dataset authors, not appearance."
+    },
+    {
+      "dataset": "shijiezhou/VLM4D",
+      "revision": "9562dc8608cf9715f979ed0c6a5409a11b3978ca",
+      "remote_path": "videos_real/ego4d/clip_003.mp4",
+      "sha256": "e4dd314e1e8be0f6faaafe2565419046a8b08779192fdc812e510eda20f0f567",
+      "bytes": 643561,
+      "label": "real",
+      "source": "Ego4D",
+      "cell": "real_ego4d",
+      "actual_metadata": {
+        "width": 720,
+        "height": 540,
+        "frames": 150,
+        "fps": 30.0
+      },
+      "id": "panel_ego4d_03",
+      "content": "Handling food at a stove",
+      "visual_cluster": "ego_kitchen",
+      "source_id": "clip_003",
+      "visual_review": "Photographic-style activity confirmed in start, middle and end frames. Origin label follows the dataset authors, not appearance."
+    },
+    {
+      "dataset": "shijiezhou/VLM4D",
+      "revision": "9562dc8608cf9715f979ed0c6a5409a11b3978ca",
+      "remote_path": "videos_real/ego4d/clip_004.mp4",
+      "sha256": "b91b5931baea5714674356bdd656928f855b602fa328f39356360445ea553c83",
+      "bytes": 935887,
+      "label": "real",
+      "source": "Ego4D",
+      "cell": "real_ego4d",
+      "actual_metadata": {
+        "width": 720,
+        "height": 540,
+        "frames": 180,
+        "fps": 30.0
+      },
+      "id": "panel_ego4d_04",
+      "content": "Moving through a kitchen",
+      "visual_cluster": "ego_kitchen",
+      "source_id": "clip_004",
+      "visual_review": "Photographic-style activity confirmed in start, middle and end frames. Origin label follows the dataset authors, not appearance."
+    },
+    {
+      "dataset": "shijiezhou/VLM4D",
+      "revision": "9562dc8608cf9715f979ed0c6a5409a11b3978ca",
+      "remote_path": "videos_real/ego4d/clip_005.mp4",
+      "sha256": "07a9319acda1dd0dd17fbe64604cf4f0e19ad764ea5ee6f81852cd8a9b0fe3f7",
+      "bytes": 710307,
+      "label": "real",
+      "source": "Ego4D",
+      "cell": "real_ego4d",
+      "actual_metadata": {
+        "width": 720,
+        "height": 540,
+        "frames": 180,
+        "fps": 30.0
+      },
+      "id": "panel_ego4d_05",
+      "content": "Reaching into a kitchen cabinet",
+      "visual_cluster": "ego_kitchen",
+      "source_id": "clip_005",
+      "visual_review": "Photographic-style activity confirmed in start, middle and end frames. Origin label follows the dataset authors, not appearance."
+    },
+    {
+      "dataset": "shijiezhou/VLM4D",
+      "revision": "9562dc8608cf9715f979ed0c6a5409a11b3978ca",
+      "remote_path": "videos_real/youtube-vos/youtube000.mp4",
+      "sha256": "2ce3437bc16d0ae2d124c7c7bc9e67056b8611666872e4b47cfb9f53ce3f582f",
+      "bytes": 3804051,
+      "label": "real",
+      "source": "YouTube-VOS",
+      "cell": "real_youtube-vos",
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 180,
+        "fps": 30.0
+      },
+      "id": "panel_youtube_vos_01",
+      "content": "Skateboarding outdoors",
+      "visual_cluster": "yt_skate",
+      "source_id": "youtube000",
+      "visual_review": "Photographic-style activity confirmed in start, middle and end frames. Origin label follows the dataset authors, not appearance."
+    },
+    {
+      "dataset": "shijiezhou/VLM4D",
+      "revision": "9562dc8608cf9715f979ed0c6a5409a11b3978ca",
+      "remote_path": "videos_real/youtube-vos/youtube001.mp4",
+      "sha256": "7ffaa2d38d5553371b80b08f43c5619bde4a92fa5d570e1e2dc5125eb4aafa51",
+      "bytes": 1699936,
+      "label": "real",
+      "source": "YouTube-VOS",
+      "cell": "real_youtube-vos",
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 150,
+        "fps": 30.0
+      },
+      "id": "panel_youtube_vos_02",
+      "content": "Owl on a branch",
+      "visual_cluster": "yt_owl",
+      "source_id": "youtube001",
+      "visual_review": "Photographic-style activity confirmed in start, middle and end frames. Origin label follows the dataset authors, not appearance."
+    },
+    {
+      "dataset": "shijiezhou/VLM4D",
+      "revision": "9562dc8608cf9715f979ed0c6a5409a11b3978ca",
+      "remote_path": "videos_real/youtube-vos/youtube005.mp4",
+      "sha256": "a331f20236f84bf48958ff8756f0753afa0bafee1c57149d861a92d273fcd4e3",
+      "bytes": 832499,
+      "label": "real",
+      "source": "YouTube-VOS",
+      "cell": "real_youtube-vos",
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 180,
+        "fps": 30.0
+      },
+      "id": "panel_youtube_vos_03",
+      "content": "Bird of prey on a rock",
+      "visual_cluster": "yt_raptor",
+      "source_id": "youtube005",
+      "visual_review": "Photographic-style activity confirmed in start, middle and end frames. Origin label follows the dataset authors, not appearance."
+    },
+    {
+      "dataset": "shijiezhou/VLM4D",
+      "revision": "9562dc8608cf9715f979ed0c6a5409a11b3978ca",
+      "remote_path": "videos_real/youtube-vos/youtube010.mp4",
+      "sha256": "b42da9d6bb72f49c4cd5566f3ae5723a4930441129185ae7fdf2f7efe01ea76d",
+      "bytes": 4496704,
+      "label": "real",
+      "source": "YouTube-VOS",
+      "cell": "real_youtube-vos",
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 180,
+        "fps": 30.0
+      },
+      "id": "panel_youtube_vos_04",
+      "content": "Kangaroo with a person",
+      "visual_cluster": "yt_kangaroo",
+      "source_id": "youtube010",
+      "visual_review": "Photographic-style activity confirmed in start, middle and end frames. Origin label follows the dataset authors, not appearance."
+    },
+    {
+      "dataset": "shijiezhou/VLM4D",
+      "revision": "9562dc8608cf9715f979ed0c6a5409a11b3978ca",
+      "remote_path": "videos_real/youtube-vos/youtube014.mp4",
+      "sha256": "cc1d6d4923d411b6ff27b761ace4e30b109f27cdaaa3abb3146193ff22f7d57e",
+      "bytes": 1499103,
+      "label": "real",
+      "source": "YouTube-VOS",
+      "cell": "real_youtube-vos",
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 180,
+        "fps": 30.0
+      },
+      "id": "panel_youtube_vos_05",
+      "content": "Person handling parrots",
+      "visual_cluster": "yt_parrots",
+      "source_id": "youtube014",
+      "visual_review": "Photographic-style activity confirmed in start, middle and end frames. Origin label follows the dataset authors, not appearance."
+    },
+    {
+      "dataset": "shijiezhou/VLM4D",
+      "revision": "9562dc8608cf9715f979ed0c6a5409a11b3978ca",
+      "remote_path": "videos_synthetic/synth_001.mp4",
+      "sha256": "83f6174d84b5f8bed7a957263249363800d4f1bf410622601ee4293091104579",
+      "bytes": 521491,
+      "label": "ai",
+      "source": "Cosmos",
+      "cell": "ai_cosmos",
+      "actual_metadata": {
+        "width": 1280,
+        "height": 704,
+        "frames": 121,
+        "fps": 24.0
+      },
+      "id": "panel_cosmos_01",
+      "content": "Mobile industrial robot arm",
+      "visual_cluster": "cos_arm",
+      "source_id": "synth_001",
+      "visual_review": "Photographic-style activity confirmed in start, middle and end frames. Origin label follows the dataset authors, not appearance."
+    },
+    {
+      "dataset": "shijiezhou/VLM4D",
+      "revision": "9562dc8608cf9715f979ed0c6a5409a11b3978ca",
+      "remote_path": "videos_synthetic/synth_002.mp4",
+      "sha256": "3f9e0f682d6323494d91ae613e4d2e04003bb9dd27af6b1444a06f6889ebfcca",
+      "bytes": 733802,
+      "label": "ai",
+      "source": "Cosmos",
+      "cell": "ai_cosmos",
+      "actual_metadata": {
+        "width": 1280,
+        "height": 704,
+        "frames": 121,
+        "fps": 24.0
+      },
+      "id": "panel_cosmos_02",
+      "content": "Skid-steer vehicle moving",
+      "visual_cluster": "cos_skid",
+      "source_id": "synth_002",
+      "visual_review": "Photographic-style activity confirmed in start, middle and end frames. Origin label follows the dataset authors, not appearance."
+    },
+    {
+      "dataset": "shijiezhou/VLM4D",
+      "revision": "9562dc8608cf9715f979ed0c6a5409a11b3978ca",
+      "remote_path": "videos_synthetic/synth_003.mp4",
+      "sha256": "2274ccb71debf1feeafe7360896a683108c837c185b8aafd2f0189d8bad70383",
+      "bytes": 843170,
+      "label": "ai",
+      "source": "Cosmos",
+      "cell": "ai_cosmos",
+      "actual_metadata": {
+        "width": 1280,
+        "height": 704,
+        "frames": 121,
+        "fps": 24.0
+      },
+      "id": "panel_cosmos_03",
+      "content": "Flying delivery drone",
+      "visual_cluster": "cos_drone",
+      "source_id": "synth_003",
+      "visual_review": "Photographic-style activity confirmed in start, middle and end frames. Origin label follows the dataset authors, not appearance."
+    },
+    {
+      "dataset": "shijiezhou/VLM4D",
+      "revision": "9562dc8608cf9715f979ed0c6a5409a11b3978ca",
+      "remote_path": "videos_synthetic/synth_004.mp4",
+      "sha256": "cc157d841c2a83ce857d529cd1634024ff33099bfebe329703409b0d67977447",
+      "bytes": 1656253,
+      "label": "ai",
+      "source": "Cosmos",
+      "cell": "ai_cosmos",
+      "actual_metadata": {
+        "width": 1280,
+        "height": 704,
+        "frames": 121,
+        "fps": 24.0
+      },
+      "id": "panel_cosmos_04",
+      "content": "Quadruped robot running",
+      "visual_cluster": "cos_quad",
+      "source_id": "synth_004",
+      "visual_review": "Photographic-style activity confirmed in start, middle and end frames. Origin label follows the dataset authors, not appearance."
+    },
+    {
+      "dataset": "shijiezhou/VLM4D",
+      "revision": "9562dc8608cf9715f979ed0c6a5409a11b3978ca",
+      "remote_path": "videos_synthetic/synth_005.mp4",
+      "sha256": "defa5791b885d204eeae11f9356ae21b5de40b4b5434d8192235835874a0f1e6",
+      "bytes": 592703,
+      "label": "ai",
+      "source": "Cosmos",
+      "cell": "ai_cosmos",
+      "actual_metadata": {
+        "width": 1280,
+        "height": 704,
+        "frames": 121,
+        "fps": 24.0
+      },
+      "id": "panel_cosmos_05",
+      "content": "Warehouse mobile robot",
+      "visual_cluster": "cos_warehouse",
+      "source_id": "synth_005",
+      "visual_review": "Photographic-style activity confirmed in start, middle and end frames. Origin label follows the dataset authors, not appearance."
+    },
+    {
+      "dataset": "govtech/SynthSite",
+      "revision": "2904ec01c3dbf2efba09f2cb1b7bdf17841d4d39",
+      "remote_path": "videos/wan2.2-14b_0001.mp4",
+      "sha256": "304b0e5d5bd52c99b4175e4e9e84caeea06425d2137d452fbcc4ab0d94ba3a22",
+      "bytes": 2246187,
+      "label": "ai",
+      "source": "Wan2.2-14B",
+      "cell": "ai_wan",
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 161,
+        "fps": 16.0
+      },
+      "id": "panel_wan_01",
+      "content": "Crane lifting steel beams",
+      "visual_cluster": "wan_beams",
+      "source_id": "wan2.2-14b_0001",
+      "visual_review": "Photographic-style activity confirmed in start, middle and end frames. Origin label follows the dataset authors, not appearance."
+    },
+    {
+      "dataset": "govtech/SynthSite",
+      "revision": "2904ec01c3dbf2efba09f2cb1b7bdf17841d4d39",
+      "remote_path": "videos/wan2.2-14b_0002.mp4",
+      "sha256": "d9a912f77c58c04d3263f8f478d384c5ee26bfaaee20b0f02314ef752bcfb803",
+      "bytes": 2173073,
+      "label": "ai",
+      "source": "Wan2.2-14B",
+      "cell": "ai_wan",
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 161,
+        "fps": 16.0
+      },
+      "id": "panel_wan_02",
+      "content": "Crane lifting steel beams",
+      "visual_cluster": "wan_beams",
+      "source_id": "wan2.2-14b_0002",
+      "visual_review": "Photographic-style activity confirmed in start, middle and end frames. Origin label follows the dataset authors, not appearance."
+    },
+    {
+      "dataset": "govtech/SynthSite",
+      "revision": "2904ec01c3dbf2efba09f2cb1b7bdf17841d4d39",
+      "remote_path": "videos/wan2.2-14b_0003.mp4",
+      "sha256": "4bc9112e22a44aad62f30fec34e8e029a1ba364cecad9edde6afb480c1d1c0e1",
+      "bytes": 2145004,
+      "label": "ai",
+      "source": "Wan2.2-14B",
+      "cell": "ai_wan",
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 161,
+        "fps": 16.0
+      },
+      "id": "panel_wan_03",
+      "content": "Crane lifting steel beams",
+      "visual_cluster": "wan_beams",
+      "source_id": "wan2.2-14b_0003",
+      "visual_review": "Photographic-style activity confirmed in start, middle and end frames. Origin label follows the dataset authors, not appearance."
+    },
+    {
+      "dataset": "govtech/SynthSite",
+      "revision": "2904ec01c3dbf2efba09f2cb1b7bdf17841d4d39",
+      "remote_path": "videos/wan2.2-14b_0004.mp4",
+      "sha256": "949b39c29d327d68bb667c3997167c151fe24387b95967de53b7faa7bed77b6b",
+      "bytes": 2219916,
+      "label": "ai",
+      "source": "Wan2.2-14B",
+      "cell": "ai_wan",
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 161,
+        "fps": 16.0
+      },
+      "id": "panel_wan_04",
+      "content": "Crane lifting a pipe",
+      "visual_cluster": "wan_pipe",
+      "source_id": "wan2.2-14b_0004",
+      "visual_review": "Photographic-style activity confirmed in start, middle and end frames. Origin label follows the dataset authors, not appearance."
+    },
+    {
+      "dataset": "govtech/SynthSite",
+      "revision": "2904ec01c3dbf2efba09f2cb1b7bdf17841d4d39",
+      "remote_path": "videos/wan2.2-14b_0005.mp4",
+      "sha256": "79f9a06b5b5084828559a196e6be5f57d92d814dbdfbbf909d8f34eaa51c110c",
+      "bytes": 1813012,
+      "label": "ai",
+      "source": "Wan2.2-14B",
+      "cell": "ai_wan",
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 161,
+        "fps": 16.0
+      },
+      "id": "panel_wan_05",
+      "content": "Workers moving construction materials",
+      "visual_cluster": "wan_materials",
+      "source_id": "wan2.2-14b_0005",
+      "visual_review": "Photographic-style activity confirmed in start, middle and end frames. Origin label follows the dataset authors, not appearance."
+    }
+  ]
+}
