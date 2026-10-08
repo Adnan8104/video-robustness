@@ -15,6 +15,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("config")
     parser.add_argument("--variants", nargs="+", help="Compare only these variants with the reference; still validate the complete new run")
+    parser.add_argument("--detectors", nargs="+", help="Compare only these detectors with the reference; still validate the complete new run")
     parser.add_argument("reference", help="Published scores.csv, relative to the repository root")
     args = parser.parse_args()
     config_path, manifest_path, config, samples = load_config(ROOT, args.config)
@@ -52,13 +53,18 @@ def main():
         reference = {(r["video_id"], r["variant"], r["detector"]): r for r in csv.DictReader(f)}
     fields = ["ai_score", "fusion_logit", "pixel_score", "motion_score", "consistency_score"]
     compared_fields = set()
-    selected = [r for r in rows if not args.variants or r["variant"] in args.variants]
+    selected = [r for r in rows if (not args.variants or r["variant"] in args.variants)
+                and (not args.detectors or r["detector"] in args.detectors)]
     if not selected or (args.variants and set(args.variants) - {r["variant"] for r in rows}):
         raise ValueError("Reference selection is empty or has unknown variants")
+    if args.detectors and set(args.detectors) - set(config["detectors"]):
+        raise ValueError("Reference selection has unknown detectors")
     for r in selected:
         key = (r["video_id"], r["variant"], r["detector"])
         old = reference[key]
-        for field in ("sha256", "label", "source"):
+        for field in ("sha256", "label", "source", "sampled_rgb_sha256", "model_input_sha256"):
+            if not old.get(field):
+                continue
             if r[field] != old[field]:
                 raise ValueError(f"Published {field} differs: {key}")
             compared_fields.add(field)

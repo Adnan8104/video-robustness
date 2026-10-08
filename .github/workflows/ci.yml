@@ -35,3 +35,5 @@ jobs:
         run: uv run --no-sync python run.py experiment configs/experiments/real-footage.json --dry-run
       - name: Validate source panel config
         run: uv run --no-sync python run.py experiment configs/experiments/source-panel.json --dry-run
+      - name: Validate third detector config
+        run: uv run --no-sync python run.py experiment configs/experiments/third-detector.json --dry-run

@@ -90,7 +90,7 @@ def main():
         script_sha256=sha(Path(__file__).resolve()))
     validation['fresh_model_repeats'] = repeats
     validation_path.write_text(json.dumps(validation, indent=2)+'\n')
-    print(f'Fresh-model repeats passed: {len(repeats)}; two reloads for the current panel')
+    print(f'Fresh-model repeats passed: {len(repeats)}; {len(config["detectors"])} model reloads')
 
 
 if __name__ == '__main__':
