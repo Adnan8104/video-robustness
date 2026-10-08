@@ -18,10 +18,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('config')
     parser.add_argument('--variants', nargs='+', required=True)
+    parser.add_argument('--source-errors', action='store_true',
+        help='Repeat representative label conflicts and model disagreements; permits the baseline')
     args = parser.parse_args()
     config_path, manifest_path, config, samples = load_config(ROOT, args.config)
-    if set(args.variants) - {v['name'] for v in config['variants']} or config['baseline'] in args.variants:
-        raise ValueError('Choose existing non-baseline variants')
+    if set(args.variants) - {v['name'] for v in config['variants']} or (not args.source_errors and config['baseline'] in args.variants):
+        raise ValueError('Choose existing variants; repeating the baseline requires --source-errors')
     out = ROOT / f"reports/experiments/{config['name']}"
     run = json.loads((out / 'run.json').read_text())
     if sha(config_path) != run['config_sha256'] or sha(manifest_path) != run['manifest_sha256']:
@@ -39,12 +41,25 @@ def main():
         if sha(ROOT / run['models'][name]['checkpoint']['path']) != run['model_sha256'][name]:
             raise ValueError('Checkpoint changed')
         edits = [r for r in rows if r['detector'] == name and r['variant'] in args.variants]
-        targets = [r for r in edits if
-                   (float(r['ai_score']) >= .5) != (float(indexed[(r['video_id'], config['baseline'], name)]['ai_score']) >= .5)]
-        for label in sorted({s['label'] for s in samples}):
-            group = [r for r in edits if r['label'] == label]
-            if group:
-                targets.append(max(group, key=lambda r: abs(float(r['delta_vs_baseline']))))
+        if args.source_errors:
+            representatives = {}
+            for r in sorted(edits, key=lambda r: (r['video_id'], r['variant'])):
+                high = float(r['ai_score']) >= .5
+                peers = {float(indexed[(r['video_id'], r['variant'], d)]['ai_score']) >= .5 for d in config['detectors']}
+                if high != (r['label'] == 'ai'):
+                    representatives.setdefault((r['cell'], 'label_conflict'), r)
+                else:
+                    representatives.setdefault((r['label'], 'correct_control'), r)
+                if len(peers) > 1:
+                    representatives.setdefault((r['cell'], 'disagreement'), r)
+            targets = list(representatives.values())
+        else:
+            targets = [r for r in edits if
+                       (float(r['ai_score']) >= .5) != (float(indexed[(r['video_id'], config['baseline'], name)]['ai_score']) >= .5)]
+            for label in sorted({s['label'] for s in samples}):
+                group = [r for r in edits if r['label'] == label]
+                if group:
+                    targets.append(max(group, key=lambda r: abs(float(r['delta_vs_baseline']))))
         selected = dict.fromkeys((r['video_id'], v) for r in targets for v in (config['baseline'], r['variant']))
         detector = make_detector(ROOT, name)
         for clip, variant_name in selected:
@@ -70,7 +85,9 @@ def main():
     validation_path = out / 'validation.json'
     validation = json.loads(validation_path.read_text())
     validation['fresh_model_repeat_selection'] = dict(variants=args.variants,
-        rule='All selected-variant midpoint crossings plus the largest absolute change per detector and label; baseline included; cases deduplicated')
+        rule=('First lexicographic label conflict and disagreement per cell, plus first correct control per label; cases deduplicated'
+              if args.source_errors else 'All selected-variant midpoint crossings plus the largest absolute change per detector and label; baseline included; cases deduplicated'),
+        script_sha256=sha(Path(__file__).resolve()))
     validation['fresh_model_repeats'] = repeats
     validation_path.write_text(json.dumps(validation, indent=2)+'\n')
     print(f'Fresh-model repeats passed: {len(repeats)}; two reloads for the current panel')
