@@ -1,0 +1,45 @@
+video_id,cell,content,section,start_seconds,end_seconds,detector,ai_score
+real_check_01,real_kitchen,Slicing a lemon,middle,0.0,3.920583333333333,aegis,3.230566289857961e-05
+real_check_01,real_kitchen,Slicing a lemon,middle,0.0,3.920583333333333,waverep,0.0015416313300651051
+real_check_01,real_kitchen,Slicing a lemon,end,0.04170833333333333,3.9622916666666663,aegis,3.080452006543055e-05
+real_check_01,real_kitchen,Slicing a lemon,end,0.04170833333333333,3.9622916666666663,waverep,0.0020076762563886385
+real_check_02,real_kitchen,Pouring vanilla into a spoon,beginning,0.0,3.937266666666667,aegis,3.761495463550091e-05
+real_check_02,real_kitchen,Pouring vanilla into a spoon,beginning,0.0,3.937266666666667,waverep,0.001965099410907423
+real_check_02,real_kitchen,Pouring vanilla into a spoon,middle,0.5005000000000001,4.437766666666667,aegis,5.140504435985349e-05
+real_check_02,real_kitchen,Pouring vanilla into a spoon,middle,0.5005000000000001,4.437766666666667,waverep,0.0015360042311365332
+real_check_02,real_kitchen,Pouring vanilla into a spoon,end,1.0343666666666667,4.971633333333333,aegis,7.343900506384671e-05
+real_check_02,real_kitchen,Pouring vanilla into a spoon,end,1.0343666666666667,4.971633333333333,waverep,0.0014209663513104205
+real_check_03,real_kitchen,Putting a frittata in an oven,middle,0.0,3.937266666666667,aegis,3.125206058030017e-05
+real_check_03,real_kitchen,Putting a frittata in an oven,middle,0.0,3.937266666666667,waverep,0.0003199596542291375
+real_check_03,real_kitchen,Putting a frittata in an oven,end,0.03336666666666667,3.9706333333333332,aegis,3.031943560927175e-05
+real_check_03,real_kitchen,Putting a frittata in an oven,end,0.03336666666666667,3.9706333333333332,waverep,0.00038449806725413357
+real_check_04,real_kitchen,Pouring rice into a pan,beginning,0.0,3.937266666666667,aegis,6.453316018451005e-05
+real_check_04,real_kitchen,Pouring rice into a pan,beginning,0.0,3.937266666666667,waverep,0.0001738376357698647
+real_check_04,real_kitchen,Pouring rice into a pan,middle,0.5005000000000001,4.437766666666667,aegis,6.245113763725385e-05
+real_check_04,real_kitchen,Pouring rice into a pan,middle,0.5005000000000001,4.437766666666667,waverep,0.0001569701887147006
+real_check_04,real_kitchen,Pouring rice into a pan,end,1.0343666666666667,4.971633333333333,aegis,7.993563485797495e-05
+real_check_04,real_kitchen,Pouring rice into a pan,end,1.0343666666666667,4.971633333333333,waverep,0.0002181823621397455
+real_check_05,real_kitchen,Seasoning water in a container,beginning,0.0,3.937266666666667,aegis,9.762692207004875e-05
+real_check_05,real_kitchen,Seasoning water in a container,beginning,0.0,3.937266666666667,waverep,0.00019460447877309354
+real_check_05,real_kitchen,Seasoning water in a container,middle,1.0010000000000001,4.938266666666666,aegis,9.960638271877542e-05
+real_check_05,real_kitchen,Seasoning water in a container,middle,1.0010000000000001,4.938266666666666,waverep,0.00015108837904612802
+real_check_05,real_kitchen,Seasoning water in a container,end,2.0353666666666665,5.9726333333333335,aegis,5.340687494026497e-05
+real_check_05,real_kitchen,Seasoning water in a container,end,2.0353666666666665,5.9726333333333335,waverep,0.0001657453362426463
+real_check_06,real_kitchen,Pouring oil over tomatoes,beginning,0.0,3.937266666666667,aegis,6.232288342289394e-06
+real_check_06,real_kitchen,Pouring oil over tomatoes,beginning,0.0,3.937266666666667,waverep,0.010383375541568868
+real_check_06,real_kitchen,Pouring oil over tomatoes,middle,0.5005000000000001,4.437766666666667,aegis,2.0571780623868108e-05
+real_check_06,real_kitchen,Pouring oil over tomatoes,middle,0.5005000000000001,4.437766666666667,waverep,0.00632190838823767
+real_check_06,real_kitchen,Pouring oil over tomatoes,end,1.0343666666666667,4.971633333333333,aegis,2.4058932467596605e-05
+real_check_06,real_kitchen,Pouring oil over tomatoes,end,1.0343666666666667,4.971633333333333,waverep,0.00583830281950211
+real_check_07,real_music,Playing electric bass,beginning,0.0,3.9583333333333335,aegis,0.00011772943253163248
+real_check_07,real_music,Playing electric bass,beginning,0.0,3.9583333333333335,waverep,0.007145472278029767
+real_check_07,real_music,Playing electric bass,middle,2.5,6.458333333333333,aegis,0.0001249340857611969
+real_check_07,real_music,Playing electric bass,middle,2.5,6.458333333333333,waverep,0.004674209437216734
+real_check_07,real_music,Playing electric bass,end,5.041666666666667,9.0,aegis,9.992335981223732e-05
+real_check_07,real_music,Playing electric bass,end,5.041666666666667,9.0,waverep,0.007378680445241129
+real_check_08,real_music,Playing violin on stage,beginning,0.0,3.9442896935933147,aegis,9.803188731893897e-05
+real_check_08,real_music,Playing violin on stage,beginning,0.0,3.9442896935933147,waverep,0.03681478593341297
+real_check_08,real_music,Playing violin on stage,middle,2.5069637883008355,6.45125348189415,aegis,0.00014269218081608415
+real_check_08,real_music,Playing violin on stage,middle,2.5069637883008355,6.45125348189415,waverep,0.025213339468358728
+real_check_08,real_music,Playing violin on stage,end,5.047353760445683,8.991643454038996,aegis,4.00130265916232e-05
+real_check_08,real_music,Playing violin on stage,end,5.047353760445683,8.991643454038996,waverep,0.10805379996655179

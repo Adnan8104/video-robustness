@@ -1,0 +1,42 @@
+{
+  "aegis": {
+    "original": {
+      "real_kitchen": {
+        "n": 6,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      },
+      "real_music": {
+        "n": 2,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      }
+    }
+  },
+  "waverep": {
+    "original": {
+      "real_kitchen": {
+        "n": 6,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      },
+      "real_music": {
+        "n": 2,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      }
+    }
+  }
+}

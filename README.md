@@ -17,6 +17,10 @@ Two models: **AEGIS** and **WaveRep**. Runs on CPU; no training required.
 Higher scores mean more AI-like. These are small-sample results; 0.5 is a reference point, not a validated detection threshold.
 [All three edits](docs/panel-results.md) · [Intermediate compression check](reports/failure-followup/report.md)
 
+A [real-footage follow-up](reports/experiments/real-footage/sections.md) checked eight new archived clips
+(six kitchen actions, two music performances). Both models stayed below 0.5 across 22 sampled windows each.
+This does not explain the separate upload failure or establish general reliability.
+
 ## Run it
 
 Requires Python 3.11 and [uv](https://docs.astral.sh/uv/).
@@ -69,7 +73,7 @@ config + pinned sources → prepare variants → detector adapters → paired sc
 - `adapters/` + `registry.py`: model adapters, discovered automatically
 - `experiment_report.py`: one output format for every config
 
-**43 tests** cover input checks, paired analysis, registry extensions, uploads, section sampling and historical commands. GitHub Actions includes the demo tests and validates both configs.
+**43 tests** cover input checks, paired analysis, registry extensions, uploads, section sampling and historical commands. GitHub Actions includes the demo tests and validates all three configs.
 Historical studies and their report code live in `src/vidrobust/legacy/`.
 
 [Config guide and technical choices](docs/experiments.md) · [Methodology](docs/methodology.md) · [Earlier experiments](docs/experiment-history.md)

@@ -154,3 +154,26 @@ uv run python scripts/repeat_experiment.py configs/experiments/compression.json 
 The script repeats each selected baseline/edit pair, checks every numeric output
 and RGB/model-tensor hash, and records the checks in `validation.json`. This is a
 diagnostic repeat of selected results, not a new evaluation sample.
+
+## Check archived real footage
+
+`configs/experiments/real-footage.json` selects eight new real source clips: six kitchen
+actions and two music performances. It scores unchanged source bytes with both models.
+The source manifest and selection policy record historical provenance, content review,
+source hashes and a rejected candidate whose video did not match its captions.
+
+```sh
+uv run python scripts/check_sections.py configs/experiments/real-footage.json
+```
+
+This reusable follow-up accepts a real-only native config with one unchanged-source variant.
+It runs the shared experiment runner, then the demo inference service on distinct
+beginning/middle/end windows. It verifies that every middle score, logit and input hash
+exactly reproduces the runner. Section results go beside the ordinary report, with
+full raw output, a compact CSV and a chart. The config, manifest, selection policy
+and script must be committed before inference.
+
+Short clips may share most frames across windows. Identical endpoint and middle
+windows are scored once, retaining the middle reference. This avoids counting duplicate
+inputs as extra observations. The real-only sample measures specific score conflicts;
+it cannot measure AI recall or rank overall model accuracy.

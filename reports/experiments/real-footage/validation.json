@@ -1,0 +1,10 @@
+{
+  "source_clips": 8,
+  "paired_cases": 8,
+  "model_scores": 16,
+  "source_hashes_and_full_decode": "passed",
+  "geometry_timing_and_frame_indices": "passed",
+  "complete_case_matrix": "passed",
+  "identical_bytes_and_RGB_between_detectors": "passed",
+  "config_and_code_unchanged_during_inference": "passed"
+}
