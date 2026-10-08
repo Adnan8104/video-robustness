@@ -115,7 +115,7 @@ class ExperimentTests(unittest.TestCase):
             config = dict(name="lossless-check", source_directory="data/sources", preparation="native",
                 variants=[dict(name=n, transform=t, encoding="ffv1") for n, t in
                           (("baseline", "identity"), ("resize", "short_side_504"), ("crop", "center_square"))])
-            sample = dict(id="clip", label="real", dataset="unused", revision="0"*40,
+            sample = dict(id="clip", label="real", dataset="fixture/unused", revision="0"*40,
                           remote_path="clip.mp4", sha256=sha(source))
             with patch("urllib.request.urlretrieve") as network:
                 cases, _ = prepare_cases(root, config, [sample])

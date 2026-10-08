@@ -2,7 +2,6 @@
 import math
 from pathlib import Path
 import subprocess
-from urllib.parse import quote
 
 
 def probe(path, full_decode=False):
@@ -20,10 +19,31 @@ def probe(path, full_decode=False):
             while cap.read()[0]:
                 count+=1
             if count!=meta["frames"]:
-                raise ValueError(f"Partial decode: {path.name} ({count}/{meta['frames']})")
+                # WebM/Matroska metadata may estimate the stream frame count. OpenCV
+                # may round duration × fps up by one. Confirm actual frames with
+                # an independent full FFmpeg decode before accepting that case.
+                with Path(path).open("rb") as stream:
+                    ebml = stream.read(4) == b"\x1a\x45\xdf\xa3"
+                if not ebml or count < 8 or decoded_frame_count(path) != count:
+                    raise ValueError(f"Partial decode: {path.name} ({count}/{meta['frames']})")
+                meta["frames"] = count
     finally:
         cap.release()
     return meta
+
+
+def decoded_frame_count(path):
+    """Independent full decode with passthrough timing; errors are fatal."""
+    import imageio_ffmpeg
+    result = subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(), "-v", "error", "-xerror", "-i", str(path),
+        "-map", "0:v:0", "-an", "-fps_mode", "passthrough", "-progress", "pipe:1", "-nostats", "-f", "null", "-"],
+        check=True, capture_output=True, text=True)
+    fields = [line.split("=", 1) for line in result.stdout.splitlines() if "=" in line]
+    progress = dict(fields)
+    if progress.get("progress") != "end" or "frame" not in progress:
+        raise ValueError("Incomplete independent frame-count check")
+    return int(progress["frame"])
+
 
 def read_exact_rgb(path, indices):
     """Decode all requested frames; reject partial decodes instead of padding."""
@@ -71,7 +91,7 @@ def transform_filter(name, width, height):
 
 
 def prepare_cases(root, config, samples):
-    from .artifacts import download, sha
+    from .artifacts import download, sha, source_url
     from .experiment import inside
     import imageio_ffmpeg
     ffmpeg = imageio_ffmpeg.get_ffmpeg_exe()
@@ -81,7 +101,7 @@ def prepare_cases(root, config, samples):
     cases, records = [], []
     for sample in samples:
         source = sources / f"{sample['id']}.mp4"
-        url = f"https://huggingface.co/datasets/{sample['dataset']}/resolve/{sample['revision']}/{quote(sample['remote_path'], safe='/')}"
+        url = source_url(sample)
         download(url, source, sample["sha256"])
         native = probe(source, full_decode=True)
         if "actual_metadata" in sample and native != sample["actual_metadata"]:

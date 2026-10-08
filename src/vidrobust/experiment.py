@@ -12,6 +12,7 @@ import sys
 import time
 
 from .registry import detector_names, get_adapter, make_detector
+from .artifacts import source_url
 TRANSFORMS = ("identity", "half_resize", "center_crop_80", "center_square", "short_side_504")
 
 
@@ -46,10 +47,9 @@ def load_config(root, path):
     for s in samples:
         if not re.fullmatch(r"[A-Za-z0-9_-]+", s["id"]) or s["label"] not in ("real", "ai"):
             raise ValueError("Invalid source ID or label")
-        if not re.fullmatch(r"[0-9a-f]{64}", s["sha256"]) or not re.fullmatch(r"[0-9a-f]{40}", s["revision"]):
-            raise ValueError("Each source needs a SHA256 and pinned dataset commit")
-        if Path(s["remote_path"]).is_absolute() or ".." in Path(s["remote_path"]).parts:
-            raise ValueError("Invalid remote path")
+        if not re.fullmatch(r"[0-9a-f]{64}", s["sha256"]):
+            raise ValueError("Each source needs a SHA256")
+        source_url(s)
     names = config["detectors"]
     available = detector_names()
     if not names or len(set(names)) != len(names) or set(names) - set(available):

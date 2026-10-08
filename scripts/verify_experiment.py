@@ -1,4 +1,4 @@
-"""Check shared-runner provenance and exact parity with a published reference CSV."""
+"""Check complete run provenance/analysis, with optional published-score parity."""
 import argparse
 import csv
 import json
@@ -17,7 +17,7 @@ def main():
     parser.add_argument("config")
     parser.add_argument("--variants", nargs="+", help="Compare only these variants with the reference; still validate the complete new run")
     parser.add_argument("--detectors", nargs="+", help="Compare only these detectors with the reference; still validate the complete new run")
-    parser.add_argument("reference", help="Published scores.csv, relative to the repository root")
+    parser.add_argument("reference", nargs="?", help="Optional published scores.csv, relative to the repository root")
     args = parser.parse_args()
     config_path, manifest_path, config, samples = load_config(ROOT, args.config)
     out = ROOT / f"reports/experiments/{config['name']}"
@@ -51,6 +51,17 @@ def main():
             path = ROOT / f"data/experiments/{config['name']}/{r['video_id']}_{r['variant']}.{extension}"
         if sha(path) != r["sha256"]:
             raise ValueError("Scored media changed")
+    if not args.reference:
+        if args.variants or args.detectors:
+            raise ValueError("Reference subset filters require a reference CSV")
+        validation_path = out / "validation.json"
+        validation = json.loads(validation_path.read_text())
+        validation["independent_run_checks"] = dict(model_scores=len(rows),
+            independent_CSV_analysis="passed", independent_error_and_agreement_analysis="passed",
+            scored_media_and_model_and_code_hashes="passed", script_sha256=sha(Path(__file__).resolve()))
+        validation_path.write_text(json.dumps(validation, indent=2)+"\n")
+        print(f"Independent run verification passed: {len(rows)} scores; inputs, models, code, summaries and error/coverage counts")
+        return
     reference_path = inside(ROOT, args.reference, "reports")
     with reference_path.open() as f:
         reference = {(r["video_id"], r["variant"], r["detector"]): r for r in csv.DictReader(f)}

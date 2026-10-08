@@ -1,0 +1,175 @@
+[
+  {
+    "id": "commons_1",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Grue_de_chantier_%C3%A0_Amb%C3%A9rieux-en-Dombes_en_janvier_2022.webm",
+    "expected_sha1": "78c71575ed778385fe0962ccecb3367b799c1f9e",
+    "bytes": 15113236,
+    "provider": "http",
+    "label": "real",
+    "source_page": "https://commons.wikimedia.org/w/index.php?oldid=805766832",
+    "source_revision": "805766832",
+    "author": "Benoît Prieur",
+    "source_date": "2022-01-04",
+    "license": "CC0",
+    "remote_path": "Grue_de_chantier_%C3%A0_Amb%C3%A9rieux-en-Dombes_en_janvier_2022.webm",
+    "sha256": "c0013ace4d6a3c7633a37755932db3a3cfb53779042b392c5d5d870001ab3c49",
+    "actual_metadata": {
+      "width": 1920,
+      "height": 1080,
+      "fps": 30.0,
+      "frames": 618
+    },
+    "header_frames": 619,
+    "selected_id": "construction_real_01",
+    "decision": "Selected before scoring after content, viewpoint and geometry review"
+  },
+  {
+    "id": "commons_2",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Potain_MD_125_B_sur_le_chantier_de_la_salle_sportive_du_Mas_du_Roux_de_Beynost_en_ao%C3%BBt_2019.webm",
+    "expected_sha1": "55f2cb8d78ad4d64b0d6f904e4e3bef8fd54f3ea",
+    "bytes": 34412777,
+    "provider": "http",
+    "label": "real",
+    "source_page": "https://commons.wikimedia.org/w/index.php?oldid=1032231965",
+    "source_revision": "1032231965",
+    "author": "Benoît Prieur",
+    "source_date": "2019-08-04",
+    "license": "CC0",
+    "remote_path": "Potain_MD_125_B_sur_le_chantier_de_la_salle_sportive_du_Mas_du_Roux_de_Beynost_en_ao%C3%BBt_2019.webm",
+    "sha256": "ad67214f32ec25cdd4b3be15aa63222344535e78c928896b382695ba374cbfd4",
+    "actual_metadata": {
+      "width": 1280,
+      "height": 720,
+      "fps": 24.0,
+      "frames": 1833
+    },
+    "header_frames": 1834,
+    "selected_id": "construction_real_02",
+    "decision": "Selected before scoring after content, viewpoint and geometry review"
+  },
+  {
+    "id": "sora-2-pro_0001_0001",
+    "dataset": "govtech/SynthSite",
+    "revision": "2904ec01c3dbf2efba09f2cb1b7bdf17841d4d39",
+    "remote_path": "videos/sora-2-pro_0001.mp4",
+    "url": "https://huggingface.co/datasets/govtech/SynthSite/resolve/2904ec01c3dbf2efba09f2cb1b7bdf17841d4d39/videos/sora-2-pro_0001.mp4",
+    "expected_sha256": "879c8b985886ad459f81ba3e2ca741d824e204f6a7641f66df3238661579d9de",
+    "bytes": 6032660,
+    "provider": "huggingface",
+    "label": "ai",
+    "source": "sora-2-pro",
+    "sha256": "879c8b985886ad459f81ba3e2ca741d824e204f6a7641f66df3238661579d9de",
+    "actual_metadata": {
+      "width": 1280,
+      "height": 720,
+      "fps": 30.0,
+      "frames": 240
+    },
+    "header_frames": 240,
+    "selected_id": "construction_ai_01",
+    "decision": "Selected before scoring after content, viewpoint and geometry review"
+  },
+  {
+    "id": "sora-2-pro_0002_0002",
+    "dataset": "govtech/SynthSite",
+    "revision": "2904ec01c3dbf2efba09f2cb1b7bdf17841d4d39",
+    "remote_path": "videos/sora-2-pro_0002.mp4",
+    "url": "https://huggingface.co/datasets/govtech/SynthSite/resolve/2904ec01c3dbf2efba09f2cb1b7bdf17841d4d39/videos/sora-2-pro_0002.mp4",
+    "expected_sha256": "2caccf4460e20a2da4b59f7260218ff097d2b9d9675cfa2d3588b6263a0463c0",
+    "bytes": 4872814,
+    "provider": "huggingface",
+    "label": "ai",
+    "source": "sora-2-pro",
+    "sha256": "2caccf4460e20a2da4b59f7260218ff097d2b9d9675cfa2d3588b6263a0463c0",
+    "actual_metadata": {
+      "width": 1280,
+      "height": 720,
+      "fps": 30.0,
+      "frames": 240
+    },
+    "header_frames": 240,
+    "selected_id": "construction_ai_02",
+    "decision": "Selected before scoring after content, viewpoint and geometry review"
+  },
+  {
+    "id": "veo3_0001",
+    "dataset": "govtech/SynthSite",
+    "revision": "2904ec01c3dbf2efba09f2cb1b7bdf17841d4d39",
+    "remote_path": "videos/veo3.1_0001.mp4",
+    "url": "https://huggingface.co/datasets/govtech/SynthSite/resolve/2904ec01c3dbf2efba09f2cb1b7bdf17841d4d39/videos/veo3.1_0001.mp4",
+    "expected_sha256": "c3bf0027d9b25e98cab3638bb86cca2ae2e169279490e6d8fe1983f6ba9fc685",
+    "bytes": 5868982,
+    "provider": "huggingface",
+    "label": "ai",
+    "source": "veo3.1",
+    "sha256": "c3bf0027d9b25e98cab3638bb86cca2ae2e169279490e6d8fe1983f6ba9fc685",
+    "actual_metadata": {
+      "width": 1280,
+      "height": 720,
+      "fps": 24.0,
+      "frames": 192
+    },
+    "header_frames": 192,
+    "decision": "Excluded before scoring: night scene has no night camera-footage counterpart in this pilot"
+  },
+  {
+    "id": "veo3_0002",
+    "dataset": "govtech/SynthSite",
+    "revision": "2904ec01c3dbf2efba09f2cb1b7bdf17841d4d39",
+    "remote_path": "videos/veo3.1_0002.mp4",
+    "url": "https://huggingface.co/datasets/govtech/SynthSite/resolve/2904ec01c3dbf2efba09f2cb1b7bdf17841d4d39/videos/veo3.1_0002.mp4",
+    "expected_sha256": "d77308313597bda85ca84e280c992d9a656ad11229cf384da762d18fa4854b79",
+    "bytes": 4662523,
+    "provider": "huggingface",
+    "label": "ai",
+    "source": "veo3.1",
+    "sha256": "d77308313597bda85ca84e280c992d9a656ad11229cf384da762d18fa4854b79",
+    "actual_metadata": {
+      "width": 1280,
+      "height": 720,
+      "fps": 24.0,
+      "frames": 192
+    },
+    "header_frames": 192,
+    "selected_id": "construction_ai_03",
+    "decision": "Selected before scoring after content, viewpoint and geometry review"
+  },
+  {
+    "id": "commons_4",
+    "provider": "http",
+    "label": "real",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Bubene%C4%8D%2C_zast%C3%A1vka_Praha-Podbaba%2C_kolejov%C3%BD_je%C5%99%C3%A1b_EDK_750.webm",
+    "source_page": "https://commons.wikimedia.org/w/index.php?oldid=836118434",
+    "source_revision": "836118434",
+    "remote_path": "Bubene%C4%8D%2C_zast%C3%A1vka_Praha-Podbaba%2C_kolejov%C3%BD_je%C5%99%C3%A1b_EDK_750.webm",
+    "author": "ŠJů",
+    "source_date": "2015-01-10",
+    "license": "CC BY 4.0",
+    "bytes": 5309157,
+    "sha256": "7ca6a391c5bb853d6e00e392394b178e2d81fbeac19f4363c2c937ced473458e",
+    "actual_metadata": {
+      "width": 1920,
+      "height": 1080,
+      "fps": 25.0,
+      "frames": 2496
+    },
+    "header_frames": 2496,
+    "selected_id": "construction_real_03",
+    "decision": "Selected before scoring after content, viewpoint and geometry review"
+  },
+  {
+    "provider": "http",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Prefabricated_house_construction.ogv",
+    "decision": "Excluded before downloading/scoring: authors identify time-lapse (one second represents one minute); temporal content does not match regular-speed AI clips"
+  },
+  {
+    "provider": "http",
+    "source_page": "https://www.pexels.com/video/heavy-equipment-2573538/",
+    "decision": "Excluded without scoring: public page and media downloads returned HTTP 403"
+  },
+  {
+    "provider": "http",
+    "source_page": "https://www.pexels.com/video/a-crane-in-operation-at-a-construction-site-2651547/",
+    "decision": "Not downloaded/scored: inaccessible source-page metadata; original media is 4K, outside the <=1920x1080 working budget"
+  }
+]
