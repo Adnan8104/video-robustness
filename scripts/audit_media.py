@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'src'))
 from vidrobust.artifacts import sha
 from vidrobust.experiment import frozen_revision, load_config
+from vidrobust.frame_scoring import experiment_indices
 from vidrobust.media import probe
 
 
@@ -24,7 +25,6 @@ def main():
     frozen_revision(ROOT, Path(__file__).resolve())
     import imageio_ffmpeg
     sys.path.insert(0,str(ROOT/'vendor/aegis'))
-    from video_io import window_sample
     out=ROOT/f"reports/experiments/{config['name']}"
     records=[]
     for sample in samples:
@@ -43,7 +43,7 @@ def main():
         gaps=[b-a for a,b in zip(pts,pts[1:])]
         if min(gaps)<=0:
             raise ValueError('Nonmonotonic frame timestamps')
-        indices=window_sample(meta['frames'],16,meta['fps'],target_dur=4,random_start=False).tolist()
+        indices=experiment_indices(meta,config)
         selected=[pts[i] for i in indices]
         drift=max(abs((pts[i]-pts[0])-i/meta['fps']) for i in indices)
         if drift>.1:

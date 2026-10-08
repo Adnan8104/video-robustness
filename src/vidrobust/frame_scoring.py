@@ -4,6 +4,23 @@ import math
 import numpy as np
 
 
+def experiment_indices(meta, config):
+    """Keep historical sampling or select sixteen nominal 8 fps positions."""
+    if config.get('sampling', 'centered_4s_16') == 'centered_4s_16':
+        from video_io import window_sample
+        return window_sample(meta['frames'], 16, meta['fps'], target_dur=4, random_start=False).tolist()
+    if config['sampling'] != 'centered_2s_8fps':
+        raise ValueError('Unknown sampling profile')
+    duration = int(round(meta['fps'] * 2))
+    if meta['fps'] < 8 or meta['frames'] < duration:
+        raise ValueError('8 fps sampling requires at least two seconds and native fps >=8')
+    start = (meta['frames'] - duration) // 2
+    indices = (start + np.floor(np.arange(16) * meta['fps'] / 8)).astype(int).tolist()
+    if len(set(indices)) != 16 or indices[-1] >= meta['frames']:
+        raise ValueError('Invalid 8 fps sample indices')
+    return indices
+
+
 def rgb_digest(frames):
     if len(frames) != 16:
         raise ValueError('Expected exactly 16 fixed RGB frames')

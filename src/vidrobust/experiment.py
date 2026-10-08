@@ -27,7 +27,7 @@ def load_config(root, path):
     path = inside(root, path)
     config = json.loads(path.read_text())
     allowed = {"schema_version", "name", "manifest", "sample_ids", "source_directory", "detectors",
-               "preparation", "variants", "baseline", "notes"}
+               "preparation", "variants", "baseline", "notes", "analysis", "sampling"}
     if set(config) - allowed or config.get("schema_version") != 1:
         raise ValueError("Unknown config field or unsupported schema_version")
     if not re.fullmatch(r"[a-z0-9][a-z0-9-]{0,63}", config["name"]):
@@ -54,6 +54,13 @@ def load_config(root, path):
     available = detector_names()
     if not names or len(set(names)) != len(names) or set(names) - set(available):
         raise ValueError("Choose unique registered detectors from " + ", ".join(available))
+    if config.get("analysis", "midpoint") not in ("midpoint", "ranking"):
+        raise ValueError("Unknown analysis mode")
+    if config.get("sampling", "centered_4s_16") not in ("centered_4s_16", "centered_2s_8fps"):
+        raise ValueError("Unknown sampling profile")
+    if config.get("analysis", "midpoint") != "ranking" and any(
+            getattr(get_adapter(name).adapter, "ranking_only", False) for name in names):
+        raise ValueError("Ranking-only detectors require ranking analysis; no midpoint decisions")
     if config["preparation"] not in ("native", "centered_4s_504_24fps"):
         raise ValueError("Unknown preparation profile")
     inside(root, config["source_directory"], "data")
@@ -115,6 +122,9 @@ def analyze(rows, config, samples):
         if row["sampled_frame_indices"] != baseline["sampled_frame_indices"]:
             raise ValueError("Temporal indices changed across variants")
         row["delta_vs_baseline"] = row["ai_score"] - baseline["ai_score"]
+    if config.get("analysis") == "ranking":
+        from .experiment_report import summarize_rankings
+        return summarize_rankings(rows, config)
     summary = {}
     for d in config["detectors"]:
         summary[d] = {}
@@ -139,7 +149,7 @@ def analyze(rows, config, samples):
 
 def run_experiment(root, path):
     from .artifacts import sha
-    from .frame_scoring import score_frames
+    from .frame_scoring import score_frames, experiment_indices
     from .media import prepare_cases, read_exact_rgb
     from .experiment_report import write_results
     import imageio_ffmpeg
@@ -149,17 +159,16 @@ def run_experiment(root, path):
     code_paths = {str(p.relative_to(root)) for p in (root / "src/vidrobust").rglob("*.py")
                   if "legacy" not in p.relative_to(root / "src/vidrobust").parts}
     code_paths.update(model["code_path"] for model in models.values())
-    code_paths.update(str(p.relative_to(root)) for p in (root / "vendor/aegis").glob("*.py"))
+    code_paths.update(str(p.relative_to(root)) for p in (root / "vendor").rglob("*.py"))
     code_hashes = {p: sha(root / p) for p in sorted(code_paths)}
     config_hash, manifest_hash = sha(config_path), sha(manifest_path)
     cases, preparation = prepare_cases(root, config, samples)
     sys.path.insert(0, str(root / "vendor/aegis"))
-    from video_io import window_sample
     rows = []
     for name in config["detectors"]:
         detector = make_detector(root, name)
         for index, (path, case) in enumerate(cases, 1):
-            indices = window_sample(case["frames"], 16, case["fps"], target_dur=4, random_start=False).tolist()
+            indices = experiment_indices(case, config)
             start = time.perf_counter()
             details = score_frames(detector, name, read_exact_rgb(path, indices))
             for key, value in list(details.items()):

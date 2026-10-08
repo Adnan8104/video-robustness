@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "temporal-shared",
+  "manifest": "configs/temporal-panel.json",
+  "source_directory": "data/temporal-panel",
+  "detectors": [
+    "d3_resnet18"
+  ],
+  "preparation": "native",
+  "analysis": "ranking",
+  "sampling": "centered_4s_16",
+  "baseline": "original",
+  "variants": [
+    {
+      "name": "original",
+      "transform": "identity",
+      "encoding": "source"
+    }
+  ],
+  "notes": "D3 ResNet18 option, L2 discrepancy; ranking only. All 26 previously published source files are retained. The bounded ai_score coordinate is 1/(1+raw temporal_std), with no decision threshold or calibration. Author BGR preprocessing is preserved. This is an adaptation to deterministic center-window sampling and directly decoded source frames: upstream uses random-window 8 fps JPEG frames, and its main model is XCLIP, not this lightweight option. The 8 fps profile checks native-like timing without introducing JPEG encoding. See configs/temporal-ranking-policy.md. Counts do not measure general accuracy or establish a replacement for the demo."
+}

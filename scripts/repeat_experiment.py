@@ -21,10 +21,17 @@ def main():
     parser.add_argument('--detectors', nargs='+', help='Reload only these configured detectors; agreement selection still uses every model')
     parser.add_argument('--source-errors', action='store_true',
         help='Repeat representative label conflicts and model disagreements; permits the baseline')
+    parser.add_argument('--clips', nargs='+', help='Explicit source IDs to repeat; supports ranking-only analysis')
     args = parser.parse_args()
     config_path, manifest_path, config, samples = load_config(ROOT, args.config)
-    if set(args.variants) - {v['name'] for v in config['variants']} or (not args.source_errors and config['baseline'] in args.variants):
+    if set(args.variants) - {v['name'] for v in config['variants']} or (not args.source_errors and not args.clips and config['baseline'] in args.variants):
         raise ValueError('Choose existing variants; repeating the baseline requires --source-errors')
+    if args.clips and (len(args.clips) != len(set(args.clips)) or set(args.clips) - {s['id'] for s in samples}):
+        raise ValueError('Choose unique existing source IDs')
+    if args.clips and args.source_errors:
+        raise ValueError('Choose explicit clips or source-error selection')
+    if config.get('analysis') == 'ranking' and not args.clips:
+        raise ValueError('Ranking-only runs need explicit repeat clips; no midpoint selection')
     names = args.detectors or config['detectors']
     if len(names) != len(set(names)) or set(names) - set(config['detectors']):
         raise ValueError('Choose unique configured detector names')
@@ -45,7 +52,9 @@ def main():
         if sha(ROOT / run['models'][name]['checkpoint']['path']) != run['model_sha256'][name]:
             raise ValueError('Checkpoint changed')
         edits = [r for r in rows if r['detector'] == name and r['variant'] in args.variants]
-        if args.source_errors:
+        if args.clips:
+            targets = [r for r in edits if r['video_id'] in args.clips]
+        elif args.source_errors:
             representatives = {}
             for r in sorted(edits, key=lambda r: (r['video_id'], r['variant'])):
                 high = float(r['ai_score']) >= .5
@@ -89,7 +98,8 @@ def main():
     validation_path = out / 'validation.json'
     validation = json.loads(validation_path.read_text())
     validation['fresh_model_repeat_selection'] = dict(variants=args.variants, detectors=names,
-        rule=('First lexicographic label conflict and disagreement per cell, plus first correct control per label; cases deduplicated'
+        rule=('Explicit source IDs; no midpoint decisions' if args.clips else
+              'First lexicographic label conflict and disagreement per cell, plus first correct control per label; cases deduplicated'
               if args.source_errors else 'All selected-variant midpoint crossings plus the largest absolute change per detector and label; baseline included; cases deduplicated'),
         script_sha256=sha(Path(__file__).resolve()))
     validation['fresh_model_repeats'] = repeats

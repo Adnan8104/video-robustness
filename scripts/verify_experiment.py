@@ -40,7 +40,10 @@ def main():
             r[key] = int(r[key])
     if analyze(rows, config, samples) != json.loads((out / "summary.json").read_text()):
         raise ValueError("Independent CSV analysis differs from stored summary")
-    if summarize_decisions(rows, config) != json.loads((out / "decisions.json").read_text()):
+    ranking = config.get('analysis') == 'ranking'
+    if ranking and (out / 'decisions.json').exists():
+        raise ValueError('Ranking-only runs must not contain midpoint decisions')
+    if not ranking and summarize_decisions(rows, config) != json.loads((out / "decisions.json").read_text()):
         raise ValueError("Independent CSV decisions differ from stored error/coverage counts")
     for r in rows:
         variant = next(v for v in config["variants"] if v["name"] == r["variant"])
@@ -57,7 +60,7 @@ def main():
         validation_path = out / "validation.json"
         validation = json.loads(validation_path.read_text())
         validation["independent_run_checks"] = dict(model_scores=len(rows),
-            independent_CSV_analysis="passed", independent_error_and_agreement_analysis="passed",
+            independent_CSV_analysis="passed", independent_error_and_agreement_analysis=("not applicable; ranking-only" if ranking else "passed"),
             scored_media_and_model_and_code_hashes="passed", script_sha256=sha(Path(__file__).resolve()))
         validation_path.write_text(json.dumps(validation, indent=2)+"\n")
         print(f"Independent run verification passed: {len(rows)} scores; inputs, models, code, summaries and error/coverage counts")

@@ -7,6 +7,8 @@ import os
 
 def summarize_decisions(rows, config):
     """Describe fixed-midpoint errors and the coverage cost of model agreement."""
+    if config.get("analysis") == "ranking":
+        raise ValueError("Ranking analysis has no midpoint decisions")
     variants = [v["name"] for v in config["variants"]]
     names = config["detectors"]
     clips = {r["video_id"] for r in rows}
@@ -48,6 +50,30 @@ def summarize_decisions(rows, config):
     return result
 
 
+def summarize_rankings(rows, config):
+    """Count AI/real pair orderings; ties count as half, with no fitted cutoff."""
+    result = {}
+    for name in config['detectors']:
+        result[name] = {}
+        for variant in config['variants']:
+            selected = [r for r in rows if r['detector'] == name and r['variant'] == variant['name']]
+            groups = {'all': selected}
+            for source in sorted({r['source'] for r in selected}):
+                groups['source:' + source] = [r for r in selected if r['source'] == source]
+            result[name][variant['name']] = {}
+            for group, members in groups.items():
+                real = [r['ai_score'] for r in members if r['label'] == 'real']
+                ai = [r['ai_score'] for r in members if r['label'] == 'ai']
+                pairs = [(a, b) for a in ai for b in real]
+                wins = sum(a > b for a, b in pairs)
+                ties = sum(a == b for a, b in pairs)
+                result[name][variant['name']][group] = dict(
+                    real_clips=len(real), ai_clips=len(ai), pairs=len(pairs),
+                    ai_above_real=wins, ties=ties,
+                    pairwise_auc=(wins + .5*ties)/len(pairs) if pairs else None)
+    return result
+
+
 def write_results(root, out, config, samples, rows, summary, metadata, validation):
     fields = sorted({k for r in rows for k in r})
     with (out / "scores.csv").open("w", newline="") as f:
@@ -56,6 +82,9 @@ def write_results(root, out, config, samples, rows, summary, metadata, validatio
         writer.writerows(rows)
     for name, value in (("summary", summary), ("run", metadata), ("validation", validation)):
         (out / f"{name}.json").write_text(json.dumps(value, indent=2)+"\n")
+    if config.get('analysis') == 'ranking':
+        write_ranking_report(root, out, config, rows, summary, metadata, samples)
+        return
     decisions = summarize_decisions(rows, config)
     (out / "decisions.json").write_text(json.dumps(decisions, indent=2)+"\n")
     plot_pairs(root, out, config, samples, rows)
@@ -111,6 +140,38 @@ def write_results(root, out, config, samples, rows, summary, metadata, validatio
     (out / "report.md").write_text("\n".join(lines))
 
 
+def write_ranking_report(root, out, config, rows, summary, metadata, samples):
+    # A ranking-only run must never leave an old decision file beside its results.
+    (out / 'decisions.json').unlink(missing_ok=True)
+    plot_pairs(root, out, config, samples, rows)
+    lines = [f"# {config['name']}", '',
+        f"{len(samples)} clips, {len(rows)} scores. Sampling: `{config.get('sampling', 'centered_4s_16')}`.", '',
+        '![Ranking coordinates](pairs.png)', '',
+        'Higher ranking coordinates mean more AI-like within each detector. There is no decision cutoff, '
+        'probability, error-rate claim or model-agreement verdict. AUC counts AI/real pair orderings, with ties worth half. '
+        'Source clusters and repeated scenes make pairs dependent; these counts are descriptive.', '',
+        '| Detector | Variant | AI clips | Real clips | AI above real pairs | Tied pairs | Pairs | AUC |',
+        '|---|---|---:|---:|---:|---:|---:|---:|']
+    for name, variants in summary.items():
+        for variant, groups in variants.items():
+            m = groups['all']
+            auc = f"{m['pairwise_auc']:.6f}" if m['pairwise_auc'] is not None else '—'
+            lines.append(f"| {name} | {variant} | {m['ai_clips']} | {m['real_clips']} | {m['ai_above_real']} | {m['ties']} | {m['pairs']} | {auc} |")
+    lines += ['', '## Raw scores', '',
+        '| Clip | Label | Detector | Variant | Raw temporal std (higher = real-like) | Bounded ranking coordinate |',
+        '|---|---|---|---|---:|---:|']
+    for row in rows:
+        raw = f"{row['temporal_std']:.6f}" if 'temporal_std' in row else '—'
+        lines.append(f"| {row['video_id']} | {row['label']} | {row['detector']} | {row['variant']} | {raw} | {row['ai_score']:.6f} |")
+    lines += ['', '## Method', '']
+    for name, model in metadata['models'].items():
+        lines.append(f"**{name}:** {model['preprocessing']}")
+    lines += ['', config.get('notes', ''), '',
+        f"Reproduce: `uv run python run.py experiment {metadata['config_path']}`.", '',
+        '[Scores and temporal distances](scores.csv) · [Rank counts](summary.json) · [Provenance](run.json) · [Checks](validation.json)', '']
+    (out / 'report.md').write_text('\n'.join(lines))
+
+
 def plot_pairs(root, out, config, samples, rows, basename="pairs", compression_hero=True):
     os.environ.setdefault("MPLCONFIGDIR", str(root / "data/.matplotlib"))
     import matplotlib
@@ -145,8 +206,9 @@ def plot_pairs(root, out, config, samples, rows, basename="pairs", compression_h
         ax.set_yticks(range(len(group)), [s["id"].rsplit("_", 1)[-1] for s in group])
         ax.invert_yaxis()
         ax.set_xlim(-.03, 1.03)
-        ax.axvline(.5, color="#64748b", ls=":", lw=1)
-        ax.set_xlabel("AI-like score")
+        if config.get('analysis') != 'ranking':
+            ax.axvline(.5, color="#64748b", ls=":", lw=1)
+        ax.set_xlabel("Bounded ranking coordinate · no cutoff" if config.get('analysis') == 'ranking' else "AI-like score")
         ax.set_title(f"{cell.replace('_', ' ')} · n={len(group)}")
         ax.grid(axis="x", alpha=.2)
         ax.legend(fontsize=8, loc="upper center", bbox_to_anchor=(.5, -.16), ncol=2)

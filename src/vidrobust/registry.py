@@ -20,9 +20,12 @@ class AdapterSpec:
 
     def metadata(self, root):
         module = importlib.import_module(self.adapter.__module__)
-        return dict(adapter=self.adapter.__module__ + "." + self.adapter.__name__,
+        details = dict(adapter=self.adapter.__module__ + "." + self.adapter.__name__,
             code_path=str(Path(module.__file__).resolve().relative_to(root)),
             checkpoint=dict(self.adapter.checkpoint), preprocessing=self.adapter.preprocessing)
+        if getattr(self.adapter, "ranking_only", False):
+            details["ranking_only"] = True
+        return details
 
 
 def register(name):

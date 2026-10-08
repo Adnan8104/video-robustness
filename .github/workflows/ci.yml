@@ -39,3 +39,7 @@ jobs:
         run: uv run --no-sync python run.py experiment configs/experiments/third-detector.json --dry-run
       - name: Validate construction scenes config
         run: uv run --no-sync python run.py experiment configs/experiments/construction-scenes.json --dry-run
+      - name: Validate shared-window temporal config
+        run: uv run --no-sync python run.py experiment configs/experiments/temporal-shared.json --dry-run
+      - name: Validate 8 fps temporal config
+        run: uv run --no-sync python run.py experiment configs/experiments/temporal-8fps.json --dry-run
