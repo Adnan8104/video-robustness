@@ -72,6 +72,12 @@ class InferenceTests(unittest.TestCase):
         self.assertTrue(all(len(set(selected)) == 16 for _, selected in plan))
         self.assertEqual(section_plan(dict(frames=24, fps=24), True),
                          section_plan(dict(frames=24, fps=24), False))
+        # Just over four seconds: beginning and middle can sample identical frames.
+        short = dict(frames=97, fps=24)
+        short_plan = section_plan(short, True)
+        self.assertEqual([name for name, _ in short_plan], ["middle", "end"])
+        self.assertEqual(short_plan[0][1], centered_indices(short))
+        self.assertEqual(len({tuple(indices) for _, indices in short_plan}), len(short_plan))
 
     def test_three_sections_share_decoded_frames_and_do_not_average_scores(self):
         first, second = FakeDetector(.2), FakeDetector(.8)

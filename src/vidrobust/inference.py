@@ -35,10 +35,14 @@ def section_plan(meta, scan_sections=False):
     span = min(meta["frames"], max(16, int(4 * meta["fps"])))
     beginning = np.linspace(0, span - 1, 16, dtype=int).tolist()
     end = np.linspace(meta["frames"] - span, meta["frames"] - 1, 16, dtype=int).tolist()
-    # Short clips have one window, not three independent observations.
-    if beginning == middle == end:
-        return [("middle", middle)]
-    return [("beginning", beginning), ("middle", middle), ("end", end)]
+    # Keep the reference middle window when a short clip duplicates an endpoint.
+    plan = []
+    if beginning != middle:
+        plan.append(("beginning", beginning))
+    plan.append(("middle", middle))
+    if end != middle and end != beginning:
+        plan.append(("end", end))
+    return plan
 
 
 def validate_metadata(meta):

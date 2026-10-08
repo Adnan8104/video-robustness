@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "name": "real-footage",
+  "manifest": "configs/real-footage.json",
+  "source_directory": "data/real-footage",
+  "detectors": [
+    "aegis",
+    "waverep"
+  ],
+  "preparation": "native",
+  "baseline": "original",
+  "variants": [
+    {
+      "name": "original",
+      "transform": "identity",
+      "encoding": "source"
+    }
+  ],
+  "notes": "Eight real-only clips selected before inference: six kitchen actions, two music performances. Original source bytes are scored without added edits. See configs/real-footage-selection.md; this targeted panel cannot estimate general accuracy or AI recall."
+}

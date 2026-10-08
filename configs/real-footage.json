@@ -1,0 +1,213 @@
+{
+  "dataset": "OmerXYZ/comgenvid",
+  "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+  "selection_policy": "configs/real-footage-selection.md",
+  "provenance": {
+    "corpus_url": "https://www.cs.utexas.edu/~ml/clamp/videoDescription/",
+    "corpus_collected": "July\u2013September 2010",
+    "captions_url": "https://www.cs.utexas.edu/users/ml/clamp/videoDescription/AllVideoDescriptions.txt",
+    "captions_sha256": "3eb90fcf576b017a8517765907a63f5d9dc580fb9d99e3a1919cac02ce11f6e7",
+    "metadata_sha256": "03ee54e9a964e25a155f41ad426a26338e5f3a9fd7e6d2e3c9d86a5dd2adfff7"
+  },
+  "excluded_after_visual_review": [
+    {
+      "remote_path": "videos/real/MSVD/_6OTzzK7t9Y_158_170.mp4",
+      "sha256": "758a371f126d11260194b0f6f0e57e868f29c47e0828a0f984cda689f4265c28",
+      "reason": "Mirror video showed piano playing; captions suggested cooking. Excluded before inference."
+    }
+  ],
+  "samples": [
+    {
+      "id": "real_check_01",
+      "label": "real",
+      "source": "MSVD",
+      "source_id": "JhCvLmf9yr0",
+      "remote_path": "videos/real/MSVD/JhCvLmf9yr0_46_50.mp4",
+      "sha256": "5dc85e05eaef1fc61a01e3b58281069287391f2f124f4abda555468080ae377a",
+      "bytes": 16395432,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 96,
+        "fps": 23.976023976023978
+      },
+      "cell": "real_kitchen",
+      "content": "Slicing a lemon",
+      "matching_captions": [
+        "two women are slicing some lemons",
+        "a girl is slicing a lemon into a halfmoon shape",
+        "a lady sliced a lemon with a tool"
+      ],
+      "source_url": "https://www.youtube.com/watch?v=JhCvLmf9yr0",
+      "visual_review": "Photographic footage; action confirmed in beginning/middle/end frames."
+    },
+    {
+      "id": "real_check_02",
+      "label": "real",
+      "source": "MSVD",
+      "source_id": "UXs3eq68ZjE",
+      "remote_path": "videos/real/MSVD/UXs3eq68ZjE_209_214.mp4",
+      "sha256": "883d30d77482095c54c8671751ab447518c61f2da23593f182572c6ad4cbec9c",
+      "bytes": 11100297,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 150,
+        "fps": 29.97002997002997
+      },
+      "cell": "real_kitchen",
+      "content": "Pouring vanilla into a spoon",
+      "matching_captions": [
+        "a person pours a liquid into a spoon",
+        "a chef pours soy sauce into a measuring spoon",
+        "a man is pouring liquid flavoring into a measuring spoon"
+      ],
+      "source_url": "https://www.youtube.com/watch?v=UXs3eq68ZjE",
+      "visual_review": "Photographic footage; action confirmed in beginning/middle/end frames."
+    },
+    {
+      "id": "real_check_03",
+      "label": "real",
+      "source": "MSVD",
+      "source_id": "WPG-BIWOrG4",
+      "remote_path": "videos/real/MSVD/WPG-BIWOrG4_130_134.mp4",
+      "sha256": "229de4e18c2cc104a215d672036dc61de44b5b6bde1f63be7e28f16de3b2bb9d",
+      "bytes": 16311614,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 120,
+        "fps": 29.97002997002997
+      },
+      "cell": "real_kitchen",
+      "content": "Putting a frittata in an oven",
+      "matching_captions": [
+        "a man is cooking a frittata in the oven",
+        "the person is cooking",
+        "a person is cooking"
+      ],
+      "source_url": "https://www.youtube.com/watch?v=WPG-BIWOrG4",
+      "visual_review": "Photographic footage; action confirmed in beginning/middle/end frames."
+    },
+    {
+      "id": "real_check_04",
+      "label": "real",
+      "source": "MSVD",
+      "source_id": "_WRC7HXBJpU",
+      "remote_path": "videos/real/MSVD/_WRC7HXBJpU_386_391.mp4",
+      "sha256": "df9a237a3b0efb586f12c590b1c78f107dcfeb31e3c608f75ca956a917dc947a",
+      "bytes": 24227635,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 150,
+        "fps": 29.97002997002997
+      },
+      "cell": "real_kitchen",
+      "content": "Pouring rice into a pan",
+      "matching_captions": [
+        "a person pours rice in a pan",
+        "someone pours a box of beef rice a roni into a skillet containing some kind of liquid",
+        "a man cooks rice in a pan"
+      ],
+      "source_url": "https://www.youtube.com/watch?v=_WRC7HXBJpU",
+      "visual_review": "Photographic footage; action confirmed in beginning/middle/end frames."
+    },
+    {
+      "id": "real_check_05",
+      "label": "real",
+      "source": "MSVD",
+      "source_id": "bQJQGoJF7_k",
+      "remote_path": "videos/real/MSVD/bQJQGoJF7_k_109_115.mp4",
+      "sha256": "57957e5444fdb956e4ba76e402babbbf8c5eed2ed23988e3ef036d61d4ba004b",
+      "bytes": 13124318,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 180,
+        "fps": 29.97002997002997
+      },
+      "cell": "real_kitchen",
+      "content": "Seasoning water in a container",
+      "matching_captions": [
+        "a man is pouring seasoning in a plastic container",
+        "a man is pouring seasoning into a square plastic container",
+        "a cook seasons some water"
+      ],
+      "source_url": "https://www.youtube.com/watch?v=bQJQGoJF7_k",
+      "visual_review": "Photographic footage; action confirmed in beginning/middle/end frames."
+    },
+    {
+      "id": "real_check_06",
+      "label": "real",
+      "source": "MSVD",
+      "source_id": "cUW_bXll6YM",
+      "remote_path": "videos/real/MSVD/cUW_bXll6YM_390_395.mp4",
+      "sha256": "3f63f1cc2993c4a26dac78611d11fb07784896e8d6c6b1b745f65735e6fad539",
+      "bytes": 14414399,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 150,
+        "fps": 29.97002997002997
+      },
+      "cell": "real_kitchen",
+      "content": "Pouring oil over tomatoes",
+      "matching_captions": [
+        "someone pours olive oil into a bowl of tomato wedges",
+        "a man pours olive oil over tomatoes",
+        "a man pours oil onto sliced tomatoes"
+      ],
+      "source_url": "https://www.youtube.com/watch?v=cUW_bXll6YM",
+      "visual_review": "Photographic footage; action confirmed in beginning/middle/end frames."
+    },
+    {
+      "id": "real_check_07",
+      "label": "real",
+      "source": "MSVD",
+      "source_id": "Ugb_uH72d0I",
+      "remote_path": "videos/real/MSVD/Ugb_uH72d0I_8_17.mp4",
+      "sha256": "1c44e20001a79b3ce56523897be756d660abfe67933330f41bf6bae77a376112",
+      "bytes": 22608528,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 217,
+        "fps": 24.0
+      },
+      "cell": "real_music",
+      "content": "Playing electric bass",
+      "matching_captions": [
+        "a man is playing a guitar",
+        "a man is sitting in a room playing an electric guitar",
+        "a man is plying a guitar"
+      ],
+      "source_url": "https://www.youtube.com/watch?v=Ugb_uH72d0I",
+      "visual_review": "Photographic footage; action confirmed in beginning/middle/end frames."
+    },
+    {
+      "id": "real_check_08",
+      "label": "real",
+      "source": "MSVD",
+      "source_id": "kk3TIio1-Uw",
+      "remote_path": "videos/real/MSVD/kk3TIio1-Uw_5_14.mp4",
+      "sha256": "b9adabbc1c038f96751a0599915125357f2cc33e4134a6afab198c62948417cd",
+      "bytes": 23802861,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 270,
+        "fps": 29.916666666666668
+      },
+      "cell": "real_music",
+      "content": "Playing violin on stage",
+      "matching_captions": [
+        "a man is playing a guitar on a stage outside",
+        "a man is playing a violin like a guitar",
+        "a man plays the guitar"
+      ],
+      "source_url": "https://www.youtube.com/watch?v=kk3TIio1-Uw",
+      "visual_review": "Photographic footage; action confirmed in beginning/middle/end frames."
+    }
+  ]
+}
