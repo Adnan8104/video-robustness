@@ -1,4 +1,4 @@
-"""Reload models and repeat spatial crossings plus the largest changes per label."""
+"""Reload selected models and repeat representative errors or spatial changes."""
 import argparse
 import csv
 import json
@@ -18,12 +18,16 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('config')
     parser.add_argument('--variants', nargs='+', required=True)
+    parser.add_argument('--detectors', nargs='+', help='Reload only these configured detectors; agreement selection still uses every model')
     parser.add_argument('--source-errors', action='store_true',
         help='Repeat representative label conflicts and model disagreements; permits the baseline')
     args = parser.parse_args()
     config_path, manifest_path, config, samples = load_config(ROOT, args.config)
     if set(args.variants) - {v['name'] for v in config['variants']} or (not args.source_errors and config['baseline'] in args.variants):
         raise ValueError('Choose existing variants; repeating the baseline requires --source-errors')
+    names = args.detectors or config['detectors']
+    if len(names) != len(set(names)) or set(names) - set(config['detectors']):
+        raise ValueError('Choose unique configured detector names')
     out = ROOT / f"reports/experiments/{config['name']}"
     run = json.loads((out / 'run.json').read_text())
     if sha(config_path) != run['config_sha256'] or sha(manifest_path) != run['manifest_sha256']:
@@ -35,7 +39,7 @@ def main():
         rows = list(csv.DictReader(f))
     indexed = {(r['video_id'], r['variant'], r['detector']): r for r in rows}
     repeats = []
-    for name in config['detectors']:
+    for name in names:
         if get_adapter(name).metadata(ROOT) != run['models'][name]:
             raise ValueError('Registered adapter changed')
         if sha(ROOT / run['models'][name]['checkpoint']['path']) != run['model_sha256'][name]:
@@ -84,13 +88,13 @@ def main():
         del detector
     validation_path = out / 'validation.json'
     validation = json.loads(validation_path.read_text())
-    validation['fresh_model_repeat_selection'] = dict(variants=args.variants,
+    validation['fresh_model_repeat_selection'] = dict(variants=args.variants, detectors=names,
         rule=('First lexicographic label conflict and disagreement per cell, plus first correct control per label; cases deduplicated'
               if args.source_errors else 'All selected-variant midpoint crossings plus the largest absolute change per detector and label; baseline included; cases deduplicated'),
         script_sha256=sha(Path(__file__).resolve()))
     validation['fresh_model_repeats'] = repeats
     validation_path.write_text(json.dumps(validation, indent=2)+'\n')
-    print(f'Fresh-model repeats passed: {len(repeats)}; {len(config["detectors"])} model reloads')
+    print(f'Fresh-model repeats passed: {len(repeats)}; {len(names)} model reloads')
 
 
 if __name__ == '__main__':
