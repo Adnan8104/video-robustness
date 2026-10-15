@@ -12,6 +12,20 @@ from vidrobust.frame_scoring import experiment_indices
 
 
 class RankingTests(unittest.TestCase):
+    def test_target_ties_block_separation_and_all_real_controls_are_kept(self):
+        from scripts.compare_rankings import evaluate
+        rows=[dict(video_id=name,label=label,ai_score=score,temporal_std=1/score-1)
+              for name,label,score in [('real_a','real',.2),('real_b','real',.8),
+                                       ('target','ai',.8),('other','ai',.9)]]
+        result=evaluate(rows,['target'])
+        self.assertEqual((result['ai_above_real'],result['ties'],result['auc']),(3,1,.875))
+        self.assertFalse(result['all_targets_strictly_ahead_of_all_real'])
+        self.assertEqual([r['video_id'] for r in result['targets'][0]['blocking_controls']],['real_b'])
+        self.assertTrue(evaluate(rows,['other'])['all_targets_strictly_ahead_of_all_real'])
+        for targets in ([],['missing'],['real_a'],['target','target']):
+            with self.assertRaises(ValueError):
+                evaluate(rows,targets)
+
     def test_rank_only_config_rejects_midpoint_before_download(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

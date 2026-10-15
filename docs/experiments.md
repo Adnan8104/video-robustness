@@ -357,3 +357,13 @@ three shared misses ranks strictly ahead of every real control; an AUC improveme
 alone cannot justify changing the demo. These remain previously examined clips,
 not fresh validation data. [Fixed criteria](../configs/xclip-ranking-policy.md) ·
 [Model/config provenance](../vendor/d3/XCLIP-ORIGIN.md).
+
+To rebuild the encoder comparison from the saved CSVs:
+
+```sh
+uv run python scripts/compare_rankings.py configs/experiments/temporal-shared.json configs/experiments/xclip-shared.json configs/experiments/temporal-8fps.json configs/experiments/xclip-8fps.json --targets panel_wan_04 panel_wan_05 construction_ai_02 --output reports/temporal-encoder-comparison
+```
+
+The comparison checks identical source hashes/labels and identical frame indices
+and decoded RGB/normalized input hashes within each sampling profile. It independently recomputes
+pair counts and retains every real control when checking the three targets.

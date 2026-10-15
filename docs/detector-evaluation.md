@@ -27,13 +27,16 @@ On six construction clips, WaveRep caught two of three AI videos. AEGIS and
 AIGVDet RGB caught none. All three missed the same Sora clip, and the RGB branch
 flagged one real recording.
 
-D3's lightweight temporal check gave AUC 0.911 with a four-second window and
-0.834 with a two-second window. AUC measures score ordering, not detection
-accuracy. Neither setting cleanly separated all three shared misses from every
-real control.
+D3's lightweight ResNet18 check gave AUC 0.911 with a four-second window and
+0.834 with a two-second window. The stronger X-CLIP encoder gave 0.899 and 0.846
+on the same clips and settings. AUC measures ordering, not detection accuracy.
+Neither encoder separated all three shared misses from every real control.
+X-CLIP separated the construction miss in both settings, but both Wan misses
+still overlapped real footage. It did not qualify as a demo upgrade.
 
-The next model needs to help with those misses without adding real-video errors.
-If it does, we'll need separate footage to choose a cutoff and test it.
+This candidate check stops here. No cutoff was fitted, and the demo still uses
+AEGIS and WaveRep. Any future upgrade needs separate footage for choosing a
+cutoff and an untouched test set before we can claim better detection.
 
 ## Checks
 

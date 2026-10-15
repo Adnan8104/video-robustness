@@ -6,13 +6,13 @@ A Python project to test how well existing models detect AI-generated videos,
 and what happens after compression, resizing or cropping.
 
 It compares AEGIS, WaveRep and AIGVDet's RGB branch. There's also a local upload
-demo and a lightweight D3 experiment looking at changes between frames.
+demo and D3 experiments looking at changes between frames.
 
 ## Key findings
 
 - Compression made WaveRep miss more AI clips: **4/10 before, 9/10 after** on the 20-clip panel.
 - Resizing pushed one real video's AEGIS score from **0.0005 to 0.839**.
-- On later tests, adding a third model didn't fix the shared misses. D3 helped separate some cases, but the result changed with the time window.
+- Adding more models didn't fix the shared misses. Both D3 encoders, including X-CLIP, still overlapped real footage on difficult clips.
 
 ![Scores before and after compression](reports/experiments/compression/compression-pairs.png)
 
@@ -44,6 +44,6 @@ The 20-clip experiment compares original, compressed, resized and cropped inputs
 
 The shared runner checks file hashes and saves scores, charts and run details
 under `reports/experiments/`. Models and videos stay out of Git. There are
-**55 tests**, with tests and config checks running in GitHub Actions.
+**59 tests**, with tests and config checks running in GitHub Actions.
 
 [Setup and configs](docs/experiments.md) · [Model comparison](docs/detector-evaluation.md) · [Sources and credits](docs/sources.md)
