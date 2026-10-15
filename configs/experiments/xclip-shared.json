@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "xclip-shared",
+  "manifest": "configs/temporal-panel.json",
+  "source_directory": "data/temporal-panel",
+  "detectors": [
+    "d3_xclip"
+  ],
+  "preparation": "native",
+  "analysis": "ranking",
+  "sampling": "centered_4s_16",
+  "baseline": "original",
+  "variants": [
+    {
+      "name": "original",
+      "transform": "identity",
+      "encoding": "source"
+    }
+  ],
+  "notes": "D3 XCLIP-16 branch with the pinned microsoft/xclip-base-patch16 checkpoint (native num_frames=8, 16 inputs form two eight-frame groups). Same 26 previously examined sources and sampling as temporal-shared. No calibration or threshold decision. Preserve author BGR preprocessing, L2 discrepancy and sample standard deviation. Direct source decoding and centered windows differ from upstream random-window JPEG extraction. See configs/xclip-ranking-policy.md. A feature encoder comparison, not a new holdout or full paper reproduction."
+}

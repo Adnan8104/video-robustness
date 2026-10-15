@@ -11,7 +11,8 @@ weights are downloaded locally and aren't redistributed.
 | [AEGIS](https://huggingface.co/MusapYildiz/aegis-video-detector) | Musap Yıldız | Released detector | [MIT license](../vendor/aegis/LICENSE) |
 | [WaveRep](https://github.com/grip-unina/WaveRep-SyntheticVideoDetection) | Riccardo Corvi, Davide Cozzolino, Ekta Prashnani, Shalini De Mello, Koki Nagano, Luisa Verdoliva; GRIP-UNINA | Sparse-frame inference | [Informational/nonprofit license](../vendor/waverep/LICENSE.md) |
 | [AIGVDet](https://github.com/multimediaFor/AIGVDet) | Jianfa Bai, Man Lin, Gang Cao, Zijie Lou | RGB branch only, sampled frames | [Academic-only restriction](../vendor/aigvdet/LICENSE.md), [provenance](../vendor/aigvdet/ORIGIN.md) |
-| [D3](https://github.com/Zig-HS/D3) | Chende Zheng and coauthors | ResNet18 temporal ranking option | [MIT license](../vendor/d3/LICENSE), [provenance](../vendor/d3/ORIGIN.md) |
+| [D3](https://github.com/Zig-HS/D3) | Chende Zheng and coauthors | ResNet18 and X-CLIP temporal ranking | [MIT license](../vendor/d3/LICENSE), [ResNet18 provenance](../vendor/d3/ORIGIN.md), [X-CLIP provenance](../vendor/d3/XCLIP-ORIGIN.md) |
+| [X-CLIP encoder](https://huggingface.co/microsoft/xclip-base-patch16) | Bolin Ni and coauthors; Microsoft | Pretrained vision encoder for D3 | [MIT license](../vendor/d3/xclip-LICENSE), [pinned model/config](../vendor/d3/XCLIP-ORIGIN.md) |
 
 D3's normalization audit also uses unchanged albucore source, with its
 [MIT license](../vendor/d3/albucore_LICENSE) retained. These adaptations don't

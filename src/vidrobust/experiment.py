@@ -185,7 +185,9 @@ def run_experiment(root, path):
         config_path=config_path.relative_to(root).as_posix(), models=models,
         config_sha256=config_hash, manifest_sha256=manifest_hash, frozen_commits=frozen,
         code_sha256=code_hashes, python=platform.python_version(),
-        packages={p: importlib.metadata.version(p) for p in ("torch", "torchvision", "timm", "numpy", "opencv-python-headless", "imageio-ffmpeg", "matplotlib")},
+        packages={p: importlib.metadata.version(p) for p in sorted({
+            "torch", "torchvision", "timm", "numpy", "opencv-python-headless", "imageio-ffmpeg", "matplotlib"
+        } | {p for name in config['detectors'] for p in getattr(get_adapter(name).adapter, 'runtime_packages', ())})},
         model_sha256={name: model["checkpoint"]["sha256"] for name, model in models.items()},
         ffmpeg=imageio_ffmpeg.get_ffmpeg_version(), device="cpu", threads=4,
         seed=0, deterministic_algorithms=True, preparation=preparation)

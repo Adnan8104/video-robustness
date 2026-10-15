@@ -1,4 +1,4 @@
-"""Audit D3's lightweight path against pinned native code and raw arithmetic."""
+"""Audit either registered D3 encoder against native code and raw arithmetic."""
 import argparse
 import ast
 import csv
@@ -34,8 +34,9 @@ def main():
     parser.add_argument('--clips',nargs='+',required=True)
     args=parser.parse_args()
     config_path,manifest_path,config,samples=load_config(ROOT,args.config)
-    if config.get('analysis') != 'ranking' or config['detectors'] != ['d3_resnet18']:
+    if config.get('analysis') != 'ranking' or config['detectors'] not in (['d3_resnet18'], ['d3_xclip']):
         raise ValueError('Choose a D3-only ranking config')
+    name = config['detectors'][0]
     if config['preparation'] != 'native' or config['variants'] != [dict(name='original',transform='identity',encoding='source')]:
         raise ValueError('Audit requires unchanged source bytes')
     if len(args.clips) != len(set(args.clips)) or set(args.clips)-{s['id'] for s in samples}:
@@ -51,23 +52,42 @@ def main():
     import numpy as np
     import torch
     import torchvision.models as models
-    adapter=make_detector(ROOT,'d3_resnet18')
-    state=torch.load(ROOT/adapter.checkpoint['path'],map_location='cpu',weights_only=True)
+    adapter=make_detector(ROOT,name)
     def local_resnet18(pretrained):
         if pretrained is not True:
             raise ValueError('Native encoder must request pretrained weights')
+        state=torch.load(ROOT/adapter.checkpoint['path'],map_location='cpu',weights_only=True)
         encoder=models.resnet18(weights=None)
         encoder.load_state_dict(state,strict=True)
         return encoder
+    def local_xclip(model_id):
+        if model_id != 'microsoft/xclip-base-patch16':
+            raise ValueError('Native D3 requested a different X-CLIP checkpoint')
+        from transformers import XCLIPVisionConfig, XCLIPVisionModel
+        # Use the library's independent pretrained loader, not adapter loading.
+        config=XCLIPVisionConfig.from_pretrained(ROOT/adapter.checkpoint['config_path'],local_files_only=True)
+        encoder,info=XCLIPVisionModel.from_pretrained((ROOT/adapter.checkpoint['path']).parent,
+            config=config,local_files_only=True,use_safetensors=True,output_loading_info=True)
+        if info['missing_keys'] or info['mismatched_keys'] or info['error_msgs'] or any(
+                key.startswith('vision_model.') and key!='vision_model.embeddings.position_ids'
+                for key in info['unexpected_keys']):
+            raise ValueError('Native vision weights did not load completely')
+        if encoder.config.num_frames != 8:
+            raise ValueError('Native eight-frame grouping changed')
+        return encoder
     namespace=dict(torch=torch,nn=torch.nn,F=torch.nn.functional,
-                   models=SimpleNamespace(resnet18=local_resnet18),Transformers=[])
-    native=native_node(vendor/'D3_model.py','D3_model',namespace)(encoder_type='ResNet-18',loss_type='l2').eval()
+                   models=SimpleNamespace(resnet18=local_resnet18),Transformers=['XCLIP-16'],
+                   XCLIPVisionModel=SimpleNamespace(from_pretrained=local_xclip))
+    native=native_node(vendor/'D3_model.py','D3_model',namespace)(
+        encoder_type='XCLIP-16' if name=='d3_xclip' else 'ResNet-18',loss_type='l2').eval()
     crop=native_node(vendor/'datasets.py','crop_center_by_percentage',{})
     normalize=native_node(vendor/'albucore_functions.py','normalize_lut',dict(
         np=np,cv2=cv2,preserve_channel_dim=lambda f:f,
         MAX_VALUES_BY_DTYPE={np.dtype('uint8'):255},get_num_channels=lambda image:image.shape[-1]))
     if set(native.encoder.state_dict()) != set(adapter.encoder.state_dict()):
         raise ValueError('Native architecture keys differ')
+    if any(not torch.equal(value,adapter.encoder.state_dict()[key]) for key,value in native.encoder.state_dict().items()):
+        raise ValueError('Native encoder weights differ')
     out=ROOT/f"reports/experiments/{config['name']}"
     run=json.loads((out/'run.json').read_text())
     if sha(config_path) != run['config_sha256'] or sha(manifest_path) != run['manifest_sha256']:
@@ -96,7 +116,7 @@ def main():
     real=[float(r['temporal_std']) for r in rows if r['label']=='real']
     ai=[float(r['temporal_std']) for r in rows if r['label']=='ai']
     wins=sum(a<b for a in ai for b in real); ties=sum(a==b for a in ai for b in real)
-    summary=json.loads((out/'summary.json').read_text())['d3_resnet18']['original']['all']
+    summary=json.loads((out/'summary.json').read_text())[name]['original']['all']
     if (summary['pairs'],summary['ai_above_real'],summary['ties'],summary['pairwise_auc']) != (len(ai)*len(real),wins,ties,(wins+.5*ties)/(len(ai)*len(real))):
         raise ValueError('Raw discrepancy rank counts disagree')
     indexed={r['video_id']:r for r in rows}
@@ -124,7 +144,7 @@ def main():
             raise ValueError('Native preprocessing differs')
         with torch.inference_mode():
             _,native_mean,native_std=native(tensor.unsqueeze(0))
-            actual=score_frames(adapter,'d3_resnet18',frames)
+            actual=score_frames(adapter,name,frames)
         if actual['temporal_std'] != native_std.item() or actual['temporal_mean'] != native_mean.item():
             raise ValueError('Native forward differs')
         row=indexed[clip]
@@ -138,8 +158,9 @@ def main():
             native_input_sha256=tensor_digest(tensor),temporal_std=actual['temporal_std'],
             native_preprocessing_and_forward_and_stored_outputs_exact=True))
         print('D3 native parity passed: '+clip,flush=True)
-    audit=dict(script_sha256=sha(Path(__file__).resolve()),native_source_sha256=hashes,
+    audit=dict(detector=name,script_sha256=sha(Path(__file__).resolve()),native_source_sha256=hashes,
         checkpoint_sha256=sha(ROOT/adapter.checkpoint['path']),sampling=config.get('sampling','centered_4s_16'),
+        native_encoder_weights_exact=True,
         arithmetic_rows=len(rows),arithmetic_tolerance='std/mean: rel 1e-6, abs 1e-7; second differences and bounded coordinate exact',
         raw_rank_counts_exact=True,clips=results)
     (out/'native-adapter-audit.json').write_text(json.dumps(audit,indent=2)+'\n')

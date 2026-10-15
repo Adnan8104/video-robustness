@@ -317,3 +317,43 @@ fixed clips. It checks all 26 score arithmetic/rank counts independently. Explic
 repeat IDs replace midpoint-based selection, which is invalid for a ranker.
 [Predeclared criteria](../configs/temporal-ranking-policy.md) ·
 [Source, encoder and adaptation details](../vendor/d3/ORIGIN.md).
+
+## Compare D3's X-CLIP encoder
+
+```sh
+uv sync --locked --extra temporal
+uv run --extra temporal python run.py experiment configs/experiments/xclip-shared.json
+uv run --extra temporal python run.py experiment configs/experiments/xclip-8fps.json
+```
+
+These configs keep all 26 source files, both sampling profiles and the same D3
+preprocessing/discrepancy as the ResNet18 runs. Only the encoder changes. X-CLIP
+adds cross-frame attention and uses the author's main encoder choice. Its pinned
+744 MiB safetensors checkpoint is downloaded under ignored `models/`; no training,
+tokenizer or text classifier is used. The optional dependency keeps the demo and
+earlier experiments usable without Transformers. CI installs both optional extras,
+tests a tiny randomly initialized encoder's grouping, and validates both configs
+without pretrained downloads.
+
+D3's `XCLIP-16` name means 16px patches, not a 16-frame checkpoint. The author
+selects `microsoft/xclip-base-patch16`, whose vision config has `num_frames=8`.
+We pass all 16 frames together, preserving two groups of eight and per-frame
+pooler features. Replacing that checkpoint or microbatching would change the
+method. The native audit independently loads the same vision weights through
+Transformers, then compares unchanged author preprocessing and forward code.
+
+For each config, verify all scores and reload the same six fixed audit clips:
+
+```sh
+uv run --extra temporal python scripts/verify_experiment.py configs/experiments/xclip-shared.json
+uv run --extra temporal python scripts/audit_media.py configs/experiments/xclip-shared.json
+uv run --extra temporal python scripts/audit_d3.py configs/experiments/xclip-shared.json --clips panel_wan_04 panel_wan_05 construction_ai_02 construction_real_02 panel_ego4d_01 panel_youtube_vos_01
+uv run --extra temporal python scripts/repeat_experiment.py configs/experiments/xclip-shared.json --variants original --clips panel_wan_04 panel_wan_05 construction_ai_02 construction_real_02 panel_ego4d_01 panel_youtube_vos_01
+```
+
+Repeat with `xclip-8fps.json` for the other profile. As before, ranking coordinates
+have no midpoint decision meaning. The predeclared test asks whether each of the
+three shared misses ranks strictly ahead of every real control; an AUC improvement
+alone cannot justify changing the demo. These remain previously examined clips,
+not fresh validation data. [Fixed criteria](../configs/xclip-ranking-policy.md) ·
+[Model/config provenance](../vendor/d3/XCLIP-ORIGIN.md).

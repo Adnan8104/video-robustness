@@ -22,6 +22,9 @@ vidrobust = "vidrobust.cli:main"
 demo = [
     "streamlit==1.65.0",
 ]
+temporal = [
+    "transformers==4.57.6",
+]
 [build-system]
 requires = ["setuptools==75.8.0"]
 build-backend = "setuptools.build_meta"
