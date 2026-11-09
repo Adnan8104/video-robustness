@@ -1,0 +1,28 @@
+{
+  "baseline": {
+    "models": {
+      "aegis": {
+        "real_clips": 8,
+        "ai_clips": 8,
+        "real_to_ai": 3,
+        "ai_to_real": 6
+      },
+      "waverep": {
+        "real_clips": 8,
+        "ai_clips": 8,
+        "real_to_ai": 1,
+        "ai_to_real": 2
+      }
+    },
+    "agreement": {
+      "clips": 16,
+      "agreed_ai": 1,
+      "agreed_real": 5,
+      "inconclusive": 10,
+      "real_to_ai": 0,
+      "ai_to_real": 1,
+      "correct_agreed": 5,
+      "agreed_clips": 6
+    }
+  }
+}

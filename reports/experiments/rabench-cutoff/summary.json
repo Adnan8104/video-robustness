@@ -1,0 +1,42 @@
+{
+  "aegis": {
+    "baseline": {
+      "ai": {
+        "n": 8,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 6,
+        "midpoint_crossings": []
+      },
+      "real": {
+        "n": 8,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 3,
+        "midpoint_crossings": []
+      }
+    }
+  },
+  "waverep": {
+    "baseline": {
+      "ai": {
+        "n": 8,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 2,
+        "midpoint_crossings": []
+      },
+      "real": {
+        "n": 8,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 1,
+        "midpoint_crossings": []
+      }
+    }
+  }
+}

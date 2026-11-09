@@ -1,0 +1,43 @@
+{
+  "policy_sha256": "df8984060842404860bd44a4eb1ac8df71756081d5013e579a3e7496caa54996",
+  "script_sha256": "8f5505293eb7aeb5b54c4c0051bc05b9ea3e52f0a1f7624f339c3984902e0913",
+  "cutoff_config_sha256": "76ba5a5044f24f297bc16964debb1292b1f9466fd68d7e147e5864a504694e1f",
+  "cutoff_manifest_sha256": "f1f342a831710dee38fd4b2fe26df81ebaaedd4f7d28299fea828b9ed11aa9c7",
+  "cutoff_scores_sha256": "18761ec53300c4731724117b92298a5d130f5b51067c5e0bcf0d7e80678ba626",
+  "test_config_sha256": "71cb2c19fd2fec547c713a5fc4c7ac1e718d61350c5b0eff3ac1125d2ec2d5a4",
+  "test_manifest_sha256": "f1f342a831710dee38fd4b2fe26df81ebaaedd4f7d28299fea828b9ed11aa9c7",
+  "model_sha256": {
+    "aegis": "7df233979f9d3ef340e101d0d635a4d074577d43e6d1591d677cde31f80e44ba",
+    "waverep": "50d639049d928986ba7d69861a4fe4f3e7afbba1843e3e089cdf6b4748f53d5b"
+  },
+  "rule": "AI if score >= cutoff; maximize AI caught, then minimize real flags, then choose higher cutoff",
+  "max_cutoff_real_flags": 1,
+  "cutoffs": {
+    "aegis": {
+      "cutoff": 0.9986868500709534,
+      "real_clips": 8,
+      "ai_clips": 8,
+      "real_flagged": 1,
+      "ai_missed": 7,
+      "midpoint": {
+        "real_clips": 8,
+        "ai_clips": 8,
+        "real_flagged": 3,
+        "ai_missed": 6
+      }
+    },
+    "waverep": {
+      "cutoff": 0.2560949594784508,
+      "real_clips": 8,
+      "ai_clips": 8,
+      "real_flagged": 1,
+      "ai_missed": 1,
+      "midpoint": {
+        "real_clips": 8,
+        "ai_clips": 8,
+        "real_flagged": 1,
+        "ai_missed": 2
+      }
+    }
+  }
+}
