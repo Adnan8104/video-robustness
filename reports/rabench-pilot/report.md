@@ -19,6 +19,16 @@ one LTX clip went from **0.999 to 0.001**. None of the 16 AEGIS scores changed
 by 0.10, but that stability did not make it a good detector on these clips:
 it already missed seven generated clips at CRF 18.
 
+## Rescan: compression reduced separation
+
+At CRF 18, every generated clip scored above every real clip on WaveRep:
+**64/64** AI–real score comparisons were in the expected order. At CRF 35,
+that fell to **43/64**, and only **1/8** generated clips scored above every
+real clip. There were no ties. On this panel, lowering a single cutoff
+could recover some misses, but catching all eight after stronger
+compression would also flag real clips. This comparison uses the saved
+scores and does not fit a new cutoff on the test group.
+
 ## How the cutoffs were chosen
 
 On the first eight pairs, each rule could flag at most one real clip. We
@@ -42,6 +52,12 @@ has eight real anchors and their generated counterparts, four from LTX and
 four from Kling v3. CRF 18 and CRF 35 start directly from the same source;
 within each clip, geometry and the 16 sampled frame positions stay fixed.
 Across clips, resolution, frame rate and source pipelines still differ.
+The [test manifest](../../configs/rabench-pilot.json) shows a format
+confound: all eight real clips are 16:9, and none of the eight generated
+clips are. This does not show that WaveRep used aspect ratio. It does mean
+the clean ranking alone cannot establish that the model separated the
+classes by content. The next check should use fresh scene pairs with
+matched resolution, frame rate and duration before applying compression.
 
 All 32 sources passed hash, decode and timing checks. All 96 score rows
 matched the preflight encodes and sampled indices. This is a small pilot on
