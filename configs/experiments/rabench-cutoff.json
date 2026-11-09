@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "name": "rabench-cutoff",
+  "manifest": "configs/rabench-pilot.json",
+  "sample_ids": [
+    "ra_L1-01_L2-01a_0012__scene_002_real",
+    "ra_L1-01_L2-01a_0012__scene_002_ai",
+    "ra_L1-01_L2-01b_0012__scene_007_real",
+    "ra_L1-01_L2-01b_0012__scene_007_ai",
+    "ra_L1-02_L2-02a_0011__scene_017_real",
+    "ra_L1-02_L2-02a_0011__scene_017_ai",
+    "ra_L1-02_L2-02b_0012__scene_003_real",
+    "ra_L1-02_L2-02b_0012__scene_003_ai",
+    "ra_L1-04_L2-04a_0013__scene_010_real",
+    "ra_L1-04_L2-04a_0013__scene_010_ai",
+    "ra_L1-04_L2-04b_0003__scene_015_real",
+    "ra_L1-04_L2-04b_0003__scene_015_ai",
+    "ra_L1-07_L2-07a_0012__scene_022_real",
+    "ra_L1-07_L2-07a_0012__scene_022_ai",
+    "ra_L1-07_L2-07b_0007__scene_006_real",
+    "ra_L1-07_L2-07b_0007__scene_006_ai"
+  ],
+  "source_directory": "data/rabench-pilot",
+  "detectors": [
+    "aegis",
+    "waverep"
+  ],
+  "preparation": "native",
+  "baseline": "baseline",
+  "variants": [
+    {
+      "name": "baseline",
+      "transform": "identity",
+      "encoding": "h264",
+      "crf": 18
+    }
+  ],
+  "notes": "Eight matched RA-Bench pairs for choosing cutoffs. CRF 18 only, with native geometry and the centered 16-frame window. Test anchors, original recordings and file hashes are disjoint. See configs/rabench-selection.md."
+}

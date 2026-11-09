@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "name": "rabench-test",
+  "manifest": "configs/rabench-pilot.json",
+  "sample_ids": [
+    "ra_L1-01_L2-01c_0019__scene_013_real",
+    "ra_L1-01_L2-01c_0019__scene_013_ai",
+    "ra_L1-01_L2-01d_0016__scene_005_real",
+    "ra_L1-01_L2-01d_0016__scene_005_ai",
+    "ra_L1-02_L2-02c_0003__scene_005_real",
+    "ra_L1-02_L2-02c_0003__scene_005_ai",
+    "ra_L1-02_L2-02d_0014__scene_015_real",
+    "ra_L1-02_L2-02d_0014__scene_015_ai",
+    "ra_L1-04_L2-04c_0013__scene_003_real",
+    "ra_L1-04_L2-04c_0013__scene_003_ai",
+    "ra_L1-04_L2-04d_0010__scene_028_real",
+    "ra_L1-04_L2-04d_0010__scene_028_ai",
+    "ra_L1-07_L2-07c_0015__scene_005_real",
+    "ra_L1-07_L2-07c_0015__scene_005_ai",
+    "ra_L1-07_L2-07d_0010__scene_002_real",
+    "ra_L1-07_L2-07d_0010__scene_002_ai"
+  ],
+  "source_directory": "data/rabench-pilot",
+  "detectors": [
+    "aegis",
+    "waverep"
+  ],
+  "preparation": "native",
+  "baseline": "baseline",
+  "variants": [
+    {
+      "name": "baseline",
+      "transform": "identity",
+      "encoding": "h264",
+      "crf": 18
+    },
+    {
+      "name": "compression",
+      "transform": "identity",
+      "encoding": "h264",
+      "crf": 35
+    }
+  ],
+  "notes": "Eight new matched RA-Bench pairs. Both encodes start from the same source with native geometry and the same centered 16-frame indices. This report uses the 0.5 reference; the separately frozen cutoffs are evaluated in reports/rabench-pilot/. No retuning on test clips. See configs/rabench-selection.md."
+}

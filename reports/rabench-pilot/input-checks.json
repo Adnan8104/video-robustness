@@ -1,0 +1,1083 @@
+{
+  "manifest_sha256": "f1f342a831710dee38fd4b2fe26df81ebaaedd4f7d28299fea828b9ed11aa9c7",
+  "ffmpeg": "7.1",
+  "method": "Verified released hashes and sizes; full OpenCV and independent FFmpeg decodes; ordered timestamps; fixed frame indices and geometry across independently prepared versions",
+  "timestamp_tolerance_seconds": 0.002,
+  "distinct_dvids_recording_ids": 16,
+  "source_count": 32,
+  "prepared_case_count": 48,
+  "clips": [
+    {
+      "video_id": "ra_L1-01_L2-01a_0012__scene_002_real",
+      "source_sha256": "89cecebbcf1dbe5b5e16a0139f0194765b2d6076a28b021a1f6da2f4c92af2f8",
+      "source_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 178,
+        "fps": 29.97002997002997
+      },
+      "independently_decoded_frames": 178,
+      "max_nominal_drift_seconds": 3.333333342681044e-07,
+      "sampled_indices": [
+        29,
+        36,
+        44,
+        52,
+        60,
+        68,
+        76,
+        84,
+        91,
+        99,
+        107,
+        115,
+        123,
+        131,
+        139,
+        147
+      ],
+      "prepared_sha256": {
+        "baseline": "fc26798502cf7490d066fc84d9fa380b7b3e0a18bb588bed30fc8b284f761207"
+      }
+    },
+    {
+      "video_id": "ra_L1-01_L2-01a_0012__scene_002_ai",
+      "source_sha256": "42f1f5eeff4a4863ce6ef18b4642360b20fcb14e0e76b4b1185fbf3c18b6f280",
+      "source_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 73,
+        "fps": 24.0
+      },
+      "independently_decoded_frames": 73,
+      "max_nominal_drift_seconds": 3.33333333379926e-07,
+      "sampled_indices": [
+        0,
+        4,
+        9,
+        14,
+        19,
+        24,
+        28,
+        33,
+        38,
+        43,
+        48,
+        52,
+        57,
+        62,
+        67,
+        72
+      ],
+      "prepared_sha256": {
+        "baseline": "473fa56ba1b54de2bd23419c0974069f4d966cb90807c44e318edac6461b4a54"
+      }
+    },
+    {
+      "video_id": "ra_L1-01_L2-01b_0012__scene_007_real",
+      "source_sha256": "c62506e8e5eaf98435c7cb22b753024e8d317d0a8057347b8e45a9bb98ea33bc",
+      "source_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 444,
+        "fps": 29.97002997002997
+      },
+      "independently_decoded_frames": 444,
+      "max_nominal_drift_seconds": 3.333333342681044e-07,
+      "sampled_indices": [
+        162,
+        169,
+        177,
+        185,
+        193,
+        201,
+        209,
+        217,
+        224,
+        232,
+        240,
+        248,
+        256,
+        264,
+        272,
+        280
+      ],
+      "prepared_sha256": {
+        "baseline": "31b7c2b9994309bfc816f81f5d23c3009b3d82bdb0dd97a19023348a702ad127"
+      }
+    },
+    {
+      "video_id": "ra_L1-01_L2-01b_0012__scene_007_ai",
+      "source_sha256": "4deb5bfcdc52c2ef729be39ae6b0a357f66275a6f3c5b601dac3ae5061442fec",
+      "source_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 193,
+        "fps": 24.0
+      },
+      "independently_decoded_frames": 193,
+      "max_nominal_drift_seconds": 3.33333333379926e-07,
+      "sampled_indices": [
+        48,
+        54,
+        60,
+        67,
+        73,
+        79,
+        86,
+        92,
+        98,
+        105,
+        111,
+        117,
+        124,
+        130,
+        136,
+        143
+      ],
+      "prepared_sha256": {
+        "baseline": "98b75c5beaeb81c3cb7c75ee013430bb0fa437ffb25da906b3f1790c3d81ac7e"
+      }
+    },
+    {
+      "video_id": "ra_L1-01_L2-01c_0019__scene_013_real",
+      "source_sha256": "c47250de8e38b4119663af39a28b491735ef075713b6b777d6afd11261a009fe",
+      "source_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 333,
+        "fps": 29.97002997002997
+      },
+      "independently_decoded_frames": 333,
+      "max_nominal_drift_seconds": 3.333333342681044e-07,
+      "sampled_indices": [
+        107,
+        114,
+        122,
+        130,
+        138,
+        146,
+        154,
+        162,
+        169,
+        177,
+        185,
+        193,
+        201,
+        209,
+        217,
+        225
+      ],
+      "prepared_sha256": {
+        "baseline": "484a6afee8e1f39dfb2e79e54a0f535f6e2894e34af881e9ff211377d4de371c",
+        "compression": "8af1ee410f7dec9b83dea6f55fcc1d7117b66a8f4eadb88f3081e98a8a4dd664"
+      }
+    },
+    {
+      "video_id": "ra_L1-01_L2-01c_0019__scene_013_ai",
+      "source_sha256": "d65673c33e375ac9007d8de9b3548cf8095c6a339efc92f005570dbd34007a41",
+      "source_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 137,
+        "fps": 24.0
+      },
+      "independently_decoded_frames": 137,
+      "max_nominal_drift_seconds": 3.33333333379926e-07,
+      "sampled_indices": [
+        20,
+        26,
+        32,
+        39,
+        45,
+        51,
+        58,
+        64,
+        70,
+        77,
+        83,
+        89,
+        96,
+        102,
+        108,
+        115
+      ],
+      "prepared_sha256": {
+        "baseline": "cbda10b60a197cd7a640bfd657c4970491bd5607d7f9dfb704b46a4ba0cbb31d",
+        "compression": "2896b5191dbbea21aa45912d836d0951071771418c01ac8fc184b3ee6f93b82d"
+      }
+    },
+    {
+      "video_id": "ra_L1-01_L2-01d_0016__scene_005_real",
+      "source_sha256": "17d99f065e233a1479334b63b58069433f3ddeb443f57b4d10cc9463e19481bb",
+      "source_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 393,
+        "fps": 29.97002997002997
+      },
+      "independently_decoded_frames": 393,
+      "max_nominal_drift_seconds": 3.333333342681044e-07,
+      "sampled_indices": [
+        137,
+        144,
+        152,
+        160,
+        168,
+        176,
+        184,
+        192,
+        199,
+        207,
+        215,
+        223,
+        231,
+        239,
+        247,
+        255
+      ],
+      "prepared_sha256": {
+        "baseline": "26c27b2c47309973450f95ad796f54fd5e5e8b25920d760d3fd667ae1bd1cd30",
+        "compression": "8df488dbc28bf15d1bfb3dc1c23f40755233275349999d345235e50bb9681747"
+      }
+    },
+    {
+      "video_id": "ra_L1-01_L2-01d_0016__scene_005_ai",
+      "source_sha256": "141d8e4203d0b848c24a89016a6937da8a3a7d85f78ccdfb1e01a68a20de7708",
+      "source_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 169,
+        "fps": 24.0
+      },
+      "independently_decoded_frames": 169,
+      "max_nominal_drift_seconds": 3.33333333379926e-07,
+      "sampled_indices": [
+        36,
+        42,
+        48,
+        55,
+        61,
+        67,
+        74,
+        80,
+        86,
+        93,
+        99,
+        105,
+        112,
+        118,
+        124,
+        131
+      ],
+      "prepared_sha256": {
+        "baseline": "8263652832fb8692bb3d478792bb54416b181cab1528f5a0e57df9f978a0e6df",
+        "compression": "e48539a93e9bbaf27f175e5bcc23b6296c15bc1a5147afc0e2958d5b41fdc29c"
+      }
+    },
+    {
+      "video_id": "ra_L1-02_L2-02a_0011__scene_017_real",
+      "source_sha256": "d6aff1c2f256a4722a3230229346d7cd313b0e17276ba2ac8dd873ec48e72917",
+      "source_metadata": {
+        "width": 640,
+        "height": 360,
+        "frames": 236,
+        "fps": 29.97002997002997
+      },
+      "independently_decoded_frames": 236,
+      "max_nominal_drift_seconds": 3.333333342681044e-07,
+      "sampled_indices": [
+        58,
+        65,
+        73,
+        81,
+        89,
+        97,
+        105,
+        113,
+        120,
+        128,
+        136,
+        144,
+        152,
+        160,
+        168,
+        176
+      ],
+      "prepared_sha256": {
+        "baseline": "7d361ab850f2f0775a78e2e582408f582e27c9f084b177d51e20dfed95c798f1"
+      }
+    },
+    {
+      "video_id": "ra_L1-02_L2-02a_0011__scene_017_ai",
+      "source_sha256": "47da568a120e6a5baf6a9d7e8fc1621f7cb8982f1a5bf85aa605de59e6fae2d0",
+      "source_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 97,
+        "fps": 24.0
+      },
+      "independently_decoded_frames": 97,
+      "max_nominal_drift_seconds": 3.33333333379926e-07,
+      "sampled_indices": [
+        0,
+        6,
+        12,
+        19,
+        25,
+        31,
+        38,
+        44,
+        50,
+        57,
+        63,
+        69,
+        76,
+        82,
+        88,
+        95
+      ],
+      "prepared_sha256": {
+        "baseline": "c1a06bf935b8e885bf5b28f5592c7231cd7908143fdb0d3d1afe7497567df264"
+      }
+    },
+    {
+      "video_id": "ra_L1-02_L2-02b_0012__scene_003_real",
+      "source_sha256": "e58232db5087d007be513e6859cd1f6bd8223f201290bfaef78639482ce93d08",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 268,
+        "fps": 29.97002997002997
+      },
+      "independently_decoded_frames": 268,
+      "max_nominal_drift_seconds": 3.333333342681044e-07,
+      "sampled_indices": [
+        74,
+        81,
+        89,
+        97,
+        105,
+        113,
+        121,
+        129,
+        136,
+        144,
+        152,
+        160,
+        168,
+        176,
+        184,
+        192
+      ],
+      "prepared_sha256": {
+        "baseline": "6eff400053891fcd1be21373577b01f68771e3cecec26d6880f7167ae1526977"
+      }
+    },
+    {
+      "video_id": "ra_L1-02_L2-02b_0012__scene_003_ai",
+      "source_sha256": "fe41f664b042c5f1d19fed3a4116db05ad3144b3a59cf2476c72ffc7037688ea",
+      "source_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 121,
+        "fps": 24.0
+      },
+      "independently_decoded_frames": 121,
+      "max_nominal_drift_seconds": 3.33333333379926e-07,
+      "sampled_indices": [
+        12,
+        18,
+        24,
+        31,
+        37,
+        43,
+        50,
+        56,
+        62,
+        69,
+        75,
+        81,
+        88,
+        94,
+        100,
+        107
+      ],
+      "prepared_sha256": {
+        "baseline": "d1ac7298412968a0b0c4fcb3c6bb8f35c48275400fee17d9b1d901aaaf6d6410"
+      }
+    },
+    {
+      "video_id": "ra_L1-02_L2-02c_0003__scene_005_real",
+      "source_sha256": "5cf38e81528703de8efec944bc2d528032d66cc79cabe08de1859976b434f6f3",
+      "source_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 355,
+        "fps": 29.97002997002997
+      },
+      "independently_decoded_frames": 355,
+      "max_nominal_drift_seconds": 3.333333342681044e-07,
+      "sampled_indices": [
+        118,
+        125,
+        133,
+        141,
+        149,
+        157,
+        165,
+        173,
+        180,
+        188,
+        196,
+        204,
+        212,
+        220,
+        228,
+        236
+      ],
+      "prepared_sha256": {
+        "baseline": "5578f28f1eaf437870883ba80e675a4b6bbb51ba6ce5af15ccf1531ce6718734",
+        "compression": "d2d2e300a2acd34ca53a3e7d5d5f374b1698a9f9792dda6a8342d201ef52faa9"
+      }
+    },
+    {
+      "video_id": "ra_L1-02_L2-02c_0003__scene_005_ai",
+      "source_sha256": "372c2ad5ff42dbe999389f0754a80cafb6764b684e541d2203c060415c91900b",
+      "source_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 145,
+        "fps": 24.0
+      },
+      "independently_decoded_frames": 145,
+      "max_nominal_drift_seconds": 3.33333333379926e-07,
+      "sampled_indices": [
+        24,
+        30,
+        36,
+        43,
+        49,
+        55,
+        62,
+        68,
+        74,
+        81,
+        87,
+        93,
+        100,
+        106,
+        112,
+        119
+      ],
+      "prepared_sha256": {
+        "baseline": "0e4c384904afc3b057f996d5f6a927e81f9c0ab81c572e3fb4bdffc093b5ec46",
+        "compression": "4ebef7c654b32032e5e1f995ad43b015598dcabd4cc1fdc4e9171e5a41528b46"
+      }
+    },
+    {
+      "video_id": "ra_L1-02_L2-02d_0014__scene_015_real",
+      "source_sha256": "a157a140a4963b51f8a648759b1c1a1f170ce0568f568c44c81f3a1a276a8c3a",
+      "source_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 328,
+        "fps": 29.97002997002997
+      },
+      "independently_decoded_frames": 328,
+      "max_nominal_drift_seconds": 3.333333342681044e-07,
+      "sampled_indices": [
+        104,
+        111,
+        119,
+        127,
+        135,
+        143,
+        151,
+        159,
+        166,
+        174,
+        182,
+        190,
+        198,
+        206,
+        214,
+        222
+      ],
+      "prepared_sha256": {
+        "baseline": "d2377b1bb044e10fc9d81e7632f51288aee3735ba78a50f676c39be0d3008d19",
+        "compression": "0e0edf18708983ae1acaa83c7cfc48190fc1a8ea465e52c07ab8ce958c00a4bb"
+      }
+    },
+    {
+      "video_id": "ra_L1-02_L2-02d_0014__scene_015_ai",
+      "source_sha256": "d2b7b5dba3bd76fcdfd09be143b54e36c11c806b5934d4b96c5a93287a887907",
+      "source_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 145,
+        "fps": 24.0
+      },
+      "independently_decoded_frames": 145,
+      "max_nominal_drift_seconds": 3.33333333379926e-07,
+      "sampled_indices": [
+        24,
+        30,
+        36,
+        43,
+        49,
+        55,
+        62,
+        68,
+        74,
+        81,
+        87,
+        93,
+        100,
+        106,
+        112,
+        119
+      ],
+      "prepared_sha256": {
+        "baseline": "bbe49357f7fcc506248da4643ccd963453e6f6b8f4a3cf3de08ea21a4952da90",
+        "compression": "ee01b926cd84c325e850eeefe3b0ac3bb630b839bf097f1b267f8c5385419fd9"
+      }
+    },
+    {
+      "video_id": "ra_L1-04_L2-04a_0013__scene_010_real",
+      "source_sha256": "e54dc93bfd52662628ee98d0d75eebf34016ad3406f126d705f396c6d313280b",
+      "source_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 144,
+        "fps": 29.97002997002997
+      },
+      "independently_decoded_frames": 144,
+      "max_nominal_drift_seconds": 3.333333342681044e-07,
+      "sampled_indices": [
+        12,
+        19,
+        27,
+        35,
+        43,
+        51,
+        59,
+        67,
+        74,
+        82,
+        90,
+        98,
+        106,
+        114,
+        122,
+        130
+      ],
+      "prepared_sha256": {
+        "baseline": "9d1bf8f2e9074e5dd7d9242f7dd23cacc97465b76e2b18c4372bec822165564b"
+      }
+    },
+    {
+      "video_id": "ra_L1-04_L2-04a_0013__scene_010_ai",
+      "source_sha256": "f95970768e7f9feafccfd3936f219c41b9f6f51aeac571113f9d758ce7666000",
+      "source_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 57,
+        "fps": 24.0
+      },
+      "independently_decoded_frames": 57,
+      "max_nominal_drift_seconds": 3.33333333379926e-07,
+      "sampled_indices": [
+        0,
+        3,
+        7,
+        11,
+        14,
+        18,
+        22,
+        26,
+        29,
+        33,
+        37,
+        41,
+        44,
+        48,
+        52,
+        56
+      ],
+      "prepared_sha256": {
+        "baseline": "e42f1d3b1a20faff999cfe359fb306d710dcb5651e47b4b19cae5326c0b11674"
+      }
+    },
+    {
+      "video_id": "ra_L1-04_L2-04b_0003__scene_015_real",
+      "source_sha256": "cc4905de904a7d2aa89e19005efe4da8de11cd1aa8dd392e86e9ed4d15487dfd",
+      "source_metadata": {
+        "width": 640,
+        "height": 480,
+        "frames": 370,
+        "fps": 30.0
+      },
+      "independently_decoded_frames": 370,
+      "max_nominal_drift_seconds": 4.000000011217253e-07,
+      "sampled_indices": [
+        125,
+        132,
+        140,
+        148,
+        156,
+        164,
+        172,
+        180,
+        188,
+        196,
+        204,
+        212,
+        220,
+        228,
+        236,
+        244
+      ],
+      "prepared_sha256": {
+        "baseline": "f89f7cbcb7479d56b877837062809937d489d9b3aa7e030626118b449e674ad7"
+      }
+    },
+    {
+      "video_id": "ra_L1-04_L2-04b_0003__scene_015_ai",
+      "source_sha256": "a59006112e5b9f6e91b62b523175bb19f24417eb5e2860ff8d6a418d348aa47e",
+      "source_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 169,
+        "fps": 24.0
+      },
+      "independently_decoded_frames": 169,
+      "max_nominal_drift_seconds": 3.33333333379926e-07,
+      "sampled_indices": [
+        36,
+        42,
+        48,
+        55,
+        61,
+        67,
+        74,
+        80,
+        86,
+        93,
+        99,
+        105,
+        112,
+        118,
+        124,
+        131
+      ],
+      "prepared_sha256": {
+        "baseline": "c01b584e8dfbe3e5d2caed3aeff96bf4a0e5276c0e177f047c8fbc68f834ba69"
+      }
+    },
+    {
+      "video_id": "ra_L1-04_L2-04c_0013__scene_003_real",
+      "source_sha256": "3406bb329d8f7ac3e513c1403a568457b61e56ee415b944eaf6952a2fee268f6",
+      "source_metadata": {
+        "width": 3840,
+        "height": 2160,
+        "frames": 153,
+        "fps": 23.976023976023978
+      },
+      "independently_decoded_frames": 153,
+      "max_nominal_drift_seconds": 3.333333338240152e-07,
+      "sampled_indices": [
+        29,
+        35,
+        41,
+        47,
+        54,
+        60,
+        66,
+        72,
+        79,
+        85,
+        91,
+        97,
+        104,
+        110,
+        116,
+        123
+      ],
+      "prepared_sha256": {
+        "baseline": "67b6edfd05ec65601aff0e968846337518d9f34e6ac493a0f872ab9686fe6c29",
+        "compression": "177c1682857660764b811a20d8ecea7fd2b4cc7c3ec1e9e38b77b32ce550d761"
+      }
+    },
+    {
+      "video_id": "ra_L1-04_L2-04c_0013__scene_003_ai",
+      "source_sha256": "881d5e3d111a3a29f569a18846767b703852cfa12a6d84ea89c79137dad3724e",
+      "source_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 81,
+        "fps": 24.0
+      },
+      "independently_decoded_frames": 81,
+      "max_nominal_drift_seconds": 3.33333333379926e-07,
+      "sampled_indices": [
+        0,
+        5,
+        10,
+        16,
+        21,
+        26,
+        32,
+        37,
+        42,
+        48,
+        53,
+        58,
+        64,
+        69,
+        74,
+        80
+      ],
+      "prepared_sha256": {
+        "baseline": "ef7882043b094036c0ee92864ccc29ef99e43fe279dd938338e5d8d336dabdef",
+        "compression": "6bb13231069e0760e637f00815848a3cf92e5deaf637729f0e47c88ce618c48f"
+      }
+    },
+    {
+      "video_id": "ra_L1-04_L2-04d_0010__scene_028_real",
+      "source_sha256": "324828438218b29fe4177216441af5a8407480fccb8752394fdbd52b52da6169",
+      "source_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 549,
+        "fps": 59.94005994005994
+      },
+      "independently_decoded_frames": 549,
+      "max_nominal_drift_seconds": 3.333333342681044e-07,
+      "sampled_indices": [
+        155,
+        170,
+        186,
+        202,
+        218,
+        234,
+        250,
+        266,
+        281,
+        297,
+        313,
+        329,
+        345,
+        361,
+        377,
+        393
+      ],
+      "prepared_sha256": {
+        "baseline": "2d5c172bc4bb7c15e43b1e48428272416f339c74111f434113d53b83bcd5c6c9",
+        "compression": "052a577507e1b2ed3b940cce3d2fc5465de837e29bf1d25ca13cc51cddb387be"
+      }
+    },
+    {
+      "video_id": "ra_L1-04_L2-04d_0010__scene_028_ai",
+      "source_sha256": "41f6e43165f3b04ee3ba4979ffee3923591f58cd89145d0812054be14106d134",
+      "source_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 121,
+        "fps": 24.0
+      },
+      "independently_decoded_frames": 121,
+      "max_nominal_drift_seconds": 3.33333333379926e-07,
+      "sampled_indices": [
+        12,
+        18,
+        24,
+        31,
+        37,
+        43,
+        50,
+        56,
+        62,
+        69,
+        75,
+        81,
+        88,
+        94,
+        100,
+        107
+      ],
+      "prepared_sha256": {
+        "baseline": "a1c7e2471cbc302119aa737b51f493ec48a5530bf3317529a9e7da9471a4b4c2",
+        "compression": "754a3a8623387ec314bc4af99dc7d2e00024df9bd4feae6fc59ddf46c111d444"
+      }
+    },
+    {
+      "video_id": "ra_L1-07_L2-07a_0012__scene_022_real",
+      "source_sha256": "55d40e263b384f155ae44fd41ad4af5332f1d74b803358f0cc7a608d885caa38",
+      "source_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 365,
+        "fps": 29.97002997002997
+      },
+      "independently_decoded_frames": 365,
+      "max_nominal_drift_seconds": 3.333333342681044e-07,
+      "sampled_indices": [
+        123,
+        130,
+        138,
+        146,
+        154,
+        162,
+        170,
+        178,
+        185,
+        193,
+        201,
+        209,
+        217,
+        225,
+        233,
+        241
+      ],
+      "prepared_sha256": {
+        "baseline": "e18c6400f444775818fb8508fcf87f9b8d14557db1133f815e50291f6566685a"
+      }
+    },
+    {
+      "video_id": "ra_L1-07_L2-07a_0012__scene_022_ai",
+      "source_sha256": "840ff5f9c6d1c0051fe184000ebfc4921d618897079af7a2de5868f6a49b56b3",
+      "source_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 153,
+        "fps": 24.0
+      },
+      "independently_decoded_frames": 153,
+      "max_nominal_drift_seconds": 3.33333333379926e-07,
+      "sampled_indices": [
+        28,
+        34,
+        40,
+        47,
+        53,
+        59,
+        66,
+        72,
+        78,
+        85,
+        91,
+        97,
+        104,
+        110,
+        116,
+        123
+      ],
+      "prepared_sha256": {
+        "baseline": "68fe4f46425b0d3a2052eaa0f8aa365925a465c369360843eceec384a330ac1f"
+      }
+    },
+    {
+      "video_id": "ra_L1-07_L2-07b_0007__scene_006_real",
+      "source_sha256": "ea594a08cc0fb65fa2a34a70f459999c5ffc069c760e6bcd92fee1e4a3fe1e79",
+      "source_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 232,
+        "fps": 29.97002997002997
+      },
+      "independently_decoded_frames": 232,
+      "max_nominal_drift_seconds": 3.333333342681044e-07,
+      "sampled_indices": [
+        56,
+        63,
+        71,
+        79,
+        87,
+        95,
+        103,
+        111,
+        118,
+        126,
+        134,
+        142,
+        150,
+        158,
+        166,
+        174
+      ],
+      "prepared_sha256": {
+        "baseline": "cc29e8865ff21c85a13abbea08851d8316f3defe2278952295643d6a5f70fa6d"
+      }
+    },
+    {
+      "video_id": "ra_L1-07_L2-07b_0007__scene_006_ai",
+      "source_sha256": "661e063cc928f591f08fc7402a5c5f91c9832c67f66e95223baf2d15def12e6b",
+      "source_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 97,
+        "fps": 24.0
+      },
+      "independently_decoded_frames": 97,
+      "max_nominal_drift_seconds": 3.33333333379926e-07,
+      "sampled_indices": [
+        0,
+        6,
+        12,
+        19,
+        25,
+        31,
+        38,
+        44,
+        50,
+        57,
+        63,
+        69,
+        76,
+        82,
+        88,
+        95
+      ],
+      "prepared_sha256": {
+        "baseline": "430557c50a3c1e307d1760e6df2877def577ef5531d4e8224ac790994cae553b"
+      }
+    },
+    {
+      "video_id": "ra_L1-07_L2-07c_0015__scene_005_real",
+      "source_sha256": "7ea797b78796a8649a660c16672d8c249648708e064fe443fda010b0882aef4f",
+      "source_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 303,
+        "fps": 29.97002997002997
+      },
+      "independently_decoded_frames": 303,
+      "max_nominal_drift_seconds": 3.333333342681044e-07,
+      "sampled_indices": [
+        92,
+        99,
+        107,
+        115,
+        123,
+        131,
+        139,
+        147,
+        154,
+        162,
+        170,
+        178,
+        186,
+        194,
+        202,
+        210
+      ],
+      "prepared_sha256": {
+        "baseline": "979ca41d9bcb9c975d61df8d14551b91b58acaf552bf28d0cbf7e35019754378",
+        "compression": "5d03f641610df3f07058e69ea92c2aadc8e28546d879995bf364fd9261308882"
+      }
+    },
+    {
+      "video_id": "ra_L1-07_L2-07c_0015__scene_005_ai",
+      "source_sha256": "62659ab6930045573abca72a5c161de53b7b9122afc4743704f32a6a6340a47c",
+      "source_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 129,
+        "fps": 24.0
+      },
+      "independently_decoded_frames": 129,
+      "max_nominal_drift_seconds": 3.33333333379926e-07,
+      "sampled_indices": [
+        16,
+        22,
+        28,
+        35,
+        41,
+        47,
+        54,
+        60,
+        66,
+        73,
+        79,
+        85,
+        92,
+        98,
+        104,
+        111
+      ],
+      "prepared_sha256": {
+        "baseline": "94c4b473c9ccf82b6fbc0951b9673f8e9441ced3348e3d23f665340c5ce89a43",
+        "compression": "ba5496ce836c079cea002834792f0f7b0c8f90a9f8cbc1f57f839c4801c7a10b"
+      }
+    },
+    {
+      "video_id": "ra_L1-07_L2-07d_0010__scene_002_real",
+      "source_sha256": "08a6cac30dffe589682adaca2d42ac62c017888dcf1087b6f4d12a44f02ddeef",
+      "source_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 123,
+        "fps": 23.976023976023978
+      },
+      "independently_decoded_frames": 123,
+      "max_nominal_drift_seconds": 3.333333336019706e-07,
+      "sampled_indices": [
+        14,
+        20,
+        26,
+        32,
+        39,
+        45,
+        51,
+        57,
+        64,
+        70,
+        76,
+        82,
+        89,
+        95,
+        101,
+        108
+      ],
+      "prepared_sha256": {
+        "baseline": "1e456611b0c8642ae4a000376689aa3c5034c04d48278183b2bd2dff4ec8facf",
+        "compression": "5851ea2a7b3dab427d43297aaf55078b3efef04d1980bf97dd09a3baff870edb"
+      }
+    },
+    {
+      "video_id": "ra_L1-07_L2-07d_0010__scene_002_ai",
+      "source_sha256": "5cea30e597cc948566be54ce41f82d1b4ecafa84d409ff9cc98704863e48d81b",
+      "source_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 73,
+        "fps": 24.0
+      },
+      "independently_decoded_frames": 73,
+      "max_nominal_drift_seconds": 3.33333333379926e-07,
+      "sampled_indices": [
+        0,
+        4,
+        9,
+        14,
+        19,
+        24,
+        28,
+        33,
+        38,
+        43,
+        48,
+        52,
+        57,
+        62,
+        67,
+        72
+      ],
+      "prepared_sha256": {
+        "baseline": "6672fed5d48cc6e4708a504772cf9f4cf1ae87a05570aceb106d8801930af48f",
+        "compression": "cd6d723a7fd1f8d6a014c2616db1e268f2472ad286db159587680390b0e4f2f9"
+      }
+    }
+  ]
+}

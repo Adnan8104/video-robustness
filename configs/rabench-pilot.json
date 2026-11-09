@@ -1,0 +1,653 @@
+{
+  "dataset": "liangshuo0111/RA-Bench",
+  "revision": "5c39eda71afe5eb7f66070f64221ea1c69dcb018",
+  "metadata_repository": "Shuo-Liang-0111/RA-Bench",
+  "metadata_revision": "a979505a2703a8304fd69358b71b6988732db850",
+  "metadata_sha256": {
+    "ra_bench_main.csv": "3a3f74c0495cf15c5c1aa0b71ab1df80b9621f7e7c32202970c044233a721c73",
+    "real_rights_release.csv": "24a9693305e76256cb1d228a70d6b932640d815aadf2aaebe0ff7dacad2e8c4f"
+  },
+  "total_source_bytes": 263479751,
+  "samples": [
+    {
+      "id": "ra_L1-01_L2-01a_0012__scene_002_real",
+      "label": "real",
+      "split": "cutoff",
+      "anchor_id": "L1-01_L2-01a_0012__scene_002",
+      "original_source_url": "https://www.dvidshub.net/video/625765/hurricane-florence-damage-mcb-camp-lejeune",
+      "source": "Real",
+      "cell": "real",
+      "content": "L2-01a",
+      "remote_path": "media/main/real/L1-01/L1-01_L2-01a_0012__scene_002.mp4",
+      "sha256": "89cecebbcf1dbe5b5e16a0139f0194765b2d6076a28b021a1f6da2f4c92af2f8",
+      "size_bytes": 4876183,
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain",
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 178,
+        "fps": 29.97002997002997
+      }
+    },
+    {
+      "id": "ra_L1-01_L2-01a_0012__scene_002_ai",
+      "label": "ai",
+      "split": "cutoff",
+      "anchor_id": "L1-01_L2-01a_0012__scene_002",
+      "original_source_url": "https://www.dvidshub.net/video/625765/hurricane-florence-damage-mcb-camp-lejeune",
+      "source": "LTX",
+      "cell": "ai",
+      "content": "L2-01a",
+      "remote_path": "media/main/generated/ltx_seed0/L1-01_L2-01a_0012__scene_002.mp4",
+      "sha256": "42f1f5eeff4a4863ce6ef18b4642360b20fcb14e0e76b4b1185fbf3c18b6f280",
+      "size_bytes": 2928182,
+      "actual_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 73,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "ra_L1-01_L2-01b_0012__scene_007_real",
+      "label": "real",
+      "split": "cutoff",
+      "anchor_id": "L1-01_L2-01b_0012__scene_007",
+      "original_source_url": "https://www.dvidshub.net/video/893990/b-roll-cjtf-50-command-visits-wildfire-devastation",
+      "source": "Real",
+      "cell": "real",
+      "content": "L2-01b",
+      "remote_path": "media/main/real/L1-01/L1-01_L2-01b_0012__scene_007.mp4",
+      "sha256": "c62506e8e5eaf98435c7cb22b753024e8d317d0a8057347b8e45a9bb98ea33bc",
+      "size_bytes": 29357384,
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain",
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 444,
+        "fps": 29.97002997002997
+      }
+    },
+    {
+      "id": "ra_L1-01_L2-01b_0012__scene_007_ai",
+      "label": "ai",
+      "split": "cutoff",
+      "anchor_id": "L1-01_L2-01b_0012__scene_007",
+      "original_source_url": "https://www.dvidshub.net/video/893990/b-roll-cjtf-50-command-visits-wildfire-devastation",
+      "source": "Kling",
+      "cell": "ai",
+      "content": "L2-01b",
+      "remote_path": "media/main/generated/kling_v3/L1-01_L2-01b_0012__scene_007.mp4",
+      "sha256": "4deb5bfcdc52c2ef729be39ae6b0a357f66275a6f3c5b601dac3ae5061442fec",
+      "size_bytes": 13036980,
+      "actual_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 193,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "ra_L1-01_L2-01c_0019__scene_013_real",
+      "label": "real",
+      "split": "test",
+      "anchor_id": "L1-01_L2-01c_0019__scene_013",
+      "original_source_url": "https://www.dvidshub.net/video/664567/operation-tomodachi",
+      "source": "Real",
+      "cell": "real",
+      "content": "L2-01c",
+      "remote_path": "media/main/real/L1-01/L1-01_L2-01c_0019__scene_013.mp4",
+      "sha256": "c47250de8e38b4119663af39a28b491735ef075713b6b777d6afd11261a009fe",
+      "size_bytes": 15138317,
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "PUBLIC DOMAIN",
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 333,
+        "fps": 29.97002997002997
+      }
+    },
+    {
+      "id": "ra_L1-01_L2-01c_0019__scene_013_ai",
+      "label": "ai",
+      "split": "test",
+      "anchor_id": "L1-01_L2-01c_0019__scene_013",
+      "original_source_url": "https://www.dvidshub.net/video/664567/operation-tomodachi",
+      "source": "LTX",
+      "cell": "ai",
+      "content": "L2-01c",
+      "remote_path": "media/main/generated/ltx_seed0/L1-01_L2-01c_0019__scene_013.mp4",
+      "sha256": "d65673c33e375ac9007d8de9b3548cf8095c6a339efc92f005570dbd34007a41",
+      "size_bytes": 5370090,
+      "actual_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 137,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "ra_L1-01_L2-01d_0016__scene_005_real",
+      "label": "real",
+      "split": "test",
+      "anchor_id": "L1-01_L2-01d_0016__scene_005",
+      "original_source_url": "https://www.dvidshub.net/video/506476/camp-pendleton-flood-areas",
+      "source": "Real",
+      "cell": "real",
+      "content": "L2-01d",
+      "remote_path": "media/main/real/L1-01/L1-01_L2-01d_0016__scene_005.mp4",
+      "sha256": "17d99f065e233a1479334b63b58069433f3ddeb443f57b4d10cc9463e19481bb",
+      "size_bytes": 33749137,
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "PUBLIC DOMAIN",
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 393,
+        "fps": 29.97002997002997
+      }
+    },
+    {
+      "id": "ra_L1-01_L2-01d_0016__scene_005_ai",
+      "label": "ai",
+      "split": "test",
+      "anchor_id": "L1-01_L2-01d_0016__scene_005",
+      "original_source_url": "https://www.dvidshub.net/video/506476/camp-pendleton-flood-areas",
+      "source": "Kling",
+      "cell": "ai",
+      "content": "L2-01d",
+      "remote_path": "media/main/generated/kling_v3/L1-01_L2-01d_0016__scene_005.mp4",
+      "sha256": "141d8e4203d0b848c24a89016a6937da8a3a7d85f78ccdfb1e01a68a20de7708",
+      "size_bytes": 5625492,
+      "actual_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 169,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "ra_L1-02_L2-02a_0011__scene_017_real",
+      "label": "real",
+      "split": "cutoff",
+      "anchor_id": "L1-02_L2-02a_0011__scene_017",
+      "original_source_url": "https://www.dvidshub.net/video/1292/3-1-marines-fallujah",
+      "source": "Real",
+      "cell": "real",
+      "content": "L2-02a",
+      "remote_path": "media/main/real/L1-02/L1-02_L2-02a_0011__scene_017.mp4",
+      "sha256": "d6aff1c2f256a4722a3230229346d7cd313b0e17276ba2ac8dd873ec48e72917",
+      "size_bytes": 1768403,
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain",
+      "actual_metadata": {
+        "width": 640,
+        "height": 360,
+        "frames": 236,
+        "fps": 29.97002997002997
+      }
+    },
+    {
+      "id": "ra_L1-02_L2-02a_0011__scene_017_ai",
+      "label": "ai",
+      "split": "cutoff",
+      "anchor_id": "L1-02_L2-02a_0011__scene_017",
+      "original_source_url": "https://www.dvidshub.net/video/1292/3-1-marines-fallujah",
+      "source": "LTX",
+      "cell": "ai",
+      "content": "L2-02a",
+      "remote_path": "media/main/generated/ltx_seed0/L1-02_L2-02a_0011__scene_017.mp4",
+      "sha256": "47da568a120e6a5baf6a9d7e8fc1621f7cb8982f1a5bf85aa605de59e6fae2d0",
+      "size_bytes": 2607574,
+      "actual_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 97,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "ra_L1-02_L2-02b_0012__scene_003_real",
+      "label": "real",
+      "split": "cutoff",
+      "anchor_id": "L1-02_L2-02b_0012__scene_003",
+      "original_source_url": "https://www.dvidshub.net/video/595888/coalition-air-strike-destroys-vbied-factory",
+      "source": "Real",
+      "cell": "real",
+      "content": "L2-02b",
+      "remote_path": "media/main/real/L1-02/L1-02_L2-02b_0012__scene_003.mp4",
+      "sha256": "e58232db5087d007be513e6859cd1f6bd8223f201290bfaef78639482ce93d08",
+      "size_bytes": 3521669,
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain",
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 268,
+        "fps": 29.97002997002997
+      }
+    },
+    {
+      "id": "ra_L1-02_L2-02b_0012__scene_003_ai",
+      "label": "ai",
+      "split": "cutoff",
+      "anchor_id": "L1-02_L2-02b_0012__scene_003",
+      "original_source_url": "https://www.dvidshub.net/video/595888/coalition-air-strike-destroys-vbied-factory",
+      "source": "Kling",
+      "cell": "ai",
+      "content": "L2-02b",
+      "remote_path": "media/main/generated/kling_v3/L1-02_L2-02b_0012__scene_003.mp4",
+      "sha256": "fe41f664b042c5f1d19fed3a4116db05ad3144b3a59cf2476c72ffc7037688ea",
+      "size_bytes": 3278189,
+      "actual_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 121,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "ra_L1-02_L2-02c_0003__scene_005_real",
+      "label": "real",
+      "split": "test",
+      "anchor_id": "L1-02_L2-02c_0003__scene_005",
+      "original_source_url": "https://www.dvidshub.net/video/985972/1st-maw-holds-elephant-walk-mcas-futenma",
+      "source": "Real",
+      "cell": "real",
+      "content": "L2-02c",
+      "remote_path": "media/main/real/L1-02/L1-02_L2-02c_0003__scene_005.mp4",
+      "sha256": "5cf38e81528703de8efec944bc2d528032d66cc79cabe08de1859976b434f6f3",
+      "size_bytes": 12965159,
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain",
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 355,
+        "fps": 29.97002997002997
+      }
+    },
+    {
+      "id": "ra_L1-02_L2-02c_0003__scene_005_ai",
+      "label": "ai",
+      "split": "test",
+      "anchor_id": "L1-02_L2-02c_0003__scene_005",
+      "original_source_url": "https://www.dvidshub.net/video/985972/1st-maw-holds-elephant-walk-mcas-futenma",
+      "source": "LTX",
+      "cell": "ai",
+      "content": "L2-02c",
+      "remote_path": "media/main/generated/ltx_seed0/L1-02_L2-02c_0003__scene_005.mp4",
+      "sha256": "372c2ad5ff42dbe999389f0754a80cafb6764b684e541d2203c060415c91900b",
+      "size_bytes": 2356051,
+      "actual_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 145,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "ra_L1-02_L2-02d_0014__scene_015_real",
+      "label": "real",
+      "split": "test",
+      "anchor_id": "L1-02_L2-02d_0014__scene_015",
+      "original_source_url": "https://www.dvidshub.net/video/962878/b-roll-force-force-training-swift-response-25",
+      "source": "Real",
+      "cell": "real",
+      "content": "L2-02d",
+      "remote_path": "media/main/real/L1-02/L1-02_L2-02d_0014__scene_015.mp4",
+      "sha256": "a157a140a4963b51f8a648759b1c1a1f170ce0568f568c44c81f3a1a276a8c3a",
+      "size_bytes": 14075106,
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain",
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 328,
+        "fps": 29.97002997002997
+      }
+    },
+    {
+      "id": "ra_L1-02_L2-02d_0014__scene_015_ai",
+      "label": "ai",
+      "split": "test",
+      "anchor_id": "L1-02_L2-02d_0014__scene_015",
+      "original_source_url": "https://www.dvidshub.net/video/962878/b-roll-force-force-training-swift-response-25",
+      "source": "Kling",
+      "cell": "ai",
+      "content": "L2-02d",
+      "remote_path": "media/main/generated/kling_v3/L1-02_L2-02d_0014__scene_015.mp4",
+      "sha256": "d2b7b5dba3bd76fcdfd09be143b54e36c11c806b5934d4b96c5a93287a887907",
+      "size_bytes": 6754180,
+      "actual_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 145,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "ra_L1-04_L2-04a_0013__scene_010_real",
+      "label": "real",
+      "split": "cutoff",
+      "anchor_id": "L1-04_L2-04a_0013__scene_010",
+      "original_source_url": "https://www.dvidshub.net/video/756806/cal-guard-supports-sacramento-peace-officers-during-civil-unrest",
+      "source": "Real",
+      "cell": "real",
+      "content": "L2-04a",
+      "remote_path": "media/main/real/L1-04/L1-04_L2-04a_0013__scene_010.mp4",
+      "sha256": "e54dc93bfd52662628ee98d0d75eebf34016ad3406f126d705f396c6d313280b",
+      "size_bytes": 5488256,
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain",
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 144,
+        "fps": 29.97002997002997
+      }
+    },
+    {
+      "id": "ra_L1-04_L2-04a_0013__scene_010_ai",
+      "label": "ai",
+      "split": "cutoff",
+      "anchor_id": "L1-04_L2-04a_0013__scene_010",
+      "original_source_url": "https://www.dvidshub.net/video/756806/cal-guard-supports-sacramento-peace-officers-during-civil-unrest",
+      "source": "LTX",
+      "cell": "ai",
+      "content": "L2-04a",
+      "remote_path": "media/main/generated/ltx_seed0/L1-04_L2-04a_0013__scene_010.mp4",
+      "sha256": "f95970768e7f9feafccfd3936f219c41b9f6f51aeac571113f9d758ce7666000",
+      "size_bytes": 1414823,
+      "actual_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 57,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "ra_L1-04_L2-04b_0003__scene_015_real",
+      "label": "real",
+      "split": "cutoff",
+      "anchor_id": "L1-04_L2-04b_0003__scene_015",
+      "original_source_url": "https://www.dvidshub.net/video/872797/por200806-redacted",
+      "source": "Real",
+      "cell": "real",
+      "content": "L2-04b",
+      "remote_path": "media/main/real/L1-04/L1-04_L2-04b_0003__scene_015.mp4",
+      "sha256": "cc4905de904a7d2aa89e19005efe4da8de11cd1aa8dd392e86e9ed4d15487dfd",
+      "size_bytes": 1191411,
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain",
+      "actual_metadata": {
+        "width": 640,
+        "height": 480,
+        "frames": 370,
+        "fps": 30.0
+      }
+    },
+    {
+      "id": "ra_L1-04_L2-04b_0003__scene_015_ai",
+      "label": "ai",
+      "split": "cutoff",
+      "anchor_id": "L1-04_L2-04b_0003__scene_015",
+      "original_source_url": "https://www.dvidshub.net/video/872797/por200806-redacted",
+      "source": "Kling",
+      "cell": "ai",
+      "content": "L2-04b",
+      "remote_path": "media/main/generated/kling_v3/L1-04_L2-04b_0003__scene_015.mp4",
+      "sha256": "a59006112e5b9f6e91b62b523175bb19f24417eb5e2860ff8d6a418d348aa47e",
+      "size_bytes": 4361389,
+      "actual_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 169,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "ra_L1-04_L2-04c_0013__scene_003_real",
+      "label": "real",
+      "split": "test",
+      "anchor_id": "L1-04_L2-04c_0013__scene_003",
+      "original_source_url": "https://www.dvidshub.net/video/926790/peru-ecuador-us-strengthen-counter-terrorism-tactics",
+      "source": "Real",
+      "cell": "real",
+      "content": "L2-04c",
+      "remote_path": "media/main/real/L1-04/L1-04_L2-04c_0013__scene_003.mp4",
+      "sha256": "3406bb329d8f7ac3e513c1403a568457b61e56ee415b944eaf6952a2fee268f6",
+      "size_bytes": 27432394,
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain",
+      "actual_metadata": {
+        "width": 3840,
+        "height": 2160,
+        "frames": 153,
+        "fps": 23.976023976023978
+      }
+    },
+    {
+      "id": "ra_L1-04_L2-04c_0013__scene_003_ai",
+      "label": "ai",
+      "split": "test",
+      "anchor_id": "L1-04_L2-04c_0013__scene_003",
+      "original_source_url": "https://www.dvidshub.net/video/926790/peru-ecuador-us-strengthen-counter-terrorism-tactics",
+      "source": "LTX",
+      "cell": "ai",
+      "content": "L2-04c",
+      "remote_path": "media/main/generated/ltx_seed0/L1-04_L2-04c_0013__scene_003.mp4",
+      "sha256": "881d5e3d111a3a29f569a18846767b703852cfa12a6d84ea89c79137dad3724e",
+      "size_bytes": 4524724,
+      "actual_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 81,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "ra_L1-04_L2-04d_0010__scene_028_real",
+      "label": "real",
+      "split": "test",
+      "anchor_id": "L1-04_L2-04d_0010__scene_028",
+      "original_source_url": "https://www.dvidshub.net/video/952322/urban-search-and-rescue-task-force-3-conducts-search-palisades",
+      "source": "Real",
+      "cell": "real",
+      "content": "L2-04d",
+      "remote_path": "media/main/real/L1-04/L1-04_L2-04d_0010__scene_028.mp4",
+      "sha256": "324828438218b29fe4177216441af5a8407480fccb8752394fdbd52b52da6169",
+      "size_bytes": 11401277,
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain",
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 549,
+        "fps": 59.94005994005994
+      }
+    },
+    {
+      "id": "ra_L1-04_L2-04d_0010__scene_028_ai",
+      "label": "ai",
+      "split": "test",
+      "anchor_id": "L1-04_L2-04d_0010__scene_028",
+      "original_source_url": "https://www.dvidshub.net/video/952322/urban-search-and-rescue-task-force-3-conducts-search-palisades",
+      "source": "Kling",
+      "cell": "ai",
+      "content": "L2-04d",
+      "remote_path": "media/main/generated/kling_v3/L1-04_L2-04d_0010__scene_028.mp4",
+      "sha256": "41f6e43165f3b04ee3ba4979ffee3923591f58cd89145d0812054be14106d134",
+      "size_bytes": 4119657,
+      "actual_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 121,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "ra_L1-07_L2-07a_0012__scene_022_real",
+      "label": "real",
+      "split": "cutoff",
+      "anchor_id": "L1-07_L2-07a_0012__scene_022",
+      "original_source_url": "https://www.dvidshub.net/video/748904",
+      "source": "Real",
+      "cell": "real",
+      "content": "L2-07a",
+      "remote_path": "media/main/real/L1-07/L1-07_L2-07a_0012__scene_022.mp4",
+      "sha256": "55d40e263b384f155ae44fd41ad4af5332f1d74b803358f0cc7a608d885caa38",
+      "size_bytes": 8208647,
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain",
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 365,
+        "fps": 29.97002997002997
+      }
+    },
+    {
+      "id": "ra_L1-07_L2-07a_0012__scene_022_ai",
+      "label": "ai",
+      "split": "cutoff",
+      "anchor_id": "L1-07_L2-07a_0012__scene_022",
+      "original_source_url": "https://www.dvidshub.net/video/748904",
+      "source": "LTX",
+      "cell": "ai",
+      "content": "L2-07a",
+      "remote_path": "media/main/generated/ltx_seed0/L1-07_L2-07a_0012__scene_022.mp4",
+      "sha256": "840ff5f9c6d1c0051fe184000ebfc4921d618897079af7a2de5868f6a49b56b3",
+      "size_bytes": 2819892,
+      "actual_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 153,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "ra_L1-07_L2-07b_0007__scene_006_real",
+      "label": "real",
+      "split": "cutoff",
+      "anchor_id": "L1-07_L2-07b_0007__scene_006",
+      "original_source_url": "https://www.dvidshub.net/video/829867",
+      "source": "Real",
+      "cell": "real",
+      "content": "L2-07b",
+      "remote_path": "media/main/real/L1-07/L1-07_L2-07b_0007__scene_006.mp4",
+      "sha256": "ea594a08cc0fb65fa2a34a70f459999c5ffc069c760e6bcd92fee1e4a3fe1e79",
+      "size_bytes": 4634550,
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain",
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 232,
+        "fps": 29.97002997002997
+      }
+    },
+    {
+      "id": "ra_L1-07_L2-07b_0007__scene_006_ai",
+      "label": "ai",
+      "split": "cutoff",
+      "anchor_id": "L1-07_L2-07b_0007__scene_006",
+      "original_source_url": "https://www.dvidshub.net/video/829867",
+      "source": "Kling",
+      "cell": "ai",
+      "content": "L2-07b",
+      "remote_path": "media/main/generated/kling_v3/L1-07_L2-07b_0007__scene_006.mp4",
+      "sha256": "661e063cc928f591f08fc7402a5c5f91c9832c67f66e95223baf2d15def12e6b",
+      "size_bytes": 2541580,
+      "actual_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 97,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "ra_L1-07_L2-07c_0015__scene_005_real",
+      "label": "real",
+      "split": "test",
+      "anchor_id": "L1-07_L2-07c_0015__scene_005",
+      "original_source_url": "https://www.dvidshub.net/video/781530",
+      "source": "Real",
+      "cell": "real",
+      "content": "L2-07c",
+      "remote_path": "media/main/real/L1-07/L1-07_L2-07c_0015__scene_005.mp4",
+      "sha256": "7ea797b78796a8649a660c16672d8c249648708e064fe443fda010b0882aef4f",
+      "size_bytes": 11832696,
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain",
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 303,
+        "fps": 29.97002997002997
+      }
+    },
+    {
+      "id": "ra_L1-07_L2-07c_0015__scene_005_ai",
+      "label": "ai",
+      "split": "test",
+      "anchor_id": "L1-07_L2-07c_0015__scene_005",
+      "original_source_url": "https://www.dvidshub.net/video/781530",
+      "source": "LTX",
+      "cell": "ai",
+      "content": "L2-07c",
+      "remote_path": "media/main/generated/ltx_seed0/L1-07_L2-07c_0015__scene_005.mp4",
+      "sha256": "62659ab6930045573abca72a5c161de53b7b9122afc4743704f32a6a6340a47c",
+      "size_bytes": 6971041,
+      "actual_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 129,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "ra_L1-07_L2-07d_0010__scene_002_real",
+      "label": "real",
+      "split": "test",
+      "anchor_id": "L1-07_L2-07d_0010__scene_002",
+      "original_source_url": "https://www.dvidshub.net/video/748251",
+      "source": "Real",
+      "cell": "real",
+      "content": "L2-07d",
+      "remote_path": "media/main/real/L1-07/L1-07_L2-07d_0010__scene_002.mp4",
+      "sha256": "08a6cac30dffe589682adaca2d42ac62c017888dcf1087b6f4d12a44f02ddeef",
+      "size_bytes": 5898517,
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain",
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 123,
+        "fps": 23.976023976023978
+      }
+    },
+    {
+      "id": "ra_L1-07_L2-07d_0010__scene_002_ai",
+      "label": "ai",
+      "split": "test",
+      "anchor_id": "L1-07_L2-07d_0010__scene_002",
+      "original_source_url": "https://www.dvidshub.net/video/748251",
+      "source": "Kling",
+      "cell": "ai",
+      "content": "L2-07d",
+      "remote_path": "media/main/generated/kling_v3/L1-07_L2-07d_0010__scene_002.mp4",
+      "sha256": "5cea30e597cc948566be54ce41f82d1b4ecafa84d409ff9cc98704863e48d81b",
+      "size_bytes": 3230801,
+      "actual_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 73,
+        "fps": 24.0
+      }
+    }
+  ]
+}

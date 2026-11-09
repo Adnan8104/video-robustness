@@ -47,3 +47,7 @@ jobs:
         run: |
           uv run --no-sync python run.py experiment configs/experiments/xclip-shared.json --dry-run
           uv run --no-sync python run.py experiment configs/experiments/xclip-8fps.json --dry-run
+      - name: Validate RA-Bench split configs
+        run: |
+          uv run --no-sync python run.py experiment configs/experiments/rabench-cutoff.json --dry-run
+          uv run --no-sync python run.py experiment configs/experiments/rabench-test.json --dry-run

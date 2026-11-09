@@ -1,0 +1,7 @@
+{
+  "cutoff_config": "configs/experiments/rabench-cutoff.json",
+  "test_config": "configs/experiments/rabench-test.json",
+  "pairs_per_split": 8,
+  "max_cutoff_real_flags": 1,
+  "output": "reports/rabench-pilot"
+}
