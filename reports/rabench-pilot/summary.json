@@ -1,0 +1,148 @@
+{
+  "frozen_cutoff_commit": "0a309852dddf7f07f7656085e8349b5e18cb7d70",
+  "frozen_cutoff_sha256": "75eaa2910548e89ad1a47a3fed10749be914ba469a56f74f716eb2039fb9cc74",
+  "test_scores_sha256": "a00c8709f41134d6d706651c3a24b7f89984816c7c8a5f151fb34d0c271c78e8",
+  "disjoint_inputs_verified": true,
+  "test": {
+    "aegis": {
+      "midpoint": {
+        "cutoff": 0.5,
+        "baseline": {
+          "real_clips": 8,
+          "ai_clips": 8,
+          "real_flagged": 0,
+          "ai_missed": 7
+        },
+        "compression": {
+          "real_clips": 8,
+          "ai_clips": 8,
+          "real_flagged": 0,
+          "ai_missed": 7
+        },
+        "paired_crossings": []
+      },
+      "frozen": {
+        "cutoff": 0.9986868500709534,
+        "baseline": {
+          "real_clips": 8,
+          "ai_clips": 8,
+          "real_flagged": 0,
+          "ai_missed": 7
+        },
+        "compression": {
+          "real_clips": 8,
+          "ai_clips": 8,
+          "real_flagged": 0,
+          "ai_missed": 7
+        },
+        "paired_crossings": []
+      }
+    },
+    "waverep": {
+      "midpoint": {
+        "cutoff": 0.5,
+        "baseline": {
+          "real_clips": 8,
+          "ai_clips": 8,
+          "real_flagged": 0,
+          "ai_missed": 3
+        },
+        "compression": {
+          "real_clips": 8,
+          "ai_clips": 8,
+          "real_flagged": 0,
+          "ai_missed": 8
+        },
+        "paired_crossings": [
+          {
+            "video_id": "ra_L1-01_L2-01c_0019__scene_013_ai",
+            "label": "ai",
+            "baseline": 0.9988354261128567,
+            "compression": 0.000937048235963394,
+            "new_error": true
+          },
+          {
+            "video_id": "ra_L1-01_L2-01d_0016__scene_005_ai",
+            "label": "ai",
+            "baseline": 0.823484391884454,
+            "compression": 0.009123161843812738,
+            "new_error": true
+          },
+          {
+            "video_id": "ra_L1-02_L2-02d_0014__scene_015_ai",
+            "label": "ai",
+            "baseline": 0.9982223828986945,
+            "compression": 0.0002491924653034053,
+            "new_error": true
+          },
+          {
+            "video_id": "ra_L1-04_L2-04c_0013__scene_003_ai",
+            "label": "ai",
+            "baseline": 0.999918828883892,
+            "compression": 0.029355265977431363,
+            "new_error": true
+          },
+          {
+            "video_id": "ra_L1-07_L2-07c_0015__scene_005_ai",
+            "label": "ai",
+            "baseline": 0.9999718678637912,
+            "compression": 0.009851489081050083,
+            "new_error": true
+          }
+        ]
+      },
+      "frozen": {
+        "cutoff": 0.2560949594784508,
+        "baseline": {
+          "real_clips": 8,
+          "ai_clips": 8,
+          "real_flagged": 0,
+          "ai_missed": 3
+        },
+        "compression": {
+          "real_clips": 8,
+          "ai_clips": 8,
+          "real_flagged": 0,
+          "ai_missed": 8
+        },
+        "paired_crossings": [
+          {
+            "video_id": "ra_L1-01_L2-01c_0019__scene_013_ai",
+            "label": "ai",
+            "baseline": 0.9988354261128567,
+            "compression": 0.000937048235963394,
+            "new_error": true
+          },
+          {
+            "video_id": "ra_L1-01_L2-01d_0016__scene_005_ai",
+            "label": "ai",
+            "baseline": 0.823484391884454,
+            "compression": 0.009123161843812738,
+            "new_error": true
+          },
+          {
+            "video_id": "ra_L1-02_L2-02d_0014__scene_015_ai",
+            "label": "ai",
+            "baseline": 0.9982223828986945,
+            "compression": 0.0002491924653034053,
+            "new_error": true
+          },
+          {
+            "video_id": "ra_L1-04_L2-04c_0013__scene_003_ai",
+            "label": "ai",
+            "baseline": 0.999918828883892,
+            "compression": 0.029355265977431363,
+            "new_error": true
+          },
+          {
+            "video_id": "ra_L1-07_L2-07c_0015__scene_005_ai",
+            "label": "ai",
+            "baseline": 0.9999718678637912,
+            "compression": 0.009851489081050083,
+            "new_error": true
+          }
+        ]
+      }
+    }
+  }
+}

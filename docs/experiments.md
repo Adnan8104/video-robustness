@@ -367,3 +367,31 @@ uv run python scripts/compare_rankings.py configs/experiments/temporal-shared.js
 The comparison checks identical source hashes/labels and identical frame indices
 and decoded RGB/normalized input hashes within each sampling profile. It independently recomputes
 pair counts and retains every real control when checking the three targets.
+
+## Test frozen cutoffs on separate footage
+
+The [RA-Bench pilot](../reports/rabench-pilot/report.md) uses eight scene pairs
+to choose cutoffs and another eight to test them. Read the
+[fixed selection and decision rule](../configs/rabench-selection.md) first.
+Only the selected files are downloaded, about 251 MiB, plus the two model
+checkpoints if they are missing. Both encodes come directly from each source;
+we hold geometry and frame sampling fixed to test compression.
+
+To reproduce inference without overwriting the published outputs, start a
+separate worktree at the input freeze commit `e31d365`. From that checkout:
+
+```sh
+uv sync --locked
+uv run python run.py experiment configs/experiments/rabench-cutoff.json
+uv run python scripts/check_cutoffs.py fit configs/rabench-cutoff-policy.json
+git add reports/rabench-pilot/cutoffs.json
+git commit -m "Freeze cutoffs before test inference"
+uv run python scripts/check_cutoffs.py score-test configs/rabench-cutoff-policy.json
+```
+
+The test command checks the committed cutoffs, input hashes and split before
+running inference. It compares the frozen rules and 0.5 on the exact same
+scores. To check the published counts from a current checkout, use
+`uv run python scripts/check_cutoffs.py evaluate configs/rabench-cutoff-policy.json`.
+`scripts/verify_experiment.py` can also verify the two full runs once their
+media, encodes and checkpoints are in the local cache.

@@ -10,7 +10,7 @@ demo and D3 experiments looking at changes between frames.
 
 ## Key findings
 
-- Compression made WaveRep miss more AI clips: **4/10 before, 9/10 after** on the 20-clip panel.
+- Compression made WaveRep miss more AI clips: **4/10 before, 9/10 after** on the 20-clip panel. On [held-out RA-Bench footage](reports/rabench-pilot/report.md), misses went from **3/8 to 8/8**, even with a lower cutoff.
 - Resizing pushed one real video's AEGIS score from **0.0005 to 0.839**.
 - Adding more models didn't fix the shared misses. Both D3 encoders, including X-CLIP, still overlapped real footage on difficult clips.
 
@@ -44,6 +44,6 @@ The 20-clip experiment compares original, compressed, resized and cropped inputs
 
 The shared runner checks file hashes and saves scores, charts and run details
 under `reports/experiments/`. Models and videos stay out of Git. There are
-**59 tests**, with tests and config checks running in GitHub Actions.
+**63 tests**, with tests and config checks running in GitHub Actions.
 
 [Setup and configs](docs/experiments.md) · [Model comparison](docs/detector-evaluation.md) · [Sources and credits](docs/sources.md)

@@ -1,0 +1,104 @@
+{
+  "aegis": {
+    "baseline": {
+      "ai": {
+        "n": 8,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 7,
+        "midpoint_crossings": []
+      },
+      "real": {
+        "n": 8,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      }
+    },
+    "compression": {
+      "ai": {
+        "n": 8,
+        "median_delta": -7.272436960192863e-06,
+        "median_absolute_delta": 1.0120532351720612e-05,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 7,
+        "midpoint_crossings": []
+      },
+      "real": {
+        "n": 8,
+        "median_delta": -5.842286554980092e-06,
+        "median_absolute_delta": 1.334803891950287e-05,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      }
+    }
+  },
+  "waverep": {
+    "baseline": {
+      "ai": {
+        "n": 8,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 3,
+        "midpoint_crossings": []
+      },
+      "real": {
+        "n": 8,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      }
+    },
+    "compression": {
+      "ai": {
+        "n": 8,
+        "median_delta": -0.892462396473551,
+        "median_absolute_delta": 0.892462396473551,
+        "changes_at_least_point10": 8,
+        "midpoint_conflicts": 8,
+        "midpoint_crossings": [
+          {
+            "video_id": "ra_L1-01_L2-01c_0019__scene_013_ai",
+            "baseline": 0.9988354261128567,
+            "score": 0.000937048235963394
+          },
+          {
+            "video_id": "ra_L1-01_L2-01d_0016__scene_005_ai",
+            "baseline": 0.823484391884454,
+            "score": 0.009123161843812738
+          },
+          {
+            "video_id": "ra_L1-02_L2-02d_0014__scene_015_ai",
+            "baseline": 0.9982223828986945,
+            "score": 0.0002491924653034053
+          },
+          {
+            "video_id": "ra_L1-04_L2-04c_0013__scene_003_ai",
+            "baseline": 0.999918828883892,
+            "score": 0.029355265977431363
+          },
+          {
+            "video_id": "ra_L1-07_L2-07c_0015__scene_005_ai",
+            "baseline": 0.9999718678637912,
+            "score": 0.009851489081050083
+          }
+        ]
+      },
+      "real": {
+        "n": 8,
+        "median_delta": -0.0001505124213662337,
+        "median_absolute_delta": 0.0003266118767763018,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": []
+      }
+    }
+  }
+}

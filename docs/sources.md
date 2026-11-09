@@ -23,6 +23,7 @@ establish performance of the full paper methods.
 - [ComGenVid](https://huggingface.co/datasets/OmerXYZ/comgenvid): real and generated footage for the original robustness work.
 - [VLM4D](https://huggingface.co/datasets/shijiezhou/VLM4D): the source panel's Ego4D and YouTube-VOS clips; inherited source rights apply.
 - [GovTech SynthSite](https://huggingface.co/datasets/govtech/SynthSite): generated construction footage. All its videos are generated; hazard labels are separate from origin labels. The pinned author card and license terms are recorded in the manifests.
+- [RA-Bench](https://github.com/Shuo-Liang-0111/RA-Bench): real anchors and generated counterparts from LTX and Kling v3 for the separate cutoff and test panels. The [selection notes](../configs/rabench-selection.md) pin the authors' media and metadata releases. The manifest retains the original DVIDS links and the benchmark's rights labels for the real footage.
 
 The source manifests record pinned versions, file hashes and selection notes.
 

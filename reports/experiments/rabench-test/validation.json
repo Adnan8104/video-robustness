@@ -1,0 +1,17 @@
+{
+  "source_clips": 16,
+  "paired_cases": 32,
+  "model_scores": 64,
+  "source_hashes_and_full_decode": "passed",
+  "geometry_timing_and_frame_indices": "passed",
+  "complete_case_matrix": "passed",
+  "identical_bytes_and_RGB_between_detectors": "passed",
+  "config_and_code_unchanged_during_inference": "passed",
+  "independent_run_checks": {
+    "model_scores": 64,
+    "independent_CSV_analysis": "passed",
+    "independent_error_and_agreement_analysis": "passed",
+    "scored_media_and_model_and_code_hashes": "passed",
+    "script_sha256": "443a685c5b56fddd2e6a82bf47f7ffc674f65c9881e88db9e73a6256b2608388"
+  }
+}
