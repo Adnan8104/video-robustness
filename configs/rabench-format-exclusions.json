@@ -1,0 +1,306 @@
+[
+  {
+    "anchor_id": "L1-01_L2-01a_0006__scene_022",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-01_L2-01a_0005__scene_003",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-01_L2-01a_0010__scene_047",
+    "reason": "Did not pass common preparation eligibility",
+    "metadata": {
+      "real": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 396,
+        "fps": 59.94005994005994
+      },
+      "ai": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 81,
+        "fps": 24.0
+      }
+    }
+  },
+  {
+    "anchor_id": "L1-01_L2-01b_0010__scene_010",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-01_L2-01b_0009__scene_002",
+    "reason": "Did not pass common preparation eligibility",
+    "metadata": {
+      "real": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 173,
+        "fps": 30.0
+      },
+      "ai": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 73,
+        "fps": 24.0
+      }
+    }
+  },
+  {
+    "anchor_id": "L1-01_L2-01b_0014__scene_009",
+    "reason": "Did not pass common preparation eligibility",
+    "metadata": {
+      "real": {
+        "width": 1280,
+        "height": 720,
+        "frames": 181,
+        "fps": 29.97002997002997
+      },
+      "ai": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 73,
+        "fps": 24.0
+      }
+    }
+  },
+  {
+    "anchor_id": "L1-01_L2-01d_0019__scene_008",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-01_L2-01d_0004__scene_005",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-01_L2-01d_0009__scene_007",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-01_L2-01b_0005__scene_030",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-01_L2-01a_0006__scene_022",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-01_L2-01a_0005__scene_003",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-02_L2-02c_0012__scene_010",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-02_L2-02c_0012__scene_010",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-02_L2-02a_0004__scene_039",
+    "reason": "Did not pass common preparation eligibility",
+    "metadata": {
+      "real": {
+        "width": 640,
+        "height": 360,
+        "frames": 444,
+        "fps": 29.97002997002997
+      },
+      "ai": {
+        "width": 1264,
+        "height": 728,
+        "frames": 193,
+        "fps": 24.0
+      }
+    }
+  },
+  {
+    "anchor_id": "L1-02_L2-02d_0002__scene_009",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-02_L2-02d_0005__scene_003",
+    "reason": "Did not pass common preparation eligibility",
+    "metadata": {
+      "real": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 191,
+        "fps": 29.97002997002997
+      },
+      "ai": {
+        "width": 1264,
+        "height": 728,
+        "frames": 73,
+        "fps": 24.0
+      }
+    }
+  },
+  {
+    "anchor_id": "L1-02_L2-02d_0001__scene_013",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-04_L2-04d_0014__scene_025",
+    "reason": "Did not pass common preparation eligibility",
+    "metadata": {
+      "real": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 224,
+        "fps": 29.97002997002997
+      },
+      "ai": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 89,
+        "fps": 24.0
+      }
+    }
+  },
+  {
+    "anchor_id": "L1-04_L2-04a_0006__scene_012",
+    "reason": "Did not pass common preparation eligibility",
+    "metadata": {
+      "real": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 245,
+        "fps": 23.976023976023978
+      },
+      "ai": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 129,
+        "fps": 24.0
+      }
+    }
+  },
+  {
+    "anchor_id": "L1-04_L2-04a_0010__scene_012",
+    "reason": "Did not pass common preparation eligibility",
+    "metadata": {
+      "real": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 204,
+        "fps": 29.97002997002997
+      },
+      "ai": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 81,
+        "fps": 24.0
+      }
+    }
+  },
+  {
+    "anchor_id": "L1-04_L2-04c_0001__scene_008",
+    "reason": "Did not pass common preparation eligibility",
+    "metadata": {
+      "real": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 167,
+        "fps": 30.0
+      },
+      "ai": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 65,
+        "fps": 24.0
+      }
+    }
+  },
+  {
+    "anchor_id": "L1-04_L2-04d_0014__scene_002",
+    "reason": "Did not pass common preparation eligibility",
+    "metadata": {
+      "real": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 159,
+        "fps": 29.97002997002997
+      },
+      "ai": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 65,
+        "fps": 24.0
+      }
+    }
+  },
+  {
+    "anchor_id": "L1-04_L2-04a_0006__scene_012",
+    "reason": "Did not pass common preparation eligibility",
+    "metadata": {
+      "real": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 245,
+        "fps": 23.976023976023978
+      },
+      "ai": {
+        "width": 1264,
+        "height": 728,
+        "frames": 121,
+        "fps": 24.0
+      }
+    }
+  },
+  {
+    "anchor_id": "L1-07_L2-07c_0006__scene_012",
+    "reason": "Did not pass common preparation eligibility",
+    "metadata": {
+      "real": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 121,
+        "fps": 23.976023976023978
+      },
+      "ai": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 65,
+        "fps": 24.0
+      }
+    }
+  },
+  {
+    "anchor_id": "L1-07_L2-07c_0006__scene_012",
+    "reason": "Did not pass common preparation eligibility",
+    "metadata": {
+      "real": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 121,
+        "fps": 23.976023976023978
+      },
+      "ai": {
+        "width": 1264,
+        "height": 728,
+        "frames": 73,
+        "fps": 24.0
+      }
+    }
+  },
+  {
+    "anchor_id": "L1-07_L2-07c_0001__scene_012",
+    "reason": "Did not pass common preparation eligibility",
+    "metadata": {
+      "real": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 164,
+        "fps": 23.976023976023978
+      },
+      "ai": {
+        "width": 1264,
+        "height": 728,
+        "frames": 97,
+        "fps": 24.0
+      }
+    }
+  }
+]

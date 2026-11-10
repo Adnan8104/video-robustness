@@ -51,3 +51,5 @@ jobs:
         run: |
           uv run --no-sync python run.py experiment configs/experiments/rabench-cutoff.json --dry-run
           uv run --no-sync python run.py experiment configs/experiments/rabench-test.json --dry-run
+      - name: Validate format-matched compression config
+        run: uv run --no-sync python run.py experiment configs/experiments/rabench-format.json --dry-run

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "name": "rabench-format",
+  "manifest": "configs/rabench-format.json",
+  "source_directory": "data/rabench-format",
+  "detectors": ["aegis", "waverep"],
+  "preparation": "centered_4s_504_24fps",
+  "baseline": "baseline",
+  "variants": [
+    {"name": "baseline", "transform": "identity", "encoding": "h264", "crf": 18},
+    {"name": "compression", "transform": "identity", "encoding": "h264", "crf": 35}
+  ],
+  "notes": "Fresh RA-Bench scene pairs, with real and generated inputs standardized to 504×504, 24 fps and 96 frames. Each clip's two encodes start directly from one lossless master. Read configs/rabench-format-selection.md for the selection rule. Report ordering and fixed 0.5 errors, with no fitted cutoff. Crop and resampling change the inputs, and comparison to the previous native pilot uses different clips."
+}

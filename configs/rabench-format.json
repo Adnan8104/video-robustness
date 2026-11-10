@@ -1,0 +1,316 @@
+{
+  "dataset": "liangshuo0111/RA-Bench",
+  "revision": "5c39eda71afe5eb7f66070f64221ea1c69dcb018",
+  "metadata_revision": "a979505a2703a8304fd69358b71b6988732db850",
+  "metadata_sha256": {
+    "ra_bench_main.csv": "3a3f74c0495cf15c5c1aa0b71ab1df80b9621f7e7c32202970c044233a721c73",
+    "real_rights_release.csv": "24a9693305e76256cb1d228a70d6b932640d815aadf2aaebe0ff7dacad2e8c4f"
+  },
+  "total_source_bytes": 120465883,
+  "samples": [
+    {
+      "id": "rfc_real_01",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-01d",
+      "source": "Real",
+      "anchor_id": "L1-01_L2-01d_0019__scene_003",
+      "original_source_url": "https://www.dvidshub.net/video/627009/flooding-near-nichols-sc",
+      "remote_path": "media/main/real/L1-01/L1-01_L2-01d_0019__scene_003.mp4",
+      "sha256": "c57b6b55dce650bbbfe1b87264c012004f733243c193aa87e9c2aea7b8c064a2",
+      "size_bytes": 15682424,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 443,
+        "fps": 29.97002997002997
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "PUBLIC DOMAIN"
+    },
+    {
+      "id": "rfc_ai_01",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-01d",
+      "source": "LTX",
+      "anchor_id": "L1-01_L2-01d_0019__scene_003",
+      "original_source_url": "https://www.dvidshub.net/video/627009/flooding-near-nichols-sc",
+      "remote_path": "media/main/generated/ltx_seed0/L1-01_L2-01d_0019__scene_003.mp4",
+      "sha256": "f653a60593fb9be0905aacdc232fa8b1f09c897f56df36fd5058114282280df2",
+      "size_bytes": 8918679,
+      "actual_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 185,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "rfc_real_02",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-01a",
+      "source": "Real",
+      "anchor_id": "L1-01_L2-01a_0010__scene_047",
+      "original_source_url": "https://www.dvidshub.net/video/766610/hurlburt-field-hurricane-sally-damage-assessment",
+      "remote_path": "media/main/real/L1-01/L1-01_L2-01a_0010__scene_047.mp4",
+      "sha256": "0d3af9350e5bc387fcd10668ac7b1006a9adc3cecd4541bd481c29cae0119df4",
+      "size_bytes": 15768427,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 396,
+        "fps": 59.94005994005994
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "rfc_ai_02",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-01a",
+      "source": "Kling",
+      "anchor_id": "L1-01_L2-01a_0010__scene_047",
+      "original_source_url": "https://www.dvidshub.net/video/766610/hurlburt-field-hurricane-sally-damage-assessment",
+      "remote_path": "media/main/generated/kling_v3/L1-01_L2-01a_0010__scene_047.mp4",
+      "sha256": "7f876f890592389c0f47b1412d4cd45b656b6c34e85ff9a5c23ac0fa6da83f3c",
+      "size_bytes": 5317235,
+      "actual_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 97,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "rfc_real_03",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-02d",
+      "source": "Real",
+      "anchor_id": "L1-02_L2-02d_0011__scene_006",
+      "original_source_url": "https://www.dvidshub.net/video/965571/b-roll-us-and-ally-partners-conduct-training-alexandroupoli",
+      "remote_path": "media/main/real/L1-02/L1-02_L2-02d_0011__scene_006.mp4",
+      "sha256": "562c8ff0abc272f6aacc0ac571c87170da74e32f0592c4f431b2d69b88684b32",
+      "size_bytes": 7810281,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 271,
+        "fps": 29.97002997002997
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "rfc_ai_03",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-02d",
+      "source": "LTX",
+      "anchor_id": "L1-02_L2-02d_0011__scene_006",
+      "original_source_url": "https://www.dvidshub.net/video/965571/b-roll-us-and-ally-partners-conduct-training-alexandroupoli",
+      "remote_path": "media/main/generated/ltx_seed0/L1-02_L2-02d_0011__scene_006.mp4",
+      "sha256": "b960a07ee8d6ee080bcecf9864a7dfb68ece104eda18a77a47df104175fe80b0",
+      "size_bytes": 1846609,
+      "actual_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 113,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "rfc_real_04",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-02b",
+      "source": "Real",
+      "anchor_id": "L1-02_L2-02b_0002__scene_002",
+      "original_source_url": "https://www.dvidshub.net/video/963417/mmiii-gt-253-launches-vandenberg",
+      "remote_path": "media/main/real/L1-02/L1-02_L2-02b_0002__scene_002.mp4",
+      "sha256": "7aea7ff151998e6bacfd8cc8135bd4d408c4f7ec634dde1bd480d872f549adb6",
+      "size_bytes": 14943197,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 681,
+        "fps": 59.94005994005994
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "rfc_ai_04",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-02b",
+      "source": "Kling",
+      "anchor_id": "L1-02_L2-02b_0002__scene_002",
+      "original_source_url": "https://www.dvidshub.net/video/963417/mmiii-gt-253-launches-vandenberg",
+      "remote_path": "media/main/generated/kling_v3/L1-02_L2-02b_0002__scene_002.mp4",
+      "sha256": "f7ceef95b378a2026483d30635ca869e1fc624f4f5049b850d122696a95ff827",
+      "size_bytes": 4260189,
+      "actual_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 145,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "rfc_real_05",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-04d",
+      "source": "Real",
+      "anchor_id": "L1-04_L2-04d_0014__scene_053",
+      "original_source_url": "https://www.dvidshub.net/video/936318/pp24-2-phl-urban-search-and-rescue",
+      "remote_path": "media/main/real/L1-04/L1-04_L2-04d_0014__scene_053.mp4",
+      "sha256": "2f10a640fd4a07dcb81eaa28c63695ccfd73982b886dff751fa9b1c9cb95ae2e",
+      "size_bytes": 13623564,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 239,
+        "fps": 29.97002997002997
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "rfc_ai_05",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-04d",
+      "source": "LTX",
+      "anchor_id": "L1-04_L2-04d_0014__scene_053",
+      "original_source_url": "https://www.dvidshub.net/video/936318/pp24-2-phl-urban-search-and-rescue",
+      "remote_path": "media/main/generated/ltx_seed0/L1-04_L2-04d_0014__scene_053.mp4",
+      "sha256": "92451b87903660900c15ab39d5f9e193ea50077fea7e5cadfc2e8378f0a8bace",
+      "size_bytes": 3364485,
+      "actual_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 97,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "rfc_real_06",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-04a",
+      "source": "Real",
+      "anchor_id": "L1-04_L2-04a_0010__scene_012",
+      "original_source_url": "https://www.dvidshub.net/video/792081/minnesota-guardsmen-provide-security-brooklyn-center-police-department",
+      "remote_path": "media/main/real/L1-04/L1-04_L2-04a_0010__scene_012.mp4",
+      "sha256": "276efbcea925d6eb3baac97126fc9241e1b8f09ccc2b6bdeebc33952efc2c117",
+      "size_bytes": 4807196,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 204,
+        "fps": 29.97002997002997
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "rfc_ai_06",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-04a",
+      "source": "Kling",
+      "anchor_id": "L1-04_L2-04a_0010__scene_012",
+      "original_source_url": "https://www.dvidshub.net/video/792081/minnesota-guardsmen-provide-security-brooklyn-center-police-department",
+      "remote_path": "media/main/generated/kling_v3/L1-04_L2-04a_0010__scene_012.mp4",
+      "sha256": "d9411f2883812b417688e9387c7910b6b1929ce95a123a269d7d6e5537bc9504",
+      "size_bytes": 2034057,
+      "actual_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 97,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "rfc_real_07",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-07b",
+      "source": "Real",
+      "anchor_id": "L1-07_L2-07b_0013__scene_013",
+      "original_source_url": "https://www.dvidshub.net/video/749448",
+      "remote_path": "media/main/real/L1-07/L1-07_L2-07b_0013__scene_013.mp4",
+      "sha256": "2d56d59541892bcc1a3bfca171d5feede6787c968c668936c4e34e572cc72f94",
+      "size_bytes": 8765259,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 435,
+        "fps": 29.97002997002997
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "rfc_ai_07",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-07b",
+      "source": "LTX",
+      "anchor_id": "L1-07_L2-07b_0013__scene_013",
+      "original_source_url": "https://www.dvidshub.net/video/749448",
+      "remote_path": "media/main/generated/ltx_seed0/L1-07_L2-07b_0013__scene_013.mp4",
+      "sha256": "9bc38ce094da9ff3d6c79f506cdf41a223ae982ca6e406fb602a12ac2ee8de65",
+      "size_bytes": 2182323,
+      "actual_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 185,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "rfc_real_08",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-07a",
+      "source": "Real",
+      "anchor_id": "L1-07_L2-07a_0013__scene_066",
+      "original_source_url": "https://www.dvidshub.net/video/747459",
+      "remote_path": "media/main/real/L1-07/L1-07_L2-07a_0013__scene_066.mp4",
+      "sha256": "c904848a90d6dcc00e07d88fe364b93b405a90b096fdf16b78373b691ab160b2",
+      "size_bytes": 7963580,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 335,
+        "fps": 29.97002997002997
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "rfc_ai_08",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-07a",
+      "source": "Kling",
+      "anchor_id": "L1-07_L2-07a_0013__scene_066",
+      "original_source_url": "https://www.dvidshub.net/video/747459",
+      "remote_path": "media/main/generated/kling_v3/L1-07_L2-07a_0013__scene_066.mp4",
+      "sha256": "84f7879840030dab92c56df9eb8a485e8c264e9f3cfcb63195d3e181b25d6372",
+      "size_bytes": 3178378,
+      "actual_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 145,
+        "fps": 24.0
+      }
+    }
+  ]
+}
