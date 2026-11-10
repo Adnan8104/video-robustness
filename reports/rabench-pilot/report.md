@@ -56,8 +56,9 @@ The [test manifest](../../configs/rabench-pilot.json) shows a format
 confound: all eight real clips are 16:9, and none of the eight generated
 clips are. This does not show that WaveRep used aspect ratio. It does mean
 the clean ranking alone cannot establish that the model separated the
-classes by content. The next check should use fresh scene pairs with
-matched resolution, frame rate and duration before applying compression.
+classes by content. The [follow-up](../../docs/rabench-format.md) used fresh
+scene pairs with matched resolution, frame rate and duration and found
+that WaveRep still missed all eight generated clips after compression.
 
 All 32 sources passed hash, decode and timing checks. All 96 score rows
 matched the preflight encodes and sampled indices. This is a small pilot on

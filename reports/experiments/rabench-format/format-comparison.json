@@ -1,0 +1,89 @@
+{
+  "scores_sha256": "bf465dedb67bbc456d177a8351016d66063d6e2c4add64237899302ee12c34f6",
+  "matched_pairs": 8,
+  "format": {
+    "width": 504,
+    "height": 504,
+    "fps": 24,
+    "frames": 96
+  },
+  "no_cutoff_fitted": true,
+  "models": {
+    "aegis": {
+      "baseline": {
+        "ai_above_real": 37,
+        "tied_comparisons": 0,
+        "comparisons": 64,
+        "ordering_auc": 0.578125,
+        "ai_above_every_real": 1,
+        "matched_scene_wins": 4,
+        "matched_scene_ties": 0,
+        "real_flagged": 2,
+        "ai_missed": 7,
+        "ai_clips": 8,
+        "real_clips": 8
+      },
+      "compression": {
+        "ai_above_real": 39,
+        "tied_comparisons": 0,
+        "comparisons": 64,
+        "ordering_auc": 0.609375,
+        "ai_above_every_real": 0,
+        "matched_scene_wins": 5,
+        "matched_scene_ties": 0,
+        "real_flagged": 2,
+        "ai_missed": 7,
+        "ai_clips": 8,
+        "real_clips": 8
+      },
+      "compression_changes": {
+        "ai": {
+          "median_delta": -3.974818537244573e-05,
+          "falls_at_least_point10": 1
+        },
+        "real": {
+          "median_delta": -3.613901026255917e-05,
+          "falls_at_least_point10": 0
+        }
+      }
+    },
+    "waverep": {
+      "baseline": {
+        "ai_above_real": 51,
+        "tied_comparisons": 0,
+        "comparisons": 64,
+        "ordering_auc": 0.796875,
+        "ai_above_every_real": 3,
+        "matched_scene_wins": 6,
+        "matched_scene_ties": 0,
+        "real_flagged": 3,
+        "ai_missed": 3,
+        "ai_clips": 8,
+        "real_clips": 8
+      },
+      "compression": {
+        "ai_above_real": 40,
+        "tied_comparisons": 0,
+        "comparisons": 64,
+        "ordering_auc": 0.625,
+        "ai_above_every_real": 1,
+        "matched_scene_wins": 7,
+        "matched_scene_ties": 0,
+        "real_flagged": 0,
+        "ai_missed": 8,
+        "ai_clips": 8,
+        "real_clips": 8
+      },
+      "compression_changes": {
+        "ai": {
+          "median_delta": -0.8330463757891542,
+          "falls_at_least_point10": 8
+        },
+        "real": {
+          "median_delta": -0.07897469147925082,
+          "falls_at_least_point10": 3
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "aegis": {
+    "baseline": {
+      "ai": {
+        "n": 8,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 7,
+        "midpoint_crossings": []
+      },
+      "real": {
+        "n": 8,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 2,
+        "midpoint_crossings": []
+      }
+    },
+    "compression": {
+      "ai": {
+        "n": 8,
+        "median_delta": -3.974818537244573e-05,
+        "median_absolute_delta": 0.0001055603934219107,
+        "changes_at_least_point10": 1,
+        "midpoint_conflicts": 7,
+        "midpoint_crossings": []
+      },
+      "real": {
+        "n": 8,
+        "median_delta": -3.613901026255917e-05,
+        "median_absolute_delta": 0.0005461775654111989,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 2,
+        "midpoint_crossings": []
+      }
+    }
+  },
+  "waverep": {
+    "baseline": {
+      "ai": {
+        "n": 8,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 3,
+        "midpoint_crossings": []
+      },
+      "real": {
+        "n": 8,
+        "median_delta": 0.0,
+        "median_absolute_delta": 0.0,
+        "changes_at_least_point10": 0,
+        "midpoint_conflicts": 3,
+        "midpoint_crossings": []
+      }
+    },
+    "compression": {
+      "ai": {
+        "n": 8,
+        "median_delta": -0.8330463757891542,
+        "median_absolute_delta": 0.8330463757891542,
+        "changes_at_least_point10": 8,
+        "midpoint_conflicts": 8,
+        "midpoint_crossings": [
+          {
+            "video_id": "rfc_ai_01",
+            "baseline": 0.999673902510816,
+            "score": 0.00024114029451009406
+          },
+          {
+            "video_id": "rfc_ai_02",
+            "baseline": 0.9916743639756643,
+            "score": 0.027022558596654304
+          },
+          {
+            "video_id": "rfc_ai_04",
+            "baseline": 0.7380756454383934,
+            "score": 0.0012858545538938465
+          },
+          {
+            "video_id": "rfc_ai_05",
+            "baseline": 0.9993106712428023,
+            "score": 0.0005417380229059017
+          },
+          {
+            "video_id": "rfc_ai_06",
+            "baseline": 0.9982657004866864,
+            "score": 0.06896273979287762
+          }
+        ]
+      },
+      "real": {
+        "n": 8,
+        "median_delta": -0.07897469147925082,
+        "median_absolute_delta": 0.07897469147925082,
+        "changes_at_least_point10": 3,
+        "midpoint_conflicts": 0,
+        "midpoint_crossings": [
+          {
+            "video_id": "rfc_real_03",
+            "baseline": 0.9153839642351649,
+            "score": 0.00010122261841532565
+          },
+          {
+            "video_id": "rfc_real_06",
+            "baseline": 0.9969818831970425,
+            "score": 0.009237259983757589
+          },
+          {
+            "video_id": "rfc_real_07",
+            "baseline": 0.8001037693836623,
+            "score": 0.0477512989153659
+          }
+        ]
+      }
+    }
+  }
+}

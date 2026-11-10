@@ -1,0 +1,54 @@
+{
+  "baseline": {
+    "models": {
+      "aegis": {
+        "real_clips": 8,
+        "ai_clips": 8,
+        "real_to_ai": 2,
+        "ai_to_real": 7
+      },
+      "waverep": {
+        "real_clips": 8,
+        "ai_clips": 8,
+        "real_to_ai": 3,
+        "ai_to_real": 3
+      }
+    },
+    "agreement": {
+      "clips": 16,
+      "agreed_ai": 2,
+      "agreed_real": 7,
+      "inconclusive": 7,
+      "real_to_ai": 1,
+      "ai_to_real": 3,
+      "correct_agreed": 5,
+      "agreed_clips": 9
+    }
+  },
+  "compression": {
+    "models": {
+      "aegis": {
+        "real_clips": 8,
+        "ai_clips": 8,
+        "real_to_ai": 2,
+        "ai_to_real": 7
+      },
+      "waverep": {
+        "real_clips": 8,
+        "ai_clips": 8,
+        "real_to_ai": 0,
+        "ai_to_real": 8
+      }
+    },
+    "agreement": {
+      "clips": 16,
+      "agreed_ai": 0,
+      "agreed_real": 13,
+      "inconclusive": 3,
+      "real_to_ai": 0,
+      "ai_to_real": 7,
+      "correct_agreed": 6,
+      "agreed_clips": 13
+    }
+  }
+}
