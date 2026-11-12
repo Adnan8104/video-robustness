@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "name": "linear-head-train",
+  "manifest": "configs/linear-head-train.json",
+  "source_directory": "data/linear-head/train",
+  "detectors": [
+    "waverep"
+  ],
+  "preparation": "centered_4s_504_24fps",
+  "baseline": "baseline",
+  "variants": [
+    {
+      "name": "baseline",
+      "transform": "identity",
+      "encoding": "h264",
+      "crf": 18
+    },
+    {
+      "name": "compression",
+      "transform": "identity",
+      "encoding": "h264",
+      "crf": 35
+    }
+  ],
+  "notes": "Use scripts/train_head.py with configs/linear-head-policy.json. Frozen training and test recordings are disjoint; two variants use the same lossless master."
+}

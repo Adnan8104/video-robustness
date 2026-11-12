@@ -53,3 +53,7 @@ jobs:
           uv run --no-sync python run.py experiment configs/experiments/rabench-test.json --dry-run
       - name: Validate format-matched compression config
         run: uv run --no-sync python run.py experiment configs/experiments/rabench-format.json --dry-run
+      - name: Validate frozen-encoder split configs
+        run: |
+          uv run --no-sync python run.py experiment configs/experiments/linear-head-train.json --dry-run
+          uv run --no-sync python run.py experiment configs/experiments/linear-head-test.json --dry-run

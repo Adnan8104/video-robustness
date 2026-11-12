@@ -1,0 +1,316 @@
+{
+  "dataset": "liangshuo0111/RA-Bench",
+  "revision": "5c39eda71afe5eb7f66070f64221ea1c69dcb018",
+  "metadata_revision": "a979505a2703a8304fd69358b71b6988732db850",
+  "metadata_sha256": {
+    "ra_bench_main.csv": "3a3f74c0495cf15c5c1aa0b71ab1df80b9621f7e7c32202970c044233a721c73",
+    "real_rights_release.csv": "24a9693305e76256cb1d228a70d6b932640d815aadf2aaebe0ff7dacad2e8c4f"
+  },
+  "total_source_bytes": 112646762,
+  "samples": [
+    {
+      "id": "lh_test_real_01",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-01d",
+      "source": "Real",
+      "anchor_id": "L1-01_L2-01d_0008__scene_005",
+      "original_source_url": "https://www.dvidshub.net/video/944596/usace-removes-debris-lake-lure-north-carolina",
+      "remote_path": "media/main/real/L1-01/L1-01_L2-01d_0008__scene_005.mp4",
+      "sha256": "cb86515d3623b87fc7c2a636eaf35d0603a888cd823c226ad0e46231aa79a448",
+      "size_bytes": 14141389,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 207,
+        "fps": 25.0
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "lh_test_ai_01",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-01d",
+      "source": "LTX",
+      "anchor_id": "L1-01_L2-01d_0008__scene_005",
+      "original_source_url": "https://www.dvidshub.net/video/944596/usace-removes-debris-lake-lure-north-carolina",
+      "remote_path": "media/main/generated/ltx_seed0/L1-01_L2-01d_0008__scene_005.mp4",
+      "sha256": "8039ea2fc816e2f50b63c3e67a300236e5e26804fa9898dbbc90de68aa3eeae5",
+      "size_bytes": 5321705,
+      "actual_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 105,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "lh_test_real_02",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-01b",
+      "source": "Real",
+      "anchor_id": "L1-01_L2-01b_0014__scene_010",
+      "original_source_url": "https://www.dvidshub.net/video/838399/joint-base-san-antonio-camp-bullis-fire-april-10-2022-b-roll-ii",
+      "remote_path": "media/main/real/L1-01/L1-01_L2-01b_0014__scene_010.mp4",
+      "sha256": "3815fbf19d9431b10bbc2c3feaa519adeae4ff5495da1202d6299bc61da3c24b",
+      "size_bytes": 7389089,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 270,
+        "fps": 29.97002997002997
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "lh_test_ai_02",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-01b",
+      "source": "Kling",
+      "anchor_id": "L1-01_L2-01b_0014__scene_010",
+      "original_source_url": "https://www.dvidshub.net/video/838399/joint-base-san-antonio-camp-bullis-fire-april-10-2022-b-roll-ii",
+      "remote_path": "media/main/generated/kling_v3/L1-01_L2-01b_0014__scene_010.mp4",
+      "sha256": "32748c357693d51599e0273a0ca84b81f158ab61dacb64fd1740c2d3114d503f",
+      "size_bytes": 6254637,
+      "actual_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 121,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "lh_test_real_03",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-02b",
+      "source": "Real",
+      "anchor_id": "L1-02_L2-02b_0004__scene_023",
+      "original_source_url": "https://www.dvidshub.net/video/944147/stinger-missile-live-fire-exercise-afn-broll",
+      "remote_path": "media/main/real/L1-02/L1-02_L2-02b_0004__scene_023.mp4",
+      "sha256": "007b6b9889a74431c14b50e1368368da1e1a661abf22dda3f523133da8a39ed4",
+      "size_bytes": 9124636,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 444,
+        "fps": 29.97002997002997
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "lh_test_ai_03",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-02b",
+      "source": "LTX",
+      "anchor_id": "L1-02_L2-02b_0004__scene_023",
+      "original_source_url": "https://www.dvidshub.net/video/944147/stinger-missile-live-fire-exercise-afn-broll",
+      "remote_path": "media/main/generated/ltx_seed0/L1-02_L2-02b_0004__scene_023.mp4",
+      "sha256": "570af38586b20526f43603200507cd0b16c786fcc558157479ff161ad35b0959",
+      "size_bytes": 1824170,
+      "actual_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 185,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "lh_test_real_04",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-02b",
+      "source": "Real",
+      "anchor_id": "L1-02_L2-02b_0003__scene_011",
+      "original_source_url": "https://www.dvidshub.net/video/946347/flight-experiment-mission-02-fem-02-b-roll",
+      "remote_path": "media/main/real/L1-02/L1-02_L2-02b_0003__scene_011.mp4",
+      "sha256": "948aa0bbb2e23eaf944c2443de6515244a2ae38fdb086d8f16c1776f4dc4f100",
+      "size_bytes": 7398087,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 347,
+        "fps": 29.97002997002997
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "lh_test_ai_04",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-02b",
+      "source": "Kling",
+      "anchor_id": "L1-02_L2-02b_0003__scene_011",
+      "original_source_url": "https://www.dvidshub.net/video/946347/flight-experiment-mission-02-fem-02-b-roll",
+      "remote_path": "media/main/generated/kling_v3/L1-02_L2-02b_0003__scene_011.mp4",
+      "sha256": "416d7177a8f17d04c0d40023def85ef8b24260bcb6efaf943645bbb695d675e7",
+      "size_bytes": 4886029,
+      "actual_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 145,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "lh_test_real_05",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-04c",
+      "source": "Real",
+      "anchor_id": "L1-04_L2-04c_0010__scene_003",
+      "original_source_url": "https://www.dvidshub.net/video/963377/misawa-neo-exercise",
+      "remote_path": "media/main/real/L1-04/L1-04_L2-04c_0010__scene_003.mp4",
+      "sha256": "7599b39e341658e02c5ecd6d16f7177afb3b1395ffff2bffd5e2215ca6c75d79",
+      "size_bytes": 8804669,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 384,
+        "fps": 29.97002997002997
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "lh_test_ai_05",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-04c",
+      "source": "LTX",
+      "anchor_id": "L1-04_L2-04c_0010__scene_003",
+      "original_source_url": "https://www.dvidshub.net/video/963377/misawa-neo-exercise",
+      "remote_path": "media/main/generated/ltx_seed0/L1-04_L2-04c_0010__scene_003.mp4",
+      "sha256": "86c04ecfae28970fcdae3462e89d2c6e09e0470c59c22cc24bda76657feafaac",
+      "size_bytes": 4245117,
+      "actual_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 161,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "lh_test_real_06",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-04d",
+      "source": "Real",
+      "anchor_id": "L1-04_L2-04d_0011__scene_026",
+      "original_source_url": "https://www.dvidshub.net/video/952285/usar-k9-dogs-conduct-search-missions-pacific-palisades",
+      "remote_path": "media/main/real/L1-04/L1-04_L2-04d_0011__scene_026.mp4",
+      "sha256": "85ba1d8c92eba011e853a9bf4895b76b45b02f2ed155206913c317404638e160",
+      "size_bytes": 13832681,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 525,
+        "fps": 59.94005994005994
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "lh_test_ai_06",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-04d",
+      "source": "Kling",
+      "anchor_id": "L1-04_L2-04d_0011__scene_026",
+      "original_source_url": "https://www.dvidshub.net/video/952285/usar-k9-dogs-conduct-search-missions-pacific-palisades",
+      "remote_path": "media/main/generated/kling_v3/L1-04_L2-04d_0011__scene_026.mp4",
+      "sha256": "1de7351183672586b39787f2a072ddfe1447ee27258da32ecf7715ba6172fcb3",
+      "size_bytes": 7028904,
+      "actual_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 121,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "lh_test_real_07",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-07b",
+      "source": "Real",
+      "anchor_id": "L1-07_L2-07b_0006__scene_011",
+      "original_source_url": "https://www.dvidshub.net/video/829884",
+      "remote_path": "media/main/real/L1-07/L1-07_L2-07b_0006__scene_011.mp4",
+      "sha256": "21cce2137a7c3d1ebbf6de014594d20b46aacf6402a04e592dac8cf1740c52e7",
+      "size_bytes": 14032135,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 355,
+        "fps": 30.0
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "lh_test_ai_07",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-07b",
+      "source": "LTX",
+      "anchor_id": "L1-07_L2-07b_0006__scene_011",
+      "original_source_url": "https://www.dvidshub.net/video/829884",
+      "remote_path": "media/main/generated/ltx_seed0/L1-07_L2-07b_0006__scene_011.mp4",
+      "sha256": "d90e5d7e86062dee1b6f7eda0b1ac604bf168beb244528278fa187d4214a9bac",
+      "size_bytes": 3959018,
+      "actual_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 145,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "lh_test_real_08",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-07b",
+      "source": "Real",
+      "anchor_id": "L1-07_L2-07b_0009__scene_010",
+      "original_source_url": "https://www.dvidshub.net/video/827802",
+      "remote_path": "media/main/real/L1-07/L1-07_L2-07b_0009__scene_010.mp4",
+      "sha256": "9550bc2485e7eac5548c0357a87d72bd1f3638eb6e8d2dfef0755d3c4148221f",
+      "size_bytes": 3066431,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 204,
+        "fps": 29.97002997002997
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "lh_test_ai_08",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-07b",
+      "source": "Kling",
+      "anchor_id": "L1-07_L2-07b_0009__scene_010",
+      "original_source_url": "https://www.dvidshub.net/video/827802",
+      "remote_path": "media/main/generated/kling_v3/L1-07_L2-07b_0009__scene_010.mp4",
+      "sha256": "fc2558c121b5dc503f2cfdb04293c13357629292803c0c04981161d4ebc1813c",
+      "size_bytes": 1338065,
+      "actual_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 97,
+        "fps": 24.0
+      }
+    }
+  ]
+}
