@@ -36,8 +36,8 @@ The [earlier native test](../reports/rabench-pilot/report.md) used different
 clips. This follow-up shows that the compression failure can happen with
 matched output formats; it does not isolate aspect ratio or remove all
 source and camera differences. The demo still uses the existing scores.
-The next detector experiment should test a small head trained with both
-compression levels and evaluated on separate recordings.
+The [trained-head follow-up](../reports/linear-head/report.md) recovered
+some compression misses on separate recordings but added false flags.
 
 ```sh
 uv run python run.py experiment configs/experiments/rabench-format.json

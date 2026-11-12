@@ -395,3 +395,32 @@ scores. To check the published counts from a current checkout, use
 `uv run python scripts/check_cutoffs.py evaluate configs/rabench-cutoff-policy.json`.
 `scripts/verify_experiment.py` can also verify the two full runs once their
 media, encodes and checkpoints are in the local cache.
+
+## Train a small head on both compression levels
+
+The [frozen encoder experiment](../reports/linear-head/report.md) compares
+the released WaveRep classifier with two linear heads. Both new heads use
+the same 18 training pairs and fixed features. One sees CRF 18; the other
+sees both CRF 18 and 35. Both are evaluated on the same eight fresh pairs.
+The [selection and training rule](../configs/linear-head-selection.md)
+was fixed before training.
+
+To reproduce from scratch, use a separate worktree at the input freeze
+commit `bf26f53`. The runner reuses the existing media preparation and
+WaveRep adapter. It requires no new packages or GPU.
+
+```sh
+uv sync --locked
+uv run python scripts/train_head.py fit configs/linear-head-policy.json
+git add reports/linear-head/fit.json
+git commit -m "Freeze both fitted heads before test inference"
+uv run python scripts/train_head.py test configs/linear-head-policy.json
+```
+
+The test step verifies the committed fit record, local weight hash,
+scoring code and recording split before running. Media, encoder weights
+and the fitted weights stay out of Git. The published fit record lists
+the training inputs and hashes; the test report includes per-clip margins.
+Use a fresh worktree for a rerun rather than overwriting the published
+test. See [timm's model API](https://huggingface.co/docs/timm/main/model_api)
+for the distinction between pooled features and the final classifier.
