@@ -44,6 +44,6 @@ The 20-clip experiment compares original, compressed, resized and cropped inputs
 
 The shared runner checks file hashes and saves scores, charts and run details
 under `reports/experiments/`. Models and videos stay out of Git. There are
-**67 tests**, with tests and config checks running in GitHub Actions.
+**70 tests**, with tests and config checks running in GitHub Actions.
 
 [Setup and configs](docs/experiments.md) · [Model comparison](docs/detector-evaluation.md) · [Sources and credits](docs/sources.md)

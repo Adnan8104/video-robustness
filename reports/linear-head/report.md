@@ -42,11 +42,11 @@ overlapping cases from the earlier format study. Independent checks
 verified the 32 test encodes, 96 margins, and both error directions.
 Weights and videos stay local.
 
-The demo stays unchanged. The new head finds some compressed AI clips
-that the other two miss, but it needs fewer false flags before use.
-For a next training round, add diverse compressed real footage and choose
-any cutoff on separate development recordings before opening a new test
-set.
+The demo stays unchanged. The [cutoff follow-up](../head-cutoff/report.md)
+repeated the four compressed AI catches at margin zero on fresh footage,
+but a stricter rule lost them. A next training round should add diverse
+compressed real footage and use separate development recordings for
+choosing any cutoff.
 
 [Training record](fit.json) · [Test margins](scores.csv) ·
 [Exact counts](summary.json) ·

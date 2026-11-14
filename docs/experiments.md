@@ -424,3 +424,28 @@ the training inputs and hashes; the test report includes per-clip margins.
 Use a fresh worktree for a rerun rather than overwriting the published
 test. See [timm's model API](https://huggingface.co/docs/timm/main/model_api)
 for the distinction between pooled features and the final classifier.
+
+## Check a stricter cutoff on new recordings
+
+The [cutoff follow-up](../reports/head-cutoff/report.md) keeps the trained
+head fixed. It chooses one margin using the previous test as
+development data and applies it to eight fresh pairs at both compression
+levels. See the [fixed selection and decision rule](../configs/head-cutoff-selection.md).
+
+With the original fitted weights in the local models cache, use a
+separate worktree at the input freeze commit `0abe568`:
+
+```sh
+uv sync --locked
+uv run python scripts/check_head_cutoff.py lock
+git add reports/head-cutoff/cutoff.json
+git commit -m "Lock cutoff before fresh inference"
+uv run python scripts/check_head_cutoff.py test
+```
+
+The cutoff command checks the fitted weight hash. If the local file is
+missing, recreate the original weights by running the training commands
+above in the original input freeze worktree under the recorded environment,
+then copy the resulting `models/linear-head-policy.npz` into the new
+worktree. The test refuses changes to the recorded head, input files or
+scoring environment, and won't overwrite an existing test result.
