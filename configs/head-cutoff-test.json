@@ -1,0 +1,316 @@
+{
+  "dataset": "liangshuo0111/RA-Bench",
+  "revision": "5c39eda71afe5eb7f66070f64221ea1c69dcb018",
+  "metadata_revision": "a979505a2703a8304fd69358b71b6988732db850",
+  "metadata_sha256": {
+    "ra_bench_main.csv": "3a3f74c0495cf15c5c1aa0b71ab1df80b9621f7e7c32202970c044233a721c73",
+    "real_rights_release.csv": "24a9693305e76256cb1d228a70d6b932640d815aadf2aaebe0ff7dacad2e8c4f"
+  },
+  "total_source_bytes": 142317364,
+  "samples": [
+    {
+      "id": "hc_test_real_01",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-01a",
+      "source": "Real",
+      "anchor_id": "L1-01_L2-01a_0003__scene_004",
+      "original_source_url": "https://www.dvidshub.net/video/943247/hurricane-hunters-fly-rafael-nov-8-2024",
+      "remote_path": "media/main/real/L1-01/L1-01_L2-01a_0003__scene_004.mp4",
+      "sha256": "79159225ed8e3cbf3f21508c97eceb711034e5294db488d203dbac886bdd8ccf",
+      "size_bytes": 5762359,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 444,
+        "fps": 29.97002997002997
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "hc_test_ai_01",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-01a",
+      "source": "LTX",
+      "anchor_id": "L1-01_L2-01a_0003__scene_004",
+      "original_source_url": "https://www.dvidshub.net/video/943247/hurricane-hunters-fly-rafael-nov-8-2024",
+      "remote_path": "media/main/generated/ltx_seed0/L1-01_L2-01a_0003__scene_004.mp4",
+      "sha256": "dec03b74de34f051f0428bf8713c13bcf277a6b5af9208f506daef29ac6d4f62",
+      "size_bytes": 2907626,
+      "actual_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 185,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "hc_test_real_02",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-01d",
+      "source": "Real",
+      "anchor_id": "L1-01_L2-01d_0009__scene_008",
+      "original_source_url": "https://www.dvidshub.net/video/941490/hurricane-helene-causes-flood-damage-western-north-carolina",
+      "remote_path": "media/main/real/L1-01/L1-01_L2-01d_0009__scene_008.mp4",
+      "sha256": "53f97fa24391448889ed0251fecaf3ba24de132ad4a6d940befc281134f82dd1",
+      "size_bytes": 17236871,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 365,
+        "fps": 29.97002997002997
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "hc_test_ai_02",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-01d",
+      "source": "Kling",
+      "anchor_id": "L1-01_L2-01d_0009__scene_008",
+      "original_source_url": "https://www.dvidshub.net/video/941490/hurricane-helene-causes-flood-damage-western-north-carolina",
+      "remote_path": "media/main/generated/kling_v3/L1-01_L2-01d_0009__scene_008.mp4",
+      "sha256": "bf3469fd87977ea55cb2a66a8355f29593de9fc3d091fce2b969a91f6496d196",
+      "size_bytes": 6321921,
+      "actual_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 145,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "hc_test_real_03",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-02b",
+      "source": "Real",
+      "anchor_id": "L1-02_L2-02b_0007__scene_003",
+      "original_source_url": "https://www.dvidshub.net/video/902897/patriot-live-fire-b-roll",
+      "remote_path": "media/main/real/L1-02/L1-02_L2-02b_0007__scene_003.mp4",
+      "sha256": "53e007a32ad84cf35ba015a6f6b00e9e163a5f64b8c120bcd84566fae18bb4ba",
+      "size_bytes": 13661451,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 893,
+        "fps": 59.94005994005994
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "hc_test_ai_03",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-02b",
+      "source": "LTX",
+      "anchor_id": "L1-02_L2-02b_0007__scene_003",
+      "original_source_url": "https://www.dvidshub.net/video/902897/patriot-live-fire-b-roll",
+      "remote_path": "media/main/generated/ltx_seed0/L1-02_L2-02b_0007__scene_003.mp4",
+      "sha256": "a034bafebff3e7ebd092313ce9924b389b3439f00f7e3c722033348172379323",
+      "size_bytes": 1959855,
+      "actual_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 185,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "hc_test_real_04",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-02d",
+      "source": "Real",
+      "anchor_id": "L1-02_L2-02d_0012__scene_014",
+      "original_source_url": "https://www.dvidshub.net/video/963299/swift-response-25-sky-soldiers-conduct-blank-fire-exercise",
+      "remote_path": "media/main/real/L1-02/L1-02_L2-02d_0012__scene_014.mp4",
+      "sha256": "2f171a3f63d2f695286fb16f9bbff1e3e5b1533895cf5ce5bffd4f5f7fa8feac",
+      "size_bytes": 15808324,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 284,
+        "fps": 29.97002997002997
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "hc_test_ai_04",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-02d",
+      "source": "Kling",
+      "anchor_id": "L1-02_L2-02d_0012__scene_014",
+      "original_source_url": "https://www.dvidshub.net/video/963299/swift-response-25-sky-soldiers-conduct-blank-fire-exercise",
+      "remote_path": "media/main/generated/kling_v3/L1-02_L2-02d_0012__scene_014.mp4",
+      "sha256": "07f9b18fdd52092e3beab56685e193eba11e8b921268115b2c7340740c635f0b",
+      "size_bytes": 6599808,
+      "actual_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 121,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "hc_test_real_05",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-04c",
+      "source": "Real",
+      "anchor_id": "L1-04_L2-04c_0001__scene_002",
+      "original_source_url": "https://www.dvidshub.net/video/998358/146-aes-conductsaeromedical-evacuation-exercise-with-139-aw-c-130-hercules-missouri-ang",
+      "remote_path": "media/main/real/L1-04/L1-04_L2-04c_0001__scene_002.mp4",
+      "sha256": "d21850e200217f3c008e66bdc226d34121ddc0f5604761b9191575286d87803a",
+      "size_bytes": 17987697,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 444,
+        "fps": 30.0
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "hc_test_ai_05",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-04c",
+      "source": "LTX",
+      "anchor_id": "L1-04_L2-04c_0001__scene_002",
+      "original_source_url": "https://www.dvidshub.net/video/998358/146-aes-conductsaeromedical-evacuation-exercise-with-139-aw-c-130-hercules-missouri-ang",
+      "remote_path": "media/main/generated/ltx_seed0/L1-04_L2-04c_0001__scene_002.mp4",
+      "sha256": "11e4585367490aa396458d5ea9bb8ecaa8ef534f41eb1cb1d8cb45ba45844ede",
+      "size_bytes": 5025214,
+      "actual_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 185,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "hc_test_real_06",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-04c",
+      "source": "Real",
+      "anchor_id": "L1-04_L2-04c_0015__scene_002",
+      "original_source_url": "https://www.dvidshub.net/video/917996/non-combatant-evacuation-operations-exercise",
+      "remote_path": "media/main/real/L1-04/L1-04_L2-04c_0015__scene_002.mp4",
+      "sha256": "bd519d7ec9f251c067a4d9412fab8f628d7c877a1a7732a6b766d02c0f3f5e28",
+      "size_bytes": 10800823,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 407,
+        "fps": 29.97002997002997
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "hc_test_ai_06",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-04c",
+      "source": "Kling",
+      "anchor_id": "L1-04_L2-04c_0015__scene_002",
+      "original_source_url": "https://www.dvidshub.net/video/917996/non-combatant-evacuation-operations-exercise",
+      "remote_path": "media/main/generated/kling_v3/L1-04_L2-04c_0015__scene_002.mp4",
+      "sha256": "60383f3039ef00174d76f1b6bcfa30dc870fc67818323716dd9b4a33a5d5c1bc",
+      "size_bytes": 4749976,
+      "actual_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 169,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "hc_test_real_07",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-07b",
+      "source": "Real",
+      "anchor_id": "L1-07_L2-07b_0008__scene_001",
+      "original_source_url": "https://www.dvidshub.net/video/829885",
+      "remote_path": "media/main/real/L1-07/L1-07_L2-07b_0008__scene_001.mp4",
+      "sha256": "0326db38c57ca84f351da19198c58e0aa6a675339bfed1c6785f7d43ae3bb590",
+      "size_bytes": 7804643,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 444,
+        "fps": 29.97002997002997
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "hc_test_ai_07",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-07b",
+      "source": "LTX",
+      "anchor_id": "L1-07_L2-07b_0008__scene_001",
+      "original_source_url": "https://www.dvidshub.net/video/829885",
+      "remote_path": "media/main/generated/ltx_seed0/L1-07_L2-07b_0008__scene_001.mp4",
+      "sha256": "e8cf9cb5cb88abb98c9d6c4d246f460013f1c052ad68bdfec5c9c98d952e5b03",
+      "size_bytes": 2865360,
+      "actual_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 185,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "hc_test_real_08",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-07d",
+      "source": "Real",
+      "anchor_id": "L1-07_L2-07d_0006__scene_003",
+      "original_source_url": "https://www.dvidshub.net/video/752342",
+      "remote_path": "media/main/real/L1-07/L1-07_L2-07d_0006__scene_003.mp4",
+      "sha256": "c10844902ed430b1f52ecda9c1f857751ac06f99b4f2bd7e181539c734bb7963",
+      "size_bytes": 16370573,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 443,
+        "fps": 29.97002997002997
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "hc_test_ai_08",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-07d",
+      "source": "Kling",
+      "anchor_id": "L1-07_L2-07d_0006__scene_003",
+      "original_source_url": "https://www.dvidshub.net/video/752342",
+      "remote_path": "media/main/generated/kling_v3/L1-07_L2-07d_0006__scene_003.mp4",
+      "sha256": "0237f6d36111239f301d82fa5c13d2c4a677e0dfca1a3cf981a68bb1eaaa0678",
+      "size_bytes": 6454863,
+      "actual_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 193,
+        "fps": 24.0
+      }
+    }
+  ]
+}
