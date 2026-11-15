@@ -476,3 +476,25 @@ uv run python scripts/train_real_negatives.py test
 The source manifests and fit are checked against Git, and the classifier
 and original encoder are checked by hash. All three classifiers use the
 same test inputs. Weights and cached training features stay in `models/`.
+
+## Check transfer to ComGenVid
+
+The [transfer check](../reports/head-transfer/report.md) tests the original
+RA-Bench trained head against released WaveRep on 12 new MSVD clips and
+12 new Veo 3 clips. The [fixed plan](../configs/head-transfer-selection.md)
+holds the head, frame sampling and decision margin fixed. Neither head
+is fitted on ComGenVid in this comparison.
+
+Reproduce from a separate worktree at `af58ca4`, with the original
+`models/linear-head-policy.npz` and its recorded environment. See the
+[original fitting instructions](#train-a-small-head-on-both-compression-levels)
+if that file is missing.
+
+```sh
+uv sync --locked
+uv run python scripts/check_head_transfer.py
+```
+
+The command checks the fitted weights and earlier manifests, then
+prepares and scores both encodes of each clip. It refuses to overwrite
+existing results. No videos or weights are published.

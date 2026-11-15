@@ -43,8 +43,9 @@ encodes, and the counts computed from the 96 classifier margins.
 The refit failed the predeclared target of reducing false flags while
 keeping AI catches. The demo remains unchanged. The original trained
 head still found four heavily compressed clips that released WaveRep
-missed. Before another fit, broaden the footage to a different source
-or generator and set aside enough real recordings to measure false flags.
+missed. The [transfer follow-up](../head-transfer/report.md) tested that
+original trained head on ComGenVid. It caught ten compressed Veo 3 clips
+released WaveRep missed, but added three real flags.
 
 [Locked fit](fit.json) · [Per-clip margins](scores.csv) ·
 [Exact counts](summary.json) ·
