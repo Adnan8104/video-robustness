@@ -32,10 +32,9 @@ by hash, and the captured features exactly reconstructed released logits.
 All 32 encode hashes and the error and ranking counts were verified.
 
 The stricter rule did not meet the predeclared target of keeping at
-least two compressed AI catches. Keep the demo unchanged. Before
-another cutoff search, test whether adding diverse real training
-footage, including compressed real clips the head tends to flag, helps
-separate the classes on fresh recordings.
+least two compressed AI catches. The demo stays unchanged. The
+[extra-real training follow-up](../real-negatives/report.md) kept the
+compressed AI catches but did not reduce false flags on new recordings.
 
 [Locked rule](cutoff.json) · [Per-clip results](scores.csv) ·
 [Counts and provenance](summary.json) ·

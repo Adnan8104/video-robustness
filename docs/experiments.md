@@ -449,3 +449,30 @@ above in the original input freeze worktree under the recorded environment,
 then copy the resulting `models/linear-head-policy.npz` into the new
 worktree. The test refuses changes to the recorded head, input files or
 scoring environment, and won't overwrite an existing test result.
+
+## Train with extra real footage
+
+The [extra-real comparison](../reports/real-negatives/report.md) adds all
+16 real clips from the two earlier trained-head tests. With both encodes
+per source, it fits on 68 real and 36 AI examples, weighted so each
+class contributes half the training loss. The encoder, ridge penalty
+and zero decision margin stay fixed. See the
+[selection policy](../configs/real-negatives-selection.md).
+
+Use a separate worktree at `1f68aa8` with the original
+`models/linear-head-policy.npz` and the same environment. The earlier
+[training instructions](#train-a-small-head-on-both-compression-levels)
+explain how to recreate that file. The fit reproduces the original
+features and classifier before adding the real clips.
+
+```sh
+uv sync --locked
+uv run python scripts/train_real_negatives.py fit
+git add reports/real-negatives/fit.json
+git commit -m "Lock the fit before scoring the test recordings"
+uv run python scripts/train_real_negatives.py test
+```
+
+The source manifests and fit are checked against Git, and the classifier
+and original encoder are checked by hash. All three classifiers use the
+same test inputs. Weights and cached training features stay in `models/`.
