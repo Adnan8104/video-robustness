@@ -1,0 +1,416 @@
+{
+  "dataset": "OmerXYZ/comgenvid",
+  "revision": "c5093999e799c897c977a8699da95ebbc59cc9cb",
+  "metadata_sha256": "03ee54e9a964e25a155f41ad426a26338e5f3a9fd7e6d2e3c9d86a5dd2adfff7",
+  "total_source_bytes": 204643935,
+  "samples": [
+    {
+      "id": "transfer_real_01",
+      "label": "real",
+      "source": "MSVD",
+      "cell": "real",
+      "content": "unmatched",
+      "recording_key": "6owu8Mow0_g",
+      "remote_path": "videos/real/MSVD/6owu8Mow0_g_527_534.mp4",
+      "sha256": "29cd874ba1be1c5139fc9fd2285c17f971d38aa461c391e4c0cb6c787a3123dd",
+      "size_bytes": 17537815,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 210,
+        "fps": 29.97002997002997
+      }
+    },
+    {
+      "id": "transfer_real_02",
+      "label": "real",
+      "source": "MSVD",
+      "cell": "real",
+      "content": "unmatched",
+      "recording_key": "8PQiaurIiDM",
+      "remote_path": "videos/real/MSVD/8PQiaurIiDM_94_99.mp4",
+      "sha256": "a1c5164be5d615066cff7d2d19452b55a7b474a26dd324c0b7fdf576ea41b4b5",
+      "size_bytes": 20479454,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 150,
+        "fps": 29.97002997002997
+      }
+    },
+    {
+      "id": "transfer_real_03",
+      "label": "real",
+      "source": "MSVD",
+      "cell": "real",
+      "content": "unmatched",
+      "recording_key": "KPPCwmU5OHQ",
+      "remote_path": "videos/real/MSVD/KPPCwmU5OHQ_467_472.mp4",
+      "sha256": "145dd3f3022287d9819cd915040dd82fc90a5912c8c26d0d6fc80524ad467e0e",
+      "size_bytes": 9071407,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 150,
+        "fps": 29.97002997002997
+      }
+    },
+    {
+      "id": "transfer_real_04",
+      "label": "real",
+      "source": "MSVD",
+      "cell": "real",
+      "content": "unmatched",
+      "recording_key": "9gbUM9oHBNI",
+      "remote_path": "videos/real/MSVD/9gbUM9oHBNI_557_563.mp4",
+      "sha256": "efed9025a3749a5528560df2aa42bb4444069de2148876572d52853e0ce4d7f5",
+      "size_bytes": 6784422,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 180,
+        "fps": 29.97002997002997
+      }
+    },
+    {
+      "id": "transfer_real_05",
+      "label": "real",
+      "source": "MSVD",
+      "cell": "real",
+      "content": "unmatched",
+      "recording_key": "q3I3R_gqy8M",
+      "remote_path": "videos/real/MSVD/q3I3R_gqy8M_38_42.mp4",
+      "sha256": "b47bb590a715aa6ce5813610451e1800778ac96064b8ace7969514f4a508f9f6",
+      "size_bytes": 9037782,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 101,
+        "fps": 25.0
+      }
+    },
+    {
+      "id": "transfer_real_06",
+      "label": "real",
+      "source": "MSVD",
+      "cell": "real",
+      "content": "unmatched",
+      "recording_key": "Je3V7U5Ctj4",
+      "remote_path": "videos/real/MSVD/Je3V7U5Ctj4_768_773.mp4",
+      "sha256": "3f1cff9f4bf46ffc2e5577023bddd7d21a7738a3f86c003740f0a9054062ca66",
+      "size_bytes": 20074767,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 150,
+        "fps": 29.97002997002997
+      }
+    },
+    {
+      "id": "transfer_real_07",
+      "label": "real",
+      "source": "MSVD",
+      "cell": "real",
+      "content": "unmatched",
+      "recording_key": "tJHUH9tpqPg",
+      "remote_path": "videos/real/MSVD/tJHUH9tpqPg_113_118.mp4",
+      "sha256": "a2d5a29dcdc25e19617d526e6ad54b850293caab11d458274e2a18f85ddaa7ec",
+      "size_bytes": 12060473,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 150,
+        "fps": 29.916666666666668
+      }
+    },
+    {
+      "id": "transfer_real_08",
+      "label": "real",
+      "source": "MSVD",
+      "cell": "real",
+      "content": "unmatched",
+      "recording_key": "9HTUcMjWB3g",
+      "remote_path": "videos/real/MSVD/9HTUcMjWB3g_134_138.mp4",
+      "sha256": "e1d652eb1a8a658fa2aefdc2735cc0d1d13b014c250fa40f608e46fc9d489f21",
+      "size_bytes": 18445791,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 120,
+        "fps": 29.916666666666668
+      }
+    },
+    {
+      "id": "transfer_real_09",
+      "label": "real",
+      "source": "MSVD",
+      "cell": "real",
+      "content": "unmatched",
+      "recording_key": "r2PM0om2El8",
+      "remote_path": "videos/real/MSVD/r2PM0om2El8_18_25.mp4",
+      "sha256": "f80767b45ee3d873f989ca4119f41a934cc46471cd4fcbf2fb71ba266af312e6",
+      "size_bytes": 19052296,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 169,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "transfer_real_10",
+      "label": "real",
+      "source": "MSVD",
+      "cell": "real",
+      "content": "unmatched",
+      "recording_key": "glii-kazad8",
+      "remote_path": "videos/real/MSVD/glii-kazad8_21_29.mp4",
+      "sha256": "3c94a140af8bc63a8215d0949c1962364e8e7c0877b76f37fcd27b0eccf5f7d6",
+      "size_bytes": 10637897,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 240,
+        "fps": 29.97002997002997
+      }
+    },
+    {
+      "id": "transfer_real_11",
+      "label": "real",
+      "source": "MSVD",
+      "cell": "real",
+      "content": "unmatched",
+      "recording_key": "lfGlDg47How",
+      "remote_path": "videos/real/MSVD/lfGlDg47How_110_115.mp4",
+      "sha256": "f23cbcc217abfeead713d89bcd9e7c988a1049323a6638016b6c9a56ae2f70b5",
+      "size_bytes": 15135477,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 150,
+        "fps": 29.97002997002997
+      }
+    },
+    {
+      "id": "transfer_real_12",
+      "label": "real",
+      "source": "MSVD",
+      "cell": "real",
+      "content": "unmatched",
+      "recording_key": "IiIiY6o-C9k",
+      "remote_path": "videos/real/MSVD/IiIiY6o-C9k_59_64.mp4",
+      "sha256": "60c1f45e7d403af050a11aec7d77e78e279b0cd81974660861ad8f5441cc5612",
+      "size_bytes": 13087914,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 150,
+        "fps": 29.97002997002997
+      }
+    },
+    {
+      "id": "transfer_ai_01",
+      "label": "ai",
+      "source": "VEO3",
+      "cell": "ai",
+      "content": "unmatched",
+      "recording_key": "29263740-48c1-58cb-bc4f-c4476f896a12",
+      "remote_path": "videos/fake/VEO3/29263740-48c1-58cb-bc4f-c4476f896a12.mp4",
+      "sha256": "6913190f6c447490d178ce4cc17e6b94328f1af7873e45fe978f42fea5d661e5",
+      "size_bytes": 2017130,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "transfer_ai_02",
+      "label": "ai",
+      "source": "VEO3",
+      "cell": "ai",
+      "content": "unmatched",
+      "recording_key": "a3be7e14-8b2a-5431-8ef0-b10f7365ea26",
+      "remote_path": "videos/fake/VEO3/a3be7e14-8b2a-5431-8ef0-b10f7365ea26.mp4",
+      "sha256": "58f4a3ef332f2dd3afd0102a90a95cc84988724884d127e49bc81455529ee6db",
+      "size_bytes": 3804885,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "transfer_ai_03",
+      "label": "ai",
+      "source": "VEO3",
+      "cell": "ai",
+      "content": "unmatched",
+      "recording_key": "8704a9ea-35a1-5d6a-a5ff-3f4b5a9c6332",
+      "remote_path": "videos/fake/VEO3/8704a9ea-35a1-5d6a-a5ff-3f4b5a9c6332.mp4",
+      "sha256": "5cddda6ec12b484b09a61bece363aad85b722e057a558c140763bbeeeb8cd2e8",
+      "size_bytes": 2347819,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "transfer_ai_04",
+      "label": "ai",
+      "source": "VEO3",
+      "cell": "ai",
+      "content": "unmatched",
+      "recording_key": "8650c442-57ee-5e1a-8be6-9a608dfa29aa",
+      "remote_path": "videos/fake/VEO3/8650c442-57ee-5e1a-8be6-9a608dfa29aa.mp4",
+      "sha256": "1de99c18658482a5ca6c951865c1bcc527490d2e5683693bd2602c932a139f1e",
+      "size_bytes": 1679799,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "transfer_ai_05",
+      "label": "ai",
+      "source": "VEO3",
+      "cell": "ai",
+      "content": "unmatched",
+      "recording_key": "966fe6af-b107-5aa9-8f06-c8e0bcc9e968",
+      "remote_path": "videos/fake/VEO3/966fe6af-b107-5aa9-8f06-c8e0bcc9e968.mp4",
+      "sha256": "1ca704630c472ba987c4a13b718207dd9b293983cac1f988f1d2c62d8ecf61b3",
+      "size_bytes": 2222631,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "transfer_ai_06",
+      "label": "ai",
+      "source": "VEO3",
+      "cell": "ai",
+      "content": "unmatched",
+      "recording_key": "907d3bc5-f4b1-50ee-9c46-e21c4858e0ef",
+      "remote_path": "videos/fake/VEO3/907d3bc5-f4b1-50ee-9c46-e21c4858e0ef.mp4",
+      "sha256": "a5a6922e611ffd642180a870f75c4801200236b950f60e3ac43d2b77e02b733e",
+      "size_bytes": 6873885,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "transfer_ai_07",
+      "label": "ai",
+      "source": "VEO3",
+      "cell": "ai",
+      "content": "unmatched",
+      "recording_key": "49777ee1-f029-51cf-b281-4c74f9481e74",
+      "remote_path": "videos/fake/VEO3/49777ee1-f029-51cf-b281-4c74f9481e74.mp4",
+      "sha256": "fac51b0087849db618ee70f2f443a674ec1211e1f8782b38fb509c26af4e8535",
+      "size_bytes": 2263854,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "transfer_ai_08",
+      "label": "ai",
+      "source": "VEO3",
+      "cell": "ai",
+      "content": "unmatched",
+      "recording_key": "172a5298-22e4-5117-bd13-bb7010318212",
+      "remote_path": "videos/fake/VEO3/172a5298-22e4-5117-bd13-bb7010318212.mp4",
+      "sha256": "56fbee4d91532be44f9269ac5cfce7efd6414ee91eb331bc91cb0d9111f45239",
+      "size_bytes": 2171191,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "transfer_ai_09",
+      "label": "ai",
+      "source": "VEO3",
+      "cell": "ai",
+      "content": "unmatched",
+      "recording_key": "21dea980-b278-5d65-a5e0-5db402992980",
+      "remote_path": "videos/fake/VEO3/21dea980-b278-5d65-a5e0-5db402992980.mp4",
+      "sha256": "4801e55315c00e73e09aa957861ebf0627306da9100e19bb1b0ec00b71ee1b52",
+      "size_bytes": 1709219,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "transfer_ai_10",
+      "label": "ai",
+      "source": "VEO3",
+      "cell": "ai",
+      "content": "unmatched",
+      "recording_key": "10f1efff-658e-5d11-8351-664dca17a8e8",
+      "remote_path": "videos/fake/VEO3/10f1efff-658e-5d11-8351-664dca17a8e8.mp4",
+      "sha256": "50d332f44034bc6fb5aefa86bf26ac7be8ec98e369214c75cf76bba68e08aba3",
+      "size_bytes": 3506325,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "transfer_ai_11",
+      "label": "ai",
+      "source": "VEO3",
+      "cell": "ai",
+      "content": "unmatched",
+      "recording_key": "38c68429-8f72-54b3-b219-2626714b8975",
+      "remote_path": "videos/fake/VEO3/38c68429-8f72-54b3-b219-2626714b8975.mp4",
+      "sha256": "a58e4690a8722beeec433eb9b04ef72b49d836707419fa059ec124f6bde17298",
+      "size_bytes": 2207350,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "transfer_ai_12",
+      "label": "ai",
+      "source": "VEO3",
+      "cell": "ai",
+      "content": "unmatched",
+      "recording_key": "7c9c6e52-5925-5a05-85f4-a28fe9199224",
+      "remote_path": "videos/fake/VEO3/7c9c6e52-5925-5a05-85f4-a28fe9199224.mp4",
+      "sha256": "6f630f480d8a0793731296bf7192aa0da5e9f325ed28b4bc52cdcdae68c0df5d",
+      "size_bytes": 2434352,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      }
+    }
+  ]
+}

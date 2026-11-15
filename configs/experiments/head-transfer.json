@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "name": "head-transfer",
+  "manifest": "configs/head-transfer.json",
+  "source_directory": "data/head-transfer",
+  "detectors": [
+    "waverep"
+  ],
+  "preparation": "centered_4s_504_24fps",
+  "baseline": "baseline",
+  "variants": [
+    {
+      "name": "baseline",
+      "transform": "identity",
+      "encoding": "h264",
+      "crf": 18
+    },
+    {
+      "name": "compression",
+      "transform": "identity",
+      "encoding": "h264",
+      "crf": 35
+    }
+  ],
+  "notes": "Fresh ComGenVid transfer check for the original locked head; use scripts/check_head_transfer.py. Model, margin zero and both encodes fixed before scoring."
+}
