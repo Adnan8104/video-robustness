@@ -1,0 +1,246 @@
+[
+  {
+    "anchor_id": "L1-01_L2-01c_0020__scene_002",
+    "reason": "Did not pass common preparation eligibility",
+    "metadata": {
+      "real": {
+        "width": 640,
+        "height": 360,
+        "frames": 444,
+        "fps": 29.97002997002997
+      },
+      "ai": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 185,
+        "fps": 24.0
+      }
+    }
+  },
+  {
+    "anchor_id": "L1-01_L2-01d_0003__scene_023",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-01_L2-01a_0005__scene_013",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-01_L2-01d_0004__scene_002",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-01_L2-01a_0005__scene_004",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-01_L2-01c_0020__scene_002",
+    "reason": "Did not pass common preparation eligibility",
+    "metadata": {
+      "real": {
+        "width": 640,
+        "height": 360,
+        "frames": 444,
+        "fps": 29.97002997002997
+      },
+      "ai": {
+        "width": 1264,
+        "height": 728,
+        "frames": 193,
+        "fps": 24.0
+      }
+    }
+  },
+  {
+    "anchor_id": "L1-01_L2-01d_0003__scene_023",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-01_L2-01a_0005__scene_013",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-01_L2-01d_0004__scene_002",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-01_L2-01a_0005__scene_004",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-01_L2-01a_0005__scene_012",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-01_L2-01d_0003__scene_016",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-01_L2-01a_0005__scene_006",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-01_L2-01a_0005__scene_003",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-01_L2-01b_0007__scene_002",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-02_L2-02a_0013__scene_010",
+    "reason": "Did not pass common preparation eligibility",
+    "metadata": {
+      "real": {
+        "width": 640,
+        "height": 480,
+        "frames": 315,
+        "fps": 29.97002997002997
+      },
+      "ai": {
+        "width": 1264,
+        "height": 728,
+        "frames": 145,
+        "fps": 24.0
+      }
+    }
+  },
+  {
+    "anchor_id": "L1-02_L2-02a_0014__scene_006",
+    "reason": "Did not pass common preparation eligibility",
+    "metadata": {
+      "real": {
+        "width": 720,
+        "height": 480,
+        "frames": 271,
+        "fps": 29.97002997002997
+      },
+      "ai": {
+        "width": 1264,
+        "height": 728,
+        "frames": 121,
+        "fps": 24.0
+      }
+    }
+  },
+  {
+    "anchor_id": "L1-02_L2-02d_0008__scene_014",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-04_L2-04a_0002__scene_008",
+    "reason": "Did not pass common preparation eligibility",
+    "metadata": {
+      "real": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 272,
+        "fps": 23.976023976023978
+      },
+      "ai": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 145,
+        "fps": 24.0
+      }
+    }
+  },
+  {
+    "anchor_id": "L1-04_L2-04a_0002__scene_008",
+    "reason": "Did not pass common preparation eligibility",
+    "metadata": {
+      "real": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 272,
+        "fps": 23.976023976023978
+      },
+      "ai": {
+        "width": 1264,
+        "height": 728,
+        "frames": 145,
+        "fps": 24.0
+      }
+    }
+  },
+  {
+    "anchor_id": "L1-07_L2-07c_0006__scene_010",
+    "reason": "Did not pass common preparation eligibility",
+    "metadata": {
+      "real": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 323,
+        "fps": 23.976023976023978
+      },
+      "ai": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 169,
+        "fps": 24.0
+      }
+    }
+  },
+  {
+    "anchor_id": "L1-07_L2-07c_0006__scene_003",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-07_L2-07b_0004__scene_006",
+    "reason": "Did not pass common preparation eligibility",
+    "metadata": {
+      "real": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 219,
+        "fps": 29.97002997002997
+      },
+      "ai": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 89,
+        "fps": 24.0
+      }
+    }
+  },
+  {
+    "anchor_id": "L1-07_L2-07c_0006__scene_010",
+    "reason": "Did not pass common preparation eligibility",
+    "metadata": {
+      "real": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 323,
+        "fps": 23.976023976023978
+      },
+      "ai": {
+        "width": 1264,
+        "height": 728,
+        "frames": 169,
+        "fps": 24.0
+      }
+    }
+  },
+  {
+    "anchor_id": "L1-07_L2-07c_0006__scene_003",
+    "reason": "Pair exceeds 24 MiB"
+  },
+  {
+    "anchor_id": "L1-07_L2-07d_0009__scene_006",
+    "reason": "Did not pass common preparation eligibility",
+    "metadata": {
+      "real": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 176,
+        "fps": 29.97002997002997
+      },
+      "ai": {
+        "width": 1264,
+        "height": 728,
+        "frames": 73,
+        "fps": 24.0
+      }
+    }
+  }
+]

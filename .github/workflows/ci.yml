@@ -59,3 +59,7 @@ jobs:
           uv run --no-sync python run.py experiment configs/experiments/linear-head-test.json --dry-run
       - name: Validate trained-head cutoff test config
         run: uv run --no-sync python run.py experiment configs/experiments/head-cutoff-test.json --dry-run
+      - name: Validate extra-real training and test configs
+        run: |
+          uv run --no-sync python run.py experiment configs/experiments/real-negatives-train.json --dry-run
+          uv run --no-sync python run.py experiment configs/experiments/real-negatives-test.json --dry-run

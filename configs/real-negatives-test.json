@@ -1,0 +1,316 @@
+{
+  "dataset": "liangshuo0111/RA-Bench",
+  "revision": "5c39eda71afe5eb7f66070f64221ea1c69dcb018",
+  "metadata_revision": "a979505a2703a8304fd69358b71b6988732db850",
+  "metadata_sha256": {
+    "ra_bench_main.csv": "3a3f74c0495cf15c5c1aa0b71ab1df80b9621f7e7c32202970c044233a721c73",
+    "real_rights_release.csv": "24a9693305e76256cb1d228a70d6b932640d815aadf2aaebe0ff7dacad2e8c4f"
+  },
+  "total_source_bytes": 100893133,
+  "samples": [
+    {
+      "id": "rn_test_real_01",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-01d",
+      "source": "Real",
+      "anchor_id": "L1-01_L2-01d_0011__scene_001",
+      "original_source_url": "https://www.dvidshub.net/video/939088/hurricane-helene-flood-damage",
+      "remote_path": "media/main/real/L1-01/L1-01_L2-01d_0011__scene_001.mp4",
+      "sha256": "da2122c466fc7fbfa2f68773dd7d513c1dd8ee467767ca880d2aeb0297a69ad7",
+      "size_bytes": 15783375,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 491,
+        "fps": 59.94005994005994
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "rn_test_ai_01",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-01d",
+      "source": "LTX",
+      "anchor_id": "L1-01_L2-01d_0011__scene_001",
+      "original_source_url": "https://www.dvidshub.net/video/939088/hurricane-helene-flood-damage",
+      "remote_path": "media/main/generated/ltx_seed0/L1-01_L2-01d_0011__scene_001.mp4",
+      "sha256": "0273f7098314e492a1cec1e31a1171417eef71248fe349a2029a1290bf626ec6",
+      "size_bytes": 8557871,
+      "actual_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 105,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "rn_test_real_02",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-01b",
+      "source": "Real",
+      "anchor_id": "L1-01_L2-01b_0009__scene_016",
+      "original_source_url": "https://www.dvidshub.net/video/902990/b-roll-hawaii-army-national-guard-provides-aerial-fire-suppression-mililani-wildfire",
+      "remote_path": "media/main/real/L1-01/L1-01_L2-01b_0009__scene_016.mp4",
+      "sha256": "8e538b0e6f0eebf33307a4c9a2756a1e4b7ad9b221f1eb893f5d910cc07282ec",
+      "size_bytes": 4973510,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 230,
+        "fps": 30.0
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "rn_test_ai_02",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-01b",
+      "source": "Kling",
+      "anchor_id": "L1-01_L2-01b_0009__scene_016",
+      "original_source_url": "https://www.dvidshub.net/video/902990/b-roll-hawaii-army-national-guard-provides-aerial-fire-suppression-mililani-wildfire",
+      "remote_path": "media/main/generated/kling_v3/L1-01_L2-01b_0009__scene_016.mp4",
+      "sha256": "0976e85a640c8d0c31b1d6e7d1b342367bfbf2977f62a1414a0136a091b9a7b5",
+      "size_bytes": 1631998,
+      "actual_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 97,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "rn_test_real_03",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-02c",
+      "source": "Real",
+      "anchor_id": "L1-02_L2-02c_0011__scene_021",
+      "original_source_url": "https://www.dvidshub.net/video/952173/marine-kc-130js-fly-formation-over-arizona",
+      "remote_path": "media/main/real/L1-02/L1-02_L2-02c_0011__scene_021.mp4",
+      "sha256": "e738436bfe5c6faf04fa2c4986db60008e9a89e3c6c015ec23605339a0c7f5dc",
+      "size_bytes": 7938827,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 457,
+        "fps": 59.94005994005994
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "rn_test_ai_03",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-02c",
+      "source": "LTX",
+      "anchor_id": "L1-02_L2-02c_0011__scene_021",
+      "original_source_url": "https://www.dvidshub.net/video/952173/marine-kc-130js-fly-formation-over-arizona",
+      "remote_path": "media/main/generated/ltx_seed0/L1-02_L2-02c_0011__scene_021.mp4",
+      "sha256": "aa6bfb1662d1a2b577798c33d1df83f92a8bc8d0443e1cacb644c437c2f51596",
+      "size_bytes": 1440017,
+      "actual_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 97,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "rn_test_real_04",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-02a",
+      "source": "Real",
+      "anchor_id": "L1-02_L2-02a_0001__scene_011",
+      "original_source_url": "https://www.dvidshub.net/video/622459/revitalizing-commerce-mosul",
+      "remote_path": "media/main/real/L1-02/L1-02_L2-02a_0001__scene_011.mp4",
+      "sha256": "2feaf9800b72a4ce303fd9ca3f810107871aa265b2c57e9637b623e35c3924c8",
+      "size_bytes": 10264127,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 338,
+        "fps": 29.97002997002997
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "rn_test_ai_04",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-02a",
+      "source": "Kling",
+      "anchor_id": "L1-02_L2-02a_0001__scene_011",
+      "original_source_url": "https://www.dvidshub.net/video/622459/revitalizing-commerce-mosul",
+      "remote_path": "media/main/generated/kling_v3/L1-02_L2-02a_0001__scene_011.mp4",
+      "sha256": "b8e3b2062e688383e709645e9308c590338f651fbbf69cfd89496bb0f5e0cddd",
+      "size_bytes": 6646752,
+      "actual_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 145,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "rn_test_real_05",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-04a",
+      "source": "Real",
+      "anchor_id": "L1-04_L2-04a_0011__scene_008",
+      "original_source_url": "https://www.dvidshub.net/video/781567/cal-guard-sacramento-during-2021-inauguration",
+      "remote_path": "media/main/real/L1-04/L1-04_L2-04a_0011__scene_008.mp4",
+      "sha256": "8752d1df353922b1b393518417c41b8ff0fa6b7e265eec23bb46d050285df5c1",
+      "size_bytes": 11919714,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 327,
+        "fps": 29.97002997002997
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "rn_test_ai_05",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-04a",
+      "source": "LTX",
+      "anchor_id": "L1-04_L2-04a_0011__scene_008",
+      "original_source_url": "https://www.dvidshub.net/video/781567/cal-guard-sacramento-during-2021-inauguration",
+      "remote_path": "media/main/generated/ltx_seed0/L1-04_L2-04a_0011__scene_008.mp4",
+      "sha256": "26a5b254614485dbaf9f9a781fd00b6c39294e35f0313967a85d76a808e1d36b",
+      "size_bytes": 6053992,
+      "actual_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 137,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "rn_test_real_06",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-04a",
+      "source": "Real",
+      "anchor_id": "L1-04_L2-04a_0012__scene_012",
+      "original_source_url": "https://www.dvidshub.net/video/755447/idaho-national-guard-support-dc-civil-unrest-response-efforts",
+      "remote_path": "media/main/real/L1-04/L1-04_L2-04a_0012__scene_012.mp4",
+      "sha256": "7be6d1664c5acaae4fefc17c71ffa824c2b90d7b5d84fe56cad83a19d5e85964",
+      "size_bytes": 4931784,
+      "actual_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 339,
+        "fps": 29.97002997002997
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "rn_test_ai_06",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-04a",
+      "source": "Kling",
+      "anchor_id": "L1-04_L2-04a_0012__scene_012",
+      "original_source_url": "https://www.dvidshub.net/video/755447/idaho-national-guard-support-dc-civil-unrest-response-efforts",
+      "remote_path": "media/main/generated/kling_v3/L1-04_L2-04a_0012__scene_012.mp4",
+      "sha256": "f313192472fb4a0ca6311569308af8a9df85194ff8572cee56402c632f0fbc08",
+      "size_bytes": 4131478,
+      "actual_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 145,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "rn_test_real_07",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-07b",
+      "source": "Real",
+      "anchor_id": "L1-07_L2-07b_0004__scene_003",
+      "original_source_url": "https://www.dvidshub.net/video/830346",
+      "remote_path": "media/main/real/L1-07/L1-07_L2-07b_0004__scene_003.mp4",
+      "sha256": "b7b9ccf8bfa7b812a797429c868aae63ab09dec9fe84eceb3955151f1559d95f",
+      "size_bytes": 6401084,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 361,
+        "fps": 29.97002997002997
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "rn_test_ai_07",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-07b",
+      "source": "LTX",
+      "anchor_id": "L1-07_L2-07b_0004__scene_003",
+      "original_source_url": "https://www.dvidshub.net/video/830346",
+      "remote_path": "media/main/generated/ltx_seed0/L1-07_L2-07b_0004__scene_003.mp4",
+      "sha256": "2d49bcab2dfa41fa01f8d36f8151f422a184e593daafd60c5895544d14bd66bf",
+      "size_bytes": 3196865,
+      "actual_metadata": {
+        "width": 1536,
+        "height": 1024,
+        "frames": 153,
+        "fps": 24.0
+      }
+    },
+    {
+      "id": "rn_test_real_08",
+      "label": "real",
+      "cell": "real",
+      "content": "L2-07a",
+      "source": "Real",
+      "anchor_id": "L1-07_L2-07a_0011__scene_005",
+      "original_source_url": "https://www.dvidshub.net/video/773973",
+      "remote_path": "media/main/real/L1-07/L1-07_L2-07a_0011__scene_005.mp4",
+      "sha256": "c5714a109d02c256c62a513dd98db230e17b364a2aedb085d41eded680a3d00f",
+      "size_bytes": 4736438,
+      "actual_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 234,
+        "fps": 29.97002997002997
+      },
+      "rights_basis": "us_gov_public_domain",
+      "license_text": "Public Domain"
+    },
+    {
+      "id": "rn_test_ai_08",
+      "label": "ai",
+      "cell": "ai",
+      "content": "L2-07a",
+      "source": "Kling",
+      "anchor_id": "L1-07_L2-07a_0011__scene_005",
+      "original_source_url": "https://www.dvidshub.net/video/773973",
+      "remote_path": "media/main/generated/kling_v3/L1-07_L2-07a_0011__scene_005.mp4",
+      "sha256": "2dbe65d3be2b87eeef163183781dcd99757e6412ea5835f2ba0df217a3754a81",
+      "size_bytes": 2285301,
+      "actual_metadata": {
+        "width": 1264,
+        "height": 728,
+        "frames": 97,
+        "fps": 24.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "name": "real-negatives-train",
+  "manifest": "configs/real-negatives-train.json",
+  "source_directory": "data/real-negatives-train",
+  "detectors": [
+    "waverep"
+  ],
+  "preparation": "centered_4s_504_24fps",
+  "baseline": "baseline",
+  "variants": [
+    {
+      "name": "baseline",
+      "transform": "identity",
+      "encoding": "h264",
+      "crf": 18
+    },
+    {
+      "name": "compression",
+      "transform": "identity",
+      "encoding": "h264",
+      "crf": 35
+    }
+  ],
+  "notes": "Use scripts/train_real_negatives.py. Both encodes start from the same lossless master; the fresh test recordings are disjoint from prior experiments."
+}
