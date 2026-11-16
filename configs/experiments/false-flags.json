@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "name": "false-flags",
+  "manifest": "configs/false-flags.json",
+  "source_directory": "data/false-flags",
+  "detectors": [
+    "waverep"
+  ],
+  "preparation": "centered_4s_504_24fps",
+  "baseline": "baseline",
+  "variants": [
+    {
+      "name": "baseline",
+      "transform": "identity",
+      "encoding": "h264",
+      "crf": 18
+    },
+    {
+      "name": "compression",
+      "transform": "identity",
+      "encoding": "h264",
+      "crf": 35
+    }
+  ],
+  "notes": "Real-only audit of both fixed heads. Use scripts/check_false_flags.py. Original released WebM bytes are used as source for the shared lossless master and two encodes. Margin zero, no new training."
+}

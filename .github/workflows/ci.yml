@@ -65,3 +65,5 @@ jobs:
           uv run --no-sync python run.py experiment configs/experiments/real-negatives-test.json --dry-run
       - name: Validate cross-dataset transfer config
         run: uv run --no-sync python run.py experiment configs/experiments/head-transfer.json --dry-run
+      - name: Validate independent real-footage audit config
+        run: uv run --no-sync python run.py experiment configs/experiments/false-flags.json --dry-run
