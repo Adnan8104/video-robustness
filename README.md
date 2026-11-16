@@ -33,11 +33,15 @@ Open `http://127.0.0.1:8501`, upload a short video and click **Check video**.
 It runs AEGIS and WaveRep locally. Temporary uploads are deleted after the check.
 The first run downloads about 764 MiB of model weights.
 
-**Prioritize for review** ranks up to 20 clips and shows the top ones for
-your review budget. This experimental mode uses the fitted WaveRep head.
-To set it up, [recreate the fitted weights](docs/experiments.md#train-a-small-head-on-both-compression-levels)
+Select **Prioritize for review** in the sidebar to try the published
+100-clip batch. Move the slider to see how many AI and real clips each
+model puts in the queue. This view uses saved scores and opens without
+downloading videos or weights.
+
+Switch to **Upload videos** to rank up to 20 clips of your own. This
+experimental mode uses the fitted WaveRep head. To set it up,
+[recreate the fitted weights](docs/experiments.md#train-a-small-head-on-both-compression-levels)
 and copy `models/linear-head-policy.npz` into this checkout's `models/`.
-If you already ran the training here, select the mode in the sidebar.
 
 ## Run an experiment
 
@@ -51,6 +55,6 @@ The 20-clip experiment compares original, compressed, resized and cropped inputs
 
 The shared runner checks file hashes and saves scores, charts and run details
 under `reports/experiments/`. Models and videos stay out of Git. There are
-**81 tests**, with tests and config checks running in GitHub Actions.
+**82 tests**, with tests and config checks running in GitHub Actions.
 
 [Setup and configs](docs/experiments.md) · [Model comparison](docs/detector-evaluation.md) · [Sources and credits](docs/sources.md)

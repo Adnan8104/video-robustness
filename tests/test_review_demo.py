@@ -25,6 +25,22 @@ class ReviewServiceTest(unittest.TestCase):
 
 @unittest.skipUnless(importlib.util.find_spec("streamlit"), "Install the demo extra for UI tests")
 class ReviewDemoTest(unittest.TestCase):
+    def test_published_batch_uses_saved_scores_at_each_budget(self):
+        from streamlit.testing.v1 import AppTest
+
+        app = AppTest.from_file(str(ROOT / "demo.py"), default_timeout=20).run()
+        with patch("vidrobust.review_demo.get_service", side_effect=AssertionError("Loaded inference")):
+            app.sidebar.radio[0].set_value("Prioritize for review").run()
+            self.assertFalse(app.exception)
+            self.assertEqual([metric.value for metric in app.metric], ["3 / 10 AI clips", "5 / 10 AI clips"])
+            first_queue = app.dataframe[0].value
+            self.assertEqual(first_queue["Rank"].tolist(), list(range(1, 11)))
+            self.assertEqual(first_queue["Trained WaveRep head"].iloc[0], "review_real_44 · Real")
+            app.slider[0].set_value(2).run()
+            self.assertEqual([metric.value for metric in app.metric], ["2 / 10 AI clips", "1 / 10 AI clips"])
+            self.assertEqual(app.dataframe[0].value.to_dict("records"), first_queue.head(2).to_dict("records"))
+            self.assertFalse(app.file_uploader)
+
     def test_rank_then_edit_budget_and_clear_stale_queue(self):
         from streamlit.testing.v1 import AppTest
 
@@ -32,6 +48,7 @@ class ReviewDemoTest(unittest.TestCase):
         service.rank.return_value = [dict(name="b.mp4", margin=0.2), dict(name="a.mp4", margin=-0.5)]
         app = AppTest.from_file(str(ROOT / "demo.py"), default_timeout=20).run()
         app.sidebar.radio[0].set_value("Prioritize for review").run()
+        app.radio(key="review_source").set_value("Upload videos").run()
         self.assertFalse(app.exception)
         self.assertTrue(app.button[0].disabled)
         with patch("vidrobust.review_demo.get_service", return_value=service):
