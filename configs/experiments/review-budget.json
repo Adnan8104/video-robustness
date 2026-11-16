@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "name": "review-budget",
+  "manifest": "configs/review-budget.json",
+  "source_directory": "data/review-budget",
+  "detectors": ["waverep"],
+  "preparation": "centered_4s_504_24fps",
+  "analysis": "ranking",
+  "baseline": "compression",
+  "variants": [
+    {"name": "compression", "transform": "identity", "encoding": "h264", "crf": 35}
+  ],
+  "notes": "Use scripts/check_review_budget.py to compare released WaveRep and the fixed trained head at 10 review slots per 100 clips."
+}

@@ -67,3 +67,5 @@ jobs:
         run: uv run --no-sync python run.py experiment configs/experiments/head-transfer.json --dry-run
       - name: Validate independent real-footage audit config
         run: uv run --no-sync python run.py experiment configs/experiments/false-flags.json --dry-run
+      - name: Validate fixed-budget review config
+        run: uv run --no-sync python run.py experiment configs/experiments/review-budget.json --dry-run
