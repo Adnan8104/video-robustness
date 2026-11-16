@@ -24,6 +24,7 @@ establish performance of the full paper methods.
 - [VLM4D](https://huggingface.co/datasets/shijiezhou/VLM4D): the source panel's Ego4D and YouTube-VOS clips; inherited source rights apply.
 - [GovTech SynthSite](https://huggingface.co/datasets/govtech/SynthSite): generated construction footage. All its videos are generated; hazard labels are separate from origin labels. The pinned author card and license terms are recorded in the manifests.
 - [RA-Bench](https://github.com/Shuo-Liang-0111/RA-Bench): real anchors and generated counterparts from LTX and Kling v3 for the separate cutoff and test panels. The [selection notes](../configs/rabench-selection.md) pin the authors' media and metadata releases. The manifest retains the original DVIDS links and the benchmark's rights labels for the real footage.
+- [YouTube UGC dataset](https://research.google/pubs/youtube-ugc-dataset-for-video-compression-research/): Wang, Inguva and Adsumilli's research dataset, used for the real-footage false-flag audit. The [manifest](../configs/false-flags.json) retains the [upstream title, creator and CC BY 4.0 credits](https://storage.googleapis.com/ugc-dataset/ATTRIBUTION) for each selected clip.
 
 The source manifests record pinned versions, file hashes and selection notes.
 

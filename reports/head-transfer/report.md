@@ -43,8 +43,9 @@ reproduced both error counts and all ordering counts.
 
 The demo stays unchanged. Detecting more compressed clips on a different
 dataset is useful evidence, but three real clips were still flagged.
-Before considering deployment, measure that tradeoff on a larger,
-independent real-footage set.
+The [independent real-footage follow-up](../false-flags/report.md) found
+three false flags in 30 heavily compressed recordings for the trained
+head and zero for released WaveRep.
 
 [Per-clip margins](scores.csv) · [Counts and provenance](summary.json) ·
 [Reproduce](../../docs/experiments.md#check-transfer-to-comgenvid)

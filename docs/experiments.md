@@ -498,3 +498,26 @@ uv run python scripts/check_head_transfer.py
 The command checks the fitted weights and earlier manifests, then
 prepares and scores both encodes of each clip. It refuses to overwrite
 existing results. No videos or weights are published.
+
+## Measure false flags on independent camera clips
+
+The [real-footage audit](../reports/false-flags/report.md) uses 30
+separate YouTube UGC recordings, with distinct credited creators.
+The [selection policy](../configs/false-flags-selection.md) fixes the
+sources, preparation and zero margin before scoring. The two versions
+of each clip use the same master and frame positions.
+
+Use a separate worktree at `80f9c2a` with the original fitted
+`models/linear-head-policy.npz` under the recorded environment.
+See the [original fitting instructions](#train-a-small-head-on-both-compression-levels)
+if the weights need to be recreated.
+
+```sh
+uv sync --locked
+uv run python scripts/check_false_flags.py
+```
+
+The script checks the original weight and encoder hashes, uses the
+generation-pinned downloads in the manifest, and records false flags
+by category and across the paired encodes. A real-only audit does not
+measure AI recall.
