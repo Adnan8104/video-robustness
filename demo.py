@@ -2,9 +2,15 @@
 from pathlib import Path
 import sys
 
+import streamlit as st
+
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT / "src"))
 
-from vidrobust.demo import main
+mode = st.sidebar.radio("Mode", ["Check a video", "Prioritize for review"])
+if mode == "Check a video":
+    from vidrobust.demo import main
+else:
+    from vidrobust.review_demo import main
 
 main(ROOT)

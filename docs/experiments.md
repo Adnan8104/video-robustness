@@ -521,3 +521,34 @@ The script checks the original weight and encoder hashes, uses the
 generation-pinned downloads in the manifest, and records false flags
 by category and across the paired encodes. A real-only audit does not
 measure AI recall.
+
+## Rank 100 clips for ten review slots
+
+The [review-budget test](../reports/review-budget/report.md) uses
+90 new MSVD clips and ten new Veo 3 clips from ComGenVid. The
+[selection plan](../configs/review-budget-selection.md) fixes the
+class mix, CRF 35 encode and ten-slot budget before inference.
+Both WaveRep heads rank the same inputs by their raw scores.
+
+Reproduce from a separate worktree at `685b9e2` with the original
+`models/linear-head-policy.npz` and its recorded environment. See
+the [original fitting instructions](#train-a-small-head-on-both-compression-levels)
+to recreate the weights.
+
+```sh
+uv sync --locked
+uv run python run.py experiment configs/experiments/review-budget.json --dry-run
+uv run python scripts/check_review_budget.py
+```
+
+The dry run checks media and detector configuration. The dedicated
+script scores both heads and writes their per-clip margins and ordered
+queues to `reports/review-budget/`. The pinned downloads total about
+3.2 GiB. The script verifies the original head and encoder fingerprints,
+then creates a fresh results directory.
+
+The demo’s **Prioritize for review** mode uses the same fitted head and
+four-second CRF 35 preparation on local uploads. It takes up to 20
+unique clips, with a 200 MiB total limit and a 100 MiB limit per clip.
+Choose the number of slots to display. The ordering stays the same
+when you change that number, so the app can reuse the scores.

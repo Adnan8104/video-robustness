@@ -13,7 +13,7 @@ demo and D3 experiments looking at changes between frames.
 - Compression made WaveRep miss more AI clips: **4/10 before, 9/10 after** on the 20-clip panel. On [held-out RA-Bench footage](reports/rabench-pilot/report.md), misses went from **3/8 to 8/8**, even with a lower cutoff.
 - Resizing pushed one real video's AEGIS score from **0.0005 to 0.839**.
 - [Training on both compression levels](reports/linear-head/report.md) caught 4/8 heavily compressed AI clips that the released model missed, but wrongly flagged 3/8 real clips.
-- The trained head caught **10/12** heavily compressed Veo 3 clips that [released WaveRep missed](reports/head-transfer/report.md). It also wrongly flagged **3/30** real clips in a [separate audit](reports/false-flags/report.md).
+- With ten review slots for 100 clips, the trained head surfaced **5/10** AI clips, compared with **3/10** for released WaveRep. [Review-budget test](reports/review-budget/report.md) · [Real-footage audit](reports/false-flags/report.md)
 
 ![Scores before and after compression](reports/experiments/compression/compression-pairs.png)
 
@@ -33,6 +33,12 @@ Open `http://127.0.0.1:8501`, upload a short video and click **Check video**.
 It runs AEGIS and WaveRep locally. Temporary uploads are deleted after the check.
 The first run downloads about 764 MiB of model weights.
 
+**Prioritize for review** ranks up to 20 clips and shows the top ones for
+your review budget. This experimental mode uses the fitted WaveRep head.
+To set it up, [recreate the fitted weights](docs/experiments.md#train-a-small-head-on-both-compression-levels)
+and copy `models/linear-head-policy.npz` into this checkout's `models/`.
+If you already ran the training here, select the mode in the sidebar.
+
 ## Run an experiment
 
 ```sh
@@ -45,6 +51,6 @@ The 20-clip experiment compares original, compressed, resized and cropped inputs
 
 The shared runner checks file hashes and saves scores, charts and run details
 under `reports/experiments/`. Models and videos stay out of Git. There are
-**76 tests**, with tests and config checks running in GitHub Actions.
+**81 tests**, with tests and config checks running in GitHub Actions.
 
 [Setup and configs](docs/experiments.md) · [Model comparison](docs/detector-evaluation.md) · [Sources and credits](docs/sources.md)

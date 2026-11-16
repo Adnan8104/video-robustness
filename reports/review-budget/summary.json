@@ -1,0 +1,6845 @@
+{
+  "budget": 10,
+  "source_clips": 100,
+  "test": {
+    "released": {
+      "ai_surfaced": 3,
+      "real_reviewed": 7,
+      "ai_outside": 7,
+      "queue": [
+        "review_ai_04",
+        "review_ai_01",
+        "review_real_19",
+        "review_real_44",
+        "review_real_23",
+        "review_real_42",
+        "review_real_84",
+        "review_real_90",
+        "review_real_26",
+        "review_ai_10"
+      ]
+    },
+    "trained": {
+      "ai_surfaced": 5,
+      "real_reviewed": 5,
+      "ai_outside": 5,
+      "queue": [
+        "review_real_44",
+        "review_ai_04",
+        "review_ai_05",
+        "review_real_85",
+        "review_ai_03",
+        "review_real_02",
+        "review_real_26",
+        "review_real_68",
+        "review_ai_07",
+        "review_ai_01"
+      ]
+    }
+  },
+  "trained_wins": true,
+  "scores_sha256": "40939f1142a7cc13caae055dea9e690249a747655acd2953046224bc119f13f1",
+  "preparation": [
+    {
+      "video_id": "review_real_01",
+      "source_sha256": "f73039849273002937d8bd1e1810267577aaaef7970496e04320ab147e81f5c4",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 150,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 0.5025,
+      "start_seconds": 0.5005000000000001,
+      "master_sha256": "b6d90a5787fd178e4be075ebbe3718d8dc9a80c4c3927680291b0c2c53c9ae03",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "0.500500000",
+          "-i",
+          "data/review-budget/review_real_01.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_01_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_01_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_01_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_02",
+      "source_sha256": "63b078e2f8433ed2b9bd1c5f7e697af8cd0edeb4033d135ff638fa9d97747c50",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 330,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 3.5055000000000005,
+      "start_seconds": 3.5035000000000003,
+      "master_sha256": "69e1056375f2d0dcc341a6f13e4c89252e1e92115d8e336fb94967abcc799b40",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "3.503500000",
+          "-i",
+          "data/review-budget/review_real_02.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_02_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_02_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_02_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_03",
+      "source_sha256": "b8a5d30b62d693c119e857a79c5db42992df96a0699f5bbc59563d8625a59d9d",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 241,
+        "fps": 24.0
+      },
+      "nominal_center_start_seconds": 3.020833333333333,
+      "start_seconds": 3.0,
+      "master_sha256": "7ce4794c0785fb077750304cb324fab7cbd091433fe4b6710f2acf907f68ba8a",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "3.000000000",
+          "-i",
+          "data/review-budget/review_real_03.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_03_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_03_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_03_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_04",
+      "source_sha256": "1d3d191e6053edaed471d635fa8e980a0b511c24f00f329dca52f64661b5f6dc",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 200,
+        "fps": 25.0
+      },
+      "nominal_center_start_seconds": 2.0,
+      "start_seconds": 2.0,
+      "master_sha256": "a3ff832d39cfbcd00d43dcdbfa81e83a900baf592f1bfe0e6c290eb0be01fdfd",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.000000000",
+          "-i",
+          "data/review-budget/review_real_04.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_04_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_04_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_04_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_05",
+      "source_sha256": "40c7ba1c0fbfa4bdc8e841f6c930c78b13e27e4f4cfec39d9baf6f4a5db2bcf3",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 389,
+        "fps": 29.916666666666668
+      },
+      "nominal_center_start_seconds": 4.501392757660167,
+      "start_seconds": 4.479108635097493,
+      "master_sha256": "7de685df719cd3bbb6ccfd7ba1a9ceaf9d533680ab745553e2020eb849fab2e7",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "4.479108635",
+          "-i",
+          "data/review-budget/review_real_05.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_05_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_05_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_05_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_06",
+      "source_sha256": "28da5c3d29bdb5acb07f4b2d6176bfa4f1c0bba7a15c346619d81797b6977c39",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 150,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 0.5025,
+      "start_seconds": 0.5005000000000001,
+      "master_sha256": "3b8aa62734afd8ab3c0ccfc9509f0a8f19e1b8651f0a460a054311f290fccf01",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "0.500500000",
+          "-i",
+          "data/review-budget/review_real_06.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_06_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_06_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_06_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_07",
+      "source_sha256": "19885ae64d9e21185d19f16da52e4796fec954a056f6e9198ec981f8db2d761b",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 180,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 1.0030000000000001,
+      "start_seconds": 1.0010000000000001,
+      "master_sha256": "7b5c466fc50c90eb7782a67c8d1c431dbfd0d74dda2f06d0f48e08d63da10486",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "1.001000000",
+          "-i",
+          "data/review-budget/review_real_07.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_07_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_07_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_07_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_08",
+      "source_sha256": "f49ddccf69bf8c68d1f1790f915b5d4c6da664878297ed99423dd4bdf48ecf3d",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 330,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 3.5055000000000005,
+      "start_seconds": 3.5035000000000003,
+      "master_sha256": "4dc66f8c0074347492fc70fb91b84a95decc48e13b40f4bfe0849bb4ee66974f",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "3.503500000",
+          "-i",
+          "data/review-budget/review_real_08.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_08_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_08_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_08_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_09",
+      "source_sha256": "e8cefee2e9bfaadfbbd244cb2043dd396508bad6b6af5527ec22998caf1f63cc",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 300,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 3.005,
+      "start_seconds": 3.003,
+      "master_sha256": "06d902fd65ee16093cbe4b879b1da6c3b74af11d9c36e100c0ff41aedc649f33",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "3.003000000",
+          "-i",
+          "data/review-budget/review_real_09.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_09_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_09_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_09_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_10",
+      "source_sha256": "93e263971ff1defa02ea87f52809c39dd4630b4cf1656e57be6140f8cf29ee9b",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 210,
+        "fps": 30.0
+      },
+      "nominal_center_start_seconds": 1.5,
+      "start_seconds": 1.5,
+      "master_sha256": "0f80dae5ebb605002e08f88ed36d7b8bb6d0b50d989c116265a79348540c2e9b",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "1.500000000",
+          "-i",
+          "data/review-budget/review_real_10.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_10_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_10_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_10_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_11",
+      "source_sha256": "63d5f44087194ced75e294b6a519b758e211cf846ec61cf5f0833c2e693df224",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 210,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 1.5035000000000003,
+      "start_seconds": 1.5015,
+      "master_sha256": "3bcf93f92df9da5244a27d6983bb77fadf0dc63e609c7f35d995851496e01f28",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "1.501500000",
+          "-i",
+          "data/review-budget/review_real_11.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_11_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_11_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_11_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_12",
+      "source_sha256": "12ec14b511f28754dfcdd0b26e4aab0798bf47317aff1d476958870edef47720",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 509,
+        "fps": 29.916666666666668
+      },
+      "nominal_center_start_seconds": 6.506963788300835,
+      "start_seconds": 6.484679665738161,
+      "master_sha256": "f64ab6823e4b6545ebcd2b492711750d07be3e20dcefc0cdefb4133dd9dcc055",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "6.484679666",
+          "-i",
+          "data/review-budget/review_real_12.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_12_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_12_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_12_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_13",
+      "source_sha256": "d93067bbe059e1decbba74b949a1a837395b6ae7b946e7fc99793ea1e3c653ec",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 240,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 2.0040000000000004,
+      "start_seconds": 2.0020000000000002,
+      "master_sha256": "ee3a9085b6fa42a72236dd83b91e4f04607d2e7bc881ec43780b9f971bb3f233",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.002000000",
+          "-i",
+          "data/review-budget/review_real_13.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_13_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_13_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_13_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_14",
+      "source_sha256": "a1defee59347d2180dee8d6fa6a94aecbd0c0c216af4197e77fc823a775d95dc",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 300,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 3.005,
+      "start_seconds": 3.003,
+      "master_sha256": "b73a2ecfc883d445a9e1376452833fa65ee7260898f13d9fc6acd2b2cc333d6d",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "3.003000000",
+          "-i",
+          "data/review-budget/review_real_14.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_14_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_14_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_14_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_15",
+      "source_sha256": "a5322e6235733688027a9de68708fda7241833d5b67daa52db340a01b3643172",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 351,
+        "fps": 25.0
+      },
+      "nominal_center_start_seconds": 5.02,
+      "start_seconds": 5.0,
+      "master_sha256": "54af424d65f346880df37f6a15652bf4ee0e3ca3356758f029dacd1f326f41e4",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "5.000000000",
+          "-i",
+          "data/review-budget/review_real_15.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_15_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_15_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_15_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_16",
+      "source_sha256": "5018647647cca6b8b7b05faaebf59740d8469c65b9e62972596c1b56554776bb",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 240,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 2.0040000000000004,
+      "start_seconds": 2.0020000000000002,
+      "master_sha256": "7a05e946910e22e3087cd7b9aa718b184883bc189000fbe3070dc8e63dd670a0",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.002000000",
+          "-i",
+          "data/review-budget/review_real_16.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_16_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_16_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_16_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_17",
+      "source_sha256": "58d9ae4851e785baf2fbf08b0ec6c1d0efdb3f697fcea7dc6a876ff3edbd9aed",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 150,
+        "fps": 29.916666666666668
+      },
+      "nominal_center_start_seconds": 0.5069637883008355,
+      "start_seconds": 0.5013927576601671,
+      "master_sha256": "292658a41766e03ca9315faf37b79c81720cc947f8a8e1ce37988f2a3bb204e3",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "0.501392758",
+          "-i",
+          "data/review-budget/review_real_17.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_17_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_17_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_17_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_18",
+      "source_sha256": "6fd2e187004bbbb7e9ca85320d8ea4f5faa9106dde34dd6bb7114d03cbec72ab",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 150,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 0.5025,
+      "start_seconds": 0.5005000000000001,
+      "master_sha256": "fb9d55404b82bc35adce1cd2f4dded355b40dbd82de3e94d99e0d243d7e3dceb",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "0.500500000",
+          "-i",
+          "data/review-budget/review_real_18.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_18_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_18_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_18_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_19",
+      "source_sha256": "a1bfb29d57076806577373d35caa1a36ae7613c3824f0056ee832a40b6562e0a",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 270,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 2.5045,
+      "start_seconds": 2.5025,
+      "master_sha256": "2052244efca9bbc145d786c8e4e93cc6b7da2bfc99669a695ed6eb2c27b4d088",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.502500000",
+          "-i",
+          "data/review-budget/review_real_19.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_19_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_19_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_19_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_20",
+      "source_sha256": "1a23ebed0e7d0e2789c8e78b5c60ab1ee3d24e45435e133b4fd9507e99a1157f",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 240,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 2.0040000000000004,
+      "start_seconds": 2.0020000000000002,
+      "master_sha256": "44d4bf549edd047b3e83cc7fb549382c67f0dc4df684a2c232b72b63c108a542",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.002000000",
+          "-i",
+          "data/review-budget/review_real_20.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_20_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_20_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_20_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_21",
+      "source_sha256": "ac72d50b5c8e4c493fdbfa89016d83a31503f0ee3aca0c2027c3a2cec05bfc07",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 571,
+        "fps": 30.0
+      },
+      "nominal_center_start_seconds": 7.5166666666666675,
+      "start_seconds": 7.5,
+      "master_sha256": "2ad17011aea6a1e1e2227cf7da4cad5ecb0dca7a1d28300902c0773ffb02c1a4",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "7.500000000",
+          "-i",
+          "data/review-budget/review_real_21.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_21_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_21_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_21_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_22",
+      "source_sha256": "812650f3bc4b9f9f204542d9958b03077bef74cd1bbccd0fe0d28a3d00be5fa2",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 240,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 2.0040000000000004,
+      "start_seconds": 2.0020000000000002,
+      "master_sha256": "34f11ec65c8d238a2df77189e3da22a9ac85b2b096f7bafb5f5c3a7fa96c90b8",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.002000000",
+          "-i",
+          "data/review-budget/review_real_22.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_22_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_22_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_22_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_23",
+      "source_sha256": "758a371f126d11260194b0f6f0e57e868f29c47e0828a0f984cda689f4265c28",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 360,
+        "fps": 29.916666666666668
+      },
+      "nominal_center_start_seconds": 4.016713091922005,
+      "start_seconds": 4.011142061281337,
+      "master_sha256": "0414804f9d24edabff6d6c9c20afe2a333ffa32aac81365c8bf52a53814e4063",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "4.011142061",
+          "-i",
+          "data/review-budget/review_real_23.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_23_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_23_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_23_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_24",
+      "source_sha256": "772e8ce3b752e8046cf773995bdfb776762c095daa7e5c4f98c48afe70e90152",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 420,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 5.007000000000001,
+      "start_seconds": 5.005,
+      "master_sha256": "3b0de2b28c35f5afbe12238b8670d5a75b83db4f3a0cf50c081326274bd17b4d",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "5.005000000",
+          "-i",
+          "data/review-budget/review_real_24.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_24_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_24_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_24_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_25",
+      "source_sha256": "f51569bd7369b90ee73bfe047756f5a627663e2fecce970ce8368c6b6eef6c0d",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 300,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 3.005,
+      "start_seconds": 3.003,
+      "master_sha256": "65ae4ebe4d7358018989cb9afac8588b913b50f16184f605fe2928f3d7eff8ec",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "3.003000000",
+          "-i",
+          "data/review-budget/review_real_25.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_25_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_25_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_25_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_26",
+      "source_sha256": "8b0afbd8df1b0dfc9f45a1c8aac56d4b1c3406b849d402ff696f723358ae7aa0",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 300,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 3.005,
+      "start_seconds": 3.003,
+      "master_sha256": "1145ff319b6cbfd549e1454c0051c3f5fdb84f4d95f45ebeeef353061be25c35",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "3.003000000",
+          "-i",
+          "data/review-budget/review_real_26.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_26_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_26_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_26_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_27",
+      "source_sha256": "501a9593254ee04eef1dab6c1b0c9fe4a0a951fd83acae718dfbb2270f5b89ff",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 180,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 1.0030000000000001,
+      "start_seconds": 1.0010000000000001,
+      "master_sha256": "9e30663214282b3c00a3df74efb949cb55e5f69d0c0bda8628cf03a0ed26ea59",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "1.001000000",
+          "-i",
+          "data/review-budget/review_real_27.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_27_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_27_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_27_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_28",
+      "source_sha256": "b78550751da83d11c0c551b909bf944e541630060b62ae43082e70788cb0a64d",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 630,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 8.5105,
+      "start_seconds": 8.5085,
+      "master_sha256": "5ba3fbf622d2edcf2e903f333f16355efadbf2d9618b05ba19dcef7c6aff01c9",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "8.508500000",
+          "-i",
+          "data/review-budget/review_real_28.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_28_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_28_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_28_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_29",
+      "source_sha256": "400fdfca702ca1ad3ce8aded3145cfd5e7bb1e77d8322d2614ca2aad45c5c8ae",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 180,
+        "fps": 29.916666666666668
+      },
+      "nominal_center_start_seconds": 1.0083565459610027,
+      "start_seconds": 1.0027855153203342,
+      "master_sha256": "a2198f4ac9eb24becf3e9191b09d2e00b7d9a8397a5248cf295ea0363e880536",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "1.002785515",
+          "-i",
+          "data/review-budget/review_real_29.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_29_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_29_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_29_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_30",
+      "source_sha256": "bc2b2ae3921d5a62bb7b7fd254d400214d23481a28a4c170f64d9728a7b212b9",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 270,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 2.5045,
+      "start_seconds": 2.5025,
+      "master_sha256": "bbc958197745c5ce5e5575eff5c75923efd9383a5bea71fbd31a2f88c17b5e3b",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.502500000",
+          "-i",
+          "data/review-budget/review_real_30.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_30_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_30_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_30_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_31",
+      "source_sha256": "90daeb789756b2acb61690571dd20ba3a9b22f240006e0ac0b3cacc60b847da6",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 810,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 11.5135,
+      "start_seconds": 11.5115,
+      "master_sha256": "6fa0d3ad8fd0b5e87f33b4fe03b58a5261c8dffa0bb3fa259de1848bc391de77",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "11.511500000",
+          "-i",
+          "data/review-budget/review_real_31.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_31_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_31_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_31_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_32",
+      "source_sha256": "b83f4b00feb8da1908c36a7127926a099676a93cca1b6df1fa274b7236f09558",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 210,
+        "fps": 29.916666666666668
+      },
+      "nominal_center_start_seconds": 1.5097493036211698,
+      "start_seconds": 1.5041782729805013,
+      "master_sha256": "952c93d0f068f0f90838e131d3e62a42400f6d1cafe623327a95cb6e2c3adbaf",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "1.504178273",
+          "-i",
+          "data/review-budget/review_real_32.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_32_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_32_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_32_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_33",
+      "source_sha256": "f489894988efffe689735abf83f7ac8afc04ea9abb238a4ce26817c5789a7fcd",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 361,
+        "fps": 24.0
+      },
+      "nominal_center_start_seconds": 5.520833333333333,
+      "start_seconds": 5.5,
+      "master_sha256": "49d9ed3c4272bf930320f9cf445de6b1ba5c4610d778f38971910e460535a109",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "5.500000000",
+          "-i",
+          "data/review-budget/review_real_33.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_33_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_33_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_33_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_34",
+      "source_sha256": "c76171d1ab6b525ce5a181393f648b471cfd2e6ae5588c5e39b2ec72464d4ab8",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 475,
+        "fps": 25.0
+      },
+      "nominal_center_start_seconds": 7.5,
+      "start_seconds": 7.48,
+      "master_sha256": "6017cc10860efb7bff56566c7f045c48179aece3b554ad34c0124c78c6873df7",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "7.480000000",
+          "-i",
+          "data/review-budget/review_real_34.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_34_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_34_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_34_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_35",
+      "source_sha256": "cb1c0be44933ae19a213ad200d8078631aaa6fe664735c3844e8619541ec6421",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 270,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 2.5045,
+      "start_seconds": 2.5025,
+      "master_sha256": "4a8fa7ec8cca6f80f7e38c22a070d7a75412871b92f2c44cdf659f8b1f42d54a",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.502500000",
+          "-i",
+          "data/review-budget/review_real_35.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_35_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_35_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_35_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_36",
+      "source_sha256": "b634281ca6997de0a723772b0459a0370d11abfef334e5b6f09528f2bfde8606",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 180,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 1.0030000000000001,
+      "start_seconds": 1.0010000000000001,
+      "master_sha256": "ccf2fba9ec8a4469d2332000a35b8c715aa3e6a9d1ad78f81d3e823d98406900",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "1.001000000",
+          "-i",
+          "data/review-budget/review_real_36.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_36_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_36_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_36_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_37",
+      "source_sha256": "1640619989f2dfc4889d65585b47d0c5ad2901008c1bb2eb314cc959dd1e663a",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 210,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 1.5035000000000003,
+      "start_seconds": 1.5015,
+      "master_sha256": "8a55b3da0282de691637a04a6393507f0113ac03a1020d683c236410009f8dfc",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "1.501500000",
+          "-i",
+          "data/review-budget/review_real_37.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_37_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_37_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_37_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_38",
+      "source_sha256": "22f6b6dd083c17234c3b1b5d03011c778505e0837d5400c733d142adb17021fc",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 251,
+        "fps": 25.0
+      },
+      "nominal_center_start_seconds": 3.0199999999999996,
+      "start_seconds": 3.0,
+      "master_sha256": "da4656d47e6af7f6c0f36a0de3be91b53ff77d9e1775da9b038b2c59044c1cdf",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "3.000000000",
+          "-i",
+          "data/review-budget/review_real_38.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_38_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_38_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_38_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_39",
+      "source_sha256": "92a43cb534291325dc7e344ce8ebfc80639f27f10dd5e9a40acdb593d656b560",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 301,
+        "fps": 25.0
+      },
+      "nominal_center_start_seconds": 4.02,
+      "start_seconds": 4.0,
+      "master_sha256": "579d7b75db4782de3604b799a046e38a50872e8ceaa33fff4f6c68256538f6cd",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "4.000000000",
+          "-i",
+          "data/review-budget/review_real_39.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_39_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_39_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_39_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_40",
+      "source_sha256": "ca4f5c5fa5ee9bed7e317de48b0122461052569f54d0096912c316c9fc343e9c",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 150,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 0.5025,
+      "start_seconds": 0.5005000000000001,
+      "master_sha256": "d3b881df02abf8160ee1431d8f9bf3c4b6f2f5164c73d0c0ee30fd48f37c2cb1",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "0.500500000",
+          "-i",
+          "data/review-budget/review_real_40.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_40_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_40_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_40_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_41",
+      "source_sha256": "b1f3fdb6ced99071e14ab15d4faaaf35127971ac3603ab393123f1bd650105da",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 150,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 0.5025,
+      "start_seconds": 0.5005000000000001,
+      "master_sha256": "5cff69aa9017dcb01648c1f9747640e927e6d2ee738795fa838db345a43babf9",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "0.500500000",
+          "-i",
+          "data/review-budget/review_real_41.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_41_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_41_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_41_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_42",
+      "source_sha256": "e387ac7812dbaed5aedd8b288602d3512f5f89774ac8ad67f1d3afe7426f0432",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 449,
+        "fps": 29.916666666666668
+      },
+      "nominal_center_start_seconds": 5.504178272980501,
+      "start_seconds": 5.481894150417827,
+      "master_sha256": "35680a12288f67f51c1546fd957d6dd5e52829c92baaeaf567e3dafeabb9974c",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "5.481894150",
+          "-i",
+          "data/review-budget/review_real_42.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_42_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_42_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_42_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_43",
+      "source_sha256": "a5f5a2924f68b6ebd9f963e8a1824e048fae211db1430c29ced8ffaa5a75cb6e",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 270,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 2.5045,
+      "start_seconds": 2.5025,
+      "master_sha256": "0df38e1fa26b670b647cb54ef8a9be9713042ebfc94fb26cc9f826793e5539b1",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.502500000",
+          "-i",
+          "data/review-budget/review_real_43.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_43_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_43_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_43_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_44",
+      "source_sha256": "d9a0813c6c58c7e790ed893c59fd4ce1437cd6c2c51da41a120a3d6fbfb4681e",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 180,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 1.0030000000000001,
+      "start_seconds": 1.0010000000000001,
+      "master_sha256": "ece9cb53a00f3d678c3e95d70aa44f422e0c8c78a28b8769fcf96c8dd55864dd",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "1.001000000",
+          "-i",
+          "data/review-budget/review_real_44.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_44_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_44_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_44_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_45",
+      "source_sha256": "7e616e767bd285b919f790e4b52807229615e307768afc0474374fcad96655ad",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 270,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 2.5045,
+      "start_seconds": 2.5025,
+      "master_sha256": "8019bd34bace8d359cdae993f59379bd7c8da547c643bab368ac80e1559ad60e",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.502500000",
+          "-i",
+          "data/review-budget/review_real_45.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_45_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_45_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_45_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_46",
+      "source_sha256": "ad161d1a9c4fe3c06a8c950581850726f1d89454e56643e4b18a379aa67e08ee",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 270,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 2.5045,
+      "start_seconds": 2.5025,
+      "master_sha256": "f08c745b39a005ba57d729aa68e3f0ed281485168689c47428d418c04b0d186f",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.502500000",
+          "-i",
+          "data/review-budget/review_real_46.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_46_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_46_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_46_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_47",
+      "source_sha256": "6b3ecdb380ac2b11b22edb165d614ae3dd394c9a00915d2374500f1af9611624",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 300,
+        "fps": 29.916666666666668
+      },
+      "nominal_center_start_seconds": 3.013927576601671,
+      "start_seconds": 3.0083565459610027,
+      "master_sha256": "598339eccfe18383c87272c94fca4c60a664da1b6e8d27dc9d020743c2a8d3dc",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "3.008356546",
+          "-i",
+          "data/review-budget/review_real_47.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_47_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_47_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_47_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_48",
+      "source_sha256": "db10a363d35c183abd7c243d3dd59feef3f2f6dcd33c3daf5656f5c64cfa2a22",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 300,
+        "fps": 29.916666666666668
+      },
+      "nominal_center_start_seconds": 3.013927576601671,
+      "start_seconds": 3.0083565459610027,
+      "master_sha256": "5798b2215fa472501b510242f3fa07a4e1dae9ebf77f6102db8bf8501350a19f",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "3.008356546",
+          "-i",
+          "data/review-budget/review_real_48.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_48_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_48_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_48_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_49",
+      "source_sha256": "005d71db46945429a75456b410b4b05692d86571cc60dfd1b56f4260fe2a9a4e",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 539,
+        "fps": 29.916666666666668
+      },
+      "nominal_center_start_seconds": 7.008356545961002,
+      "start_seconds": 6.986072423398328,
+      "master_sha256": "0040fbb90a91cef6cad0a821e15073f38a56ecfb4a740470ddbc8359389e83f1",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "6.986072423",
+          "-i",
+          "data/review-budget/review_real_49.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_49_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_49_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_49_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_50",
+      "source_sha256": "264af3e8ca46d9614cb6371b756bf9f180f1db950eb3a04e297066f531f792bc",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 300,
+        "fps": 29.916666666666668
+      },
+      "nominal_center_start_seconds": 3.013927576601671,
+      "start_seconds": 3.0083565459610027,
+      "master_sha256": "edda49f2f5827e924e9c4ecab5d6e4e18a2071dc7d9cb6693ef173c9d8cb805c",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "3.008356546",
+          "-i",
+          "data/review-budget/review_real_50.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_50_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_50_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_50_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_51",
+      "source_sha256": "13fce69f64b0892417605673ff500d009a83c140452f25ff247fd0014be6fe39",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 150,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 0.5025,
+      "start_seconds": 0.5005000000000001,
+      "master_sha256": "4ed466b5ad0c2a37e94443950c3a5d8b6f26998b56a8f497bbcfb94d8b827cb1",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "0.500500000",
+          "-i",
+          "data/review-budget/review_real_51.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_51_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_51_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_51_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_52",
+      "source_sha256": "08c32dc8c2ce8b2edec934f1f6a5763ff7d9de241ca802f25459e1da6b98ca6d",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 451,
+        "fps": 30.0
+      },
+      "nominal_center_start_seconds": 5.516666666666667,
+      "start_seconds": 5.5,
+      "master_sha256": "8c80fd25a3eceb42801c6ba5c906ac5c8976c1dd5afaa2929a3fb807a15a1c63",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "5.500000000",
+          "-i",
+          "data/review-budget/review_real_52.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_52_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_52_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_52_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_53",
+      "source_sha256": "cc6e5ab7686512aa245e28df6b78c9b02df04db5c8dc55f838e3e959ff5ea439",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 289,
+        "fps": 24.0
+      },
+      "nominal_center_start_seconds": 4.020833333333333,
+      "start_seconds": 4.0,
+      "master_sha256": "94569a4e322cc892a29de438444f55751625180fe4af44c63e347850a5718842",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "4.000000000",
+          "-i",
+          "data/review-budget/review_real_53.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_53_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_53_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_53_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_54",
+      "source_sha256": "15497bc6415a17175adee1cdf6f66ab5a2f469af80b86461c7d2565f54891154",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 180,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 1.0030000000000001,
+      "start_seconds": 1.0010000000000001,
+      "master_sha256": "8eca8a7d2db13822dfac78cdc683b828d5ad8da10c83c5f72dcce9cf05fba2e9",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "1.001000000",
+          "-i",
+          "data/review-budget/review_real_54.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_54_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_54_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_54_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_55",
+      "source_sha256": "7870dfe2e8a1c55870cca8fae8e9ba88ee42967bb30c7c2330147792c56b2dba",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 450,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 5.5075,
+      "start_seconds": 5.5055000000000005,
+      "master_sha256": "aa40a9486323c894cc5ea0575670df7a066b22abf73c9b0caefbd63f9025ff01",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "5.505500000",
+          "-i",
+          "data/review-budget/review_real_55.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_55_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_55_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_55_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_56",
+      "source_sha256": "b14e3a9ec415c8f39e14bd01e2bfa02259734f285bd8049ef97204f34dd77995",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 180,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 1.0030000000000001,
+      "start_seconds": 1.0010000000000001,
+      "master_sha256": "e075e871a31572477a910fa654199a6e8ad275c466d85398774db73f60169f8e",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "1.001000000",
+          "-i",
+          "data/review-budget/review_real_56.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_56_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_56_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_56_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_57",
+      "source_sha256": "b8e51d1b7be154a07e6e8f91ef7c39e8495e38753c97fbf16793e6f5343d0387",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 145,
+        "fps": 24.0
+      },
+      "nominal_center_start_seconds": 1.0208333333333335,
+      "start_seconds": 1.0,
+      "master_sha256": "164664988c8de74a2bfb09508769ed13e71f8789afa55140b46d849a0cbce647",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "1.000000000",
+          "-i",
+          "data/review-budget/review_real_57.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_57_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_57_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_57_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_58",
+      "source_sha256": "ebc49b23c9107069a47b5f609028e08189a61a59c911f79ba731cc8071041359",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 300,
+        "fps": 29.916666666666668
+      },
+      "nominal_center_start_seconds": 3.013927576601671,
+      "start_seconds": 3.0083565459610027,
+      "master_sha256": "8ed3065d81863a42fae9044645c1aab4e9602b8727e4722df31c099b7d9fc742",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "3.008356546",
+          "-i",
+          "data/review-budget/review_real_58.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_58_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_58_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_58_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_59",
+      "source_sha256": "dba11a92ec64ae51bf79ed012d9b3484105c46f2f128b4e695f89191c82c5c2d",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 251,
+        "fps": 25.0
+      },
+      "nominal_center_start_seconds": 3.0199999999999996,
+      "start_seconds": 3.0,
+      "master_sha256": "6a52656a98a218fa7d1e1243186917a6d47d7441b82df67f460301f2f0193e34",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "3.000000000",
+          "-i",
+          "data/review-budget/review_real_59.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_59_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_59_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_59_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_60",
+      "source_sha256": "08cdd3bbf2ed3b8655ae2603a396e66c53dab6c04718f4c1faeb715e3a6a5d47",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 210,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 1.5035000000000003,
+      "start_seconds": 1.5015,
+      "master_sha256": "c8335c06d1f6ed81eb1cc2d9295bd0001dde57bbcdf65546f2b9dd942782b0c5",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "1.501500000",
+          "-i",
+          "data/review-budget/review_real_60.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_60_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_60_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_60_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_61",
+      "source_sha256": "127bdc15916a2f0449e151f04266d11288b8d9c7126566705b80331cdb445ed8",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 300,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 3.005,
+      "start_seconds": 3.003,
+      "master_sha256": "3e0be3c22d3b6de8d9586e32a97a3408e418944957d93d40512a8e35b0d239da",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "3.003000000",
+          "-i",
+          "data/review-budget/review_real_61.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_61_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_61_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_61_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_62",
+      "source_sha256": "6a9e26f2051b204bb9c3763104354906a0df40d9ffd1e2f529988ac4f809382a",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 301,
+        "fps": 30.0
+      },
+      "nominal_center_start_seconds": 3.0166666666666666,
+      "start_seconds": 3.0,
+      "master_sha256": "7e7c0af6a7deaa995aa58ebe0806be2ebe0666bf51915c3ae66681d137a11503",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "3.000000000",
+          "-i",
+          "data/review-budget/review_real_62.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_62_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_62_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_62_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_63",
+      "source_sha256": "172d801adef5dd42302361ca3eda35e881288d314db0090ee19f3a7b424361b3",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 180,
+        "fps": 29.916666666666668
+      },
+      "nominal_center_start_seconds": 1.0083565459610027,
+      "start_seconds": 1.0027855153203342,
+      "master_sha256": "c5d3464c5f407b509ba8161fbde425c5c16eb5e9faa535a236b6d1a0edd4d553",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "1.002785515",
+          "-i",
+          "data/review-budget/review_real_63.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_63_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_63_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_63_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_64",
+      "source_sha256": "8c88fa9a8af206c93239c4eaa9cf579303f815517ae0a5d3a26818b67a506e25",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 240,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 2.0040000000000004,
+      "start_seconds": 2.0020000000000002,
+      "master_sha256": "2944d654d87659d8519890fcf32ad4bc4411e028ba3b9907032f83a2490dbf68",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.002000000",
+          "-i",
+          "data/review-budget/review_real_64.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_64_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_64_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_64_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_65",
+      "source_sha256": "bde36fcd14981ce7de523dff7966c1295a7ff570deb070ee55699986349e128a",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 210,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 1.5035000000000003,
+      "start_seconds": 1.5015,
+      "master_sha256": "4ea1a9df4a228ce46e695e7a30949d9d74ed1bbb90cd5801243b9cafc754cab7",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "1.501500000",
+          "-i",
+          "data/review-budget/review_real_65.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_65_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_65_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_65_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_66",
+      "source_sha256": "682245d14fc2c028a7be22f7ef6dc7783dc1c0e7b28d21d8ac79f0d9bf80d18f",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 240,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 2.0040000000000004,
+      "start_seconds": 2.0020000000000002,
+      "master_sha256": "44fba91123d15765ec7cea6989ea9ef3859e9f7b57b9163b08d59ada6ba7e684",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.002000000",
+          "-i",
+          "data/review-budget/review_real_66.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_66_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_66_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_66_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_67",
+      "source_sha256": "0967aa0f57c78542b23e295b66b2b8438a14225d400f71416740a8d290d72127",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 210,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 1.5035000000000003,
+      "start_seconds": 1.5015,
+      "master_sha256": "a717316b69c4767824ad9878592e95f5090a2d28dfd244bb37629e6eb95a9bc9",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "1.501500000",
+          "-i",
+          "data/review-budget/review_real_67.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_67_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_67_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_67_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_68",
+      "source_sha256": "2f6167ac7fd016ec0b98459c102b6b7fe0122efe306c53a50f632b0a53524982",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 180,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 1.0030000000000001,
+      "start_seconds": 1.0010000000000001,
+      "master_sha256": "3bd76a42f814385d4f9f5b3f48fd79f755a5ee1fdcb7eff911607080a3a3b3cb",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "1.001000000",
+          "-i",
+          "data/review-budget/review_real_68.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_68_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_68_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_68_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_69",
+      "source_sha256": "76cdd52f385b3a8ce3b43dd897537a62f1d3b536de76beb540c73a908cafb125",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 151,
+        "fps": 25.0
+      },
+      "nominal_center_start_seconds": 1.02,
+      "start_seconds": 1.0,
+      "master_sha256": "afb8d2ee722d9e69027e4cbde6431a8479f2b8b01b84d54268419115b3ada35a",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "1.000000000",
+          "-i",
+          "data/review-budget/review_real_69.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_69_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_69_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_69_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_70",
+      "source_sha256": "fb032faca51fe247ccd306b32ff681037fc8df30e89a0b7737acbc08c22877e6",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 300,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 3.005,
+      "start_seconds": 3.003,
+      "master_sha256": "acc0990015cb91aace8cb745aec1ee522ce1eeb854370a7d38a599ddb983863f",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "3.003000000",
+          "-i",
+          "data/review-budget/review_real_70.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_70_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_70_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_70_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_71",
+      "source_sha256": "a704bc4e2f376277a2222d468d5b07ce2b21d59c4a4a29ff0c80bbd82797f569",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 169,
+        "fps": 24.0
+      },
+      "nominal_center_start_seconds": 1.5208333333333335,
+      "start_seconds": 1.5,
+      "master_sha256": "ee7779345dab825698f8eb071ff941dbc703053963cb3a8c64b5a488e7565dd3",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "1.500000000",
+          "-i",
+          "data/review-budget/review_real_71.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_71_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_71_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_71_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_72",
+      "source_sha256": "feac9698512df1d15f633ce134c59b4af6e86c76381ae3d26cec583f23b5d9dd",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 360,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 4.006,
+      "start_seconds": 4.0040000000000004,
+      "master_sha256": "de78b5c1ec975fccb86f166d2a1230956e6756aea7c7f90c466abde37603c039",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "4.004000000",
+          "-i",
+          "data/review-budget/review_real_72.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_72_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_72_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_72_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_73",
+      "source_sha256": "7b28d39357662fb5ead72e2b95d4f22f53fe3e8a0fda3c0ac948a48f99efdab0",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 169,
+        "fps": 24.0
+      },
+      "nominal_center_start_seconds": 1.5208333333333335,
+      "start_seconds": 1.5,
+      "master_sha256": "93fd2dfef8abd363ae208ff971701cdc3cdbfd6bbf0635b2871f945b7dcc0d99",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "1.500000000",
+          "-i",
+          "data/review-budget/review_real_73.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_73_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_73_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_73_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_74",
+      "source_sha256": "a856613f06bb8b2a7ad6930794e2912653361627aa8b224b31bb8decf5bd99cc",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 390,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 4.5065,
+      "start_seconds": 4.5045,
+      "master_sha256": "bceca4ebb47cd4961a236b9e264caeca7c25bb1047c666653a066d7d6ba95d9c",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "4.504500000",
+          "-i",
+          "data/review-budget/review_real_74.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_74_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_74_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_74_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_75",
+      "source_sha256": "a3814404d81fe9ba073a2286d3307b239d18c18f528dbddd9d1703539122cfbf",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 151,
+        "fps": 30.0
+      },
+      "nominal_center_start_seconds": 0.5166666666666666,
+      "start_seconds": 0.5,
+      "master_sha256": "f2a81470b71b710eec170fba992b129aabdb8772755e4e4bf6626d125a78674d",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "0.500000000",
+          "-i",
+          "data/review-budget/review_real_75.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_75_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_75_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_75_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_76",
+      "source_sha256": "f608f0bc07741b8b6240d811e819f7551440480bb93f2ba53e8566f76509aa21",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 361,
+        "fps": 24.0
+      },
+      "nominal_center_start_seconds": 5.520833333333333,
+      "start_seconds": 5.5,
+      "master_sha256": "4e3c71ff98a238d2d5b6ed0ffd31dffcb353b0d5483d403a6082fed1e07f479a",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "5.500000000",
+          "-i",
+          "data/review-budget/review_real_76.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_76_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_76_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_76_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_77",
+      "source_sha256": "2a58e09e57ae9357af9acd8e53a3722acdcf8e6d4f6f09fca90d675ef0c2ad87",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 211,
+        "fps": 30.0
+      },
+      "nominal_center_start_seconds": 1.5166666666666666,
+      "start_seconds": 1.5,
+      "master_sha256": "9a0fa4681096c2ccfc13555f50d949b7aa969a964d9ee28b07fb1b8c60134297",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "1.500000000",
+          "-i",
+          "data/review-budget/review_real_77.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_77_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_77_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_77_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_78",
+      "source_sha256": "bbe92058111a3d3ed30264c190c51a4d3e11c952051456cdc4a91fe2d19c328f",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 600,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 8.01,
+      "start_seconds": 8.008000000000001,
+      "master_sha256": "0d2b7c8741dc58f16ab763a1b4fa925b1d471612e5675c8d07b3ada6153db34b",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "8.008000000",
+          "-i",
+          "data/review-budget/review_real_78.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_78_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_78_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_78_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_79",
+      "source_sha256": "88111b673ad4577d9e03ae8ac4bafea3280b674ab0a35e58d690ed4962312182",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 150,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 0.5025,
+      "start_seconds": 0.5005000000000001,
+      "master_sha256": "bee0785b475ec3c5c0d81815d7cf7eb8258ceedee591a26dba98e5bf42872820",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "0.500500000",
+          "-i",
+          "data/review-budget/review_real_79.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_79_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_79_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_79_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_80",
+      "source_sha256": "39e2f6f2c28ec74588575479e5f92f941c7b9c22bb819457b2717d94bc0b561b",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 300,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 3.005,
+      "start_seconds": 3.003,
+      "master_sha256": "be6fb05b5aaec3e4a21a067c6cf784869e2fb69226dafe90e1786bcb4b151cd7",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "3.003000000",
+          "-i",
+          "data/review-budget/review_real_80.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_80_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_80_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_80_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_81",
+      "source_sha256": "cca23ccd6a9aa83395518d00297b4c549d3bb8989f67e44f61a267862951b478",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 250,
+        "fps": 25.0
+      },
+      "nominal_center_start_seconds": 3.0,
+      "start_seconds": 3.0,
+      "master_sha256": "885b5eb0dfc62ab3f788e0757213d72eaf6ffd36608bfe1d78c0bbdc7aabce12",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "3.000000000",
+          "-i",
+          "data/review-budget/review_real_81.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_81_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_81_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_81_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_82",
+      "source_sha256": "51e3a788b7f6f0d7116370c5436036499d194aee7ddb27001e47c5d182887278",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 481,
+        "fps": 24.0
+      },
+      "nominal_center_start_seconds": 8.020833333333334,
+      "start_seconds": 8.0,
+      "master_sha256": "cb9b4c524d340a0c363700546aabe319267c72db5f45b1a2039fc797cc7125d5",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "8.000000000",
+          "-i",
+          "data/review-budget/review_real_82.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_82_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_82_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_82_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_83",
+      "source_sha256": "f0ab5b9ee182fa7f160c111584a4e5fc8b55ab3d4d72cef51c91b502b17b8893",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 300,
+        "fps": 29.916666666666668
+      },
+      "nominal_center_start_seconds": 3.013927576601671,
+      "start_seconds": 3.0083565459610027,
+      "master_sha256": "4aff0a271b0f3144c2a20378820c3d90e8a3cbd8ca9954a9b7994e827d9ff79a",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "3.008356546",
+          "-i",
+          "data/review-budget/review_real_83.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_83_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_83_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_83_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_84",
+      "source_sha256": "02b8da2239c60a7496232678ec586d56a591a1183e5a5f7a4475832f831fb252",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 270,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 2.5045,
+      "start_seconds": 2.5025,
+      "master_sha256": "334adf397e1493f0f7c6053c4a4012316d97a29f8770a928143fa8c4fe6d2b6e",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.502500000",
+          "-i",
+          "data/review-budget/review_real_84.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_84_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_84_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_84_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_85",
+      "source_sha256": "d27aaee9cdea5c6b45f9d4856aaea0a7bb4d720a8fa1f727472318396257af12",
+      "source_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 421,
+        "fps": 30.0
+      },
+      "nominal_center_start_seconds": 5.016666666666667,
+      "start_seconds": 5.0,
+      "master_sha256": "9b7916de9d594b6788b6408834f64bd3de6e34c2b55ffd16584170e36c75eb0f",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "5.000000000",
+          "-i",
+          "data/review-budget/review_real_85.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_85_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_85_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_85_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_86",
+      "source_sha256": "e2ef3e883b6e4f96347a761431723d71781e6ed20c653ac528e63c85e6796ee4",
+      "source_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 169,
+        "fps": 24.0
+      },
+      "nominal_center_start_seconds": 1.5208333333333335,
+      "start_seconds": 1.5,
+      "master_sha256": "f0f61007636708bf5ef28d3ed1913749334124f3b2ead92c682893590c8393a0",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "1.500000000",
+          "-i",
+          "data/review-budget/review_real_86.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_86_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_86_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_86_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_87",
+      "source_sha256": "3b41e13cbadc7135a39ee2e7708b934c0369d50b913de38f4ee8d2c12966cce4",
+      "source_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 210,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 1.5035000000000003,
+      "start_seconds": 1.5015,
+      "master_sha256": "b3b8ec5e4ffa1aa095949b4d02ccf1b4653072fd371a2a1fb70829406aa4dcdf",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "1.501500000",
+          "-i",
+          "data/review-budget/review_real_87.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_87_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_87_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_87_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_88",
+      "source_sha256": "a32682bc62b809b41374ca62e7e0b8ea9ce60afa65a97cd6021d98c31d6168a2",
+      "source_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 150,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 0.5025,
+      "start_seconds": 0.5005000000000001,
+      "master_sha256": "8772fcbea7aaac50e4d0b34865048b78747e163e9e0d17d1523fd6f9853499e4",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "0.500500000",
+          "-i",
+          "data/review-budget/review_real_88.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_88_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_88_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_88_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_89",
+      "source_sha256": "81ff0ada0d2f7f58740c5db02e1f1499af91fa9484bfd28abf2aa35f238d6787",
+      "source_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 180,
+        "fps": 29.97002997002997
+      },
+      "nominal_center_start_seconds": 1.0030000000000001,
+      "start_seconds": 1.0010000000000001,
+      "master_sha256": "dcf4f0468a913e9454cca4d7e69ad9c24990a0f567c6a763dbc2920c18028425",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "1.001000000",
+          "-i",
+          "data/review-budget/review_real_89.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_89_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_89_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_89_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_real_90",
+      "source_sha256": "8513f89978f44140ebffff4b668db86f0d28bf88b5af9f55309cd143292a6022",
+      "source_metadata": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 211,
+        "fps": 30.0
+      },
+      "nominal_center_start_seconds": 1.5166666666666666,
+      "start_seconds": 1.5,
+      "master_sha256": "7bb5424784abbdf13ee9d879e56591f96ad1f59bf57e3f3ddec60b19ea7e5a51",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "1.500000000",
+          "-i",
+          "data/review-budget/review_real_90.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_90_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_real_90_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_real_90_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_ai_01",
+      "source_sha256": "a61a43c44272b0b2fdea1c68c4883c30de9fd0d3306a02aec7a5ec3d5e9c9b4f",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "nominal_center_start_seconds": 2.0,
+      "start_seconds": 2.0,
+      "master_sha256": "6a1a56a65b048ec9f96d009d63cb17f35a685c4a1177d4c78bc82ca6e3da8642",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.000000000",
+          "-i",
+          "data/review-budget/review_ai_01.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_ai_01_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_ai_01_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_ai_01_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_ai_02",
+      "source_sha256": "5e086f3042e1f83f3dc555a28391358dd29cc733a856929741fa048eca9c37e2",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "nominal_center_start_seconds": 2.0,
+      "start_seconds": 2.0,
+      "master_sha256": "3d927e403c7ca49dfe0da673c98b6d2b63736ac64077993364a0cb5a8c76cc6f",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.000000000",
+          "-i",
+          "data/review-budget/review_ai_02.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_ai_02_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_ai_02_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_ai_02_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_ai_03",
+      "source_sha256": "4cd81dddc3c8cc06f1f2a3b073c0c486bc17487ca66edfd5d827c17c0197cbb0",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "nominal_center_start_seconds": 2.0,
+      "start_seconds": 2.0,
+      "master_sha256": "24c535c7cde993debc8ff5e12480be1cb92279ae4ffe263a00563f4e1b5e9374",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.000000000",
+          "-i",
+          "data/review-budget/review_ai_03.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_ai_03_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_ai_03_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_ai_03_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_ai_04",
+      "source_sha256": "a02bfe906f9bb98339fc8281735061c6b3dfdebfdbddfe48dfeb1d2033ee6465",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "nominal_center_start_seconds": 2.0,
+      "start_seconds": 2.0,
+      "master_sha256": "3ec51dab6c22e5719a4f73a2536e3b7b64a1d17997e9a1e47687fb011bdb3fa6",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.000000000",
+          "-i",
+          "data/review-budget/review_ai_04.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_ai_04_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_ai_04_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_ai_04_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_ai_05",
+      "source_sha256": "69a74ff2d84cc7b6ec5485e78891be181af86ecf5e63783ab648c338730629f4",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "nominal_center_start_seconds": 2.0,
+      "start_seconds": 2.0,
+      "master_sha256": "9c3809397fcbdd7fb282de2dc3fc9dfe156693e50d6be2fc0a409b07426e6727",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.000000000",
+          "-i",
+          "data/review-budget/review_ai_05.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_ai_05_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_ai_05_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_ai_05_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_ai_06",
+      "source_sha256": "330fcfebb3bdbf43f95447008e0d2833c2a7c76c45756706d2096796c2c75f35",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "nominal_center_start_seconds": 2.0,
+      "start_seconds": 2.0,
+      "master_sha256": "3d97f47cf23ee30b0b641ed6601059c5c65d939cec0a8d1aef351e903d409fd2",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.000000000",
+          "-i",
+          "data/review-budget/review_ai_06.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_ai_06_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_ai_06_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_ai_06_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_ai_07",
+      "source_sha256": "c15d2aeaa74983446a3ce829c8bdaa43c504a1a402fa2aca3426e61ad89a0b5d",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "nominal_center_start_seconds": 2.0,
+      "start_seconds": 2.0,
+      "master_sha256": "f80d1aaec2553835c62803420f6fe8b6382dcf748a6eb721bb49b0b248f877ee",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.000000000",
+          "-i",
+          "data/review-budget/review_ai_07.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_ai_07_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_ai_07_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_ai_07_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_ai_08",
+      "source_sha256": "36f1ee170b63c71af01699969ed2b904484a89dd6541bd45b9f6a6c9514847a1",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "nominal_center_start_seconds": 2.0,
+      "start_seconds": 2.0,
+      "master_sha256": "5e42f9a780ee40e319468a99156f8ac4b7c21e5e1c119cf5c0a4b62d62de34e1",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.000000000",
+          "-i",
+          "data/review-budget/review_ai_08.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_ai_08_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_ai_08_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_ai_08_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_ai_09",
+      "source_sha256": "02b3a5472619a67535117f4162611bd516166350970201d72cd07554c5b146c6",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "nominal_center_start_seconds": 2.0,
+      "start_seconds": 2.0,
+      "master_sha256": "0f8a952a94dc27edb6dc6a41ff208a6e34c5d4502d00e5fcfafb352a32d3fec6",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.000000000",
+          "-i",
+          "data/review-budget/review_ai_09.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_ai_09_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_ai_09_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_ai_09_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    },
+    {
+      "video_id": "review_ai_10",
+      "source_sha256": "087cdc573fe172018975251807a00c2e3eb33711bd5f83513e802f6dc192f688",
+      "source_metadata": {
+        "width": 1280,
+        "height": 720,
+        "frames": 192,
+        "fps": 24.0
+      },
+      "nominal_center_start_seconds": 2.0,
+      "start_seconds": 2.0,
+      "master_sha256": "5358d3919160621865c237e98aa8e5af735b84e0a9257de115e31818dfffe40a",
+      "master_metadata": {
+        "width": 504,
+        "height": 504,
+        "frames": 96,
+        "fps": 24.0
+      },
+      "commands": [
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-ss",
+          "2.000000000",
+          "-i",
+          "data/review-budget/review_ai_10.mp4",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-vf",
+          "setpts=PTS-STARTPTS,fps=24:start_time=0,scale=-2:504:flags=bicubic,crop=504:504,setsar=1,setpts=N/(24*TB)",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "ffv1",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_ai_10_master.avi"
+        ],
+        [
+          "-y",
+          "-loglevel",
+          "warning",
+          "-i",
+          "data/experiments/review-budget/review_ai_10_master.avi",
+          "-map",
+          "0:v:0",
+          "-an",
+          "-frames:v",
+          "96",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "35",
+          "-pix_fmt",
+          "yuv420p",
+          "data/experiments/review-budget/review_ai_10_compression.mp4"
+        ]
+      ],
+      "warnings": [
+        "",
+        ""
+      ]
+    }
+  ],
+  "weights_sha256": "57453399ed3b7ab7bb82dfedd012115e69fcff8c97e816f6b9f17012d82ec5a6",
+  "encoder_sha256": "50d639049d928986ba7d69861a4fe4f3e7afbba1843e3e089cdf6b4748f53d5b",
+  "environment": {
+    "python": "3.11.15",
+    "architecture": "arm64",
+    "ffmpeg": "7.1",
+    "packages": {
+      "numpy": "2.2.6",
+      "torch": "2.5.1",
+      "torchvision": "0.20.1",
+      "timm": "1.0.27",
+      "opencv-python-headless": "4.11.0.86"
+    }
+  },
+  "frozen_revisions": {
+    "configs/construction-scenes.json": "36e4bf5aa85a411a13c032adb3a097e879a9a8e4",
+    "configs/controlled.json": "ff9fc7ee5face033fb99ee01df60949b5812ff03",
+    "configs/experiments/linear-head-test.json": "bf26f537376389e4da4299889a0b3d4ae5c6f71d",
+    "configs/experiments/linear-head-train.json": "bf26f537376389e4da4299889a0b3d4ae5c6f71d",
+    "configs/experiments/review-budget.json": "685b9e2fcbaff466181923d64fd052e849a62357",
+    "configs/false-flags.json": "80f9c2a530c51cf38098c0f98a8815e526d258b7",
+    "configs/head-cutoff-test.json": "0abe568674598d04ac7e213e688cee8001a7ecc3",
+    "configs/head-transfer.json": "af58ca42d757e27775ac55ae2ba1bc731b978389",
+    "configs/linear-head-policy.json": "bf26f537376389e4da4299889a0b3d4ae5c6f71d",
+    "configs/linear-head-test.json": "bf26f537376389e4da4299889a0b3d4ae5c6f71d",
+    "configs/linear-head-train.json": "bf26f537376389e4da4299889a0b3d4ae5c6f71d",
+    "configs/rabench-format.json": "1de2ac03655de6b987df7ec73565c057a8411498",
+    "configs/rabench-pilot.json": "e31d36575add649df2b05b0954790e481244ee74",
+    "configs/real-footage.json": "04068ab9e145c4f9c470dad5f1e32fea4197f283",
+    "configs/real-negatives-test.json": "1f68aa8e65a9f0147a57a9d6eeccca2fd942de0a",
+    "configs/real-negatives-train.json": "1f68aa8e65a9f0147a57a9d6eeccca2fd942de0a",
+    "configs/review-budget-exclusions.json": "685b9e2fcbaff466181923d64fd052e849a62357",
+    "configs/review-budget-selection.md": "685b9e2fcbaff466181923d64fd052e849a62357",
+    "configs/review-budget.json": "685b9e2fcbaff466181923d64fd052e849a62357",
+    "configs/samples.json": "001190d44b82acae012afc337574ce291bf1c6ef",
+    "configs/source-panel.json": "a962b17c79f8add32a4e71b78046bbbbedcd759a",
+    "configs/temporal-panel.json": "0f1ec9c9489fc193179915b0877b23ed925ef681",
+    "configs/two-detectors.json": "e61770c06ba3df93b38cd039d71df53aa5b07d05",
+    "reports/linear-head/fit.json": "684b66c85e9279dd056465115b035ccbf35916f8",
+    "scripts/check_head_transfer.py": "af58ca42d757e27775ac55ae2ba1bc731b978389",
+    "scripts/check_review_budget.py": "685b9e2fcbaff466181923d64fd052e849a62357",
+    "scripts/train_head.py": "bf26f537376389e4da4299889a0b3d4ae5c6f71d",
+    "src/vidrobust/__init__.py": "a218ae5485a727f1da140e24f021669fc3753621",
+    "src/vidrobust/adapters/waverep.py": "dc550d893d01cc490e23fdd9fd37779a52b36096",
+    "src/vidrobust/artifacts.py": "36e4bf5aa85a411a13c032adb3a097e879a9a8e4",
+    "src/vidrobust/cli.py": "a3e38f4cdf36233b77a90d637e7477911845d221",
+    "src/vidrobust/demo.py": "a3e38f4cdf36233b77a90d637e7477911845d221",
+    "src/vidrobust/detectors.py": "dc550d893d01cc490e23fdd9fd37779a52b36096",
+    "src/vidrobust/experiment.py": "045e004df2a3b9f9e153e7a61671a1b312209722",
+    "src/vidrobust/experiment_report.py": "0f1ec9c9489fc193179915b0877b23ed925ef681",
+    "src/vidrobust/frame_scoring.py": "0f1ec9c9489fc193179915b0877b23ed925ef681",
+    "src/vidrobust/inference.py": "04068ab9e145c4f9c470dad5f1e32fea4197f283",
+    "src/vidrobust/linear_head.py": "bf26f537376389e4da4299889a0b3d4ae5c6f71d",
+    "src/vidrobust/media.py": "36e4bf5aa85a411a13c032adb3a097e879a9a8e4",
+    "src/vidrobust/registry.py": "0f1ec9c9489fc193179915b0877b23ed925ef681",
+    "vendor/aegis/video_io.py": "a218ae5485a727f1da140e24f021669fc3753621"
+  },
+  "fingerprints": {
+    "configs/construction-scenes.json": "4a150c8f95a7e948083be9c899f75d20b59622efb55db7c7ca948b2abd05f310",
+    "configs/controlled.json": "ba0d1d49e7aae666207321bd7462770b681e6f475f8d5560f43eea7629e67674",
+    "configs/experiments/linear-head-test.json": "f70e6e12213ebed8189476f606ad25bb26726c0960dc39ad7c52f605bc287596",
+    "configs/experiments/linear-head-train.json": "20743fac7bb58a7ef4262fda71c695206d838f3825379b4b3a7d72d26652b828",
+    "configs/experiments/review-budget.json": "7715a87a5f7e502fbf0abddf06cc4333538389fd3c0392093067c500f0b91703",
+    "configs/false-flags.json": "30f075709fce759020f9511ae488381611fe85fc2e9ca85c7c8f78d551230fd1",
+    "configs/head-cutoff-test.json": "d1b29815402fee1912f73d095b66b34130d276bfc385c38d9074dff77d9eb56e",
+    "configs/head-transfer.json": "9668b9dbfe5b081a6a4cf975798fdf4bab3b12748451d41d0b6266cb81443dc3",
+    "configs/linear-head-policy.json": "7737400426996c69765613e97ecdef6b8dde761f299401abbdc5ab4438bb51e2",
+    "configs/linear-head-test.json": "442ebf8b4c388b76295001c76ab593dec89a67a3b6a465039cecfd13de3206fc",
+    "configs/linear-head-train.json": "1e47ed2b8ee0c3bb73eea8c19aa6cf9393474499c25f46a7f537a71ddf498205",
+    "configs/rabench-format.json": "466a4c2731bbf95bfaa6ae5c147452690978ba7648295dcbe792a05c956fd8f1",
+    "configs/rabench-pilot.json": "f1f342a831710dee38fd4b2fe26df81ebaaedd4f7d28299fea828b9ed11aa9c7",
+    "configs/real-footage.json": "e5b0771cd4afdb5d213238d506f874d596b598b6e915a5d8551a9516f3690d44",
+    "configs/real-negatives-test.json": "0e3df5b901f5573a9d41fd33b9862557f1aa342711b680cf9009fc2e28b0f099",
+    "configs/real-negatives-train.json": "6349ddeb5278728b30a5a381853d4209b6ce760706b8a47ab166481ced94fd2f",
+    "configs/review-budget-exclusions.json": "429bf9e9fea3c32061a59cf5e1cdf01d9ecf670002999b753b8cfa1dd9cd3e65",
+    "configs/review-budget-selection.md": "93c2fe9a9e916e6a2d75a64a09c731930c80e0bd80f1c9dd474789140beca067",
+    "configs/review-budget.json": "af3571087316e5e6ff349fce9db31f095440d9c8a2a711cdaed013d42d4961ff",
+    "configs/samples.json": "7fd318d7bcc81f9579ebe593e54872c75900eefdf25c929ce89c72c8e714fb42",
+    "configs/source-panel.json": "c79db292283e7c798e77f3fbe59de0cee873bc17b82e885e7490375f1b3bbc3a",
+    "configs/temporal-panel.json": "37521ba87accaf6b2dc0420a6a7feee04b810885b6e4ff32e1636a4576ef2899",
+    "configs/two-detectors.json": "adc6de294a26ee928e669b9bcb57478c2bf2dfb2e9863b0aad7b52dd6d425c12",
+    "reports/linear-head/fit.json": "cb744ca52a23a3b04dc6a409278c93d670ea37a682ed97b226f36fd297b64224",
+    "scripts/check_head_transfer.py": "c3df2cd338df1b0fd3dbf8bba7127125d2345eae601fbe8e62a0e18ff89fd8ca",
+    "scripts/check_review_budget.py": "7fc86b56e4614f0b9419e3779e7c2062ab6d6332bef4c7a0aaa5a09a8ca9d76d",
+    "scripts/train_head.py": "89984d4867b64952262b2f98c9c37a54171377c8469844f0fb948070982de891",
+    "src/vidrobust/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/vidrobust/adapters/waverep.py": "5d1db1890e45cf08d2ccc4456dedaf343bc7e0534d7b0c90e84fe236c5027394",
+    "src/vidrobust/artifacts.py": "859f540b0688201b74a346cc496fdd4d321bf06f1390dcde25a49e4eb9d687d1",
+    "src/vidrobust/cli.py": "22132dac9fa6bef4ee93d2efc7435c7f0178b8bca8dce4467646503ee1825d5d",
+    "src/vidrobust/demo.py": "e6eeb68614ba4d5f6c84f5eac557db6b67f46f94e9814d7cff21ff448241b1ae",
+    "src/vidrobust/detectors.py": "008d9ee078d5f2b002e95ea2bb10292a45a77c90f4e8af0b3ba562e8e5460dbc",
+    "src/vidrobust/experiment.py": "66b3c30e1f9a4b9621bc361743f628424aa6da468e63f7fee940143d15fb5a80",
+    "src/vidrobust/experiment_report.py": "58956f2d9684630c60297d9c87bb427b5a1a6730b899f805d97d87512bbc46c8",
+    "src/vidrobust/frame_scoring.py": "1ed45ddd118399e03914552c39d1874dce9a55553b38f98acfe8d559ad926c21",
+    "src/vidrobust/inference.py": "de4d95833fbf4b3f70d3453c2c6e3963504cb01e68e3c534965e1becff7852db",
+    "src/vidrobust/linear_head.py": "af1cc96466b837f8428eb820e4543eb3d21829993b45010bc90376003e4bf071",
+    "src/vidrobust/media.py": "bc5cb77acdce748721ee20c3033b2a2fc23fc55d39473ee298c99c4dd59cf3b0",
+    "src/vidrobust/registry.py": "c706bfb7f1121690452147e57be63b47a8a926f36f5818cf5b0ad4b0429c7093",
+    "vendor/aegis/video_io.py": "bab6ba4b8b1c07ff9bc392cf40487be8e8d31fdd248a4494563057e812a043dc"
+  },
+  "reconstructed_released_logits": "exact"
+}
